@@ -32,7 +32,7 @@ Chaque produit copie une **demande prouvée** (pub qui tourne depuis des mois + 
 
 1. **Excel + IA : de zéro à pro en 7 jours** · 2 500 F (barré 10 000 F)
    Preuve : n°1 du classement, 254 jours de pub, 6 variantes, 5 pays, 1K+ achats à 7 000 F.
-   Différence : on montre comment ChatGPT/Claude écrit les formules à ta place. Format : PDF + 10 vidéos courtes.
+   Différence : on montre comment ChatGPT/Claude écrit les formules à ta place. Format : e-book PDF d'environ 70 pages.
    Bonus : 20 modèles Excel prêts (facture, stock, paie, budget).
 
 2. **Kit budget Mobile Money** (modèle Google Sheets + PDF) · 1 000 F

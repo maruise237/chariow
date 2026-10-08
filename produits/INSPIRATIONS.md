@@ -1,5 +1,7 @@
 # Pages concurrentes étrangères à étudier (8 octobre 2026)
 
+Rappel : nos produits sont des e-books ; des formations ci-dessous on ne reprend que le contenu, la structure et les arguments de vente.
+
 Pages lues ou vérifiées le 8 octobre 2026. Les pages Gumroad s'affichent mal sans navigateur : ouvre-les toi-même pour voir les visuels.
 
 ## Produit 1 : Excel avec l'IA
@@ -7,7 +9,7 @@ Pages lues ou vérifiées le 8 octobre 2026. Les pages Gumroad s'affichent mal s
 | Page | Prix | Ce qu'on en tire |
 |---|---|---|
 | [Coursera : ChatGPT + Excel (Vanderbilt)](https://www.coursera.org/fr-FR/learn/chatgpt-excel-formulas-visualizations) | Gratuit, certificat payant | 12 244 inscrits, note 4,8/5. Leur module le plus utile s'appelle « vérifier les formules de l'IA et créer des cas de test ». On le reprend en « checklist de vérification ». L'idée « reproduire un graphique à partir d'une image » fait une très bonne démo pour les pubs. |
-| [Udemy : ChatGPT for Excel automation](https://www.udemy.com/course/chatgpt-for-excel-automation/) | Non relevé | Automatisation et VBA par l'IA. Confirme notre jour 6. |
+| [Udemy : ChatGPT for Excel automation](https://www.udemy.com/course/chatgpt-for-excel-automation/) | Non relevé | Automatisation et VBA par l'IA. Confirme notre chapitre 6. |
 | [Gumroad krafterai : 125+ prompts Excel](https://krafterai.gumroad.com/l/MicrosoftExcelChatGPTPrompts) | Gratuit | Un PDF de prompts gratuit, utilisé pour se faire connaître. On peut faire pareil : 20 prompts gratuits pour attirer des clients vers le produit payant. |
 
 ## Produit 2 : Comptable 2.0

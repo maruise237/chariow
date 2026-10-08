@@ -18,7 +18,7 @@ Trois idées sur la table. Ce que dit la veille (56 produits Chariow concurrents
   - graphiques ;
   - prompts ChatGPT/Claude prêts à copier pour chaque cas ;
   - analyse d'un fichier avec l'IA.
-- **Format** : PDF et 10 vidéos courtes de 3 à 5 min, filmées écran et téléphone.
+- **Format** : e-book PDF d'environ 70 pages, lisible sur téléphone.
 - **Bonus** : 20 modèles prêts à l'emploi (facture, stock, paie, budget, suivi des ventes Mobile Money).
 - **Prix** : 2 500 F au lieu de 10 000 F barrés. Le leader vend à 7 000 F ; on passe en dessous avec l'IA en plus.
 

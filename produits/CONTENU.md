@@ -1,6 +1,6 @@
 # Contenu détaillé des 3 produits (8 octobre 2026)
 
-Trois produits, trois acheteurs différents, une même logique : **l'IA fait le travail, on apprend à la piloter et à vérifier.**
+Trois produits, trois acheteurs différents, une même logique : **l'IA fait le travail, on apprend à la piloter et à vérifier.** Les 3 produits sont des **e-books PDF** (pas des formations), livrés avec des fichiers bonus.
 
 | # | Produit | Acheteur | Prix | Rôle dans la gamme |
 |---|---|---|---|---|
@@ -25,8 +25,9 @@ Titre au choix : E1 à E7 (voir `TITRES.md`). Mon choix : **E2 « Excel sans app
 - Avant : chercher sur Google, copier, voir #NOM? s'afficher.
 - Maintenant : tu dis ce que tu veux en français et l'IA écrit la formule.
 - Ce que tu sauras faire dans 7 jours (liste de résultats concrets).
+- Plan de lecture : 1 chapitre par jour, pro en 7 jours.
 
-**Jour 0 : régler ton IA pour Excel** (notre méthode)
+**Chapitre 0 : régler ton IA pour Excel** (notre méthode)
 - Les 3 informations à toujours donner à l'IA :
   - ta version (Excel en français, Excel mobile ou Google Sheets) ;
   - tes colonnes (A = date, B = produit...) ;
@@ -35,33 +36,33 @@ Titre au choix : E1 à E7 (voir `TITRES.md`). Mon choix : **E2 « Excel sans app
 - Pourquoi les formules de ChatGPT plantent souvent (noms anglais, virgule au lieu de « ; ») et comment l'éviter.
 - Quelle IA choisir : ChatGPT, Claude, Gemini dans Sheets, Copilot. Tout ça est gratuit pour commencer.
 
-**Jour 1 : l'essentiel d'Excel en 1 heure**
+**Chapitre 1 : l'essentiel d'Excel en 1 heure**
 - Classeur, feuille, cellule, plage, mise en forme d'un tableau propre.
 - Version PC et version téléphone (Excel mobile et Google Sheets), côte à côte.
 
-**Jour 2 : les 15 formules qui font 90 % du travail, écrites par l'IA**
+**Chapitre 2 : les 15 formules qui font 90 % du travail, écrites par l'IA**
 - SOMME, MOYENNE, SI, SI imbriqués, SOMME.SI.ENS, NB.SI, RECHERCHEV/RECHERCHEX, CONCATENER, AUJOURDHUI, ARRONDI...
 - Pour chacune : le prompt à copier, la formule obtenue, une capture, l'erreur fréquente.
 - **Débloquer une formule** : coller l'erreur (#N/A, #VALEUR!, #REF!) à l'IA et obtenir la correction.
 
-**Jour 3 : nettoyer une liste en 10 minutes**
+**Chapitre 3 : nettoyer une liste en 10 minutes**
 - Doublons, noms en majuscules ou minuscules, espaces en trop, numéros de téléphone au format +237.
 - Séparer ou fusionner des colonnes avec l'IA.
 
-**Jour 4 : tableaux croisés dynamiques et graphiques**
+**Chapitre 4 : tableaux croisés dynamiques et graphiques**
 - L'IA te dit quel tableau croisé faire, puis comment le faire, étape par étape.
 - Choisir le bon graphique.
 - Demander à l'IA d'**expliquer ce que montrent tes chiffres**.
 
-**Jour 5 : ton tableau de bord en 30 minutes**
+**Chapitre 5 : ton tableau de bord en 30 minutes**
 - Ventes, dépenses, bénéfice, avec indicateurs et couleurs automatiques (mise en forme conditionnelle).
 
-**Jour 6 : automatiser sans coder**
+**Chapitre 6 : automatiser sans coder**
 - L'IA écrit la macro, tu la colles, tu cliques.
 - Google Apps Script pour ceux qui sont sur Sheets.
 - Les règles de sécurité : ne jamais lancer une macro qu'on ne comprend pas.
 
-**Jour 7 : 5 projets réels**
+**Chapitre 7 : 5 projets réels**
 - Gestion de stock ;
 - fiche de paie simple ;
 - facture automatique ;
@@ -75,11 +76,16 @@ Titre au choix : E1 à E7 (voir `TITRES.md`). Mon choix : **E2 « Excel sans app
 ### Bonus
 - 100 prompts Excel en français, rangés par besoin.
 - 20 modèles prêts en FCFA.
-- Attestation de fin de formation.
+- Fiche mémo des 15 formules (1 page à imprimer).
 
 ### Format
-- PDF d'environ 60 pages, avec beaucoup de captures.
-- 10 vidéos de 3 à 5 minutes, une par jour et par projet clé.
+Format : e-book PDF de ~70 pages, avec beaucoup de captures, lisible sur téléphone.
+
+Fichiers bonus livrés avec l'e-book :
+- PDF des 100 prompts Excel en français ;
+- 20 modèles Excel / Google Sheets en FCFA ;
+- fiche mémo des 15 formules (PDF, 1 page) ;
+- option : un QR code dans l'e-book ouvre le modèle Google Sheets.
 
 ---
 
@@ -93,46 +99,46 @@ Titre conseillé : **C1 « Comptable 2.0 : le SYSCOHADA avec l'IA »**.
 - Ce que l'IA fait bien en comptabilité : rédiger, classer, calculer, expliquer, contrôler.
 - Ce qu'elle fait mal : inventer des comptes, se tromper sur les taux, ignorer les textes récents.
 
-**Module 0 : le mode SYSCOHADA** (notre méthode)
+**Chapitre 0 : le mode SYSCOHADA** (notre méthode)
 - Le prompt maître : rôle, référentiel SYSCOHADA révisé, plan de comptes, format de réponse en tableau débit et crédit.
 - **Confidentialité** : anonymiser les données clients avant de les donner à l'IA (noms, NIU, montants sensibles) ; ce qu'on ne colle jamais.
 - Construire son « assistant comptable » réutilisable (GPT personnalisé, projet Claude).
 
-**Module 1 : les écritures courantes**
+**Chapitre 1 : les écritures courantes**
 - Achats, ventes, TVA, frais, paie, emprunts.
 - L'IA propose l'écriture compte par compte, tu valides.
 - Les cas difficiles : avoirs, acomptes, opérations en devises.
 
-**Module 2 : des pièces à la saisie**
+**Chapitre 2 : des pièces à la saisie**
 - Photo ou PDF de facture : extraction en tableau, puis import Excel ou Sage.
 - Classer et nommer les pièces en masse.
 
-**Module 3 : le rapprochement bancaire**
+**Chapitre 3 : le rapprochement bancaire**
 - Relevé et grand livre côte à côte dans Excel, avec repérage des écarts par l'IA.
 - Modèle d'état de rapprochement fourni.
 
-**Module 4 : les travaux de clôture**
+**Chapitre 4 : les travaux de clôture**
 - Amortissements : linéaire, dégressif, tableaux générés.
 - Provisions, régularisations (charges constatées d'avance, produits à recevoir), inventaire.
 
-**Module 5 : les états financiers**
+**Chapitre 5 : les états financiers**
 - Bilan, compte de résultat, tableau des flux de trésorerie (TFT).
 - L'IA contrôle la cohérence : équilibre, variations anormales, comptes à solde inverse.
 - Notes annexes : premier jet rédigé par l'IA.
 
-**Module 6 : analyse et rapport au dirigeant**
+**Chapitre 6 : analyse et rapport au dirigeant**
 - Ratios clés, commentaires rédigés, note de synthèse d'une page.
 - Le comptable devient conseiller.
 
-**Module 7 : la fiscalité**
+**Chapitre 7 : la fiscalité**
 - Préparer la DSF et les déclarations périodiques avec l'IA comme assistant.
 - Règle d'or : toujours vérifier dans les textes en vigueur (CGI, loi de finances de l'année).
 
-**Module 8 : communication et organisation**
+**Chapitre 8 : communication et organisation**
 - Relances d'impayés, mails clients, demandes de pièces, notes internes, procédures.
 - Planning de fin de mois.
 
-**Module 9 : les limites de l'IA**
+**Chapitre 9 : les limites de l'IA**
 - Les 10 erreurs fréquentes de l'IA en comptabilité.
 - La grille de contrôle en 7 points avant de valider.
 
@@ -142,8 +148,12 @@ Titre conseillé : **C1 « Comptable 2.0 : le SYSCOHADA avec l'IA »**.
 - Checklist de clôture.
 
 ### Format
-- PDF d'environ 80 pages.
-- 8 vidéos de démonstration sur des cas réels anonymisés.
+Format : e-book PDF de ~90 pages, avec des cas réels anonymisés, lisible sur téléphone.
+
+Fichiers bonus livrés avec l'e-book :
+- PDF des 150 prompts SYSCOHADA ;
+- modèles Excel (rapprochement, tableau d'amortissement, fiche d'immobilisation, balance de contrôle) ;
+- checklist de clôture (PDF).
 
 ---
 
@@ -206,8 +216,13 @@ Règle d'écriture : **zéro jargon comptable.**
 - Fiche imprimable de la routine.
 
 ### Format
-- PDF court d'environ 30 pages, très visuel, lisible sur téléphone.
-- 3 à 4 vidéos courtes montrant le modèle Sheets en action.
+Format : e-book PDF de ~35 pages, très visuel, lisible sur téléphone.
+
+Fichiers bonus livrés avec l'e-book :
+- modèle Google Sheets « Cahier de caisse intelligent » ;
+- PDF des 30 prompts pour commerçants et des 10 messages de relance ;
+- fiche imprimable de la routine ;
+- option : un QR code dans l'e-book ouvre le modèle Google Sheets.
 
 ### Prix et position
 - 1 500 F, barré 6 000 F.

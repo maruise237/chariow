@@ -66,9 +66,9 @@ Le titre de la fiche Chariow doit tenir sur 2 lignes de carte, environ 60 caract
 - Le bon réflexe : lancer **E2 et E1 en deux pubs** et garder le titre qui a le coût par achat le plus bas.
 - E4 et E3 font de très bonnes **accroches de pub**, même si on ne les garde pas comme titre.
 
-### Contenu (7 jours)
+### Contenu (7 chapitres, 1 par jour)
 
-| Jour | Module | Ce qui nous différencie |
+| Chapitre | Contenu | Ce qui nous différencie |
 |---|---|---|
 | 0 | **Régler l'IA pour ton Excel** : la phrase de départ (Excel en français, « ; », décrire ses colonnes) | Notre mécanisme unique : les formules marchent du premier coup |
 | 1 | L'essentiel d'Excel en 1 heure : cellules, tableaux, mise en forme | Sur PC **et sur téléphone** (Excel mobile et Google Sheets) |
@@ -79,11 +79,11 @@ Le titre de la fiche Chariow doit tenir sur 2 lignes de carte, environ 60 caract
 | 6 | Automatiser sans coder : l'IA écrit la macro, tu cliques | Démystifie le VBA |
 | 7 | 5 projets réels : stock, paie, facture, tontine, budget | Cas locaux en FCFA, rien d'équivalent sur le marché |
 
-- **Format** : PDF et 10 vidéos courtes (écran et téléphone).
+- **Format** : e-book PDF d'environ 70 pages, lisible sur téléphone.
 - **Bonus** :
   - 100 prompts en français, rangés par besoin ;
   - 20 modèles en FCFA ;
-  - attestation de fin de formation, parce que le public cherche une preuve pour son CV.
+  - fiche mémo des 15 formules (1 page à imprimer), parce que le public aime avoir l'essentiel sous la main.
 - **Prix** : 2 500 F, barré 10 000 F.
 
 ---
@@ -97,8 +97,8 @@ Décision de Mariuse : **Comptable 2.0 vise directement les comptables, pas les 
 | Segment | Douleur principale | Budget | Rôle dans l'offre |
 |---|---|---|---|
 | **Comptables en poste** (PME, assistants comptables, comptables juniors) | Saisie répétitive, fins de mois chargées, clôture, DSF, rapprochements, peur d'être dépassé par l'IA | Habitués à payer 7 500 à 10 000 F pour un livre SYSCOHADA | **Cœur de cible** |
-| Collaborateurs de cabinet | Volume de dossiers, délais, relances clients | Plus élevé, formation souvent payée par le cabinet | Cible secondaire, offre « cabinet » plus tard |
-| Étudiants (BTS, licence, master CCA) | Examens, écritures déséquilibrées, plan de comptes à mémoriser | Faible, mais très nombreux | Module bonus ou petit produit séparé |
+| Collaborateurs de cabinet | Volume de dossiers, délais, relances clients | Plus élevé, achat souvent payé par le cabinet | Cible secondaire, offre « cabinet » plus tard |
+| Étudiants (BTS, licence, master CCA) | Examens, écritures déséquilibrées, plan de comptes à mémoriser | Faible, mais très nombreux | Chapitre bonus ou petit produit séparé |
 
 ### Ce que dit le marché
 
@@ -137,7 +137,7 @@ Un argument que personne n'utilise : **la confidentialité.** Le produit apprend
 
 ### Contenu
 
-| # | Module | Ce qui nous différencie |
+| # | Chapitre | Ce qui nous différencie |
 |---|---|---|
 | 0 | **Le mode SYSCOHADA** : prompt maître et règles de confidentialité (anonymiser) | Le mécanisme unique |
 | 1 | Écritures courantes : l'IA propose l'écriture compte par compte, tu valides (achats, ventes, TVA, paie) | Numéros de comptes SYSCOHADA révisé |
@@ -150,7 +150,7 @@ Un argument que personne n'utilise : **la confidentialité.** Le produit apprend
 | 8 | Communication : relances d'impayés, mails clients, notes internes | Messages prêts à envoyer |
 | 9 | **Les limites de l'IA en comptabilité** : erreurs fréquentes et grille de contrôle | Indispensable pour être crédible auprès des pros |
 
-- **Format** : PDF et vidéos courtes de démonstration sur des cas réels anonymisés.
+- **Format** : e-book PDF d'environ 90 pages, avec des cas réels anonymisés.
 - **Bonus** :
   - 150 prompts SYSCOHADA ;
   - modèles Excel (rapprochement, tableau d'amortissement, fiche d'immobilisation) ;
