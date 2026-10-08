@@ -37,7 +37,7 @@ Ces recherches ne voient pas Facebook ni les boutiques Chariow. Elles complèten
   - Il parle au public B, qui s'identifie à ce métier.
   - Il fait peur au public A. Un commerçant ne se voit pas comme un comptable : il parle de « caisse », de « bénéfice », de « crédit ».
 
-**Décision :** Comptable 2.0 vise les comptables (public B). Le public A est mis de côté (voir la fin du fichier).
+**Décision :** Comptable 2.0 vise les comptables (public B). Le public A devient un produit séparé, le produit 3 (voir `CONTENU.md`).
 
 ---
 
@@ -160,12 +160,25 @@ Un argument que personne n'utilise : **la confidentialité.** Le produit apprend
   - Et 10 fois moins cher que la formation togolaise.
 - **Pack** : Comptable 2.0 et Excel + IA à 6 500 F. Ce sont les mêmes outils et le même acheteur.
 
-### Idée mise de côté
+### Produit 3 : comptes de boutique (commerçants)
 
-L'ancienne « approche A » (commerçants : « Où part l'argent de ta boutique ? », cahier de caisse intelligent) n'est plus Comptable 2.0. Elle peut devenir un petit produit séparé à 1 000 à 2 000 F, dans la lignée du Kit budget Mobile Money, si on le décide plus tard.
+Décision de Mariuse : l'approche A devient le **produit 3**, distinct de Comptable 2.0. Son contenu détaillé est dans `CONTENU.md`.
+
+| # | Approche | Titre | Sous-titre |
+|---|---|---|---|
+| CA1 | Question douleur | **Où part l'argent de ta boutique ?** | Tiens tes comptes en 10 minutes par jour avec l'IA, sans comptable |
+| CA2 | Objet familier et IA | **Le cahier de caisse intelligent** | Ton assistant IA dans ton téléphone : caisse, crédits, stock, bénéfice |
+| CA3 | Résultat quotidien | **Sache chaque soir combien tu as VRAIMENT gagné** | La méthode IA pour commerçants qui n'aiment pas les chiffres |
+| CA4 | « Sans » | **Tes comptes de boutique sans comptable** | L'IA calcule, range et t'explique, tu n'as qu'à noter tes ventes |
+| CA5 | Argent perdu | **Récupère l'argent que tes clients te doivent** | Fini le carnet de crédit : suivi et relances WhatsApp écrites par l'IA |
+
+**Mon avis :**
+- **CA1** ou **CA3** pour le titre et la pub froide.
+- **CA5** en accroche de pub secondaire.
+- On n'utilise plus « Comptable 2.0 » pour ce produit, pour ne pas mélanger les deux cibles.
 
 ## Ordre conseillé
 
 1. **Excel avec l'IA** (titre E2 ou E1) : la demande est prouvée, on le lance en premier.
-2. **Comptable 2.0** (titre C1), avec le pack Excel + Comptable.
-3. Plus tard, si ça marche : la version étudiante (C7) et une offre cabinet.
+2. **Comptes de boutique** (titre CA1 ou CA3) : produit d'appel à 1 500 F, il nourrit l'upsell vers Excel.
+3. **Comptable 2.0** (titre C1) : produit premium à 4 900 F, avec le pack Excel + Comptable 2.0.
