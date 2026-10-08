@@ -37,10 +37,7 @@ Ces recherches ne voient pas Facebook ni les boutiques Chariow. Elles complèten
   - Il parle au public B, qui s'identifie à ce métier.
   - Il fait peur au public A. Un commerçant ne se voit pas comme un comptable : il parle de « caisse », de « bénéfice », de « crédit ».
 
-**Conclusion :**
-- Le nom « Comptable 2.0 » est parfait pour le public B.
-- Pour le public A, il faut un titre avec ses propres mots.
-- On peut faire les deux produits, l'un après l'autre.
+**Décision :** Comptable 2.0 vise les comptables (public B). Le public A est mis de côté (voir la fin du fichier).
 
 ---
 
@@ -91,73 +88,84 @@ Le titre de la fiche Chariow doit tenir sur 2 lignes de carte, environ 60 caract
 
 ---
 
-## Produit 2 : Comptabilité avec l'IA
+## Produit 2 : Comptable 2.0 (cible : les comptables)
 
-### Approche A : commerçants et boutiques (grand public, achat d'impulsion)
+Décision de Mariuse : **Comptable 2.0 vise directement les comptables, pas les commerçants.**
+
+### Qui achète
+
+| Segment | Douleur principale | Budget | Rôle dans l'offre |
+|---|---|---|---|
+| **Comptables en poste** (PME, assistants comptables, comptables juniors) | Saisie répétitive, fins de mois chargées, clôture, DSF, rapprochements, peur d'être dépassé par l'IA | Habitués à payer 7 500 à 10 000 F pour un livre SYSCOHADA | **Cœur de cible** |
+| Collaborateurs de cabinet | Volume de dossiers, délais, relances clients | Plus élevé, formation souvent payée par le cabinet | Cible secondaire, offre « cabinet » plus tard |
+| Étudiants (BTS, licence, master CCA) | Examens, écritures déséquilibrées, plan de comptes à mémoriser | Faible, mais très nombreux | Module bonus ou petit produit séparé |
+
+### Ce que dit le marché
+
+- Une seule offre « IA pour comptables » repérée en Afrique francophone : 50 000 F, au Togo, sur 2 semaines.
+- Rien sous 10 000 F, nulle part.
+- Les offres européennes (Lefebvre Dalloz, UQO, CCI) ignorent le SYSCOHADA.
+- **Le créneau est libre : l'IA appliquée au SYSCOHADA révisé, à un prix de livre.**
+
+### Mécanisme unique
+
+« Le mode SYSCOHADA » repose sur deux outils :
+- **un prompt maître** qui fait raisonner l'IA dans le plan de comptes SYSCOHADA révisé (numéros de comptes, schémas d'écritures OHADA) ;
+- **une grille de contrôle** qui repère les erreurs de l'IA avant qu'elles n'arrivent dans les comptes.
+
+Un argument que personne n'utilise : **la confidentialité.** Le produit apprend à anonymiser les données clients avant de les donner à l'IA. C'est la première objection d'un vrai comptable.
+
+### Titres, par approche
 
 | # | Approche | Titre | Sous-titre |
 |---|---|---|---|
-| CA1 | Question douleur | **Où part l'argent de ta boutique ?** | Tiens tes comptes en 10 minutes par jour avec l'IA, sans comptable |
-| CA2 | Objet familier et IA | **Le cahier de caisse intelligent** | Ton comptable IA dans ton téléphone : caisse, crédits, stock, bénéfice |
-| CA3 | Résultat quotidien | **Sache chaque soir combien tu as VRAIMENT gagné** | La méthode IA pour commerçants qui n'aiment pas les chiffres |
-| CA4 | « Sans » | **Tes comptes de boutique sans comptable** | L'IA calcule, range et t'explique, tu n'as qu'à noter tes ventes |
-| CA5 | Argent perdu | **Récupère l'argent que tes clients te doivent** | Fini le carnet de crédit : suivi et relances WhatsApp écrites par l'IA |
-| CA6 | Ton idée d'origine | **Comptable 2.0 : l'IA tient les comptes de ta boutique** | Caisse, crédits, stock et bénéfice en 10 minutes par jour |
+| C1 | Identité (ton nom) | **Comptable 2.0 : le SYSCOHADA avec l'IA** | Écritures, rapprochements, clôture : fais en 1 heure le travail d'une journée |
+| C2 | Peur d'être remplacé | **Comptable 2.0 : l'IA ne te remplacera pas, elle travaillera pour toi** | Le guide SYSCOHADA pour comptables qui veulent garder une longueur d'avance |
+| C3 | Gain de temps | **Comptable 2.0 : fais ta fin de mois 2 fois plus vite avec l'IA** | Saisie, rapprochement bancaire, états financiers, sans erreur |
+| C4 | Pack d'outils | **Comptable 2.0 : 150 prompts IA pour le SYSCOHADA révisé** | Prêts à copier : écritures, amortissements, clôture, analyse, rapports |
+| C5 | Carrière et statut | **Comptable 2.0 : deviens le comptable que tout le monde s'arrache** | Maîtrise l'IA avant tes collègues, et fais-le savoir |
+| C6 | Mécanisme | **Comptable 2.0 : la méthode « mode SYSCOHADA »** | Fais travailler ChatGPT et Claude comme un assistant comptable OHADA |
+| C7 | Étudiants | **Comptable 2.0 Étudiant : réussis tes écritures SYSCOHADA avec l'IA** | L'IA t'explique chaque compte et corrige tes exercices |
 
 **Mon avis :**
-- **CA1** ou **CA3** pour la pub froide. Une question, ou une promesse que le commerçant comprend en 2 secondes.
-- **CA5** est un excellent angle de pub secondaire : de l'argent qu'on récupère paie le produit tout de suite.
-- **CA6** garde ton nom, mais le mot « comptable » freine ce public.
+- **C1** comme titre de fiche : clair, il porte ta marque et le mot SYSCOHADA qui filtre la bonne cible.
+- **C2** et **C3** comme accroches de pub :
+  - C2 joue sur la peur, qui fait cliquer ;
+  - C3 joue sur le bénéfice, qui fait acheter.
+  - On teste les deux.
+- **C7** si on veut une version étudiante moins chère plus tard.
 
-**Contenu A :**
-1. Séparer l'argent de la boutique et ton argent perso (règle des 2 portefeuilles Mobile Money).
-2. Le cahier de caisse automatique (modèle Google Sheets fourni, rempli depuis le téléphone).
-3. Crédits clients : le tableau des dettes et les messages de relance WhatsApp écrits par l'IA.
-4. Stock et marge par produit : quel article te fait vraiment gagner.
-5. Le bilan du mois en 1 prompt : tu colles ton tableau, l'IA te dit où tu gagnes et où tu perds.
-6. Impôts et IGS expliqués simplement.
-   - Information générale, datée.
-   - Avec le renvoi vers un centre de gestion agréé ou les impôts.
-   - Les barèmes trouvés en ligne se contredisent : on ne promet rien de chiffré.
+### Contenu
 
-**Bonus** :
-- modèle Google Sheets ;
-- 30 prompts ;
-- 10 messages de relance.
+| # | Module | Ce qui nous différencie |
+|---|---|---|
+| 0 | **Le mode SYSCOHADA** : prompt maître et règles de confidentialité (anonymiser) | Le mécanisme unique |
+| 1 | Écritures courantes : l'IA propose l'écriture compte par compte, tu valides (achats, ventes, TVA, paie) | Numéros de comptes SYSCOHADA révisé |
+| 2 | Des pièces à la saisie : photo de facture → tableau prêt à importer dans Excel ou Sage | Gain de temps visible dès le premier jour |
+| 3 | Rapprochement bancaire avec Excel et l'IA | Pont avec le produit Excel + IA |
+| 4 | Clôture : amortissements, provisions, régularisations, inventaire | Tableaux d'amortissement générés |
+| 5 | États financiers : bilan, compte de résultat, TFT, contrôles de cohérence | L'IA vérifie l'équilibre et les incohérences |
+| 6 | Analyse et rapport au dirigeant : ratios et commentaires rédigés | Le comptable devient conseiller |
+| 7 | Fiscalité : préparer la DSF et les déclarations | Aide à la préparation, toujours vérifier les textes en vigueur |
+| 8 | Communication : relances d'impayés, mails clients, notes internes | Messages prêts à envoyer |
+| 9 | **Les limites de l'IA en comptabilité** : erreurs fréquentes et grille de contrôle | Indispensable pour être crédible auprès des pros |
 
-**Prix** :
-- 2 000 F seul, barré 8 000 F ;
-- 1 500 F en upsell après Excel.
+- **Format** : PDF et vidéos courtes de démonstration sur des cas réels anonymisés.
+- **Bonus** :
+  - 150 prompts SYSCOHADA ;
+  - modèles Excel (rapprochement, tableau d'amortissement, fiche d'immobilisation) ;
+  - checklist de clôture.
+- **Prix** : 4 900 F, barré 20 000 F.
+  - C'est sous le prix d'un livre SYSCOHADA (7 500 à 10 000 F).
+  - Et 10 fois moins cher que la formation togolaise.
+- **Pack** : Comptable 2.0 et Excel + IA à 6 500 F. Ce sont les mêmes outils et le même acheteur.
 
-### Approche B : étudiants, comptables juniors, cabinets (le vrai « Comptable 2.0 »)
+### Idée mise de côté
 
-| # | Approche | Titre | Sous-titre |
-|---|---|---|---|
-| CB1 | Identité | **Comptable 2.0 : le SYSCOHADA avec l'IA** | Écritures, rapprochements, états financiers : fais en 1 heure le travail d'une journée |
-| CB2 | Pack d'outils | **150 prompts IA pour comptables OHADA** | Prêts à copier : écritures, amortissements, analyse, rapports |
-| CB3 | Examen (étudiants) | **Réussis tes écritures SYSCOHADA avec ChatGPT** | L'IA t'explique chaque compte et corrige tes exercices |
-| CB4 | Productivité et statut | **Le comptable augmenté** | Deviens le comptable que les cabinets veulent garder |
-
-**Mon avis :**
-- **CB1**. Le nom « Comptable 2.0 » prend tout son sens auprès de ce public.
-- Le seul concurrent repéré coûte 50 000 F.
-
-**Contenu B** :
-1. Régler l'IA en mode SYSCOHADA révisé.
-2. Écritures courantes et contrôle de l'équilibre.
-3. Rapprochement bancaire.
-4. Amortissements et provisions.
-5. États financiers.
-6. Analyse et rédaction de rapport.
-7. Relances d'impayés.
-8. **Les limites : vérifier ce que dit l'IA**. C'est indispensable pour être crédible.
-
-**Prix** : 3 500 à 5 000 F, barré 15 000 F.
-
----
+L'ancienne « approche A » (commerçants : « Où part l'argent de ta boutique ? », cahier de caisse intelligent) n'est plus Comptable 2.0. Elle peut devenir un petit produit séparé à 1 000 à 2 000 F, dans la lignée du Kit budget Mobile Money, si on le décide plus tard.
 
 ## Ordre conseillé
 
-1. **Excel avec l'IA** (titre E2 ou E1) : la demande est prouvée et personne ne fait Excel + IA en FCFA.
-2. **Approche A** en upsell d'Excel, puis en pub seule : même acheteur, même outil (Google Sheets).
-3. **Comptable 2.0 (approche B)** comme produit premium séparé, plus tard.
+1. **Excel avec l'IA** (titre E2 ou E1) : la demande est prouvée, on le lance en premier.
+2. **Comptable 2.0** (titre C1), avec le pack Excel + Comptable.
+3. Plus tard, si ça marche : la version étudiante (C7) et une offre cabinet.
