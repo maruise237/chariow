@@ -156,3 +156,33 @@ fs.writeFileSync(path.join(DIR, 'RAPPORT.md'), md.join('\n') + '\n');
 
 console.log(`${pubs.size} pubs, ${rows.length} produits -> veille/RAPPORT.md, veille/data/produits.csv`);
 console.table(rows.slice(0, 12).map((r) => ({ score: r.score, niche: r.niche, prix: r.prix, achats: r.achatsTexte, jours: r.joursMax, var: r.variantes, titre: r.titre.slice(0, 50) })));
+
+// 5. Export d'un scan compact pour le tableau de bord (Radar KAMTECH) : un document par collecte.
+const idOf = (lien) => lien.replace(/^https?:\/\//, '').replace(/[^A-Za-z0-9_\-.~:@+]+/g, '-').replace(/-+$/, '').slice(0, 180);
+const scan = {
+  date: new Date().toISOString().slice(0, 10),
+  requete: 'mychariow',
+  pays: [...new Set(rows.flatMap((r) => r.pays))].filter((p) => p !== 'ALL').sort(),
+  pubs: pubs.size,
+  boutiques: new Set(rows.map((r) => r.boutique)).size,
+  produits: rows.map((r) => ({
+    id: idOf(r.lien),
+    titre: r.titre.trim(),
+    page: r.page,
+    niche: r.niche,
+    prix: r.prix,
+    achats: r.achats,
+    achatsTexte: r.achatsTexte || null,
+    avis: r.avis,
+    jours: r.joursMax,
+    variantes: r.variantes,
+    pays: r.pays.filter((p) => p !== 'ALL'),
+    formats: r.formats,
+    rebours: r.compteARebours,
+    score: r.score,
+    accroche: r.accroche,
+    lien: r.lien,
+    pub: r.pubUrl,
+  })),
+};
+fs.writeFileSync(path.join(DIR, 'data', 'scan.json'), JSON.stringify(scan));

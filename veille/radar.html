@@ -1,0 +1,452 @@
+<title>Radar KAMTECH</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400;500;600;800&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout : poste de veille. Bandeau de synthèse, deux lectures du marché (niches, prix), puis la liste des produits et notre plan. */
+:root {
+  --bg: #f2f4f1;
+  --panel: #ffffff;
+  --ink: #16211c;
+  --muted: #5d6b64;
+  --line: #d9dfda;
+  --accent: #0e5a6b;
+  --accent-soft: #dcebee;
+  --gold: #b88400;
+  --gold-soft: #fbefc8;
+  --good: #1d7a46;
+  --bad: #a3382c;
+  --font-display: "Schibsted Grotesk", "Helvetica Neue", Arial, sans-serif;
+  --font-body: "Schibsted Grotesk", "Helvetica Neue", Arial, sans-serif;
+  --font-data: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+  --r: 10px;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0e1513; --panel: #151e1b; --ink: #e5ece8; --muted: #94a59c; --line: #26332e;
+    --accent: #63b6c7; --accent-soft: #173238; --gold: #f0c341; --gold-soft: #3a2f0c;
+    --good: #5cc488; --bad: #e57c6f; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0e1513; --panel: #151e1b; --ink: #e5ece8; --muted: #94a59c; --line: #26332e;
+  --accent: #63b6c7; --accent-soft: #173238; --gold: #f0c341; --gold-soft: #3a2f0c;
+  --good: #5cc488; --bad: #e57c6f; color-scheme: dark;
+}
+* { box-sizing: border-box; }
+body { background: var(--bg); color: var(--ink); font-family: var(--font-body); font-size: 15px; line-height: 1.5; }
+.wrap { max-width: 1180px; margin: 0 auto; padding-inline: 16px; padding-block: 24px 56px; display: grid; gap: 28px; }
+h1, h2, h3 { font-family: var(--font-display); text-wrap: balance; margin: 0; }
+h1 { font-size: clamp(1.7rem, 4vw, 2.4rem); font-weight: 800; letter-spacing: -0.02em; }
+h2 { font-size: 1.15rem; font-weight: 600; }
+.eyebrow { font-family: var(--font-data); font-size: 0.72rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--muted); }
+.num { font-family: var(--font-data); font-variant-numeric: tabular-nums; }
+a { color: var(--accent); }
+button, select, input { font: inherit; color: inherit; }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+header.top { display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between; gap: 16px; }
+header.top .meta { color: var(--muted); max-width: 60ch; }
+.scan-pick { display: flex; align-items: center; gap: 8px; }
+select, input[type="search"], input[type="text"], input[type="number"] {
+  background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 7px 10px; min-width: 0;
+}
+
+.kpis { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: var(--r); overflow: hidden; }
+.kpi { background: var(--panel); padding: 16px 18px; display: grid; gap: 4px; }
+.kpi .v { font-family: var(--font-display); font-size: 1.9rem; font-weight: 800; letter-spacing: -0.02em; font-variant-numeric: tabular-nums; }
+.kpi .s { color: var(--muted); font-size: 0.85rem; }
+.kpi .v .delta { font-family: var(--font-data); font-size: 0.8rem; font-weight: 500; color: var(--good); margin-left: 6px; }
+@media (max-width: 720px) { .kpis { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+
+.duo { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 20px; }
+@media (max-width: 900px) { .duo { grid-template-columns: minmax(0, 1fr); } }
+.panel { background: var(--panel); border: 1px solid var(--line); border-radius: var(--r); padding: 18px; display: grid; gap: 14px; align-content: start; min-width: 0; }
+.panel .hint { color: var(--muted); font-size: 0.85rem; margin: 0; }
+
+.niches { display: grid; gap: 6px; }
+.niche { display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 2px 10px; padding: 6px 8px; border-radius: 6px; border: 1px solid transparent; background: none; text-align: left; cursor: pointer; }
+.niche:hover { background: var(--accent-soft); }
+.niche[aria-pressed="true"] { border-color: var(--accent); background: var(--accent-soft); }
+.niche .nm { font-weight: 500; overflow-wrap: anywhere; }
+.niche .st { font-family: var(--font-data); font-size: 0.78rem; color: var(--muted); text-align: right; }
+.niche .bar { grid-column: 1 / -1; height: 6px; border-radius: 3px; background: var(--line); position: relative; overflow: hidden; }
+.niche .bar i { position: absolute; inset: 0 auto 0 0; background: var(--accent); border-radius: 3px; }
+.niche .bar b { position: absolute; inset: 0 auto 0 0; background: var(--gold); border-radius: 3px; opacity: 0.9; }
+.legend { display: flex; flex-wrap: wrap; gap: 14px; font-size: 0.8rem; color: var(--muted); }
+.legend span::before { content: ""; display: inline-block; width: 10px; height: 10px; border-radius: 2px; margin-right: 6px; vertical-align: -1px; background: var(--c); }
+
+.chart { width: 100%; overflow-x: auto; }
+.chart svg { display: block; width: 100%; min-width: 460px; height: auto; }
+.chart text { fill: var(--muted); font-family: var(--font-data); font-size: 11px; }
+.chart .grid { stroke: var(--line); stroke-width: 1; }
+.chart .band { fill: var(--gold-soft); }
+.chart .band-label { fill: var(--gold); font-weight: 500; }
+.chart circle { fill: var(--accent); fill-opacity: 0.75; stroke: var(--panel); stroke-width: 1.5; cursor: pointer; }
+.chart circle.hot { fill: var(--gold); fill-opacity: 1; }
+.chart circle:hover { stroke: var(--ink); }
+
+.tools { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+.tools input[type="search"] { flex: 1 1 220px; }
+.chip { border: 1px solid var(--line); background: var(--panel); border-radius: 999px; padding: 4px 12px; cursor: pointer; font-size: 0.85rem; }
+.chip[aria-pressed="true"] { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+.count { color: var(--muted); font-size: 0.85rem; margin-left: auto; }
+
+.list { display: grid; border: 1px solid var(--line); border-radius: var(--r); overflow: hidden; background: var(--panel); }
+.row { display: grid; grid-template-columns: 54px minmax(0, 1fr) 96px 78px 64px 64px 128px; gap: 12px; align-items: center; padding: 12px 14px; border-top: 1px solid var(--line); }
+.row.head { border-top: 0; background: var(--bg); font-family: var(--font-data); font-size: 0.72rem; letter-spacing: 0.06em; text-transform: uppercase; color: var(--muted); padding-block: 8px; }
+.row.head button { background: none; border: 0; padding: 0; cursor: pointer; text-transform: inherit; letter-spacing: inherit; font: inherit; color: inherit; text-align: left; }
+.row.head button[aria-pressed="true"] { color: var(--ink); text-decoration: underline; }
+.score { font-family: var(--font-data); font-weight: 500; display: grid; gap: 4px; }
+.score .mini { height: 4px; background: var(--line); border-radius: 2px; overflow: hidden; }
+.score .mini i { display: block; height: 100%; background: var(--accent); }
+.prod { min-width: 0; display: grid; gap: 2px; }
+.prod button.t { background: none; border: 0; padding: 0; text-align: left; cursor: pointer; font-weight: 600; overflow-wrap: anywhere; }
+.prod .sub { color: var(--muted); font-size: 0.82rem; overflow-wrap: anywhere; }
+.tag { display: inline-block; font-family: var(--font-data); font-size: 0.68rem; padding: 1px 6px; border-radius: 4px; background: var(--accent-soft); color: var(--accent); margin-left: 6px; vertical-align: 1px; }
+.tag.new { background: var(--gold-soft); color: var(--gold); }
+.pill { font-family: var(--font-data); font-size: 0.8rem; padding: 2px 8px; border-radius: 999px; background: var(--bg); border: 1px solid var(--line); justify-self: start; }
+.pill.k { background: var(--gold-soft); border-color: transparent; color: var(--gold); font-weight: 500; }
+.cell-r { text-align: right; font-family: var(--font-data); font-variant-numeric: tabular-nums; }
+.statut { width: 100%; font-size: 0.85rem; padding: 5px 6px; }
+.statut[data-v="copier"] { border-color: var(--good); color: var(--good); }
+.statut[data-v="etudier"] { border-color: var(--gold); }
+.statut[data-v="ignore"] { color: var(--muted); }
+.detail { grid-column: 1 / -1; background: var(--bg); border-radius: 8px; padding: 12px 14px; display: grid; gap: 8px; }
+.detail blockquote { margin: 0; padding-left: 12px; border-left: 3px solid var(--gold); font-style: italic; max-width: 75ch; overflow-wrap: anywhere; }
+.detail .facts { display: flex; flex-wrap: wrap; gap: 6px 18px; font-size: 0.85rem; color: var(--muted); }
+.detail .links { display: flex; flex-wrap: wrap; gap: 14px; font-weight: 500; }
+.lbl { display: none; }
+@media (max-width: 820px) {
+  .row.head { display: none; }
+  .row { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 8px 12px; }
+  .row .prod { grid-column: 1 / -1; order: -1; }
+  .row .score { grid-column: 1 / -1; grid-template-columns: auto minmax(0, 1fr); align-items: center; }
+  .cell-r { text-align: left; }
+  .lbl { display: inline; color: var(--muted); font-family: var(--font-body); font-size: 0.78rem; margin-right: 4px; }
+}
+
+.plan { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 14px; }
+.stage { display: grid; gap: 10px; align-content: start; min-width: 0; }
+.stage h3 { font-size: 0.95rem; display: flex; justify-content: space-between; border-bottom: 2px solid var(--line); padding-bottom: 6px; }
+.stage[data-e="gagnant"] h3 { border-color: var(--good); }
+.stage[data-e="test"] h3 { border-color: var(--gold); }
+.card { background: var(--panel); border: 1px solid var(--line); border-radius: 8px; padding: 12px; display: grid; gap: 6px; min-width: 0; }
+.card .nm { font-weight: 600; overflow-wrap: anywhere; }
+.card .nt { font-size: 0.85rem; color: var(--muted); overflow-wrap: anywhere; }
+.card .bot { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; justify-content: space-between; }
+.card select { font-size: 0.82rem; padding: 4px 6px; }
+.empty-stage { color: var(--muted); font-size: 0.85rem; border: 1px dashed var(--line); border-radius: 8px; padding: 10px; }
+form.add { display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 1fr) minmax(0, 2fr) auto; gap: 10px; align-items: end; }
+form.add label { display: grid; gap: 4px; font-size: 0.8rem; color: var(--muted); min-width: 0; }
+@media (max-width: 720px) { form.add { grid-template-columns: minmax(0, 1fr); } }
+.btn { background: var(--ink); color: var(--bg); border: 0; border-radius: 8px; padding: 8px 14px; font-weight: 600; cursor: pointer; }
+.btn:disabled { opacity: 0.5; cursor: default; }
+
+.notice { background: var(--panel); border: 1px dashed var(--line); border-radius: var(--r); padding: 22px; display: grid; gap: 8px; }
+.update { display: grid; gap: 10px; color: var(--muted); font-size: 0.9rem; max-width: 80ch; }
+.update code { font-family: var(--font-data); font-size: 0.82rem; background: var(--panel); border: 1px solid var(--line); border-radius: 4px; padding: 1px 5px; overflow-wrap: anywhere; }
+.toast { position: fixed; left: 50%; transform: translateX(-50%); bottom: calc(16px + env(safe-area-inset-bottom, 0px)); background: var(--ink); color: var(--bg); padding: 8px 14px; border-radius: 8px; font-size: 0.9rem; max-width: calc(100% - 32px); }
+@media (prefers-reduced-motion: no-preference) { .niche .bar i, .score .mini i { transition: width 0.3s ease; } }
+</style>
+
+<div class="wrap">
+  <header class="top">
+    <div style="display:grid;gap:6px;min-width:0">
+      <span class="eyebrow">Veille pubs Meta · boutiques Chariow · Afrique francophone</span>
+      <h1>Radar KAMTECH</h1>
+      <p class="meta" id="meta">Chargement des scans…</p>
+    </div>
+    <label class="scan-pick" for="scanSel"><span class="eyebrow">Scan</span><select id="scanSel" disabled><option>…</option></select></label>
+  </header>
+
+  <div id="app" hidden>
+    <div style="display:grid;gap:28px">
+      <section class="kpis" id="kpis" aria-label="Synthèse"></section>
+
+      <section class="duo">
+        <div class="panel">
+          <div style="display:grid;gap:4px">
+            <h2>Niches poussées en pub</h2>
+            <p class="hint">Cliquer une niche filtre la liste. Barre bleue : score cumulé. Barre jaune : part des produits à 500+ achats.</p>
+          </div>
+          <div class="niches" id="niches"></div>
+          <div class="legend"><span style="--c:var(--accent)">Score cumulé</span><span style="--c:var(--gold)">Produits 500+ achats</span></div>
+        </div>
+        <div class="panel">
+          <div style="display:grid;gap:4px">
+            <h2>Prix qui vendent</h2>
+            <p class="hint" id="bandHint">Chaque point est un produit concurrent, placé selon son prix et les achats affichés sur sa page.</p>
+          </div>
+          <div class="chart" id="chart"></div>
+        </div>
+      </section>
+
+      <section style="display:grid;gap:12px">
+        <h2>Produits concurrents</h2>
+        <div class="tools">
+          <input type="search" id="q" placeholder="Chercher un produit, une page, un mot de l'accroche" aria-label="Chercher">
+          <select id="fAchats" aria-label="Achats minimum">
+            <option value="0">Tous les achats</option>
+            <option value="100">100+ achats</option>
+            <option value="500">500+ achats</option>
+            <option value="1000">1K+ achats</option>
+          </select>
+          <select id="fStatut" aria-label="Statut">
+            <option value="tous">Tous les statuts</option>
+            <option value="trier">À trier</option>
+            <option value="etudier">À étudier</option>
+            <option value="copier">À copier</option>
+            <option value="ignore">Ignorés</option>
+          </select>
+          <button class="chip" id="fNew" aria-pressed="false" type="button">Nouveaux seulement</button>
+          <span class="count" id="count"></span>
+        </div>
+        <div class="list" id="list"></div>
+      </section>
+
+      <section style="display:grid;gap:14px">
+        <div style="display:grid;gap:4px">
+          <h2>Notre plan produits</h2>
+          <p class="hint" style="color:var(--muted);margin:0">Les idées de la boutique esaystor, de l'idée au gagnant. Change l'étape d'une carte avec son menu.</p>
+        </div>
+        <div class="plan" id="plan"></div>
+        <form class="add" id="addForm">
+          <label for="pNom">Nouvelle idée<input type="text" id="pNom" required maxlength="120" placeholder="Ex. Pack Word + IA pour secrétaires"></label>
+          <label for="pPrix">Prix (F)<input type="number" id="pPrix" min="0" step="50" placeholder="1500"></label>
+          <label for="pNote">Preuve ou note<input type="text" id="pNote" maxlength="240" placeholder="Copié du n°3 du radar, 1K+ achats"></label>
+          <button class="btn" type="submit" id="pAdd">Ajouter</button>
+        </form>
+      </section>
+    </div>
+  </div>
+
+  <section class="notice" id="empty" hidden>
+    <h2>Aucun scan pour l'instant</h2>
+    <p style="margin:0;color:var(--muted)">Les scans apparaissent ici dès que Claude en enregistre un. Demande-lui : « mets à jour le Radar KAMTECH ».</p>
+  </section>
+
+  <section class="update">
+    <h2 style="color:var(--ink)">Mettre à jour le radar</h2>
+    <p style="margin:0">Le plus simple : demande à Claude « mets à jour le Radar KAMTECH ». Il collecte les nouvelles pubs, relit les pages de vente et ajoute un scan daté. L'ancien scan reste consultable, et les produits apparus depuis portent l'étiquette <span class="tag new">nouveau</span>.</p>
+    <p style="margin:0">À la main, depuis le dépôt <code>maruise237/chariow</code> : <code>node veille/collect.mjs</code>, puis <code>node veille/analyze.mjs</code>, <code>node veille/enrich.cjs</code>, <code>node veille/analyze.mjs</code>. Le fichier <code>veille/data/scan.json</code> est le scan à enregistrer.</p>
+    <p style="margin:0">Tes statuts (à étudier, à copier…) et ton plan restent attachés au radar d'un scan à l'autre.</p>
+  </section>
+</div>
+<div class="toast" id="toast" role="status" hidden></div>
+
+<script>
+const $ = (id) => document.getElementById(id);
+const esc = (s) => String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
+const fcfa = (v) => (v == null ? '?' : v === 0 ? 'Gratuit' : v.toLocaleString('fr-FR') + ' F');
+const median = (a) => { if (!a.length) return null; const s = [...a].sort((x, y) => x - y); return s[Math.floor(s.length / 2)]; };
+const FLAGS = { CM: 'Cameroun', CI: "Côte d'Ivoire", SN: 'Sénégal', BJ: 'Bénin', TG: 'Togo', GA: 'Gabon', BF: 'Burkina', ML: 'Mali', CD: 'RDC', FR: 'France' };
+const STATUTS = [['trier', 'À trier'], ['etudier', 'À étudier'], ['copier', 'À copier'], ['ignore', 'Ignoré']];
+const ETAPES = [['idee', 'Idée'], ['creation', 'En création'], ['enligne', 'En ligne'], ['test', 'Test pub'], ['gagnant', 'Gagnant'], ['stop', 'Arrêté']];
+
+const S = { db: null, scans: [], idx: 0, suivi: {}, plan: [], niche: null, tri: 'score', ouverts: new Set(), lecture: false };
+
+function toast(msg) {
+  const t = $('toast'); t.textContent = msg; t.hidden = false;
+  clearTimeout(toast.h); toast.h = setTimeout(() => { t.hidden = true; }, 2600);
+}
+
+function current() { return S.scans[S.idx]; }
+function previous() { return S.scans[S.idx + 1]; }
+
+function renderAll() {
+  const sc = current();
+  if (!sc) { $('app').hidden = true; $('empty').hidden = false; $('meta').textContent = 'Aucun scan enregistré.'; return; }
+  $('empty').hidden = true; $('app').hidden = false;
+  const sel = $('scanSel');
+  sel.innerHTML = S.scans.map((s, i) => `<option value="${i}" ${i === S.idx ? 'selected' : ''}>${esc(s.date)}</option>`).join('');
+  sel.disabled = S.scans.length < 2;
+  const pays = (sc.pays || []).map((p) => FLAGS[p] || p).join(', ');
+  $('meta').textContent = `Scan du ${new Date(sc.date + 'T12:00:00').toLocaleDateString('fr-FR', { day: 'numeric', month: 'long', year: 'numeric' })} · requête « ${sc.requete} » · ${pays}. Score = jours de diffusion (max 120) + 15 × variantes + 10 × pays + achats ÷ 5 (max 200).`;
+  renderKpis(); renderNiches(); renderChart(); renderList(); renderPlan();
+}
+
+function renderKpis() {
+  const sc = current(), prev = previous(), P = sc.produits;
+  const k1 = P.filter((p) => (p.achats || 0) >= 1000);
+  const nouveaux = prev ? P.filter((p) => !prev.produits.some((q) => q.id === p.id)).length : null;
+  const items = [
+    ['Produits suivis', P.length, `${sc.pubs} pubs uniques`, nouveaux ? `+${nouveaux} nouveaux` : ''],
+    ['Boutiques concurrentes', sc.boutiques, 'qui paient de la pub Meta', ''],
+    ['Produits à 1K+ achats', k1.length, `${Math.round((100 * k1.length) / P.length)} % de la liste`, ''],
+    ['Prix médian des 1K+', fcfa(median(k1.map((p) => p.prix).filter((v) => v != null))), `tous produits : ${fcfa(median(P.map((p) => p.prix).filter((v) => v != null)))}`, ''],
+  ];
+  $('kpis').innerHTML = items.map(([l, v, s, d]) => `<div class="kpi"><span class="eyebrow">${l}</span><span class="v">${esc(v)}${d ? `<span class="delta">${esc(d)}</span>` : ''}</span><span class="s">${esc(s)}</span></div>`).join('');
+}
+
+function renderNiches() {
+  const by = {};
+  for (const p of current().produits) {
+    const n = (by[p.niche] ||= { score: 0, n: 0, hot: 0, achats: 0, prix: [] });
+    n.score += p.score; n.n++; n.achats += p.achats || 0;
+    if ((p.achats || 0) >= 500) n.hot++;
+    if (p.prix != null) n.prix.push(p.prix);
+  }
+  const rows = Object.entries(by).sort((a, b) => b[1].score - a[1].score);
+  const max = rows[0]?.[1].score || 1;
+  $('niches').innerHTML = rows.map(([nm, v]) => `
+    <button type="button" class="niche" data-n="${esc(nm)}" aria-pressed="${S.niche === nm}">
+      <span class="nm">${esc(nm)}</span>
+      <span class="st">${v.n} prod. · ${v.achats.toLocaleString('fr-FR')}+ achats · méd. ${fcfa(median(v.prix))}</span>
+      <span class="bar"><i style="width:${(100 * v.score) / max}%"></i><b style="width:${((100 * v.score) / max) * (v.hot / v.n)}%"></b></span>
+    </button>`).join('');
+}
+
+const BUCKETS = [['1K+', 1000], ['500+', 500], ['100+', 100], ['10 à 99', 10], ['Non affiché', -1]];
+function bucketOf(a) { if (a == null || a < 10) return 4; return BUCKETS.findIndex(([, m]) => a >= m); }
+
+function renderChart() {
+  const P = current().produits.filter((p) => p.prix != null);
+  const W = 640, H = 250, L = 92, R = 16, T = 22, B = 34, XMAX = 10000;
+  const x = (v) => L + (Math.min(v, XMAX) / XMAX) * (W - L - R);
+  const rowH = (H - T - B) / BUCKETS.length;
+  const y = (i) => T + rowH * i + rowH / 2;
+  const k1 = P.filter((p) => (p.achats || 0) >= 500).map((p) => p.prix).sort((a, b) => a - b);
+  let band = '';
+  if (k1.length >= 3) {
+    const lo = k1[Math.floor(k1.length * 0.2)], hi = k1[Math.floor(k1.length * 0.8)];
+    band = `<rect class="band" x="${x(lo)}" y="${T}" width="${Math.max(4, x(hi) - x(lo))}" height="${H - T - B}" rx="4"/>
+      <text class="band-label" x="${(x(lo) + x(hi)) / 2}" y="${T - 8}" text-anchor="middle">Zone qui vend : ${lo.toLocaleString('fr-FR')} à ${hi.toLocaleString('fr-FR')} F</text>`;
+    $('bandHint').textContent = `Chaque point est un produit concurrent. La zone jaune couvre 60 % des produits à 500+ achats : c'est là qu'il faut placer nos prix.`;
+  }
+  const ticks = [0, 2000, 4000, 6000, 8000, 10000];
+  const seen = {};
+  const dots = P.map((p) => {
+    const b = bucketOf(p.achats); const key = b + ':' + Math.round(p.prix / 250);
+    const off = ((seen[key] = (seen[key] || 0) + 1) - 1) * 5;
+    return `<circle class="${b <= 1 ? 'hot' : ''}" cx="${x(p.prix)}" cy="${y(b) - off + (off ? 2 : 0)}" r="${b <= 1 ? 6 : 4.5}" data-id="${esc(p.id)}"><title>${esc(p.titre)} · ${fcfa(p.prix)} · ${esc(p.achatsTexte || 'achats non affichés')}</title></circle>`;
+  }).join('');
+  $('chart').innerHTML = `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Prix des produits concurrents selon les achats affichés">
+    ${band}
+    ${BUCKETS.map(([l], i) => `<line class="grid" x1="${L}" x2="${W - R}" y1="${y(i)}" y2="${y(i)}"/><text x="${L - 10}" y="${y(i) + 4}" text-anchor="end">${l}</text>`).join('')}
+    ${ticks.map((t) => `<text x="${x(t)}" y="${H - 12}" text-anchor="middle">${t === XMAX ? '10 000+' : t.toLocaleString('fr-FR')}</text>`).join('')}
+    ${dots}
+  </svg>`;
+}
+
+function statutOf(id) { return S.suivi[id]?.statut || 'trier'; }
+
+function filtered() {
+  const q = $('q').value.trim().toLowerCase();
+  const minA = +$('fAchats').value, st = $('fStatut').value, onlyNew = $('fNew').getAttribute('aria-pressed') === 'true';
+  const prev = previous();
+  return current().produits.filter((p) => {
+    if (S.niche && p.niche !== S.niche) return false;
+    if (minA && (p.achats || 0) < minA) return false;
+    if (st !== 'tous' && statutOf(p.id) !== st) return false;
+    if (onlyNew && (!prev || prev.produits.some((o) => o.id === p.id))) return false;
+    if (q && !`${p.titre} ${p.page} ${p.accroche} ${p.niche}`.toLowerCase().includes(q)) return false;
+    return true;
+  }).sort((a, b) => S.tri === 'prix' ? (a.prix ?? 1e9) - (b.prix ?? 1e9) : (b[S.tri] ?? -1) - (a[S.tri] ?? -1));
+}
+
+function renderList() {
+  const prev = previous(), rows = filtered(), maxS = Math.max(...current().produits.map((p) => p.score), 1);
+  const th = (k, l, cls = '') => `<button type="button" data-tri="${k}" aria-pressed="${S.tri === k}" class="${cls}">${l}</button>`;
+  $('count').textContent = `${rows.length} produit${rows.length > 1 ? 's' : ''}${S.niche ? ' · ' + S.niche : ''}`;
+  const head = `<div class="row head">${th('score', 'Score')}<span>Produit</span>${th('prix', 'Prix')}${th('achats', 'Achats')}${th('jours', 'Jours')}${th('variantes', 'Var.')}<span>Statut</span></div>`;
+  const body = rows.map((p) => {
+    const isNew = prev && !prev.produits.some((o) => o.id === p.id);
+    const open = S.ouverts.has(p.id), st = statutOf(p.id);
+    return `<div class="row" data-id="${esc(p.id)}">
+      <div class="score"><span>${p.score}</span><span class="mini"><i style="width:${(100 * p.score) / maxS}%"></i></span></div>
+      <div class="prod">
+        <button type="button" class="t" data-open="${esc(p.id)}" aria-expanded="${open}">${esc(p.titre)}${isNew ? '<span class="tag new">nouveau</span>' : ''}</button>
+        <span class="sub">${esc(p.page)} · ${esc(p.niche)} · ${p.pays.join(' ')}</span>
+      </div>
+      <div class="cell-r"><span class="lbl">Prix</span>${fcfa(p.prix)}</div>
+      <div><span class="lbl">Achats</span><span class="pill ${(p.achats || 0) >= 500 ? 'k' : ''}">${esc(p.achatsTexte || '–')}</span></div>
+      <div class="cell-r"><span class="lbl">Jours</span>${p.jours}</div>
+      <div class="cell-r"><span class="lbl">Variantes</span>${p.variantes}</div>
+      <div><select class="statut" data-statut="${esc(p.id)}" data-v="${st}" aria-label="Statut de ${esc(p.titre)}" ${S.lecture ? 'disabled' : ''}>${STATUTS.map(([v, l]) => `<option value="${v}" ${v === st ? 'selected' : ''}>${l}</option>`).join('')}</select></div>
+      ${open ? `<div class="detail">
+        <blockquote>${esc(p.accroche)}</blockquote>
+        <div class="facts"><span>Formats : ${p.formats.map((f) => ({ VIDEO: 'vidéo', IMAGE: 'image', DCO: 'dynamique' }[f] || f)).join(', ')}</span><span>Compte à rebours : ${p.rebours ? 'oui' : p.rebours === false ? 'non' : '?'}</span><span>Avis : ${p.avis ?? '–'}</span><span>Pays : ${p.pays.map((c) => FLAGS[c] || c).join(', ')}</span></div>
+        <div class="links"><a href="${esc(p.lien)}" target="_blank" rel="noopener">Page de vente ↗</a><a href="${esc(p.pub)}" target="_blank" rel="noopener">Pub dans la bibliothèque Meta ↗</a></div>
+      </div>` : ''}
+    </div>`;
+  }).join('');
+  $('list').innerHTML = head + (body || `<div class="row"><span style="grid-column:1/-1;color:var(--muted)">Aucun produit ne correspond à ces filtres.</span></div>`);
+}
+
+function renderPlan() {
+  const byE = Object.fromEntries(ETAPES.map(([e]) => [e, []]));
+  for (const p of S.plan) (byE[p.etape] || byE.idee).push(p);
+  $('plan').innerHTML = ETAPES.map(([e, l]) => `
+    <div class="stage" data-e="${e}">
+      <h3><span>${l}</span><span class="num" style="color:var(--muted)">${byE[e].length}</span></h3>
+      ${byE[e].length ? byE[e].sort((a, b) => (a.ordre ?? 99) - (b.ordre ?? 99)).map((p) => `
+        <div class="card">
+          <span class="nm">${esc(p.nom)}</span>
+          ${p.note ? `<span class="nt">${esc(p.note)}</span>` : ''}
+          <div class="bot"><span class="num">${p.prix != null ? fcfa(p.prix) : ''}</span>
+            <select data-etape="${esc(p.id)}" aria-label="Étape de ${esc(p.nom)}" ${S.lecture ? 'disabled' : ''}>${ETAPES.map(([v, lb]) => `<option value="${v}" ${v === p.etape ? 'selected' : ''}>${lb}</option>`).join('')}</select>
+          </div>
+        </div>`).join('') : `<div class="empty-stage">Rien à cette étape.</div>`}
+    </div>`).join('');
+}
+
+// Interactions
+$('scanSel').addEventListener('change', (e) => { S.idx = +e.target.value; renderAll(); });
+['q', 'fAchats', 'fStatut'].forEach((id) => $(id).addEventListener('input', renderList));
+$('fNew').addEventListener('click', (e) => { const b = e.currentTarget; b.setAttribute('aria-pressed', b.getAttribute('aria-pressed') !== 'true'); renderList(); });
+$('niches').addEventListener('click', (e) => {
+  const b = e.target.closest('.niche'); if (!b) return;
+  S.niche = S.niche === b.dataset.n ? null : b.dataset.n; renderNiches(); renderList();
+});
+$('chart').addEventListener('click', (e) => {
+  const c = e.target.closest('circle'); if (!c) return;
+  S.niche = null; $('q').value = ''; $('fAchats').value = '0'; $('fStatut').value = 'tous';
+  S.ouverts.add(c.dataset.id); renderNiches(); renderList();
+  document.querySelector(`.row[data-id="${CSS.escape(c.dataset.id)}"]`)?.scrollIntoView({ behavior: 'smooth', block: 'center' });
+});
+$('list').addEventListener('click', (e) => {
+  const t = e.target.closest('[data-tri]'); if (t) { S.tri = t.dataset.tri; renderList(); return; }
+  const o = e.target.closest('[data-open]'); if (o) { const id = o.dataset.open; S.ouverts.has(id) ? S.ouverts.delete(id) : S.ouverts.add(id); renderList(); }
+});
+$('list').addEventListener('change', async (e) => {
+  const s = e.target.closest('[data-statut]'); if (!s) return;
+  const id = s.dataset.statut, statut = s.value; s.dataset.v = statut;
+  if (!S.db) return toast("Enregistrement impossible dans cette vue.");
+  try { await S.db.collection('suivi').doc(id).set({ statut, maj: new Date().toISOString() }); toast('Statut enregistré'); }
+  catch (err) { toast(err?.code === 'invalid_argument' ? "Tu n'as pas le droit de modifier ce radar." : "Statut non enregistré, réessaie."); }
+});
+$('plan').addEventListener('change', async (e) => {
+  const s = e.target.closest('[data-etape]'); if (!s || !S.db) return;
+  try { await S.db.collection('plan').doc(s.dataset.etape).update({ etape: s.value, maj: new Date().toISOString() }); toast('Étape mise à jour'); }
+  catch { toast("Étape non enregistrée, réessaie."); }
+});
+$('addForm').addEventListener('submit', async (e) => {
+  e.preventDefault();
+  if (!S.db) return toast("Enregistrement impossible dans cette vue.");
+  const nom = $('pNom').value.trim(); if (!nom) return;
+  const prix = $('pPrix').value === '' ? null : +$('pPrix').value;
+  $('pAdd').disabled = true;
+  try {
+    await S.db.collection('plan').add({ nom, prix, note: $('pNote').value.trim(), etape: 'idee', ordre: 99, maj: new Date().toISOString() });
+    $('addForm').reset(); toast('Idée ajoutée');
+  } catch { toast("Idée non enregistrée, réessaie."); }
+  $('pAdd').disabled = false;
+});
+
+// Données
+(async () => {
+  const db = await (window.claude?.use ? window.claude.use('db') : null);
+  if (!db) { $('meta').textContent = "Les données du radar ne sont pas disponibles dans cette vue. Ouvre-le sur claude.ai en étant connecté."; return; }
+  S.db = db;
+  const fail = () => toast('Connexion aux données perdue. Recharge la page.');
+  db.collection('scans').onSnapshot((snap) => {
+    const keep = current()?.date;
+    S.scans = snap.docs.map((d) => d.data()).filter((s) => s?.produits).sort((a, b) => (a.date < b.date ? 1 : -1));
+    const i = S.scans.findIndex((s) => s.date === keep); S.idx = i >= 0 ? i : 0;
+    renderAll();
+  }, fail);
+  db.collection('suivi').onSnapshot((snap) => { S.suivi = Object.fromEntries(snap.docs.map((d) => [d.id, d.data()])); if (current()) renderList(); }, fail);
+  db.collection('plan').onSnapshot((snap) => { S.plan = snap.docs.map((d) => ({ id: d.id, ...d.data() })); if (current()) renderPlan(); }, fail);
+})();
+</script>

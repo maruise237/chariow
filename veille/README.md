@@ -15,3 +15,10 @@ Repère les produits digitaux qui se vendent en Afrique francophone en espionnan
 - Score = jours de diffusion (max 120) + 15 × variantes + 10 × pays + achats ÷ 5 (max 200).
 
 La stratégie produits tirée de la première collecte est dans `STRATEGIE.md`.
+
+## Tableau de bord : Radar KAMTECH
+
+https://claude.ai/artifact/CeyiakYhTfLpacMDQPjfjc (source : `veille/radar.html`)
+
+- Chaque collecte devient un document `scans/<date>` (contenu de `data/scan.json`, écrit par `analyze.mjs`). Les anciens scans restent consultables ; les produits apparus depuis le scan précédent sont marqués « nouveau ».
+- Les statuts posés sur les produits concurrents (`suivi/`) et le plan produits (`plan/`) sont modifiés depuis la page et survivent aux mises à jour.
