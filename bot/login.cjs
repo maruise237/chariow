@@ -1,70 +1,75 @@
-// Connexion au dashboard Chariow avec le compte bot.
-// Usage : node bot/login.cjs [code-recu-par-email]
-// Lit CHARIOW_BOT_EMAIL et CHARIOW_BOT_PASSWORD ; enregistre la session dans bot/.session.json
+// Connexion au dashboard Chariow (via Axa Zara) et sauvegarde de la session.
+// Usage : node bot/login.cjs
+// Lit CHARIOW_BOT_EMAIL et CHARIOW_BOT_PASSWORD (ou CHARIOW_PASSWORD).
+// Si un code de vérification est demandé, le script attend que le code soit écrit dans bot/code.txt.
+const fs = require('fs');
 const path = require('path');
 const { chromium } = require(process.env.PLAYWRIGHT_MODULE || 'playwright');
 
 const EMAIL = process.env.CHARIOW_BOT_EMAIL;
-const PASSWORD = process.env.CHARIOW_BOT_PASSWORD;
-const CODE = process.argv[2];
+const PASSWORD = process.env.CHARIOW_BOT_PASSWORD || process.env.CHARIOW_PASSWORD;
 const SESSION = path.join(__dirname, '.session.json');
+const CODE_FILE = path.join(__dirname, 'code.txt');
 const SHOTS = path.join(__dirname, 'captures');
 
+const settle = (page) => page.waitForLoadState('networkidle').catch(() => {});
+const text = async (page) => (await page.innerText('body')).replace(/\s+/g, ' ').slice(0, 300);
+
 (async () => {
-  if (!EMAIL) {
-    console.error('Erreur : CHARIOW_BOT_EMAIL manquant.');
+  if (!EMAIL || !PASSWORD) {
+    console.error('Erreur : CHARIOW_BOT_EMAIL et CHARIOW_BOT_PASSWORD sont requis.');
     process.exit(1);
   }
-  require('fs').mkdirSync(SHOTS, { recursive: true });
+  fs.mkdirSync(SHOTS, { recursive: true });
+  fs.rmSync(CODE_FILE, { force: true });
   const browser = await chromium.launch();
   const page = await browser.newPage();
 
+  // Étape 1 : email sur Chariow, qui redirige vers Axa Zara
   await page.goto('https://app.chariow.com/auth/login', { waitUntil: 'networkidle' });
   await page.fill('input[type=email]', EMAIL);
   await page.click('button[type=submit]');
-  await page.waitForLoadState('networkidle');
+  await page.waitForURL(/axazara\.com/, { timeout: 30000 });
+  await settle(page);
 
-  // Étape 2 : mot de passe ou code, selon ce que Chariow demande
-  const password = page.locator('input[type=password]');
-  const code = page.locator('input[autocomplete=one-time-code], input[inputmode=numeric], input[name*=code i], input[name*=otp i]');
+  // Étape 2 : mot de passe Axa Zara
+  await page.fill('input[type=password]', PASSWORD);
+  await page.click('button[type=submit]');
+  await page.waitForTimeout(6000);
+  await settle(page);
 
-  if (await password.count()) {
-    if (!PASSWORD) throw new Error('Chariow demande un mot de passe : CHARIOW_BOT_PASSWORD manquant.');
-    await password.first().fill(PASSWORD);
-    await page.click('button[type=submit]');
-    await page.waitForLoadState('networkidle');
-  }
-
-  if (await code.count()) {
-    if (!CODE) {
-      await page.screenshot({ path: path.join(SHOTS, 'login-code.png') });
-      console.log('CODE_REQUIS : Chariow a envoyé un code par email. Relance avec : node bot/login.cjs <code>');
-      await browser.close();
-      process.exit(2);
+  // Étape 3 (optionnelle) : code de vérification
+  if (/axazara\.com/.test(page.url())) {
+    await page.screenshot({ path: path.join(SHOTS, 'verification.png') });
+    console.log('CODE_REQUIS ' + page.url() + ' :: ' + (await text(page)));
+    const t0 = Date.now();
+    while (!fs.existsSync(CODE_FILE)) {
+      if (Date.now() - t0 > 15 * 60e3) throw new Error('Pas de code reçu en 15 minutes.');
+      await page.waitForTimeout(2000);
     }
-    const n = await code.count();
-    if (n > 1) {
-      // Une case par chiffre
-      for (let i = 0; i < n && i < CODE.length; i++) await code.nth(i).fill(CODE[i]);
-    } else {
-      await code.first().fill(CODE);
-    }
+    const code = fs.readFileSync(CODE_FILE, 'utf8').trim();
+    fs.rmSync(CODE_FILE, { force: true });
+    const boxes = page.locator('input:not([type=hidden]):not([type=email]):not([type=password])');
+    const n = await boxes.count();
+    if (n > 1) for (let i = 0; i < n && i < code.length; i++) await boxes.nth(i).fill(code[i]);
+    else if (n === 1) await boxes.first().fill(code);
+    else await page.keyboard.type(code);
     const submit = page.locator('button[type=submit]');
-    if (await submit.count()) await submit.first().click();
-    await page.waitForLoadState('networkidle');
+    if (await submit.count()) await submit.first().click().catch(() => {});
+    await page.waitForTimeout(8000);
+    await settle(page);
   }
 
   await page.screenshot({ path: path.join(SHOTS, 'login-result.png') });
-  if (page.url().includes('/auth/')) {
-    console.error('Échec : toujours sur ' + page.url() + ' (voir bot/captures/login-result.png)');
+  if (!page.url().startsWith('https://app.chariow.com') || page.url().includes('/auth/')) {
+    console.error('LOGIN_FAILED ' + page.url() + ' :: ' + (await text(page)));
     await browser.close();
     process.exit(1);
   }
-
   await page.context().storageState({ path: SESSION });
-  console.log('Connecté : ' + page.url());
+  console.log('LOGGED_IN ' + page.url());
   await browser.close();
 })().catch((e) => {
-  console.error(e.message);
+  console.error('ERROR ' + e.message);
   process.exit(1);
 });

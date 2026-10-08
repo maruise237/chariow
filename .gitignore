@@ -1,3 +1,4 @@
 .env
 bot/.session.json
 bot/captures/
+bot/code.txt
