@@ -1,0 +1,16 @@
+{
+  "id": "si-anglais",
+  "ok": true,
+  "resultats": [
+    {
+      "feuille": "Ventes",
+      "cellule": "E2",
+      "formule_fr": "=IF(AND(D2 > 50000, C2 = \"Grossiste\"), \"Remise 10%\", \"\")",
+      "formule_affichee": "=if(and(D2 > 50000 C2 = \"Grossiste\"), \"Remise 10%\", \"\")",
+      "valeur": "Err :509",
+      "erreur": true,
+      "attendu": "Err:509",
+      "ok": true
+    }
+  ]
+}

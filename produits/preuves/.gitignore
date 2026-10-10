@@ -1,0 +1,4 @@
+# fichiers temporaires de LibreOffice / du script
+.~lock.*
+*.tmp
+__pycache__/

@@ -1,0 +1,26 @@
+{
+  "id": "recherchev-sierreur",
+  "ok": true,
+  "resultats": [
+    {
+      "feuille": "Facture",
+      "cellule": "B2",
+      "formule_fr": "=SIERREUR(RECHERCHEV(A2;Tarifs!A:B;2;FAUX);\"Code inconnu\")",
+      "formule_affichee": "=SIERREUR(RECHERCHEV(A2;$Tarifs.A:B;2;0);\"Code inconnu\")",
+      "valeur": 7500.0,
+      "erreur": false,
+      "attendu": 7500,
+      "ok": true
+    },
+    {
+      "feuille": "Facture",
+      "cellule": "B3",
+      "formule_fr": "=SIERREUR(RECHERCHEV(A3;Tarifs!A:B;2;FAUX);\"Code inconnu\")",
+      "formule_affichee": "=SIERREUR(RECHERCHEV(A3;$Tarifs.A:B;2;0);\"Code inconnu\")",
+      "valeur": "Code inconnu",
+      "erreur": false,
+      "attendu": "Code inconnu",
+      "ok": true
+    }
+  ]
+}

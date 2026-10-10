@@ -1,0 +1,7 @@
+{
+ "id": "nb-si-casse",
+ "feuilles": {"Clients": [["Client","Produit","Qté","Total FCFA","Statut"],["Awa","Savon",12,6000,"Payé"],["Boris","Huile 1 L",5,7500,"payé"],["Carine","Savon",20,10000,"PAYÉ"],["David","Riz 5 kg",3,13500,"Impayé"],["Estelle","Savon",4,2000,"Payé"],[null,null,null,"Nb Payé"]]},
+ "formules": [{"feuille":"Clients","cellule":"E7","fr":"=NB.SI(E2:E6;\"Payé\")","attendu":4}],
+ "capture": {"feuille":"Clients","plage":"A1:E8","cellule_active":"E7","zoom":185},
+ "largeurs": {"A":10,"B":12,"D":12,"E":10}
+}

@@ -26,7 +26,7 @@ const DA = {
     nom: 'Cabinet',
     titres: { famille: 'Zodiak', graisse: 700, casse: 'none', interlettre: '-0.01em' },
     couleurs: { primaire: '#1F3FD1', fonce: '#00104F', accent: '#E8B84A', surAccent: '#1A1405', fond: '#FAF8F2', papier: '#FFFFFF' },
-    corps: 13.5, interligne: 1.5,       // ~48 car./ligne, ~13 px sur téléphone : lecteurs pros, souvent aussi sur PC
+    corps: 15.5, interligne: 1.5,       // ≈ 15 px à l'écran d'un téléphone de 393 px (calcul dans DIRECTION-ARTISTIQUE.md) : lecteurs pros, aussi sur PC
     couverture: 'scene',   // l'écriture au journal : comme les autres couvertures, on montre l'objet du lecteur
     ouvertures: ['scinde'],
     motif: 'filets',
@@ -36,7 +36,7 @@ const DA = {
     nom: 'Atelier',
     titres: { famille: 'Cabinet Grotesk', graisse: 800, casse: 'none', interlettre: '-0.02em' },
     couleurs: { primaire: '#12924A', fonce: '#06331C', accent: '#C8F05A', surAccent: '#06331C', fond: '#F4F8F2', papier: '#FFFFFF' },
-    corps: 15, interligne: 1.45,       // ~44 car./ligne, ~15 px sur téléphone
+    corps: 17, interligne: 1.45,       // ≈ 16 px à l'écran d'un téléphone de 393 px
     couverture: 'scene',
     ouvertures: ['plein', 'panneau'],
     motif: 'grille',
@@ -46,7 +46,7 @@ const DA = {
     nom: 'Marché',
     titres: { famille: 'Bricolage Grotesque', graisse: 800, casse: 'none', interlettre: '-0.02em' },
     couleurs: { primaire: '#E85A16', fonce: '#4A1806', accent: '#FFC93C', surAccent: '#3A1404', fond: '#FFF6EC', papier: '#FFFFFF' },
-    corps: 16.5, interligne: 1.45,      // ~40 car./ligne, 16 px sur téléphone, une idée par écran
+    corps: 18, interligne: 1.45,      // ≈ 17 px à l'écran d'un téléphone de 393 px, une idée par écran
     couverture: 'scene',
     ouvertures: ['panneau', 'plein'],
     motif: 'pagne',
@@ -56,7 +56,7 @@ const DA = {
     nom: 'Studio',
     titres: { famille: 'Supreme', graisse: 800, casse: 'uppercase', interlettre: '-0.01em' },
     couleurs: { primaire: '#7B5CFF', fonce: '#0E0B1A', accent: '#FF3D7F', surAccent: '#FFFFFF', fond: '#F4F2FF', papier: '#FFFFFF' },
-    corps: 15.5, interligne: 1.45,
+    corps: 17, interligne: 1.45,
     couverture: 'typo',
     ouvertures: ['plein'],
     motif: 'grille',

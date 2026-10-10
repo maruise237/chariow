@@ -154,28 +154,27 @@ function couverture(m, da) {
   </section>`;
 }
 
+// Les droits d'usage tiennent en 3 lignes : ils vont en bas du sommaire, pas sur une page à part.
 function licence(m) {
-  const contenu = (m.contenu || '').split('|').map(s => s.trim()).filter(Boolean);
-  return `<section class="plein page-licence">
-    <div class="bande">${ico.alerte}<span>Usage strictement personnel</span></div>
-    <div class="marges">
-      <p>Cet e-book <b>« ${fmt(m.titre)} »</b> et ses fichiers bonus te sont vendus pour ton usage personnel. Il contient :</p>
-      <ul class="liste">${contenu.map(c => `<li>${fmt(c)}</li>`).join('')}</ul>
-      <p><em>Toute revente, copie, partage dans un groupe WhatsApp ou Telegram, ou distribution gratuite ou payante est strictement interdite.</em></p>
-      <p>Chaque exemplaire est lié à un achat. En utilisant cet e-book, tu acceptes ces conditions.</p>
-      <p class="fort">© ${(m.edition || '').split(' ').pop()} ${MARQUE.nom}. Tous droits réservés.</p>
-    </div>
-    <div class="logo-bas">${logo()}</div>
-  </section>`;
+  return `<div class="licence">${ico.alerte}<p><b>Usage personnel.</b> Cet e-book et ses bonus sont liés à ton achat : ne les partage pas (WhatsApp, Telegram, revente). © ${(m.edition || '').split(' ').pop()} ${MARQUE.nom}.</p></div>`;
 }
 
-function sommaire(chapitres, pages) {
+function sommaire(m, chapitres, pages) {
   return `<section class="plein page-sommaire">
     <div class="marges">
       <h1 class="h-page">Sommaire</h1>
       <ol class="toc">${chapitres.map(c => `<li><a href="#ch${c.arg}"><span class="toc-n">${c.arg}</span><span class="toc-t">${fmt(c.kv.titre)}</span><span class="toc-p">${pages[c.arg] || ''}</span></a></li>`).join('')}</ol>
     </div>
+    ${licence(m)}
   </section>`;
+}
+
+// Personnages Open Peeps (CC0) pré-générés dans assets/illustrations (voir illustrations/README.md).
+// Inclus en ligne pour que la teinte --peau suive la DA. Trait noir : jamais sur un fond foncé.
+function illustration(id, classe = 'illu') {
+  const f = path.join(ASSETS, 'illustrations', `${id.trim()}.svg`);
+  if (!fs.existsSync(f)) throw new Error(`Illustration inconnue : ${id}`);
+  return fs.readFileSync(f, 'utf8').replace(/^<\?xml[^>]*>\s*/, '').replace('<svg', `<svg class="${classe}" aria-hidden="true"`);
 }
 
 function ouverture(b, variante, marqueur) {
@@ -183,7 +182,8 @@ function ouverture(b, variante, marqueur) {
   const k = b.kv;
   const infos = [k.duree && `Lecture : ${fmt(k.duree)}`, k.bonus && `Bonus lié : <b>${fmt(k.bonus)}</b>`].filter(Boolean);
   const meta = infos.length ? `<p class="ouv-meta">${infos.join('<i>/</i>')}</p>` : '';
-  const vis = k.visuel ? `<div class="ouv-visuel">${visuel(k.visuel)}</div>` : '';
+  const vis = k.visuel ? `<div class="ouv-visuel">${visuel(k.visuel)}</div>`
+    : k.illustration ? `<div class="ouv-visuel">${illustration(k.illustration)}</div>` : '';
   const id = `id="ch${b.arg}"`;
   const marq = marqueur ? `<span class="marqueur">@@CH${b.arg}@@</span>` : '';
   const obj = k.objectif ? `<p class="objectif">Tu vas savoir ${fmt(k.objectif.replace(/^\s*[A-ZÀ-Ý]/, c => c.toLowerCase()))}</p>` : '';
@@ -224,6 +224,45 @@ function pause(b) {
   </section>`;
 }
 
+// Capture réelle annotée : l'image (capture du tableur, de l'IA...) + des repères numérotés avec flèche.
+// Source :
+//   :::capture ../preuves/sortie/somme-si/capture.png | Légende facultative
+//   1: 40,12 g | La formule, en français, avec « ; »
+//   2: 78,64 b | Le résultat calculé : 16 000
+//   :::
+// x,y = point visé, en % de la largeur et de la hauteur de l'image ; la lettre dit d'où vient la flèche
+// (g gauche, d droite, h haut, b bas), suivie si besoin de la longueur de la flèche (« g4 », 9 par défaut). Le texte de chaque repère se lit sous l'image.
+let DOSSIER = process.cwd();
+function taillePng(f) {
+  const b = fs.readFileSync(f);
+  return { l: b.readUInt32BE(16), h: b.readUInt32BE(20) };
+}
+function capture(b) {
+  const [fichier, legende] = b.arg.split('|').map(t => t.trim());
+  const chemin = path.resolve(DOSSIER, fichier);
+  if (!fs.existsSync(chemin)) throw new Error(`Capture introuvable : ${chemin}`);
+  const { l, h } = taillePng(chemin);
+  const reps = b.lignes.map(x => x.match(/^\s*(\d+)\s*:\s*([\d.]+)\s*,\s*([\d.]+)\s*([gdhb])?(\d+)?\s*\|\s*(.+)$/)).filter(Boolean)
+    .map(r => ({ n: r[1], x: +r[2] / 100 * l, y: +r[3] / 100 * h, dir: r[4] || 'g', lg: r[5] ? +r[5] : 9, t: r[6] }));
+  const u = Math.max(l, h) / 100;            // unité : 1 % du plus grand côté
+  const R = 2.6 * u;                          // rayon du repère
+  const dirs = { g: [-1, 0], d: [1, 0], h: [0, -1], b: [0, 1] };
+  const svg = reps.map(r => {
+    const [dx, dy] = dirs[r.dir], L = r.lg * u;              // longueur de la flèche (9 par défaut, « g4 » = 4)
+    const cx = r.x + dx * (L + R), cy = r.y + dy * (L + R);   // centre du repère numéroté
+    const x1 = r.x + dx * L, y1 = r.y + dy * L;               // départ de la flèche (bord du repère)
+    return `<line x1="${x1}" y1="${y1}" x2="${r.x - dx * u * .4}" y2="${r.y - dy * u * .4}" class="cap-fl" stroke-width="${u * .55}" marker-end="url(#pointe)"/>
+      <circle cx="${cx}" cy="${cy}" r="${R}" class="cap-rep" stroke-width="${u * .35}"/>
+      <text x="${cx}" y="${cy}" font-size="${R * 1.15}" class="cap-n">${r.n}</text>`;
+  }).join('');
+  return `<figure class="capture">
+    <div class="cap-img"><img src="file://${chemin}" alt="">
+      <svg viewBox="0 0 ${l} ${h}"><defs><marker id="pointe" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="3.2" markerHeight="3.2" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="cap-pointe"/></marker></defs>${svg}</svg>
+    </div>
+    ${reps.length || legende ? `<figcaption>${reps.map(r => `<span class="leg"><i class="rep">${r.n}</i><span>${fmt(r.t)}</span></span>`).join('')}${legende ? `<span class="cap-leg">${fmt(legende)}</span>` : ''}</figcaption>` : ''}
+  </figure>`;
+}
+
 function bloc(b) {
   const texte = () => b.lignes.filter(l => l.trim()).map(fmt).join('<br>');
   const items = () => b.lignes.map(l => l.match(/^\s*[-•]\s+(.*)$/)).filter(Boolean).map(r => r[1]);
@@ -244,10 +283,13 @@ function bloc(b) {
         `<tr${r.some(c => /^totaux?$/i.test(c)) ? ' class="tot"' : ''}>${r.map((c, j) => `<td${cl(j)}>${fmt(c)}</td>`).join('')}</tr>`).join('')}</table>`;
     }
     case 'visuel': return `<div class="visuel-flux">${visuel(b.arg)}</div>`;
+    case 'capture': return capture(b);
+    case 'illustration': { const [id, leg] = b.arg.split('|').map(t => t.trim());
+      return `<figure class="illu-flux">${illustration(id)}${leg ? `<figcaption>${fmt(leg)}</figcaption>` : ''}</figure>`; }
     case 'prompt': return `<div class="prompt"><div class="prompt-tete"><span>À copier</span><span>${fmt(b.arg)}</span></div><p>${texte()}</p></div>`;
     case 'resultat': {
       const [titre, opt] = b.arg.split('|').map(s => s.trim());
-      return `<div class="resultat"><span class="resultat-label">${fmt(titre || 'Résultat')}</span><div class="resultat-corps${opt === 'mono' ? ' mono' : ''}">${opt === 'mono' ? b.lignes.filter(l => l.trim()).map(echap).join('<br>') : texte()}</div></div>`;
+      return `<div class="resultat"><span class="resultat-label">${fmt(titre || 'Résultat')}</span><div class="resultat-corps${opt === 'mono' ? ' mono' : ''}">${opt === 'mono' ? b.lignes.filter(l => l.trim()).map(l => echap(l).replace(/([;,(])/g, '$1<wbr>')).join('<br>') : texte()}</div></div>`;
     }
     case 'erreur': return `<div class="encart erreur">${ico.alerte}<div><b>Erreur fréquente.</b> ${texte()}</div></div>`;
     case 'astuce': return `<div class="encart astuce">${ico.ampoule}<div><b>Astuce.</b> ${texte()}</div></div>`;
@@ -260,23 +302,14 @@ function bloc(b) {
   }
 }
 
-function auteur(m) {
-  return `<section class="plein page-auteur">
-    <div class="bande-accent"><h1>À propos de l'auteur</h1></div>
-    <div class="marges centre">
-      <p>Cet e-book a été conçu par <b>${MARQUE.nom}</b>, au Cameroun.</p>
-      <p>${MARQUE.nom} écrit des guides pour utiliser l'intelligence artificielle dans le travail de tous les jours en Afrique francophone. Chaque méthode est testée sur téléphone, avec des montants en FCFA.</p>
-      ${m.suite ? `<p class="suite">${fmt(m.suite)}</p>` : ''}
-      ${MARQUE.boutique ? `<p class="lien">${MARQUE.boutique}</p>` : ''}
-    </div>
-    <div class="logo-bas">${logo()}</div>
-  </section>`;
-}
-
 function dos(m, da) {
+  // Dernière page : qui a écrit le livre, la suite conseillée et l'adresse de la boutique (l'ancienne page « auteur »)
   return `<section class="plein dos motif-${da.motif}">
-    <div class="dos-centre">${logo(true)}<p>${fmt(m.titre)}</p></div>
-    <p class="dos-bas">${MARQUE.boutique ? MARQUE.boutique + '<br>' : ''}${m.edition || ''}</p>
+    <div class="dos-centre">${logo(true)}
+      <p>Guides testés sur téléphone, avec des montants en FCFA. Conçus au Cameroun.</p>
+      ${m.suite ? `<p class="suite">${fmt(m.suite)}</p>` : ''}
+    </div>
+    <p class="dos-bas">${MARQUE.boutique ? `<b>${MARQUE.boutique}</b><br>` : ''}${m.edition || ''}</p>
   </section>`;
 }
 
@@ -291,7 +324,8 @@ function document(src, pages = {}, marqueurs = false) {
     if (b.t === 'chapitre') {
       vider();
       // Variante choisie par la DA, en alternance pour le rythme ; la source peut l'imposer (variante: ...)
-      const v = b.kv.variante || da.ouvertures[nChap++ % da.ouvertures.length];
+      let v = b.kv.variante || da.ouvertures[nChap++ % da.ouvertures.length];
+      if (b.kv.illustration && !b.kv.visuel && v === 'plein') v = 'panneau';
       corps.push(ouverture(b, v, marqueurs));
     } else if (b.t === 'pause') { vider(); corps.push(pause(b)); }
     else flux.push(bloc(b));
@@ -299,9 +333,9 @@ function document(src, pages = {}, marqueurs = false) {
   vider();
   const html = `<!doctype html><html lang="fr"><head><meta charset="utf-8"><title>${echap(meta.titre)}</title>
     <style>${polices()}${css(meta, da)}${CSS_VISUELS}</style></head><body>
-    ${couverture(meta, da)}${licence(meta)}${sommaire(chapitres, pages)}
+    ${couverture(meta, da)}${chapitres.length ? sommaire(meta, chapitres, pages) : ''}
     ${corps.join('\n')}
-    ${auteur(meta)}${dos(meta, da)}
+    ${dos(meta, da)}
   </body></html>`;
   return fines(html);
 }
@@ -324,7 +358,7 @@ function css(m, da) {
   };
   return `
   @page{size:${F.l} ${F.h};margin:0}
-  @page texte{margin:13mm 13mm 16mm;background:${c.papier};
+  @page texte{margin:12mm 10mm 15mm;background:${c.papier};
     @bottom-left{content:"${echap(m.court || m.titre)}";font:600 7pt "Hanken Grotesk";color:#8A8F98}
     @bottom-right{content:counter(page);font:800 8pt "Hanken Grotesk";color:${c.fonce}}}
   :root{--p:${c.primaire};--f:${c.fonce};--a:${c.accent};--surA:${c.surAccent};--fond:${c.fond};--papier:${c.papier};
@@ -391,7 +425,8 @@ function css(m, da) {
   .mots-cles i{color:var(--a);margin:0 2mm;font-style:normal}
 
   /* Licence, sommaire, auteur */
-  .page-licence{background:var(--fond)}
+  .licence{position:absolute!important;left:13mm;right:13mm;bottom:11mm;display:flex;gap:2.5mm;align-items:flex-start;font-family:var(--util);font-size:8pt;line-height:1.4;color:#5A5F68;border-top:1px solid rgba(0,0,0,.12);padding-top:3mm}
+  .licence svg{flex:none;width:4mm;height:4mm;color:var(--erreur)}
   .bande{margin-top:16mm;background:var(--f);color:#fff;display:flex;align-items:center;justify-content:center;gap:2mm;padding:3.5mm;font-family:var(--titre);font-size:12pt;text-transform:uppercase;letter-spacing:.02em}
   .bande svg{color:var(--a)}
   .page-licence p,.page-auteur p{font-size:calc(var(--c)*.78);line-height:1.45;margin-bottom:3.5mm}
@@ -413,9 +448,16 @@ function css(m, da) {
   /* Ouvertures de chapitre : numéro plein, pas d'outline, pas de pilule */
   .ouv h1{font-size:25pt;margin-bottom:4mm}
   .ouv .objectif{font-weight:600;font-size:calc(var(--c)*.82);line-height:1.4;margin-bottom:3mm}
-  .ouv .intro{font-size:calc(var(--c)*.72);line-height:1.45}
+  .ouv .intro{font-size:calc(var(--c)*.84);line-height:1.45}
   .ouv-meta{font-size:7.5pt;opacity:.85}
   .ouv-visuel{display:flex;justify-content:center}
+  .illu{display:block;height:100%;max-height:62mm;width:auto;max-width:100%;--peau:#B9814F}
+  .ouv-haut:has(.illu){align-items:flex-end}
+  .ouv-haut .illu{height:64mm}
+  .ouv-scinde .illu{max-height:52mm}
+  .illu-flux{display:flex;flex-direction:column;align-items:center;margin:5mm 0;break-inside:avoid}
+  .illu-flux .illu{height:46mm}
+  .illu-flux figcaption{text-align:center;color:#6A6F78}
   /* plein */
   .ouv-plein{background:var(--f);color:#fff;padding:12mm;display:flex;flex-direction:column}
   .num-plein{font-family:var(--titre);font-size:64pt;line-height:.9;color:var(--a);margin-bottom:6mm}
@@ -442,6 +484,18 @@ function css(m, da) {
   .ouv-scinde .ouv-meta{margin-top:auto;border-top:1px solid #ddd;padding-top:3mm}
 
   /* Page respiration */
+  /* Captures annotées : l'image réelle, un cadre fin, des repères et flèches d'une seule couleur vive */
+  .capture{margin:5mm 0 6mm;break-inside:avoid}
+  .cap-img{position:relative;border:1px solid #CFCFCF;border-radius:1.5mm;overflow:hidden;background:#fff}
+  .cap-img img{display:block;width:100%;height:auto}
+  .cap-img svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+  .cap-fl{stroke:var(--erreur);stroke-linecap:round}
+  .cap-pointe{fill:var(--erreur)}
+  .cap-rep{fill:var(--erreur);stroke:#fff}
+  .cap-n{fill:#fff;font-family:var(--util);font-weight:800;text-anchor:middle;dominant-baseline:central}
+  .capture .rep{background:var(--erreur)}
+  .capture figcaption{font-size:.78em}
+  .cap-leg{color:#6A6F78;font-style:italic}
   .pause{background:var(--a);color:var(--surA);display:flex;flex-direction:column;justify-content:center;padding:0 14mm}
   .pause-chiffre{font-family:var(--titre);font-size:72pt;line-height:1;margin-bottom:5mm;letter-spacing:-.03em}
   .pause-texte{font-family:var(--titre);font-size:19pt;line-height:1.2}
@@ -478,7 +532,7 @@ function css(m, da) {
   .resultat{border:1.5px solid var(--p);border-radius:3mm;background:#fff;overflow:hidden}
   .resultat-label{display:block;background:var(--p);color:#fff;font-size:.62em;font-weight:800;letter-spacing:.1em;padding:.4em 1.6em;text-transform:uppercase}
   .resultat-corps{padding:.7em 1em;font-size:.95em}
-  .resultat-corps.mono{font-family:var(--mono,'JetBrains Mono'),monospace;font-size:.82em}
+  .resultat-corps.mono{font-family:var(--mono,'JetBrains Mono'),monospace;font-size:.82em;overflow-wrap:anywhere;line-height:1.45}
   .encart{display:flex;gap:.6em;border-radius:3mm;padding:.8em 1em;font-size:.9em;line-height:1.4}
   .encart svg{flex:none;font-size:1.25em;margin-top:.05em}
   .erreur{background:#FFE9E4}.erreur svg{color:var(--erreur)}
@@ -510,8 +564,10 @@ function css(m, da) {
   .dos-centre{position:absolute!important;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4mm}
   .dos-centre .logo{font-size:20pt}
   .dos-centre .logo img{height:1.8em}
-  .dos-centre p{font-size:9pt;opacity:.7;max-width:90mm;text-align:center}
-  .dos-bas{position:absolute!important;bottom:11mm;left:0;right:0;text-align:center;font-size:8pt;opacity:.8;line-height:1.5}
+  .dos-centre p{font-family:var(--util);font-size:10pt;opacity:.8;max-width:100mm;text-align:center;line-height:1.45}
+  .dos-centre .suite{opacity:1;margin-top:6mm;font-size:11pt}
+  .dos-bas{position:absolute!important;bottom:11mm;left:0;right:0;text-align:center;font-family:var(--util);font-size:9pt;opacity:.85;line-height:1.5}
+  .dos-bas b{font-size:11pt;color:var(--a)}
   `;
 }
 
@@ -551,6 +607,7 @@ async function rendre(nav, html, fichierHtml, fichierPdf) {
 
 async function generer(source) {
   const src = lire(source);
+  DOSSIER = path.dirname(source);
   const nom = path.basename(source, '.md');
   const sortie = path.join(path.dirname(source), 'sortie');
   fs.mkdirSync(path.join(sortie, 'png'), { recursive: true });

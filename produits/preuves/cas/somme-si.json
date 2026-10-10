@@ -1,0 +1,63 @@
+{
+ "id": "somme-si",
+ "feuilles": {
+  "Ventes": [
+   [
+    "Date",
+    "Produit",
+    "Qté",
+    "Total FCFA"
+   ],
+   [
+    "02/10",
+    "Savon",
+    12,
+    6000
+   ],
+   [
+    "03/10",
+    "Huile 1 L",
+    5,
+    7500
+   ],
+   [
+    "04/10",
+    "Savon",
+    20,
+    10000
+   ],
+   [
+    "05/10",
+    "Riz 5 kg",
+    3,
+    13500
+   ],
+   [
+    null,
+    null,
+    "Savon"
+   ]
+  ]
+ },
+ "formules": [
+  {
+   "feuille": "Ventes",
+   "cellule": "D6",
+   "fr": "=SOMME.SI(B2:B5;\"Savon\";D2:D5)",
+   "attendu": 16000
+  }
+ ],
+ "capture": {
+  "feuille": "Ventes",
+  "plage": "A1:E7",
+  "cellule_active": "D6",
+  "zoom": 185
+ },
+ "largeurs": {
+  "B": 14,
+  "D": 14
+ },
+ "formats": {
+  "D2:D6": "# ##0"
+ }
+}

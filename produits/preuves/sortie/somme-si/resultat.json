@@ -1,0 +1,16 @@
+{
+  "id": "somme-si",
+  "ok": true,
+  "resultats": [
+    {
+      "feuille": "Ventes",
+      "cellule": "D6",
+      "formule_fr": "=SOMME.SI(B2:B5;\"Savon\";D2:D5)",
+      "formule_affichee": "=SOMME.SI(B2:B5;\"Savon\";D2:D5)",
+      "valeur": 16000.0,
+      "erreur": false,
+      "attendu": 16000,
+      "ok": true
+    }
+  ]
+}

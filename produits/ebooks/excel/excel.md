@@ -1,0 +1,180 @@
+---
+produit: excel
+da: atelier
+titre: Excel sans apprendre les formules
+titreCouv: Excel *sans apprendre* les formules
+titreVignette: Excel *sans* formules
+court: Excel sans formules
+collection: Méthode KAMTECH
+surtitre: Excel + IA · en français
+sousTitre: Tu écris ta demande en français, l'IA te donne la formule, tu la vérifies en 30 secondes.
+atouts: 100 prompts testés | 20 modèles en FCFA | Fiche mémo
+visuel: excel
+contenu: L'e-book PDF | 100 prompts Excel testés | 20 modèles Excel et Google Sheets en FCFA | La fiche mémo des 15 formules
+suite: Tu es comptable ? Le même principe, appliqué au SYSCOHADA : **Comptable 2.0**.
+edition: Octobre 2026
+---
+# Avant de commencer
+
+Tu n'as pas besoin de retenir SOMME.SI.ENS ni RECHERCHEV. Tu as besoin de savoir dire ce que tu veux, et de vérifier ce qu'on te donne.
+
+Ce livre t'apprend ces deux gestes. Chaque prompt a été envoyé à ChatGPT avant d'être imprimé ici. Chaque formule a été collée dans un vrai tableur, et les captures montrent le résultat obtenu, pas une maquette.
+
+## Ce qu'il te faut
+- Excel (PC ou téléphone) ou Google Sheets, gratuit.
+- ChatGPT, Gemini ou Claude, en version gratuite.
+- 20 minutes par chapitre.
+
+:::chapitre 00
+titre: Régler ton IA pour Excel
+objectif: obtenir une formule qui marche du premier coup dans ton Excel en français.
+intro: Nous avons posé les mêmes questions à ChatGPT de plusieurs façons. La plupart du temps, il répond juste. Mais trois pièges reviennent, et ils coûtent une heure à un débutant.
+duree: 15 min
+illustration: telephone-afro
+:::
+
+## Ce que nous avons testé
+
+Le 10 octobre 2026, nous avons envoyé 10 demandes à ChatGPT (modèles gpt-4o-mini et gpt-5-mini), puis collé chaque formule dans un tableur en français.
+
+Quand la question est écrite en français, la formule revient presque toujours en français, avec le point-virgule. C'est une bonne nouvelle. Les problèmes viennent d'ailleurs.
+
+## Piège 1 : la question en anglais
+
+Beaucoup de tutoriels sont en anglais. Si tu poses ta question en anglais, l'IA te répond avec des noms anglais et des virgules.
+
+:::resultat Réponse réelle de ChatGPT (question en anglais) | mono
+=IF(AND(D2 > 50000, C2 = "Grossiste"), "Remise 10%", "")
+:::
+
+Nous l'avons collée telle quelle dans un tableur en français :
+
+:::capture ../../preuves/sortie/si-anglais/capture.png | Capture réelle : LibreOffice Calc en français, 10 octobre 2026.
+1: 42,8 b | La formule anglaise, collée sans rien changer.
+2: 89,67 g4 | Le résultat : une erreur au lieu de « Remise 10% ».
+:::
+
+Dans Excel en français aussi, `IF` et `AND` sont inconnus : il faut `SI`, `ET` et des « ; ». La même question posée en français donne directement la bonne version :
+
+:::resultat Réponse réelle de ChatGPT (question en français) | mono
+=SI(ET(D2>50000; C2="Grossiste"); "Remise 10%"; "")
+:::
+
+:::capture ../../preuves/sortie/si-et/capture.png | La même formule, collée dans le même tableur.
+1: 58,6 b | La formule française, avec ET et les « ; ».
+2: 87,52 b4 | Awa est grossiste et dépasse 50 000 F : elle a la remise. Boris (détaillant) et Carine (30 000 F) n'ont rien.
+:::
+
+## Piège 2 : un mot anglais au milieu
+
+Nous avons posé deux fois à gpt-5-mini, sans réglage, une question de recherche de prix. Une des deux réponses, pourtant en français, contenait un nom anglais :
+
+:::resultat Réponse réelle de ChatGPT | mono
+=XLOOKUP(A2;Tarifs!A:A;Tarifs!B:B;"Non trouvé")
+:::
+
+En français, cette fonction s'appelle `RECHERCHEX`. Avec un nom qu'il ne reconnaît pas, Excel affiche l'erreur `#NOM?` au lieu du prix (aide Microsoft, « Comment corriger une erreur #NOM? »).
+
+Il y a un second piège : d'après Microsoft, RECHERCHEX « n'est pas disponible dans Excel 2016 et Excel 2019 ». Sur ces versions, encore très répandues, même le bon nom français donne une erreur.
+
+## Piège 3 : trop de choix
+
+Sans consigne, l'IA propose souvent deux ou trois formules « selon ta version ». Le débutant ne sait pas laquelle prendre. Une consigne claire règle ça : tu reçois une seule formule, adaptée à ton Excel.
+
+## Le message de réglage
+
+Copie ce texte au début de ta conversation avec l'IA. Mets ta version d'Excel (elle s'affiche dans Fichier, puis Compte). Remplace la partie sur tes colonnes à chaque nouveau tableau.
+
+:::prompt Réglage
+J'utilise Excel [2016, 2019, 2021 ou 365] en français. Donne-moi une seule formule, avec les noms de fonctions en français et le point-virgule ; comme séparateur. Mes données : [décris tes feuilles et tes colonnes]. Je veux : [le résultat attendu].
+:::
+
+Nous avons envoyé ce réglage à gpt-5-mini avec « Excel 2016 » et notre besoin : le prix d'un produit à partir de son code, ou « Code inconnu ». Réponse complète, en une ligne :
+
+:::resultat Réponse réelle de ChatGPT (avec le réglage) | mono
+=SIERREUR(RECHERCHEV(A2;Tarifs!A:B;2;FAUX);"Code inconnu")
+:::
+
+:::capture ../../preuves/sortie/recherchev-sierreur/capture.png | LibreOffice écrit 0 à la place de FAUX : c'est la même valeur.
+1: 68,8 b | La formule de l'IA, collée en B2 puis recopiée en B3.
+2: 48,72 d | P09 n'existe pas dans les tarifs : le message remplace l'erreur.
+:::
+
+:::astuce
+Sur Google Sheets, écris « J'utilise Google Sheets en français ». Les noms sont presque tous les mêmes qu'Excel.
+:::
+
+## Vérifier en 30 secondes
+
+L'IA peut se tromper même quand la formule est juste. Dans nos tests, ChatGPT a donné `=NB.SI(E:E; "Payé")` pour compter les clients qui ont payé, en ajoutant qu'il fallait « respecter les majuscules ». Nous avons vérifié :
+
+:::capture ../../preuves/sortie/nb-si-casse/capture.png | Payé, payé et PAYÉ sont comptés ; Impayé ne l'est pas.
+1: 38,5 b | La formule de l'IA, limitée aux lignes 2 à 6.
+2: 98,83 g | Résultat : 4. NB.SI ne fait pas la différence entre majuscules et minuscules.
+:::
+
+La formule est juste, l'explication est fausse. L'aide Microsoft le confirme : « NB.SI ignore la casse ».
+
+:::checklist Avant de garder une formule
+- Elle s'affiche sans erreur (#NOM?, #VALEUR!, #N/A).
+- Tu as vérifié le résultat sur 2 ou 3 lignes, de tête ou à la calculatrice.
+- Tu as changé une donnée : le résultat a bougé comme prévu.
+:::
+
+:::recap
+- Pose ta question en français.
+- Commence par le message de réglage : version, colonnes, résultat voulu.
+- Vérifie sur 2 ou 3 lignes avant de recopier la formule partout.
+:::
+
+:::exercice Maintenant
+Ouvre ChatGPT, colle le message de réglage et décris un tableau que tu utilises vraiment. Garde cette conversation : tu t'en serviras dans les chapitres suivants.
+:::
+
+:::chapitre 02
+titre: Les formules qui font le travail
+objectif: obtenir de l'IA les formules de tous les jours, et les vérifier sur tes propres chiffres.
+intro: Additionner selon une condition, décider entre deux cas, compter. Pour chaque formule : le message à envoyer, la vraie réponse de l'IA et la capture du résultat.
+duree: 25 min
+illustration: papier-lunettes
+:::
+
+## Additionner une seule catégorie
+
+Tu as la liste des ventes de la semaine et tu veux le total du savon seulement.
+
+:::prompt Prompt 2.1
+J'ai un tableau Excel : colonne B les produits, colonne D le total de chaque vente en FCFA, lignes 2 à 5. Donne-moi la formule pour avoir le total des ventes de Savon.
+:::
+
+:::resultat Réponse réelle de ChatGPT (gpt-4o-mini et gpt-5-mini) | mono
+=SOMME.SI(B2:B5;"Savon";D2:D5)
+:::
+
+:::capture ../../preuves/sortie/somme-si/capture.png | Capture réelle, LibreOffice Calc en français.
+1: 40,6 b | La formule, telle que l'IA l'a donnée.
+2: 31,57 d | Les deux lignes « Savon » : 6 000 + 10 000.
+3: 74,80 g | Le total : 16 000. Le compte est bon.
+:::
+
+:::erreur
+Copier la formule avec des virgules à la place des « ; ». Nous l'avons testé : le tableur affiche une erreur et ne calcule rien.
+:::
+
+## Décider entre deux cas
+
+La fonction SI sert dès que la réponse dépend d'une condition : remise ou pas, payé ou pas, en stock ou pas. C'est la formule SI(ET(…)) du chapitre 0.
+
+:::astuce
+Pour vérifier une formule SI, ajoute une ligne qui doit dire « non ». Si Boris le détaillant reçoit la remise, la condition est fausse.
+:::
+
+:::recap
+- Décris tes colonnes et la plage de lignes : l'IA écrit la bonne plage.
+- Vérifie le total de tête sur 2 ou 3 lignes.
+- Pour un SI, teste une ligne qui doit dire « oui » et une qui doit dire « non ».
+:::
+
+:::exercice Avec tes chiffres
+Prends une liste de ventes ou de dépenses à toi. Demande à l'IA le total d'une seule catégorie, colle la formule et vérifie le résultat de tête.
+:::

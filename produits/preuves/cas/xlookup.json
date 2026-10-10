@@ -1,0 +1,14 @@
+{
+ "id": "xlookup",
+ "feuilles": {
+  "Tarifs": [["Code","Prix FCFA"],["P01",2500],["P02",4000],["P03",7500],["P04",12000]],
+  "Facture": [["Code","XLOOKUP","RECHERCHEX","RECHERCHEV"],["P03"]]
+ },
+ "formules": [
+  {"feuille":"Facture","cellule":"B2","fr":"=XLOOKUP(A2;Tarifs!A:A;Tarifs!B:B;\"Non trouvé\")","attendu_erreur":"#NOM?"},
+  {"feuille":"Facture","cellule":"C2","fr":"=RECHERCHEX(A2;Tarifs!A:A;Tarifs!B:B;\"Non trouvé\")","attendu_erreur":"#NOM?"},
+  {"feuille":"Facture","cellule":"D2","fr":"=RECHERCHEV(A2;Tarifs!A:B;2;FAUX)","attendu":7500}
+ ],
+ "capture": {"feuille":"Facture","plage":"A1:E4","cellule_active":"B2","zoom":185},
+ "largeurs": {"A":10,"B":14,"C":14,"D":14}
+}

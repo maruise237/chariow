@@ -1,0 +1,10 @@
+[
+  { "id": "telephone-afro", "body": "Device", "hair": "Afro", "face": "Smile", "facialHair": "None", "accessory": "None" },
+  { "id": "papier-lunettes", "body": "Paper", "hair": "ShortCurly", "face": "Calm", "facialHair": "None", "accessory": "GlassRound" },
+  { "id": "explique-twists", "body": "PointingUp", "hair": "Twists", "face": "Explaining", "facialHair": "None", "accessory": "None" },
+  { "id": "assis-bantu", "body": "MediumBW", "hair": "BantuKnots", "face": "Cute", "facialHair": "None", "accessory": "None" },
+  { "id": "debout-bras-croises", "body": "CrossedArmsWB", "hair": "CornRows", "face": "Smile", "facialHair": "None", "accessory": "None" },
+  { "id": "pointe-hijab", "body": "PointingFingerWB", "hair": "Hijab", "face": "Smile", "facialHair": "None", "accessory": "None" },
+  { "id": "cafe-chignon", "body": "Coffee", "hair": "BunCurly", "face": "Calm", "facialHair": "None", "accessory": "None" },
+  { "id": "marche-turban", "body": "WalkingWB", "hair": "Turban", "face": "Smile", "facialHair": "None", "accessory": "None" }
+]

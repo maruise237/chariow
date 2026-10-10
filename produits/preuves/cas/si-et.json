@@ -1,0 +1,67 @@
+{
+ "id": "si-et",
+ "feuilles": {
+  "Ventes": [
+   [
+    "Client",
+    "Produit",
+    "Type",
+    "Vente FCFA",
+    "Remise"
+   ],
+   [
+    "Awa",
+    "Riz 50 kg",
+    "Grossiste",
+    75000
+   ],
+   [
+    "Boris",
+    "Huile 20 L",
+    "Détaillant",
+    80000
+   ],
+   [
+    "Carine",
+    "Savon",
+    "Grossiste",
+    30000
+   ]
+  ]
+ },
+ "formules": [
+  {
+   "feuille": "Ventes",
+   "cellule": "E2",
+   "fr": "=SI(ET(D2>50000; C2=\"Grossiste\"); \"Remise 10%\"; \"\")",
+   "attendu": "Remise 10%"
+  },
+  {
+   "feuille": "Ventes",
+   "cellule": "E3",
+   "fr": "=SI(ET(D3>50000; C3=\"Grossiste\"); \"Remise 10%\"; \"\")",
+   "attendu": ""
+  },
+  {
+   "feuille": "Ventes",
+   "cellule": "E4",
+   "fr": "=SI(ET(D4>50000; C4=\"Grossiste\"); \"Remise 10%\"; \"\")",
+   "attendu": ""
+  }
+ ],
+ "capture": {
+  "feuille": "Ventes",
+  "plage": "A1:E5",
+  "cellule_active": "E2",
+  "zoom": 165
+ },
+ "largeurs": {
+  "B": 12,
+  "C": 12,
+  "D": 13,
+  "E": 14
+ },
+ "formats": {
+  "D2:D4": "# ##0"
+ }
+}

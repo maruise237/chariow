@@ -53,10 +53,10 @@ On choisit la DA avec 4 questions :
 
 | DA | Pour qui | Titres | Couverture | Ouvertures | Corps | Motif | Produits |
 |---|---|---|---|---|---|---|---|
-| **Cabinet** | Pros, premium, référence | Zodiak (serif éditorial, Fontshare) | Typographique : le titre est l'image | Scindée (colonne + texte) | 13,5 pt, ~48 car./ligne | Filets fins | Comptable 2.0 |
-| **Atelier** | Apprenants motivés, outil | Cabinet Grotesk (grotesque à caractère, Fontshare) | Scène : réplique d'Excel avec repères numérotés | Pleine page / panneau en alternance | 15 pt, ~44 car./ligne | Grille de tableur | Excel avec l'IA |
-| **Marché** | Grand public, petit prix, téléphone | Bricolage Grotesque (chaleureux) | Scène : le ticket « bilan du jour » | Panneau / pleine page | 16,5 pt, ~40 car./ligne | Losanges façon pagne, discrets | Comptes de boutique |
-| **Studio** | Créatifs, vidéo, réseaux | Supreme (Fontshare) | Typographique sur fond sombre | Pleine page | 15,5 pt | Grille | Futur e-book montage vidéo |
+| **Cabinet** | Pros, premium, référence | Zodiak (serif éditorial, Fontshare) | Scène : l'écriture au journal SYSCOHADA, annotée | Scindée (colonne + texte) | 15,5 pt | Filets fins | Comptable 2.0 |
+| **Atelier** | Apprenants motivés, outil | Cabinet Grotesk (grotesque à caractère, Fontshare) | Scène : réplique d'Excel avec repères numérotés | Pleine page / panneau en alternance | 17 pt | Grille de tableur | Excel avec l'IA |
+| **Marché** | Grand public, petit prix, téléphone | Bricolage Grotesque (chaleureux) | Scène : le ticket « bilan du jour » | Panneau / pleine page | 18 pt | Losanges façon pagne, discrets | Comptes de boutique |
+| **Studio** | Créatifs, vidéo, réseaux | Supreme (Fontshare) | Typographique sur fond sombre | Pleine page | 17 pt | Grille | Futur e-book montage vidéo |
 
 Pourquoi la police des titres change alors que la recherche conseille de la garder constante :
 - Nos trois publics sont trop éloignés pour un même ton : un comptable qui paie 4 900 F n'achète pas sur les mêmes signaux qu'un commerçant à 1 500 F.
@@ -85,7 +85,9 @@ On n'écrit pas « page 12 = gabarit B ». On écrit le contenu avec des blocs, 
 ## 4. Les règles chiffrées
 
 1. **Format** : 148 × 185 mm (portrait 4:5, largeur A5). Affichée en entier sur un téléphone d'environ 400 px de large, la page est réduite à 0,72 environ.
-2. **Corps du texte** : 13,5 pt (Cabinet), 15 pt (Atelier) et 16,5 pt (Marché) en Literata, soit 13 à 16 px réels sur téléphone et 40 à 48 caractères par ligne. On ne descend jamais sous 13,5 pt pour le texte courant.
+2. **Corps du texte** (relevé le 10 octobre 2026, le texte était jugé trop petit sur téléphone) : 15,5 pt (Cabinet), 17 pt (Atelier et Studio), 18 pt (Marché), en Literata. Marges de page : 10 mm à gauche et à droite.
+   - Le calcul : la page fait 148 mm = 559 px CSS. Un téléphone courant affiche environ 393 px de large, donc la page en pleine largeur est réduite à 393 / 559 = 0,70. Or 1 pt = 1,333 px. 17 pt donne 22,7 px × 0,70 = **16 px à l'écran**, la taille de texte par défaut des navigateurs mobiles. 15,5 pt donne 14,5 px et 18 pt donne 16,8 px.
+   - On ne descend jamais sous 15,5 pt pour le texte courant.
 3. **Paragraphes** : 60 mots au plus. Le moteur alerte au-delà de 75.
 4. **Couverture** : 7 mots de titre au plus, un seul mot en couleur d'accent, lisible à 200 px (vérifier `*-miniature-200px-01.png`). Pas de badge au-dessus du titre, et les atouts tiennent sur une seule ligne de texte.
 5. **Polices** : une police de titre par DA, plus les trois polices communes. Rien d'autre.
@@ -161,9 +163,22 @@ D'après [Butterick](https://practicaltypography.com/tables.html) et [Matthew St
    - Excel : interface réelle annotée ;
    - Comptable 2.0 : typographie et documents comptables fidèles ;
    - Comptes de boutique : objets du quotidien (ticket, cahier), plus un motif géométrique discret façon pagne, en accent seulement.
-5. Images générées par IA : seulement pour d'éventuelles scènes de couverture, avec un style verrouillé (même bloc de style, palette fixe, aucun texte dans l'image). Coût estimé : 3 à 7 $ pour 30 images via treg. À décider : rien n'a été généré.
+5. **Personnages** : la bibliothèque [Open Peeps](https://www.openpeeps.com/) de Pablo Stanley, sous licence CC0 (usage commercial libre, sans attribution), rendue en SVG par `illustrations/generer.js`. C'est la seule bibliothèque vérifiée qui soit à la fois libre de droits et dans le style choisi : trait noir, aplat d'une seule couleur. Les coiffures (afro, twists, bantu knots, nattes, hijab) servent à représenter nos lecteurs.
+   - **Dosage** : une illustration par ouverture de chapitre au plus, aucune dans les pages techniques (formules, écritures). Une image décorative est ignorée, alors qu'une image qui montre quelque chose est regardée (Nielsen Norman Group, [Photos as Web Content](https://www.nngroup.com/articles/photos-as-web-content/)). Le GOV.UK Design System, lui, dit : « n'utiliser une image que s'il y a un vrai besoin » ([Images](https://design-system.service.gov.uk/styles/images)).
+   - **Trait noir** : jamais sur un fond foncé. Le moteur passe l'ouverture en « panneau » (haut clair) quand le chapitre a une illustration.
+6. **Captures annotées** (`:::capture`) : une vraie capture, avec 5 repères numérotés au plus, des flèches d'une seule couleur (le rouge de la marque) et une explication d'une ligne par repère sous l'image.
+7. Images générées par IA : pas utilisées pour l'instant. Toute image Gemini porte un filigrane invisible SynthID, et une image purement générée n'est pas protégeable par le droit d'auteur (avis du Copyright Office américain, 2025).
+
+### Preuves
+Rien n'est inventé. Chaque prompt est envoyé à ChatGPT avant publication, avec la réponse brute archivée dans `produits/preuves/tests-ia.md`. Chaque formule est calculée dans un vrai tableur (LibreOffice Calc en français) par `produits/preuves/tableur.py`, qui fournit aussi les captures. Une réponse d'IA citée dans le livre est toujours une vraie réponse, avec le nom du modèle et la date.
+
+### Pages
+Pas de page sans contenu utile :
+- les droits d'usage tiennent en 3 lignes au bas du sommaire ;
+- « à propos » et l'adresse de la boutique vont sur la dernière page ;
+- pas de sommaire s'il n'y a pas de chapitre.
 
 ## 8. Ce qui reste à décider ou à tester
 - Le vrai logo KAMTECH et ses couleurs : la couche 1 est prête à les recevoir dans `da.js`, via `MARQUE`.
-- Tester les 3 PDF sur 2 ou 3 téléphones Android réels (dont un bas de gamme).
+- Tester les 3 PDF sur 2 ou 3 téléphones Android réels (dont un bas de gamme) : le calcul des tailles reste théorique tant que ce n'est pas fait.
 - A/B test en pub : couverture plate ou mockup 3D.

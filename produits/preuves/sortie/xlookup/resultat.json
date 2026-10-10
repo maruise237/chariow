@@ -1,0 +1,36 @@
+{
+  "id": "xlookup",
+  "ok": true,
+  "resultats": [
+    {
+      "feuille": "Facture",
+      "cellule": "B2",
+      "formule_fr": "=XLOOKUP(A2;Tarifs!A:A;Tarifs!B:B;\"Non trouvé\")",
+      "formule_affichee": "=xlookup(A2;$Tarifs.A:A;$Tarifs.B:B;\"Non trouvé\")",
+      "valeur": "#NOM ?",
+      "erreur": true,
+      "attendu": "#NOM?",
+      "ok": true
+    },
+    {
+      "feuille": "Facture",
+      "cellule": "C2",
+      "formule_fr": "=RECHERCHEX(A2;Tarifs!A:A;Tarifs!B:B;\"Non trouvé\")",
+      "formule_affichee": "=recherchex(A2;$Tarifs.A:A;$Tarifs.B:B;\"Non trouvé\")",
+      "valeur": "#NOM ?",
+      "erreur": true,
+      "attendu": "#NOM?",
+      "ok": true
+    },
+    {
+      "feuille": "Facture",
+      "cellule": "D2",
+      "formule_fr": "=RECHERCHEV(A2;Tarifs!A:B;2;FAUX)",
+      "formule_affichee": "=RECHERCHEV(A2;$Tarifs.A:B;2;0)",
+      "valeur": 7500.0,
+      "erreur": false,
+      "attendu": 7500,
+      "ok": true
+    }
+  ]
+}

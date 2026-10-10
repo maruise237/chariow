@@ -1,0 +1,43 @@
+{
+ "id": "si-anglais",
+ "feuilles": {
+  "Ventes": [
+   [
+    "Client",
+    "Produit",
+    "Type",
+    "Vente FCFA",
+    "Remise"
+   ],
+   [
+    "Awa",
+    "Riz 50 kg",
+    "Grossiste",
+    75000
+   ]
+  ]
+ },
+ "formules": [
+  {
+   "feuille": "Ventes",
+   "cellule": "E2",
+   "fr": "=IF(AND(D2 > 50000, C2 = \"Grossiste\"), \"Remise 10%\", \"\")",
+   "attendu_erreur": "Err:509"
+  }
+ ],
+ "capture": {
+  "feuille": "Ventes",
+  "plage": "A1:E3",
+  "cellule_active": "E2",
+  "zoom": 165
+ },
+ "largeurs": {
+  "B": 12,
+  "C": 12,
+  "D": 13,
+  "E": 14
+ },
+ "formats": {
+  "D2": "# ##0"
+ }
+}

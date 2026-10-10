@@ -1,0 +1,16 @@
+{
+  "id": "nb-si-casse",
+  "ok": true,
+  "resultats": [
+    {
+      "feuille": "Clients",
+      "cellule": "E7",
+      "formule_fr": "=NB.SI(E2:E6;\"Payé\")",
+      "formule_affichee": "=NB.SI(E2:E6;\"Payé\")",
+      "valeur": 4.0,
+      "erreur": false,
+      "attendu": 4,
+      "ok": true
+    }
+  ]
+}
