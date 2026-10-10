@@ -165,6 +165,7 @@ def construire(doc, cas):
         cell = feuilles.getByName(fo["feuille"]).getCellRangeByName(fo["cellule"])
         cell.setPropertyValue("FormulaLocal", fo["fr"])
     # largeurs de colonnes (en nombre de caractères)
+    serre = cas.get("largeurs_serrees")
     for fn in noms:
         f = feuilles.getByName(fn)
         for col, car in cas.get("largeurs", {}).items():
@@ -180,6 +181,32 @@ def construire(doc, cas):
         if cle == -1:
             cle = nf.addNew(code, loc)
         f.getCellRangeByName(adr).NumberFormat = cle
+    if serre is not None:
+        serrer_colonnes(doc, cas, serre)
+
+
+def serrer_colonnes(doc, cas, marge):
+    """Largeurs serrées : chaque colonne de la plage colle à son contenu.
+
+    Option « largeurs_serrees » du cas : marge (en 1/100 mm) ajoutée de part et
+    d'autre au contenu le plus large (largeur optimale de Calc, qui tient compte
+    du format affiché : jamais de ###). Une colonne de la plage sans contenu
+    prend la largeur donnée par « largeurs » (en caractères), sinon la marge.
+    """
+    doc.calculateAll()
+    cap = cas["capture"]
+    f = doc.Sheets.getByName(cap["feuille"])
+    plage = f.getCellRangeByName(cap["plage"]).RangeAddress
+    for c in range(plage.StartColumn, plage.EndColumn + 1):
+        col = f.Columns.getByIndex(c)
+        zone = f.getCellRangeByPosition(c, 0, c, 100)
+        if not any(v != "" for lig in zone.getDataArray() for v in lig):
+            nom = col.Name
+            car = cas.get("largeurs", {}).get(nom)
+            col.Width = largeur_colonne_mm100(car) if car is not None else 2 * marge
+            continue
+        col.OptimalWidth = True
+        col.Width = col.Width + 2 * marge
 
 
 def lire_resultat(cell):
@@ -294,9 +321,9 @@ def main_cas(chemin_cas, doc_ctx_factory=None):
         configurer_fenetre(doc, cas)
         time.sleep(4)
         brut = capturer(cas, None, tmp)
-        recadrer(brut, os.path.join(sortie, "capture.png"), cas, doc)
+        mesures = recadrer(brut, os.path.join(sortie, "capture.png"), cas, doc)
         doc.close(True)
-        return tout_ok, resultats
+        return tout_ok, resultats, mesures
     finally:
         arreter(proc)
         shutil.rmtree(tmp, ignore_errors=True)
@@ -353,38 +380,91 @@ def mesurer_ecran(im, nb_col, nb_lig):
     x_fin = seps_x[nb_col]      # seps_x[0] = x0
     y_fin = seps_y[nb_lig]      # seps_y[0] = y_entete
     # bandeau de la barre de formule : à droite (zone de texte vide, blanche),
-    # en remontant depuis les en-têtes, on traverse le gris puis le blanc
-    xb = larg - 300
-    y = y_entete - 1
-    gris = im.getpixel((xb, y))[:3]
-    while im.getpixel((xb, y))[:3] == gris:
-        y -= 1
-    bar_bas = y + 1                      # sous le cadre bas du champ de saisie
-    while im.getpixel((xb, y))[:3] != gris:
-        y -= 1
-    bar_haut = max(y - 3, 0)             # au-dessus du cadre haut du champ
+    # en remontant depuis les en-têtes, on traverse le gris puis le blanc.
+    # On essaie plusieurs abscisses : une lettre de colonne peut tomber pile
+    # sur celle qu'on lit (la bande mesurée serait alors minuscule).
+    for decalage in range(0, 400, 7):
+        xb = larg - 300 - decalage
+        y = y_entete - 1
+        gris = im.getpixel((xb, y))[:3]
+        while im.getpixel((xb, y))[:3] == gris:
+            y -= 1
+        bar_bas = y + 1                      # sous le cadre bas du champ de saisie
+        while im.getpixel((xb, y))[:3] != gris:
+            y -= 1
+        bar_haut = max(y - 3, 0)             # au-dessus du cadre haut du champ
+        if bar_bas - bar_haut > 30:
+            break
+    else:
+        raise RuntimeError("barre de formule introuvable")
     return {"x0": x0, "y_entete": y_entete, "x_fin": x_fin, "y_fin": y_fin,
             "bar_haut": bar_haut, "bar_bas": bar_bas, "xb": xb}
+
+
+def bord_champ_formule(im, m):
+    """Abscisse du cadre gauche du champ de saisie de la formule."""
+    y = m["bar_haut"] + 8              # au-dessus du texte, dans le blanc du champ
+    x = m["xb"]
+    while im.getpixel((x, y))[:3] == (255, 255, 255):
+        x -= 1
+    return x
+
+
+def debut_fx(im, m):
+    """Abscisse de l'icône « fx » (bleue) : premier pixel bleu de la barre."""
+    for x in range(0, m["xb"]):
+        for y in range(m["bar_haut"], m["bar_bas"]):
+            r, g, b = im.getpixel((x, y))[:3]
+            if b > r + 60 and b > 120:
+                return x
+    raise RuntimeError("icône fx introuvable")
 
 
 def fin_texte_formule(im, m):
     """Abscisse du dernier pixel de texte dans le champ de formule."""
     y1, y2 = m["bar_haut"] + 6, m["bar_bas"] - 6
-    for x in range(m["xb"] - 40, 400, -1):
+    for x in range(m["xb"] - 40, bord_champ_formule(im, m) + 2, -1):
         for y in range(y1, y2):
             if max(im.getpixel((x, y))[:3]) < 160:
                 return x
-    return 400
+    raise RuntimeError("texte de formule introuvable")
+
+
+def hauteur_glyphe(im, x1, x2, y1, y2, rang=0):
+    """Hauteur (px) du glyphe n°rang (0 = premier) de texte noir dans la zone.
+
+    Mesure d'une majuscule : on prend un glyphe de départ qui est une majuscule
+    ou un chiffre (« C » de Client, « S » de SOMME.SI...).
+    """
+    cols = []
+    for x in range(x1, x2):
+        ys = [y for y in range(y1, y2) if max(im.getpixel((x, y))[:3]) < 140]
+        cols.append((min(ys), max(ys)) if ys else None)
+    runs, cur = [], []
+    for c in cols + [None]:
+        if c:
+            cur.append(c)
+        elif cur:
+            runs.append(cur)
+            cur = []
+    g = runs[rang]
+    return max(c[1] for c in g) - min(c[0] for c in g) + 1
 
 
 def recadrer(brut, cible, cas, doc):
-    """Recadre la capture : barre de formule + exactement la plage demandée.
+    """Recadre la capture : barre de formule (à partir de « fx ») + la plage.
 
-    Les bandes sont repérées par analyse d'image (voir mesurer_ecran) : le
-    recadrage tombe sur le dernier trait de la plage, sans colonne ni ligne en
-    trop. Si le texte de la formule dépasse la plage, la barre est gardée en
-    entier et la grille est complétée à droite par du blanc (jamais de colonne
-    voisine). L'image reste une capture réelle : aucun pixel n'est dessiné.
+    Les bandes sont repérées par analyse d'image (voir mesurer_ecran). Dans la
+    bande du haut on supprime la zone de nom (« D6 » et sa flèche) : on garde de
+    l'icône fx jusqu'à la fin du texte de la formule + une marge. Le recadrage
+    de la grille tombe sur le dernier trait de la plage. Si la barre est plus
+    large que la grille, elle est réduite (échelle indépendante) pour tenir dans
+    la largeur de la grille, sans que ses majuscules tombent sous 60 % de celles
+    de la grille ; sinon la grille est complétée à droite par du blanc. L'image
+    reste une capture réelle : aucun pixel n'est dessiné, seulement recadrés ou
+    mis à l'échelle.
+
+    Renvoie un dict de mesures (pixels de la capture brute et de l'image finale).
     """
     from PIL import Image
     cap = cas["capture"]
@@ -393,18 +473,42 @@ def recadrer(brut, cible, cas, doc):
     nb_col = plage.EndColumn - plage.StartColumn + 1
     nb_lig = plage.EndRow - plage.StartRow + 1
     im = Image.open(brut).convert("RGB")
+    if os.environ.get("KT_BRUT"):
+        shutil.copy(brut, os.path.join(os.environ["KT_BRUT"], cas["id"] + ".png"))
     m = mesurer_ecran(im, nb_col, nb_lig)
     larg_grille = m["x_fin"] + 3
-    larg = max(larg_grille, fin_texte_formule(im, m) + 24)
-    barre = im.crop((0, m["bar_haut"], larg, m["bar_bas"]))
+    x_fx = max(debut_fx(im, m) - 8, 0)
+    x_texte = fin_texte_formule(im, m)
+    barre = im.crop((x_fx, m["bar_haut"], x_texte + 16, m["bar_bas"]))
     grille = im.crop((0, m["bar_bas"], larg_grille, m["y_fin"] + 3))
+
+    # hauteur des majuscules (px bruts) : 1re lettre de A1 ; 1re lettre après « = »
+    xa = m["x0"] + 6
+    cap_g = hauteur_glyphe(im, xa, xa + 60, m["y_entete"] + 4, m["y_entete"] + 36)
+    xt = bord_champ_formule(im, m) + 4
+    cap_b = hauteur_glyphe(im, xt, x_texte + 1, m["bar_haut"] + 6, m["bar_bas"] - 6, 1)
+
+    larg_barre_brute = barre.width
+    facteur = 1.0
+    if barre.width > grille.width:
+        facteur = max(grille.width / barre.width, 0.6 * cap_g / cap_b)
+        facteur = min(facteur, 1.0)
+        barre = barre.resize((round(barre.width * facteur), round(barre.height * facteur)),
+                             Image.LANCZOS)
+    larg = max(grille.width, barre.width)
     toile = Image.new("RGB", (larg, barre.height + grille.height), (255, 255, 255))
     toile.paste(barre, (0, 0))
     toile.paste(grille, (0, barre.height))
     cadre = Image.new("RGB", (larg + 8, toile.height + 8), (255, 255, 255))
     cadre.paste(toile, (4, 4))
-    h = round(cadre.height * LARGEUR_FINALE / cadre.width)
+    echelle = LARGEUR_FINALE / cadre.width
+    h = round(cadre.height * echelle)
     cadre.resize((LARGEUR_FINALE, h), Image.LANCZOS).save(cible)
+    return {"plage_brute": larg_grille, "barre_brute": larg_barre_brute,
+            "facteur_barre": round(facteur, 3), "echelle": round(echelle, 3),
+            "cap_grille": round(cap_g * echelle, 1),
+            "cap_barre": round(cap_b * facteur * echelle, 1),
+            "taille": (LARGEUR_FINALE, h)}
 
 
 def cas_a_lancer(args):
@@ -421,11 +525,12 @@ if __name__ == "__main__":
     code = 0
     try:
         for c in cas_a_lancer(sys.argv[1:]):
-            ok, res = main_cas(c)
+            ok, res, mes = main_cas(c)
             print(("OK  " if ok else "ECHEC ") + os.path.basename(c))
             for r in res:
                 print("   %s!%s %s -> %r (attendu %r)" % (r["feuille"], r["cellule"],
                       r["formule_fr"], r["valeur"], r["attendu"]))
+            print("   mesures : " + json.dumps(mes))
             if not ok:
                 code = 1
     finally:

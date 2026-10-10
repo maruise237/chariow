@@ -58,9 +58,12 @@
  },
  "largeurs": {
   "A": 12,
-  "B": 16
+  "B": 16,
+  "C": 4,
+  "D": 4
  },
  "formats": {
   "B2": "# ##0"
- }
+ },
+ "largeurs_serrees": 40
 }

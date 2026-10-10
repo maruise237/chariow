@@ -486,8 +486,7 @@ function css(m, da) {
 
   /* Page respiration */
   /* Captures annotées : l'image réelle, un cadre fin, des repères et flèches d'une seule couleur vive */
-  .capture{margin:5mm -6mm 6mm;break-inside:avoid}
-  .capture figcaption{padding:0 6mm}
+  .capture{margin:5mm 0 6mm;break-inside:avoid}
   .cap-img{position:relative}
   .cap-img img{display:block;width:100%;height:auto;border:1px solid #CFCFCF;border-radius:1.5mm;background:#fff}
   .cap-haut{padding-top:9%}

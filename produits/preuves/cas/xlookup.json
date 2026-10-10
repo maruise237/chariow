@@ -10,5 +10,6 @@
   {"feuille":"Facture","cellule":"D2","fr":"=RECHERCHEV(A2;Tarifs!A:B;2;FAUX)","attendu":7500}
  ],
  "capture": {"feuille":"Facture","plage":"A1:E4","cellule_active":"B2","zoom":185},
- "largeurs": {"A":10,"B":14,"C":14,"D":14}
+ "largeurs": {"A":10,"B":14,"C":14,"D":14,"E":4},
+ "largeurs_serrees": 40
 }

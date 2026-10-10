@@ -59,5 +59,6 @@
  },
  "formats": {
   "D2:D6": "# ##0"
- }
+ },
+ "largeurs_serrees": 40
 }
