@@ -1,0 +1,8 @@
+{
+  "macro": "t02-gpt4omini",
+  "fichier": "t02-gpt4omini.bas",
+  "execution": {
+    "ok": false,
+    "message": "BLOQUÉE : la macro attend (probablement une boîte de dialogue)"
+  }
+}
