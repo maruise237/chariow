@@ -67,12 +67,15 @@
  ],
  "capture": {
   "feuille": "Ventes",
-  "plage": "A1:D6",
+  "plage": "A1:E6",
   "cellule_active": "D3",
   "zoom": 185
  },
  "formats": {
   "B2:D6": "# ##0"
  },
- "largeurs_serrees": 40
+ "largeurs_serrees": 40,
+ "largeurs": {
+  "E": 4
+ }
 }

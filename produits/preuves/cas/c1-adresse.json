@@ -37,12 +37,15 @@
  "formules": [],
  "capture": {
   "feuille": "Ventes",
-  "plage": "A1:D5",
+  "plage": "A1:E5",
   "cellule_active": "C3",
   "zoom": 185
  },
  "formats": {
   "B2:D5": "# ##0"
  },
- "largeurs_serrees": 40
+ "largeurs_serrees": 40,
+ "largeurs": {
+  "E": 4
+ }
 }

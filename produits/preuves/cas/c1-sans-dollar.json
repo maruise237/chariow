@@ -62,7 +62,7 @@
  ],
  "capture": {
   "feuille": "Ventes",
-  "plage": "A1:C6",
+  "plage": "A1:D6",
   "cellule_active": "C3",
   "zoom": 185
  },
@@ -70,5 +70,8 @@
   "B2:B6": "# ##0",
   "C2:C6": "0,0%"
  },
- "largeurs_serrees": 40
+ "largeurs_serrees": 40,
+ "largeurs": {
+  "D": 4
+ }
 }

@@ -191,13 +191,10 @@
  ],
  "capture": {
   "feuille": "Stock",
-  "plage": "A1:G5",
+  "plage": "A1:F5",
   "cellule_active": "C3",
   "zoom": 165
  },
  "formats": {},
- "largeurs_serrees": 40,
- "largeurs": {
-  "G": 5
- }
+ "largeurs_serrees": 40
 }
