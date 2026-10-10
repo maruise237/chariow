@@ -1,0 +1,139 @@
+{
+ "id": "c7-momo-piege",
+ "note": "espace après Orange Money ligne 6",
+ "feuilles": {
+  "Bilan": [
+   [
+    "Opérateur",
+    "Entrées",
+    "Sorties",
+    "Frais",
+    "Solde"
+   ],
+   [
+    "Orange Money"
+   ],
+   [
+    "MTN MoMo"
+   ]
+  ],
+  "Opérations": [
+   [
+    "Date",
+    "Opérateur",
+    "Type",
+    "Montant",
+    "Frais"
+   ],
+   [
+    "01/10",
+    "Orange Money",
+    "Entrée",
+    150000,
+    0
+   ],
+   [
+    "02/10",
+    "Orange Money",
+    "Sortie",
+    25000,
+    250
+   ],
+   [
+    "03/10",
+    "MTN MoMo",
+    "Entrée",
+    80000,
+    0
+   ],
+   [
+    "04/10",
+    "MTN MoMo",
+    "Sortie",
+    30000,
+    300
+   ],
+   [
+    "05/10",
+    "Orange Money ",
+    "Sortie",
+    10000,
+    150
+   ],
+   [
+    "06/10",
+    "MTN MoMo",
+    "Sortie",
+    15000,
+    200
+   ],
+   [
+    "07/10",
+    "Orange Money",
+    "Entrée",
+    20000,
+    0
+   ]
+  ]
+ },
+ "formules": [
+  {
+   "feuille": "Bilan",
+   "cellule": "B2",
+   "fr": "=SOMME.SI.ENS('Opérations'!$D:$D;'Opérations'!$B:$B;$A2;'Opérations'!$C:$C;\"Entrée\")",
+   "attendu": 170000
+  },
+  {
+   "feuille": "Bilan",
+   "cellule": "C2",
+   "fr": "=SOMME.SI.ENS('Opérations'!$D:$D;'Opérations'!$B:$B;$A2;'Opérations'!$C:$C;\"Sortie\")",
+   "attendu": 25000
+  },
+  {
+   "feuille": "Bilan",
+   "cellule": "D2",
+   "fr": "=SOMME.SI('Opérations'!$B:$B;$A2;'Opérations'!$E:$E)",
+   "attendu": 250
+  },
+  {
+   "feuille": "Bilan",
+   "cellule": "E2",
+   "fr": "=B2-C2-D2",
+   "attendu": 144750
+  },
+  {
+   "feuille": "Bilan",
+   "cellule": "B3",
+   "fr": "=SOMME.SI.ENS('Opérations'!$D:$D;'Opérations'!$B:$B;$A3;'Opérations'!$C:$C;\"Entrée\")",
+   "attendu": 80000
+  },
+  {
+   "feuille": "Bilan",
+   "cellule": "C3",
+   "fr": "=SOMME.SI.ENS('Opérations'!$D:$D;'Opérations'!$B:$B;$A3;'Opérations'!$C:$C;\"Sortie\")",
+   "attendu": 45000
+  },
+  {
+   "feuille": "Bilan",
+   "cellule": "D3",
+   "fr": "=SOMME.SI('Opérations'!$B:$B;$A3;'Opérations'!$E:$E)",
+   "attendu": 500
+  },
+  {
+   "feuille": "Bilan",
+   "cellule": "E3",
+   "fr": "=B3-C3-D3",
+   "attendu": 34500
+  }
+ ],
+ "capture": {
+  "feuille": "Bilan",
+  "plage": "A1:E3",
+  "cellule_active": "B2",
+  "zoom": 165
+ },
+ "formats": {
+  "B2:E3": "# ##0"
+ },
+ "largeurs_serrees": 40
+}

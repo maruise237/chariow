@@ -1,0 +1,36 @@
+{
+  "id": "c1-apres",
+  "ok": true,
+  "resultats": [
+    {
+      "feuille": "Ventes",
+      "cellule": "D2",
+      "formule_fr": "=B2*C2",
+      "formule_affichee": "=B2*C2",
+      "valeur": 300000.0,
+      "erreur": false,
+      "attendu": 300000,
+      "ok": true
+    },
+    {
+      "feuille": "Ventes",
+      "cellule": "D3",
+      "formule_fr": "=B3*C3",
+      "formule_affichee": "=B3*C3",
+      "valeur": 260000.0,
+      "erreur": false,
+      "attendu": 260000,
+      "ok": true
+    },
+    {
+      "feuille": "Ventes",
+      "cellule": "D4",
+      "formule_fr": "=B4*C4",
+      "formule_affichee": "=B4*C4",
+      "valeur": 540000.0,
+      "erreur": false,
+      "attendu": 540000,
+      "ok": true
+    }
+  ]
+}

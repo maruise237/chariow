@@ -1,0 +1,56 @@
+{
+  "id": "c1-recopie",
+  "ok": true,
+  "resultats": [
+    {
+      "feuille": "Ventes",
+      "cellule": "D2",
+      "formule_fr": "=B2*C2",
+      "formule_affichee": "=B2*C2",
+      "valeur": 6000.0,
+      "erreur": false,
+      "attendu": 6000,
+      "ok": true
+    },
+    {
+      "feuille": "Ventes",
+      "cellule": "D3",
+      "formule_fr": "=B3*C3",
+      "formule_affichee": "=B3*C3",
+      "valeur": 4500.0,
+      "erreur": false,
+      "attendu": 4500,
+      "ok": true
+    },
+    {
+      "feuille": "Ventes",
+      "cellule": "D4",
+      "formule_fr": "=B4*C4",
+      "formule_affichee": "=B4*C4",
+      "valeur": 6000.0,
+      "erreur": false,
+      "attendu": 6000,
+      "ok": true
+    },
+    {
+      "feuille": "Ventes",
+      "cellule": "D5",
+      "formule_fr": "=B5*C5",
+      "formule_affichee": "=B5*C5",
+      "valeur": 4000.0,
+      "erreur": false,
+      "attendu": 4000,
+      "ok": true
+    },
+    {
+      "feuille": "Ventes",
+      "cellule": "D6",
+      "formule_fr": "=SOMME(D2:D5)",
+      "formule_affichee": "=SOMME(D2:D5)",
+      "valeur": 20500.0,
+      "erreur": false,
+      "attendu": 20500,
+      "ok": true
+    }
+  ]
+}

@@ -1,0 +1,74 @@
+{
+ "id": "c1-sans-dollar",
+ "feuilles": {
+  "Ventes": [
+   [
+    "Article",
+    "Montant",
+    "Part"
+   ],
+   [
+    "Café noir",
+    6000
+   ],
+   [
+    "Beignets",
+    4500
+   ],
+   [
+    "Jus de gingembre",
+    6000
+   ],
+   [
+    "Thé",
+    4000
+   ],
+   [
+    "Total"
+   ]
+  ]
+ },
+ "formules": [
+  {
+   "feuille": "Ventes",
+   "cellule": "B6",
+   "fr": "=SOMME(B2:B5)",
+   "attendu": 20500
+  },
+  {
+   "feuille": "Ventes",
+   "cellule": "C2",
+   "fr": "=B2/B6",
+   "attendu": 0.2926829268292683
+  },
+  {
+   "feuille": "Ventes",
+   "cellule": "C3",
+   "fr": "=B3/B7",
+   "attendu_erreur": "#DIV/0!"
+  },
+  {
+   "feuille": "Ventes",
+   "cellule": "C4",
+   "fr": "=B4/B8",
+   "attendu_erreur": "#DIV/0!"
+  },
+  {
+   "feuille": "Ventes",
+   "cellule": "C5",
+   "fr": "=B5/B9",
+   "attendu_erreur": "#DIV/0!"
+  }
+ ],
+ "capture": {
+  "feuille": "Ventes",
+  "plage": "A1:C6",
+  "cellule_active": "C3",
+  "zoom": 185
+ },
+ "formats": {
+  "B2:B6": "# ##0",
+  "C2:C6": "0,0%"
+ },
+ "largeurs_serrees": 40
+}

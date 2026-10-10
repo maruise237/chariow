@@ -1,0 +1,205 @@
+{
+ "id": "c3-noms-proper",
+ "feuilles": {
+  "Clients": [
+   [
+    "Client",
+    "Téléphone",
+    "Nom propre",
+    "Numéro",
+    "Doublon",
+    "Prénom",
+    "Nom"
+   ],
+   [
+    "  aminatou  NJOYA ",
+    "6 77 12 34 56",
+    null,
+    "+237677123456"
+   ],
+   [
+    "BORIS tchoumi",
+    699887766,
+    null,
+    "+237699887766"
+   ],
+   [
+    "carine FOTSO",
+    "+237699112233",
+    null,
+    "+237699112233"
+   ],
+   [
+    "Aminatou Njoya",
+    "+237677123456",
+    null,
+    "+237677123456"
+   ],
+   [
+    "Esther  Nkou",
+    "00237 655 44 33 22",
+    null,
+    "+237655443322"
+   ],
+   [
+    "Joël  ATANGANA",
+    "+33 6 12 34 56 78",
+    null,
+    "À vérifier"
+   ],
+   [
+    "boris Tchoumi",
+    "699 88 77 66",
+    null,
+    "+237699887766"
+   ],
+   [
+    "Pauline ngo bassa",
+    "677 12 34 5",
+    null,
+    "À vérifier"
+   ],
+   [
+    "armand MBARGA",
+    "(237) 691-234-567",
+    null,
+    "+237691234567"
+   ],
+   [
+    "marie-claire EWANE",
+    "237 670 55 66 77",
+    null,
+    "+237670556677"
+   ],
+   [
+    "Hervé  KAMGA",
+    "+237 6 99 00 11 22",
+    null,
+    "+237699001122"
+   ],
+   [
+    "sandrine abena",
+    "694 12 12 12",
+    null,
+    "+237694121212"
+   ],
+   [
+    "FATIMA bello",
+    "222 33 44 55",
+    null,
+    "À vérifier"
+   ],
+   [
+    "Carine Fotso",
+    699112233,
+    null,
+    "+237699112233"
+   ],
+   [
+    "paul  EBODE",
+    "651 20 30 40",
+    null,
+    "+237651203040"
+   ]
+  ]
+ },
+ "formules": [
+  {
+   "feuille": "Clients",
+   "cellule": "C2",
+   "fr": "=PROPER(SUPPRESPACE(A2))",
+   "attendu_erreur": "#NOM?"
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "C3",
+   "fr": "=PROPER(SUPPRESPACE(A3))",
+   "attendu_erreur": "#NOM?"
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "C4",
+   "fr": "=PROPER(SUPPRESPACE(A4))",
+   "attendu_erreur": "#NOM?"
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "C5",
+   "fr": "=PROPER(SUPPRESPACE(A5))",
+   "attendu_erreur": "#NOM?"
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "C6",
+   "fr": "=PROPER(SUPPRESPACE(A6))",
+   "attendu_erreur": "#NOM?"
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "C7",
+   "fr": "=PROPER(SUPPRESPACE(A7))",
+   "attendu_erreur": "#NOM?"
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "C8",
+   "fr": "=PROPER(SUPPRESPACE(A8))",
+   "attendu_erreur": "#NOM?"
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "C9",
+   "fr": "=PROPER(SUPPRESPACE(A9))",
+   "attendu_erreur": "#NOM?"
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "C10",
+   "fr": "=PROPER(SUPPRESPACE(A10))",
+   "attendu_erreur": "#NOM?"
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "C11",
+   "fr": "=PROPER(SUPPRESPACE(A11))",
+   "attendu_erreur": "#NOM?"
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "C12",
+   "fr": "=PROPER(SUPPRESPACE(A12))",
+   "attendu_erreur": "#NOM?"
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "C13",
+   "fr": "=PROPER(SUPPRESPACE(A13))",
+   "attendu_erreur": "#NOM?"
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "C14",
+   "fr": "=PROPER(SUPPRESPACE(A14))",
+   "attendu_erreur": "#NOM?"
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "C15",
+   "fr": "=PROPER(SUPPRESPACE(A15))",
+   "attendu_erreur": "#NOM?"
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "C16",
+   "fr": "=PROPER(SUPPRESPACE(A16))",
+   "attendu_erreur": "#NOM?"
+  }
+ ],
+ "capture": {
+  "feuille": "Clients",
+  "plage": "A1:C4",
+  "cellule_active": "C2",
+  "zoom": 165
+ },
+ "largeurs_serrees": 40
+}

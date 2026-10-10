@@ -1,0 +1,36 @@
+{
+  "id": "c7-paie-piege",
+  "ok": true,
+  "resultats": [
+    {
+      "feuille": "Paie",
+      "cellule": "B6",
+      "formule_fr": "=MIN(B2;B4)*B3",
+      "formule_affichee": "=MIN(B2;B4)*B3",
+      "valeur": 1050000.0,
+      "erreur": false,
+      "attendu": 1050000,
+      "ok": true
+    },
+    {
+      "feuille": "Paie",
+      "cellule": "B7",
+      "formule_fr": "=B6+B5",
+      "formule_affichee": "=B6+B5",
+      "valeur": 1075000.0,
+      "erreur": false,
+      "attendu": 1075000,
+      "ok": true
+    },
+    {
+      "feuille": "Paie",
+      "cellule": "B8",
+      "formule_fr": "=B2-B7",
+      "formule_affichee": "=B2-B7",
+      "valeur": -825000.0,
+      "erreur": false,
+      "attendu": -825000,
+      "ok": true
+    }
+  ]
+}

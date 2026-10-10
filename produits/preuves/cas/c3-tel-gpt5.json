@@ -1,0 +1,172 @@
+{
+ "id": "c3-tel-gpt5",
+ "feuilles": {
+  "Clients": [
+   [
+    "Client",
+    "Téléphone",
+    "Chiffres",
+    "Numéro"
+   ],
+   [
+    "  aminatou  NJOYA ",
+    "6 77 12 34 56"
+   ],
+   [
+    "BORIS tchoumi",
+    699887766
+   ],
+   [
+    "carine FOTSO",
+    "+237699112233"
+   ],
+   [
+    "Aminatou Njoya",
+    "+237677123456"
+   ],
+   [
+    "Esther  Nkou",
+    "00237 655 44 33 22"
+   ],
+   [
+    "Joël  ATANGANA",
+    "+33 6 12 34 56 78"
+   ],
+   [
+    "boris Tchoumi",
+    "699 88 77 66"
+   ],
+   [
+    "Pauline ngo bassa",
+    "677 12 34 5"
+   ],
+   [
+    "armand MBARGA",
+    "(237) 691-234-567"
+   ],
+   [
+    "marie-claire EWANE",
+    "237 670 55 66 77"
+   ],
+   [
+    "Hervé  KAMGA",
+    "+237 6 99 00 11 22"
+   ],
+   [
+    "sandrine abena",
+    "694 12 12 12"
+   ],
+   [
+    "FATIMA bello",
+    "222 33 44 55"
+   ],
+   [
+    "Carine Fotso",
+    699112233
+   ],
+   [
+    "paul  EBODE",
+    "651 20 30 40"
+   ]
+  ]
+ },
+ "formules": [
+  {
+   "feuille": "Clients",
+   "cellule": "D2",
+   "fr": "=\"+237\"&DROITE(SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(B2;\" \";\"\");\"-\";\"\");\"(\";\"\";\")\";\"\");\"+\";\"\");9)",
+   "attendu_erreur": "Err:504"
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "D3",
+   "fr": "=\"+237\"&DROITE(SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(B3;\" \";\"\");\"-\";\"\");\"(\";\"\";\")\";\"\");\"+\";\"\");9)",
+   "attendu_erreur": "Err:504"
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "D4",
+   "fr": "=\"+237\"&DROITE(SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(B4;\" \";\"\");\"-\";\"\");\"(\";\"\";\")\";\"\");\"+\";\"\");9)",
+   "attendu_erreur": "Err:504"
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "D5",
+   "fr": "=\"+237\"&DROITE(SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(B5;\" \";\"\");\"-\";\"\");\"(\";\"\";\")\";\"\");\"+\";\"\");9)",
+   "attendu_erreur": "Err:504"
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "D6",
+   "fr": "=\"+237\"&DROITE(SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(B6;\" \";\"\");\"-\";\"\");\"(\";\"\";\")\";\"\");\"+\";\"\");9)",
+   "attendu_erreur": "Err:504"
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "D7",
+   "fr": "=\"+237\"&DROITE(SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(B7;\" \";\"\");\"-\";\"\");\"(\";\"\";\")\";\"\");\"+\";\"\");9)",
+   "attendu_erreur": "Err:504"
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "D8",
+   "fr": "=\"+237\"&DROITE(SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(B8;\" \";\"\");\"-\";\"\");\"(\";\"\";\")\";\"\");\"+\";\"\");9)",
+   "attendu_erreur": "Err:504"
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "D9",
+   "fr": "=\"+237\"&DROITE(SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(B9;\" \";\"\");\"-\";\"\");\"(\";\"\";\")\";\"\");\"+\";\"\");9)",
+   "attendu_erreur": "Err:504"
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "D10",
+   "fr": "=\"+237\"&DROITE(SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(B10;\" \";\"\");\"-\";\"\");\"(\";\"\";\")\";\"\");\"+\";\"\");9)",
+   "attendu_erreur": "Err:504"
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "D11",
+   "fr": "=\"+237\"&DROITE(SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(B11;\" \";\"\");\"-\";\"\");\"(\";\"\";\")\";\"\");\"+\";\"\");9)",
+   "attendu_erreur": "Err:504"
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "D12",
+   "fr": "=\"+237\"&DROITE(SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(B12;\" \";\"\");\"-\";\"\");\"(\";\"\";\")\";\"\");\"+\";\"\");9)",
+   "attendu_erreur": "Err:504"
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "D13",
+   "fr": "=\"+237\"&DROITE(SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(B13;\" \";\"\");\"-\";\"\");\"(\";\"\";\")\";\"\");\"+\";\"\");9)",
+   "attendu_erreur": "Err:504"
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "D14",
+   "fr": "=\"+237\"&DROITE(SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(B14;\" \";\"\");\"-\";\"\");\"(\";\"\";\")\";\"\");\"+\";\"\");9)",
+   "attendu_erreur": "Err:504"
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "D15",
+   "fr": "=\"+237\"&DROITE(SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(B15;\" \";\"\");\"-\";\"\");\"(\";\"\";\")\";\"\");\"+\";\"\");9)",
+   "attendu_erreur": "Err:504"
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "D16",
+   "fr": "=\"+237\"&DROITE(SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(B16;\" \";\"\");\"-\";\"\");\"(\";\"\";\")\";\"\");\"+\";\"\");9)",
+   "attendu_erreur": "Err:504"
+  }
+ ],
+ "capture": {
+  "feuille": "Clients",
+  "plage": "A1:D7",
+  "cellule_active": "D2",
+  "zoom": 165
+ },
+ "largeurs_serrees": 40
+}

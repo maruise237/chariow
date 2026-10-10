@@ -1,0 +1,156 @@
+{
+  "id": "c3-doublons-brut",
+  "ok": true,
+  "resultats": [
+    {
+      "feuille": "Clients",
+      "cellule": "B2",
+      "formule_fr": "=SI(NB.SI($A$2:A2;A2)>1;\"Doublon\";\"\")",
+      "formule_affichee": "=SI(NB.SI($A$2:A2;A2)>1;\"Doublon\";\"\")",
+      "valeur": "",
+      "erreur": false,
+      "attendu": "",
+      "ok": true
+    },
+    {
+      "feuille": "Clients",
+      "cellule": "B3",
+      "formule_fr": "=SI(NB.SI($A$2:A3;A3)>1;\"Doublon\";\"\")",
+      "formule_affichee": "=SI(NB.SI($A$2:A3;A3)>1;\"Doublon\";\"\")",
+      "valeur": "",
+      "erreur": false,
+      "attendu": "",
+      "ok": true
+    },
+    {
+      "feuille": "Clients",
+      "cellule": "B4",
+      "formule_fr": "=SI(NB.SI($A$2:A4;A4)>1;\"Doublon\";\"\")",
+      "formule_affichee": "=SI(NB.SI($A$2:A4;A4)>1;\"Doublon\";\"\")",
+      "valeur": "",
+      "erreur": false,
+      "attendu": "",
+      "ok": true
+    },
+    {
+      "feuille": "Clients",
+      "cellule": "B5",
+      "formule_fr": "=SI(NB.SI($A$2:A5;A5)>1;\"Doublon\";\"\")",
+      "formule_affichee": "=SI(NB.SI($A$2:A5;A5)>1;\"Doublon\";\"\")",
+      "valeur": "",
+      "erreur": false,
+      "attendu": "",
+      "ok": true
+    },
+    {
+      "feuille": "Clients",
+      "cellule": "B6",
+      "formule_fr": "=SI(NB.SI($A$2:A6;A6)>1;\"Doublon\";\"\")",
+      "formule_affichee": "=SI(NB.SI($A$2:A6;A6)>1;\"Doublon\";\"\")",
+      "valeur": "",
+      "erreur": false,
+      "attendu": "",
+      "ok": true
+    },
+    {
+      "feuille": "Clients",
+      "cellule": "B7",
+      "formule_fr": "=SI(NB.SI($A$2:A7;A7)>1;\"Doublon\";\"\")",
+      "formule_affichee": "=SI(NB.SI($A$2:A7;A7)>1;\"Doublon\";\"\")",
+      "valeur": "",
+      "erreur": false,
+      "attendu": "",
+      "ok": true
+    },
+    {
+      "feuille": "Clients",
+      "cellule": "B8",
+      "formule_fr": "=SI(NB.SI($A$2:A8;A8)>1;\"Doublon\";\"\")",
+      "formule_affichee": "=SI(NB.SI($A$2:A8;A8)>1;\"Doublon\";\"\")",
+      "valeur": "Doublon",
+      "erreur": false,
+      "attendu": "Doublon",
+      "ok": true
+    },
+    {
+      "feuille": "Clients",
+      "cellule": "B9",
+      "formule_fr": "=SI(NB.SI($A$2:A9;A9)>1;\"Doublon\";\"\")",
+      "formule_affichee": "=SI(NB.SI($A$2:A9;A9)>1;\"Doublon\";\"\")",
+      "valeur": "",
+      "erreur": false,
+      "attendu": "",
+      "ok": true
+    },
+    {
+      "feuille": "Clients",
+      "cellule": "B10",
+      "formule_fr": "=SI(NB.SI($A$2:A10;A10)>1;\"Doublon\";\"\")",
+      "formule_affichee": "=SI(NB.SI($A$2:A10;A10)>1;\"Doublon\";\"\")",
+      "valeur": "",
+      "erreur": false,
+      "attendu": "",
+      "ok": true
+    },
+    {
+      "feuille": "Clients",
+      "cellule": "B11",
+      "formule_fr": "=SI(NB.SI($A$2:A11;A11)>1;\"Doublon\";\"\")",
+      "formule_affichee": "=SI(NB.SI($A$2:A11;A11)>1;\"Doublon\";\"\")",
+      "valeur": "",
+      "erreur": false,
+      "attendu": "",
+      "ok": true
+    },
+    {
+      "feuille": "Clients",
+      "cellule": "B12",
+      "formule_fr": "=SI(NB.SI($A$2:A12;A12)>1;\"Doublon\";\"\")",
+      "formule_affichee": "=SI(NB.SI($A$2:A12;A12)>1;\"Doublon\";\"\")",
+      "valeur": "",
+      "erreur": false,
+      "attendu": "",
+      "ok": true
+    },
+    {
+      "feuille": "Clients",
+      "cellule": "B13",
+      "formule_fr": "=SI(NB.SI($A$2:A13;A13)>1;\"Doublon\";\"\")",
+      "formule_affichee": "=SI(NB.SI($A$2:A13;A13)>1;\"Doublon\";\"\")",
+      "valeur": "",
+      "erreur": false,
+      "attendu": "",
+      "ok": true
+    },
+    {
+      "feuille": "Clients",
+      "cellule": "B14",
+      "formule_fr": "=SI(NB.SI($A$2:A14;A14)>1;\"Doublon\";\"\")",
+      "formule_affichee": "=SI(NB.SI($A$2:A14;A14)>1;\"Doublon\";\"\")",
+      "valeur": "",
+      "erreur": false,
+      "attendu": "",
+      "ok": true
+    },
+    {
+      "feuille": "Clients",
+      "cellule": "B15",
+      "formule_fr": "=SI(NB.SI($A$2:A15;A15)>1;\"Doublon\";\"\")",
+      "formule_affichee": "=SI(NB.SI($A$2:A15;A15)>1;\"Doublon\";\"\")",
+      "valeur": "Doublon",
+      "erreur": false,
+      "attendu": "Doublon",
+      "ok": true
+    },
+    {
+      "feuille": "Clients",
+      "cellule": "B16",
+      "formule_fr": "=SI(NB.SI($A$2:A16;A16)>1;\"Doublon\";\"\")",
+      "formule_affichee": "=SI(NB.SI($A$2:A16;A16)>1;\"Doublon\";\"\")",
+      "valeur": "",
+      "erreur": false,
+      "attendu": "",
+      "ok": true
+    }
+  ]
+}

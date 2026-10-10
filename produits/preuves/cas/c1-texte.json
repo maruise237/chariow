@@ -1,0 +1,55 @@
+{
+ "id": "c1-texte",
+ "note": "B2 et B4 : textes (saisie vérifiée équivalente à la frappe : '6 000 F' reste du texte).",
+ "feuilles": {
+  "Ventes": [
+   [
+    "Article",
+    "Montant"
+   ],
+   [
+    "Café noir",
+    "6 000 F"
+   ],
+   [
+    "Beignets",
+    4500
+   ],
+   [
+    "Thé",
+    "4 000 F"
+   ],
+   [
+    "Total SOMME"
+   ],
+   [
+    "B2+B3"
+   ]
+  ]
+ },
+ "formules": [
+  {
+   "feuille": "Ventes",
+   "cellule": "B5",
+   "fr": "=SOMME(B2:B4)",
+   "attendu": 4500
+  },
+  {
+   "feuille": "Ventes",
+   "cellule": "B6",
+   "fr": "=B2+B3",
+   "attendu_erreur": "#VALEUR!"
+  }
+ ],
+ "capture": {
+  "feuille": "Ventes",
+  "plage": "A1:B6",
+  "cellule_active": "B5",
+  "zoom": 185
+ },
+ "formats": {
+  "B3": "# ##0",
+  "B5": "# ##0"
+ },
+ "largeurs_serrees": 40
+}

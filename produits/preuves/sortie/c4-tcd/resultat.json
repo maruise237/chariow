@@ -1,0 +1,904 @@
+{
+  "ok": true,
+  "lignes": 36,
+  "total_F": 91400,
+  "controles": [
+    {
+      "controle": "Produit : Huile 1 L",
+      "table_de_pilote": 22500.0,
+      "formule": "=SOMME.SI($Ventes.$B$2:$B$37;A4;$Ventes.$E$2:$E$37)",
+      "valeur_formule": 22500.0,
+      "python": 22500,
+      "ok": true
+    },
+    {
+      "controle": "Produit : Lait en poudre",
+      "table_de_pilote": 15000.0,
+      "formule": "=SOMME.SI($Ventes.$B$2:$B$37;A5;$Ventes.$E$2:$E$37)",
+      "valeur_formule": 15000.0,
+      "python": 15000,
+      "ok": true
+    },
+    {
+      "controle": "Produit : Riz 5 kg",
+      "table_de_pilote": 12000.0,
+      "formule": "=SOMME.SI($Ventes.$B$2:$B$37;A6;$Ventes.$E$2:$E$37)",
+      "valeur_formule": 12000.0,
+      "python": 12000,
+      "ok": true
+    },
+    {
+      "controle": "Produit : Savon",
+      "table_de_pilote": 15500.0,
+      "formule": "=SOMME.SI($Ventes.$B$2:$B$37;A7;$Ventes.$E$2:$E$37)",
+      "valeur_formule": 15500.0,
+      "python": 15500,
+      "ok": true
+    },
+    {
+      "controle": "Produit : Sucre 1 kg",
+      "table_de_pilote": 26400.0,
+      "formule": "=SOMME.SI($Ventes.$B$2:$B$37;A8;$Ventes.$E$2:$E$37)",
+      "valeur_formule": 26400.0,
+      "python": 26400,
+      "ok": true
+    },
+    {
+      "controle": "Produits : total",
+      "table_de_pilote": 91400.0,
+      "formule": "=SOMME(Ventes!E2:E37)",
+      "valeur_formule": 91400.0,
+      "python": 91400,
+      "ok": true
+    },
+    {
+      "controle": "Quantité : Huile 1 L",
+      "table_de_pilote": 15.0,
+      "formule": "=SOMME.SI($Ventes.$B$2:$B$37;\"Huile 1 L\";$Ventes.$D$2:$D$37)",
+      "valeur_formule": 15.0,
+      "python": 15,
+      "ok": true
+    },
+    {
+      "controle": "Quantité : Lait en poudre",
+      "table_de_pilote": 6.0,
+      "formule": "=SOMME.SI($Ventes.$B$2:$B$37;\"Lait en poudre\";$Ventes.$D$2:$D$37)",
+      "valeur_formule": 6.0,
+      "python": 6,
+      "ok": true
+    },
+    {
+      "controle": "Quantité : Riz 5 kg",
+      "table_de_pilote": 3.0,
+      "formule": "=SOMME.SI($Ventes.$B$2:$B$37;\"Riz 5 kg\";$Ventes.$D$2:$D$37)",
+      "valeur_formule": 3.0,
+      "python": 3,
+      "ok": true
+    },
+    {
+      "controle": "Quantité : Savon",
+      "table_de_pilote": 31.0,
+      "formule": "=SOMME.SI($Ventes.$B$2:$B$37;\"Savon\";$Ventes.$D$2:$D$37)",
+      "valeur_formule": 31.0,
+      "python": 31,
+      "ok": true
+    },
+    {
+      "controle": "Quantité : Sucre 1 kg",
+      "table_de_pilote": 33.0,
+      "formule": "=SOMME.SI($Ventes.$B$2:$B$37;\"Sucre 1 kg\";$Ventes.$D$2:$D$37)",
+      "valeur_formule": 33.0,
+      "python": 33,
+      "ok": true
+    },
+    {
+      "controle": "Vendeur : Awa",
+      "table_de_pilote": 31900.0,
+      "formule": "=SOMME.SI($Ventes.$C$2:$C$37;A4;$Ventes.$E$2:$E$37)",
+      "valeur_formule": 31900.0,
+      "python": 31900,
+      "ok": true
+    },
+    {
+      "controle": "Vendeur : Boris",
+      "table_de_pilote": 35700.0,
+      "formule": "=SOMME.SI($Ventes.$C$2:$C$37;A5;$Ventes.$E$2:$E$37)",
+      "valeur_formule": 35700.0,
+      "python": 35700,
+      "ok": true
+    },
+    {
+      "controle": "Vendeur : Carine",
+      "table_de_pilote": 23800.0,
+      "formule": "=SOMME.SI($Ventes.$C$2:$C$37;A6;$Ventes.$E$2:$E$37)",
+      "valeur_formule": 23800.0,
+      "python": 23800,
+      "ok": true
+    },
+    {
+      "controle": "Vendeurs : total",
+      "table_de_pilote": 91400.0,
+      "formule": "=SOMME(Ventes!E2:E37)",
+      "valeur_formule": 91400.0,
+      "python": 91400,
+      "ok": true
+    },
+    {
+      "controle": "Paiement : Espèces",
+      "table_de_pilote": 28600.0,
+      "formule": "=SOMME.SI($Ventes.$F$2:$F$37;A4;$Ventes.$E$2:$E$37)",
+      "valeur_formule": 28600.0,
+      "python": 28600,
+      "ok": true
+    },
+    {
+      "controle": "Nombre de ventes : Espèces",
+      "table_de_pilote": 11.0,
+      "formule": "=NB.SI($Ventes.$F$2:$F$37;A14)",
+      "valeur_formule": 11.0,
+      "python": 11,
+      "ok": true
+    },
+    {
+      "controle": "Paiement : MTN MoMo",
+      "table_de_pilote": 26400.0,
+      "formule": "=SOMME.SI($Ventes.$F$2:$F$37;A5;$Ventes.$E$2:$E$37)",
+      "valeur_formule": 26400.0,
+      "python": 26400,
+      "ok": true
+    },
+    {
+      "controle": "Nombre de ventes : MTN MoMo",
+      "table_de_pilote": 10.0,
+      "formule": "=NB.SI($Ventes.$F$2:$F$37;A15)",
+      "valeur_formule": 10.0,
+      "python": 10,
+      "ok": true
+    },
+    {
+      "controle": "Paiement : Orange Money",
+      "table_de_pilote": 36400.0,
+      "formule": "=SOMME.SI($Ventes.$F$2:$F$37;A6;$Ventes.$E$2:$E$37)",
+      "valeur_formule": 36400.0,
+      "python": 36400,
+      "ok": true
+    },
+    {
+      "controle": "Nombre de ventes : Orange Money",
+      "table_de_pilote": 15.0,
+      "formule": "=NB.SI($Ventes.$F$2:$F$37;A16)",
+      "valeur_formule": 15.0,
+      "python": 15,
+      "ok": true
+    },
+    {
+      "controle": "Paiements : total",
+      "table_de_pilote": 91400.0,
+      "formule": "=SOMME(Ventes!E2:E37)",
+      "valeur_formule": 91400.0,
+      "python": 91400,
+      "ok": true
+    },
+    {
+      "controle": "Nombre de ventes : total",
+      "table_de_pilote": 36.0,
+      "formule": "=NB(Ventes!E2:E37)",
+      "valeur_formule": 36.0,
+      "python": 36,
+      "ok": true
+    },
+    {
+      "controle": "Articles par vendeur : Awa",
+      "table_de_pilote": 25.0,
+      "formule": "=SOMME.SI($Ventes.$C$2:$C$37;A4;$Ventes.$D$2:$D$37)",
+      "valeur_formule": 25.0,
+      "python": 25,
+      "ok": true
+    },
+    {
+      "controle": "Articles par vendeur : Boris",
+      "table_de_pilote": 39.0,
+      "formule": "=SOMME.SI($Ventes.$C$2:$C$37;A5;$Ventes.$D$2:$D$37)",
+      "valeur_formule": 39.0,
+      "python": 39,
+      "ok": true
+    },
+    {
+      "controle": "Articles par vendeur : Carine",
+      "table_de_pilote": 24.0,
+      "formule": "=SOMME.SI($Ventes.$C$2:$C$37;A6;$Ventes.$D$2:$D$37)",
+      "valeur_formule": 24.0,
+      "python": 24,
+      "ok": true
+    },
+    {
+      "controle": "Articles par paiement : Espèces",
+      "table_de_pilote": 25.0,
+      "formule": "=SOMME.SI($Ventes.$F$2:$F$37;A4;$Ventes.$D$2:$D$37)",
+      "valeur_formule": 25.0,
+      "python": 25,
+      "ok": true
+    },
+    {
+      "controle": "Articles par paiement : MTN MoMo",
+      "table_de_pilote": 26.0,
+      "formule": "=SOMME.SI($Ventes.$F$2:$F$37;A5;$Ventes.$D$2:$D$37)",
+      "valeur_formule": 26.0,
+      "python": 26,
+      "ok": true
+    },
+    {
+      "controle": "Articles par paiement : Orange Money",
+      "table_de_pilote": 37.0,
+      "formule": "=SOMME.SI($Ventes.$F$2:$F$37;A6;$Ventes.$D$2:$D$37)",
+      "valeur_formule": 37.0,
+      "python": 37,
+      "ok": true
+    },
+    {
+      "controle": "Croisé : total Sucre (E9) et contrôle E11",
+      "table_de_pilote": 26400.0,
+      "formule": "=SOMME.SI($Ventes.$B$2:$B$37;\"Sucre 1 kg\";$Ventes.$E$2:$E$37)",
+      "valeur_formule": 26400.0,
+      "python": 26400,
+      "ok": true
+    },
+    {
+      "controle": "Croisé : Huile 1 L / Espèces",
+      "table_de_pilote": 7500.0,
+      "formule": "=SOMME.SI.ENS($Ventes.$E$2:$E$37;$Ventes.$B$2:$B$37;\"Huile 1 L\";$Ventes.$F$2:$F$37;\"Espèces\")",
+      "valeur_formule": 7500.0,
+      "python": 7500,
+      "ok": true
+    },
+    {
+      "controle": "Croisé : Huile 1 L / MTN MoMo",
+      "table_de_pilote": 10500.0,
+      "formule": "=SOMME.SI.ENS($Ventes.$E$2:$E$37;$Ventes.$B$2:$B$37;\"Huile 1 L\";$Ventes.$F$2:$F$37;\"MTN MoMo\")",
+      "valeur_formule": 10500.0,
+      "python": 10500,
+      "ok": true
+    },
+    {
+      "controle": "Croisé : Huile 1 L / Orange Money",
+      "table_de_pilote": 4500.0,
+      "formule": "=SOMME.SI.ENS($Ventes.$E$2:$E$37;$Ventes.$B$2:$B$37;\"Huile 1 L\";$Ventes.$F$2:$F$37;\"Orange Money\")",
+      "valeur_formule": 4500.0,
+      "python": 4500,
+      "ok": true
+    },
+    {
+      "controle": "Croisé : Lait en poudre / Espèces",
+      "table_de_pilote": 0.0,
+      "formule": "=SOMME.SI.ENS($Ventes.$E$2:$E$37;$Ventes.$B$2:$B$37;\"Lait en poudre\";$Ventes.$F$2:$F$37;\"Espèces\")",
+      "valeur_formule": 0.0,
+      "python": 0,
+      "ok": true
+    },
+    {
+      "controle": "Croisé : Lait en poudre / MTN MoMo",
+      "table_de_pilote": 5000.0,
+      "formule": "=SOMME.SI.ENS($Ventes.$E$2:$E$37;$Ventes.$B$2:$B$37;\"Lait en poudre\";$Ventes.$F$2:$F$37;\"MTN MoMo\")",
+      "valeur_formule": 5000.0,
+      "python": 5000,
+      "ok": true
+    },
+    {
+      "controle": "Croisé : Lait en poudre / Orange Money",
+      "table_de_pilote": 10000.0,
+      "formule": "=SOMME.SI.ENS($Ventes.$E$2:$E$37;$Ventes.$B$2:$B$37;\"Lait en poudre\";$Ventes.$F$2:$F$37;\"Orange Money\")",
+      "valeur_formule": 10000.0,
+      "python": 10000,
+      "ok": true
+    },
+    {
+      "controle": "Croisé : Riz 5 kg / Espèces",
+      "table_de_pilote": 12000.0,
+      "formule": "=SOMME.SI.ENS($Ventes.$E$2:$E$37;$Ventes.$B$2:$B$37;\"Riz 5 kg\";$Ventes.$F$2:$F$37;\"Espèces\")",
+      "valeur_formule": 12000.0,
+      "python": 12000,
+      "ok": true
+    },
+    {
+      "controle": "Croisé : Riz 5 kg / MTN MoMo",
+      "table_de_pilote": 0.0,
+      "formule": "=SOMME.SI.ENS($Ventes.$E$2:$E$37;$Ventes.$B$2:$B$37;\"Riz 5 kg\";$Ventes.$F$2:$F$37;\"MTN MoMo\")",
+      "valeur_formule": 0.0,
+      "python": 0,
+      "ok": true
+    },
+    {
+      "controle": "Croisé : Riz 5 kg / Orange Money",
+      "table_de_pilote": 0.0,
+      "formule": "=SOMME.SI.ENS($Ventes.$E$2:$E$37;$Ventes.$B$2:$B$37;\"Riz 5 kg\";$Ventes.$F$2:$F$37;\"Orange Money\")",
+      "valeur_formule": 0.0,
+      "python": 0,
+      "ok": true
+    },
+    {
+      "controle": "Croisé : Savon / Espèces",
+      "table_de_pilote": 7500.0,
+      "formule": "=SOMME.SI.ENS($Ventes.$E$2:$E$37;$Ventes.$B$2:$B$37;\"Savon\";$Ventes.$F$2:$F$37;\"Espèces\")",
+      "valeur_formule": 7500.0,
+      "python": 7500,
+      "ok": true
+    },
+    {
+      "controle": "Croisé : Savon / MTN MoMo",
+      "table_de_pilote": 4500.0,
+      "formule": "=SOMME.SI.ENS($Ventes.$E$2:$E$37;$Ventes.$B$2:$B$37;\"Savon\";$Ventes.$F$2:$F$37;\"MTN MoMo\")",
+      "valeur_formule": 4500.0,
+      "python": 4500,
+      "ok": true
+    },
+    {
+      "controle": "Croisé : Savon / Orange Money",
+      "table_de_pilote": 3500.0,
+      "formule": "=SOMME.SI.ENS($Ventes.$E$2:$E$37;$Ventes.$B$2:$B$37;\"Savon\";$Ventes.$F$2:$F$37;\"Orange Money\")",
+      "valeur_formule": 3500.0,
+      "python": 3500,
+      "ok": true
+    },
+    {
+      "controle": "Croisé : Sucre 1 kg / Espèces",
+      "table_de_pilote": 1600.0,
+      "formule": "=SOMME.SI.ENS($Ventes.$E$2:$E$37;$Ventes.$B$2:$B$37;\"Sucre 1 kg\";$Ventes.$F$2:$F$37;\"Espèces\")",
+      "valeur_formule": 1600.0,
+      "python": 1600,
+      "ok": true
+    },
+    {
+      "controle": "Croisé : Sucre 1 kg / MTN MoMo",
+      "table_de_pilote": 6400.0,
+      "formule": "=SOMME.SI.ENS($Ventes.$E$2:$E$37;$Ventes.$B$2:$B$37;\"Sucre 1 kg\";$Ventes.$F$2:$F$37;\"MTN MoMo\")",
+      "valeur_formule": 6400.0,
+      "python": 6400,
+      "ok": true
+    },
+    {
+      "controle": "Croisé : Sucre 1 kg / Orange Money",
+      "table_de_pilote": 18400.0,
+      "formule": "=SOMME.SI.ENS($Ventes.$E$2:$E$37;$Ventes.$B$2:$B$37;\"Sucre 1 kg\";$Ventes.$F$2:$F$37;\"Orange Money\")",
+      "valeur_formule": 18400.0,
+      "python": 18400,
+      "ok": true
+    },
+    {
+      "controle": "Jour : 01/10",
+      "table_de_pilote": 1500.0,
+      "formule": "=SOMME.SI($Ventes.$A$2:$A$37;A4;$Ventes.$E$2:$E$37)",
+      "valeur_formule": 1500.0,
+      "python": 1500,
+      "ok": true
+    },
+    {
+      "controle": "Jour : 02/10",
+      "table_de_pilote": 800.0,
+      "formule": "=SOMME.SI($Ventes.$A$2:$A$37;A5;$Ventes.$E$2:$E$37)",
+      "valeur_formule": 800.0,
+      "python": 800,
+      "ok": true
+    },
+    {
+      "controle": "Jour : 03/10",
+      "table_de_pilote": 1600.0,
+      "formule": "=SOMME.SI($Ventes.$A$2:$A$37;A6;$Ventes.$E$2:$E$37)",
+      "valeur_formule": 1600.0,
+      "python": 1600,
+      "ok": true
+    },
+    {
+      "controle": "Jour : 04/10",
+      "table_de_pilote": 7000.0,
+      "formule": "=SOMME.SI($Ventes.$A$2:$A$37;A7;$Ventes.$E$2:$E$37)",
+      "valeur_formule": 7000.0,
+      "python": 7000,
+      "ok": true
+    },
+    {
+      "controle": "Jour : 05/10",
+      "table_de_pilote": 1000.0,
+      "formule": "=SOMME.SI($Ventes.$A$2:$A$37;A8;$Ventes.$E$2:$E$37)",
+      "valeur_formule": 1000.0,
+      "python": 1000,
+      "ok": true
+    },
+    {
+      "controle": "Jour : 06/10",
+      "table_de_pilote": 1500.0,
+      "formule": "=SOMME.SI($Ventes.$A$2:$A$37;A9;$Ventes.$E$2:$E$37)",
+      "valeur_formule": 1500.0,
+      "python": 1500,
+      "ok": true
+    },
+    {
+      "controle": "Jour : 07/10",
+      "table_de_pilote": 1600.0,
+      "formule": "=SOMME.SI($Ventes.$A$2:$A$37;A10;$Ventes.$E$2:$E$37)",
+      "valeur_formule": 1600.0,
+      "python": 1600,
+      "ok": true
+    },
+    {
+      "controle": "Jour : 08/10",
+      "table_de_pilote": 1600.0,
+      "formule": "=SOMME.SI($Ventes.$A$2:$A$37;A11;$Ventes.$E$2:$E$37)",
+      "valeur_formule": 1600.0,
+      "python": 1600,
+      "ok": true
+    },
+    {
+      "controle": "Jour : 09/10",
+      "table_de_pilote": 1000.0,
+      "formule": "=SOMME.SI($Ventes.$A$2:$A$37;A12;$Ventes.$E$2:$E$37)",
+      "valeur_formule": 1000.0,
+      "python": 1000,
+      "ok": true
+    },
+    {
+      "controle": "Jour : 10/10",
+      "table_de_pilote": 4000.0,
+      "formule": "=SOMME.SI($Ventes.$A$2:$A$37;A13;$Ventes.$E$2:$E$37)",
+      "valeur_formule": 4000.0,
+      "python": 4000,
+      "ok": true
+    },
+    {
+      "controle": "Jour : 11/10",
+      "table_de_pilote": 1500.0,
+      "formule": "=SOMME.SI($Ventes.$A$2:$A$37;A14;$Ventes.$E$2:$E$37)",
+      "valeur_formule": 1500.0,
+      "python": 1500,
+      "ok": true
+    },
+    {
+      "controle": "Jour : 12/10",
+      "table_de_pilote": 8000.0,
+      "formule": "=SOMME.SI($Ventes.$A$2:$A$37;A15;$Ventes.$E$2:$E$37)",
+      "valeur_formule": 8000.0,
+      "python": 8000,
+      "ok": true
+    },
+    {
+      "controle": "Jour : 13/10",
+      "table_de_pilote": 3000.0,
+      "formule": "=SOMME.SI($Ventes.$A$2:$A$37;A16;$Ventes.$E$2:$E$37)",
+      "valeur_formule": 3000.0,
+      "python": 3000,
+      "ok": true
+    },
+    {
+      "controle": "Jour : 14/10",
+      "table_de_pilote": 4500.0,
+      "formule": "=SOMME.SI($Ventes.$A$2:$A$37;A17;$Ventes.$E$2:$E$37)",
+      "valeur_formule": 4500.0,
+      "python": 4500,
+      "ok": true
+    },
+    {
+      "controle": "Jour : 15/10",
+      "table_de_pilote": 2000.0,
+      "formule": "=SOMME.SI($Ventes.$A$2:$A$37;A18;$Ventes.$E$2:$E$37)",
+      "valeur_formule": 2000.0,
+      "python": 2000,
+      "ok": true
+    },
+    {
+      "controle": "Jour : 16/10",
+      "table_de_pilote": 8800.0,
+      "formule": "=SOMME.SI($Ventes.$A$2:$A$37;A19;$Ventes.$E$2:$E$37)",
+      "valeur_formule": 8800.0,
+      "python": 8800,
+      "ok": true
+    },
+    {
+      "controle": "Jour : 17/10",
+      "table_de_pilote": 1500.0,
+      "formule": "=SOMME.SI($Ventes.$A$2:$A$37;A20;$Ventes.$E$2:$E$37)",
+      "valeur_formule": 1500.0,
+      "python": 1500,
+      "ok": true
+    },
+    {
+      "controle": "Jour : 18/10",
+      "table_de_pilote": 500.0,
+      "formule": "=SOMME.SI($Ventes.$A$2:$A$37;A21;$Ventes.$E$2:$E$37)",
+      "valeur_formule": 500.0,
+      "python": 500,
+      "ok": true
+    },
+    {
+      "controle": "Jour : 19/10",
+      "table_de_pilote": 1600.0,
+      "formule": "=SOMME.SI($Ventes.$A$2:$A$37;A22;$Ventes.$E$2:$E$37)",
+      "valeur_formule": 1600.0,
+      "python": 1600,
+      "ok": true
+    },
+    {
+      "controle": "Jour : 20/10",
+      "table_de_pilote": 1500.0,
+      "formule": "=SOMME.SI($Ventes.$A$2:$A$37;A23;$Ventes.$E$2:$E$37)",
+      "valeur_formule": 1500.0,
+      "python": 1500,
+      "ok": true
+    },
+    {
+      "controle": "Jour : 21/10",
+      "table_de_pilote": 7400.0,
+      "formule": "=SOMME.SI($Ventes.$A$2:$A$37;A24;$Ventes.$E$2:$E$37)",
+      "valeur_formule": 7400.0,
+      "python": 7400,
+      "ok": true
+    },
+    {
+      "controle": "Jour : 22/10",
+      "table_de_pilote": 4000.0,
+      "formule": "=SOMME.SI($Ventes.$A$2:$A$37;A25;$Ventes.$E$2:$E$37)",
+      "valeur_formule": 4000.0,
+      "python": 4000,
+      "ok": true
+    },
+    {
+      "controle": "Jour : 23/10",
+      "table_de_pilote": 1500.0,
+      "formule": "=SOMME.SI($Ventes.$A$2:$A$37;A26;$Ventes.$E$2:$E$37)",
+      "valeur_formule": 1500.0,
+      "python": 1500,
+      "ok": true
+    },
+    {
+      "controle": "Jour : 24/10",
+      "table_de_pilote": 1000.0,
+      "formule": "=SOMME.SI($Ventes.$A$2:$A$37;A27;$Ventes.$E$2:$E$37)",
+      "valeur_formule": 1000.0,
+      "python": 1000,
+      "ok": true
+    },
+    {
+      "controle": "Jour : 25/10",
+      "table_de_pilote": 2500.0,
+      "formule": "=SOMME.SI($Ventes.$A$2:$A$37;A28;$Ventes.$E$2:$E$37)",
+      "valeur_formule": 2500.0,
+      "python": 2500,
+      "ok": true
+    },
+    {
+      "controle": "Jour : 26/10",
+      "table_de_pilote": 5000.0,
+      "formule": "=SOMME.SI($Ventes.$A$2:$A$37;A29;$Ventes.$E$2:$E$37)",
+      "valeur_formule": 5000.0,
+      "python": 5000,
+      "ok": true
+    },
+    {
+      "controle": "Jour : 27/10",
+      "table_de_pilote": 9000.0,
+      "formule": "=SOMME.SI($Ventes.$A$2:$A$37;A30;$Ventes.$E$2:$E$37)",
+      "valeur_formule": 9000.0,
+      "python": 9000,
+      "ok": true
+    },
+    {
+      "controle": "Jour : 28/10",
+      "table_de_pilote": 500.0,
+      "formule": "=SOMME.SI($Ventes.$A$2:$A$37;A31;$Ventes.$E$2:$E$37)",
+      "valeur_formule": 500.0,
+      "python": 500,
+      "ok": true
+    },
+    {
+      "controle": "Jour : 29/10",
+      "table_de_pilote": 1500.0,
+      "formule": "=SOMME.SI($Ventes.$A$2:$A$37;A32;$Ventes.$E$2:$E$37)",
+      "valeur_formule": 1500.0,
+      "python": 1500,
+      "ok": true
+    },
+    {
+      "controle": "Jour : 30/10",
+      "table_de_pilote": 4500.0,
+      "formule": "=SOMME.SI($Ventes.$A$2:$A$37;A33;$Ventes.$E$2:$E$37)",
+      "valeur_formule": 4500.0,
+      "python": 4500,
+      "ok": true
+    }
+  ],
+  "produits": [
+    [
+      "Huile 1 L",
+      22500.0,
+      15.0
+    ],
+    [
+      "Lait en poudre",
+      15000.0,
+      6.0
+    ],
+    [
+      "Riz 5 kg",
+      12000.0,
+      3.0
+    ],
+    [
+      "Savon",
+      15500.0,
+      31.0
+    ],
+    [
+      "Sucre 1 kg",
+      26400.0,
+      33.0
+    ]
+  ],
+  "croise": [
+    [
+      "Filtre",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "Somme - Montant en F",
+      "Moyen de paiement",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "Produit",
+      "Espèces",
+      "MTN MoMo",
+      "Orange Money",
+      "Total Résultat",
+      ""
+    ],
+    [
+      "Huile 1 L",
+      7500.0,
+      10500.0,
+      4500.0,
+      22500.0,
+      ""
+    ],
+    [
+      "Lait en poudre",
+      "",
+      5000.0,
+      10000.0,
+      15000.0,
+      ""
+    ],
+    [
+      "Riz 5 kg",
+      12000.0,
+      "",
+      "",
+      12000.0,
+      ""
+    ],
+    [
+      "Savon",
+      7500.0,
+      4500.0,
+      3500.0,
+      15500.0,
+      ""
+    ],
+    [
+      "Sucre 1 kg",
+      1600.0,
+      6400.0,
+      18400.0,
+      26400.0,
+      ""
+    ],
+    [
+      "Total Résultat",
+      28600.0,
+      26400.0,
+      36400.0,
+      91400.0,
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  ],
+  "jours": [
+    [
+      "01/10",
+      1500.0
+    ],
+    [
+      "02/10",
+      800.0
+    ],
+    [
+      "03/10",
+      1600.0
+    ],
+    [
+      "04/10",
+      7000.0
+    ],
+    [
+      "05/10",
+      1000.0
+    ],
+    [
+      "06/10",
+      1500.0
+    ],
+    [
+      "07/10",
+      1600.0
+    ],
+    [
+      "08/10",
+      1600.0
+    ],
+    [
+      "09/10",
+      1000.0
+    ],
+    [
+      "10/10",
+      4000.0
+    ],
+    [
+      "11/10",
+      1500.0
+    ],
+    [
+      "12/10",
+      8000.0
+    ],
+    [
+      "13/10",
+      3000.0
+    ],
+    [
+      "14/10",
+      4500.0
+    ],
+    [
+      "15/10",
+      2000.0
+    ],
+    [
+      "16/10",
+      8800.0
+    ],
+    [
+      "17/10",
+      1500.0
+    ],
+    [
+      "18/10",
+      500.0
+    ],
+    [
+      "19/10",
+      1600.0
+    ],
+    [
+      "20/10",
+      1500.0
+    ],
+    [
+      "21/10",
+      7400.0
+    ],
+    [
+      "22/10",
+      4000.0
+    ],
+    [
+      "23/10",
+      1500.0
+    ],
+    [
+      "24/10",
+      1000.0
+    ],
+    [
+      "25/10",
+      2500.0
+    ],
+    [
+      "26/10",
+      5000.0
+    ],
+    [
+      "27/10",
+      9000.0
+    ],
+    [
+      "28/10",
+      500.0
+    ],
+    [
+      "29/10",
+      1500.0
+    ],
+    [
+      "30/10",
+      4500.0
+    ]
+  ],
+  "mesures_captures": {
+    "c4-tcd": {
+      "plage_brute": 1007,
+      "barre_brute": 732,
+      "facteur_barre": 1.0,
+      "echelle": 0.985,
+      "cap_grille": 23.6,
+      "cap_barre": 14.8,
+      "taille": [
+        1000,
+        359
+      ]
+    },
+    "c4-tcd-vendeurs": {
+      "plage_brute": 1000,
+      "barre_brute": 735,
+      "facteur_barre": 1.0,
+      "echelle": 0.992,
+      "cap_grille": 23.8,
+      "cap_barre": 14.9,
+      "taille": [
+        1000,
+        282
+      ]
+    },
+    "c4-tcd-paiements": {
+      "plage_brute": 1072,
+      "barre_brute": 729,
+      "facteur_barre": 1.0,
+      "echelle": 0.926,
+      "cap_grille": 22.2,
+      "cap_barre": 13.9,
+      "taille": [
+        1000,
+        263
+      ]
+    },
+    "c4-tcd-croise": {
+      "plage_brute": 1438,
+      "barre_brute": 826,
+      "facteur_barre": 1.0,
+      "echelle": 0.692,
+      "cap_grille": 16.6,
+      "cap_barre": 10.4,
+      "taille": [
+        1000,
+        279
+      ]
+    }
+  }
+}

@@ -1,0 +1,73 @@
+{
+ "id": "c1-texte-valeur",
+ "note": "VALEUR est le nom Excel ; LibreOffice FR l'appelle CNUM (VALEUR donne #NOM?). On teste donc CNUM, équivalent. C2:C4 : formule de gpt-5-mini ; C6 : celle de gpt-4o-mini.",
+ "feuilles": {
+  "Ventes": [
+   [
+    "Article",
+    "Montant",
+    "Nombre"
+   ],
+   [
+    "Café noir",
+    "6 000 F"
+   ],
+   [
+    "Beignets",
+    "4 500 F"
+   ],
+   [
+    "Thé",
+    "4 000 F"
+   ],
+   [
+    "Total"
+   ],
+   [
+    "IA 4o-mini"
+   ]
+  ]
+ },
+ "formules": [
+  {
+   "feuille": "Ventes",
+   "cellule": "C2",
+   "fr": "=CNUM(SUBSTITUE(B2;\" F\";\"\"))",
+   "attendu": 6000
+  },
+  {
+   "feuille": "Ventes",
+   "cellule": "C3",
+   "fr": "=CNUM(SUBSTITUE(B3;\" F\";\"\"))",
+   "attendu": 4500
+  },
+  {
+   "feuille": "Ventes",
+   "cellule": "C4",
+   "fr": "=CNUM(SUBSTITUE(B4;\" F\";\"\"))",
+   "attendu": 4000
+  },
+  {
+   "feuille": "Ventes",
+   "cellule": "C5",
+   "fr": "=SOMME(C2:C4)",
+   "attendu": 14500
+  },
+  {
+   "feuille": "Ventes",
+   "cellule": "C6",
+   "fr": "=SOMME(CNUM(SUBSTITUE(B2:B4; \" F\"; \"\")))",
+   "attendu_erreur": "#VALEUR!"
+  }
+ ],
+ "capture": {
+  "feuille": "Ventes",
+  "plage": "A1:C6",
+  "cellule_active": "C2",
+  "zoom": 185
+ },
+ "formats": {
+  "C2:C5": "# ##0"
+ },
+ "largeurs_serrees": 40
+}

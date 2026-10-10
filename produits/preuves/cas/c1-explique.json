@@ -1,0 +1,74 @@
+{
+ "id": "c1-explique",
+ "feuilles": {
+  "Clients": [
+   [
+    "Client",
+    "Contrôle"
+   ],
+   [
+    "Awa"
+   ],
+   [
+    "Boris"
+   ],
+   [
+    "Awa"
+   ],
+   [
+    "Carine"
+   ],
+   [
+    "Dieudonné"
+   ],
+   [
+    "Boris"
+   ]
+  ]
+ },
+ "formules": [
+  {
+   "feuille": "Clients",
+   "cellule": "B2",
+   "fr": "=SI(NB.SI($A$2:$A$7;A2)>1;\"Doublon\";\"\")",
+   "attendu": "Doublon"
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "B3",
+   "fr": "=SI(NB.SI($A$2:$A$7;A3)>1;\"Doublon\";\"\")",
+   "attendu": "Doublon"
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "B4",
+   "fr": "=SI(NB.SI($A$2:$A$7;A4)>1;\"Doublon\";\"\")",
+   "attendu": "Doublon"
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "B5",
+   "fr": "=SI(NB.SI($A$2:$A$7;A5)>1;\"Doublon\";\"\")",
+   "attendu": ""
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "B6",
+   "fr": "=SI(NB.SI($A$2:$A$7;A6)>1;\"Doublon\";\"\")",
+   "attendu": ""
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "B7",
+   "fr": "=SI(NB.SI($A$2:$A$7;A7)>1;\"Doublon\";\"\")",
+   "attendu": "Doublon"
+  }
+ ],
+ "capture": {
+  "feuille": "Clients",
+  "plage": "A1:B7",
+  "cellule_active": "B3",
+  "zoom": 185
+ },
+ "largeurs_serrees": 40
+}

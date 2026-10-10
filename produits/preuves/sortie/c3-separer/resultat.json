@@ -1,0 +1,456 @@
+{
+  "id": "c3-separer",
+  "ok": true,
+  "resultats": [
+    {
+      "feuille": "Clients",
+      "cellule": "C2",
+      "formule_fr": "=NOMPROPRE(SUPPRESPACE(MINUSCULE(A2)))",
+      "formule_affichee": "=NOMPROPRE(SUPPRESPACE(MINUSCULE(A2)))",
+      "valeur": "Aminatou Njoya",
+      "erreur": false,
+      "attendu": "Aminatou Njoya",
+      "ok": true
+    },
+    {
+      "feuille": "Clients",
+      "cellule": "C3",
+      "formule_fr": "=NOMPROPRE(SUPPRESPACE(MINUSCULE(A3)))",
+      "formule_affichee": "=NOMPROPRE(SUPPRESPACE(MINUSCULE(A3)))",
+      "valeur": "Boris Tchoumi",
+      "erreur": false,
+      "attendu": "Boris Tchoumi",
+      "ok": true
+    },
+    {
+      "feuille": "Clients",
+      "cellule": "C4",
+      "formule_fr": "=NOMPROPRE(SUPPRESPACE(MINUSCULE(A4)))",
+      "formule_affichee": "=NOMPROPRE(SUPPRESPACE(MINUSCULE(A4)))",
+      "valeur": "Carine Fotso",
+      "erreur": false,
+      "attendu": "Carine Fotso",
+      "ok": true
+    },
+    {
+      "feuille": "Clients",
+      "cellule": "C5",
+      "formule_fr": "=NOMPROPRE(SUPPRESPACE(MINUSCULE(A5)))",
+      "formule_affichee": "=NOMPROPRE(SUPPRESPACE(MINUSCULE(A5)))",
+      "valeur": "Aminatou Njoya",
+      "erreur": false,
+      "attendu": "Aminatou Njoya",
+      "ok": true
+    },
+    {
+      "feuille": "Clients",
+      "cellule": "C6",
+      "formule_fr": "=NOMPROPRE(SUPPRESPACE(MINUSCULE(A6)))",
+      "formule_affichee": "=NOMPROPRE(SUPPRESPACE(MINUSCULE(A6)))",
+      "valeur": "Esther Nkou",
+      "erreur": false,
+      "attendu": "Esther Nkou",
+      "ok": true
+    },
+    {
+      "feuille": "Clients",
+      "cellule": "C7",
+      "formule_fr": "=NOMPROPRE(SUPPRESPACE(MINUSCULE(A7)))",
+      "formule_affichee": "=NOMPROPRE(SUPPRESPACE(MINUSCULE(A7)))",
+      "valeur": "Joël Atangana",
+      "erreur": false,
+      "attendu": "Joël Atangana",
+      "ok": true
+    },
+    {
+      "feuille": "Clients",
+      "cellule": "C8",
+      "formule_fr": "=NOMPROPRE(SUPPRESPACE(MINUSCULE(A8)))",
+      "formule_affichee": "=NOMPROPRE(SUPPRESPACE(MINUSCULE(A8)))",
+      "valeur": "Boris Tchoumi",
+      "erreur": false,
+      "attendu": "Boris Tchoumi",
+      "ok": true
+    },
+    {
+      "feuille": "Clients",
+      "cellule": "C9",
+      "formule_fr": "=NOMPROPRE(SUPPRESPACE(MINUSCULE(A9)))",
+      "formule_affichee": "=NOMPROPRE(SUPPRESPACE(MINUSCULE(A9)))",
+      "valeur": "Pauline Ngo Bassa",
+      "erreur": false,
+      "attendu": "Pauline Ngo Bassa",
+      "ok": true
+    },
+    {
+      "feuille": "Clients",
+      "cellule": "C10",
+      "formule_fr": "=NOMPROPRE(SUPPRESPACE(MINUSCULE(A10)))",
+      "formule_affichee": "=NOMPROPRE(SUPPRESPACE(MINUSCULE(A10)))",
+      "valeur": "Armand Mbarga",
+      "erreur": false,
+      "attendu": "Armand Mbarga",
+      "ok": true
+    },
+    {
+      "feuille": "Clients",
+      "cellule": "C11",
+      "formule_fr": "=NOMPROPRE(SUPPRESPACE(MINUSCULE(A11)))",
+      "formule_affichee": "=NOMPROPRE(SUPPRESPACE(MINUSCULE(A11)))",
+      "valeur": "Marie-Claire Ewane",
+      "erreur": false,
+      "attendu": "Marie-Claire Ewane",
+      "ok": true
+    },
+    {
+      "feuille": "Clients",
+      "cellule": "C12",
+      "formule_fr": "=NOMPROPRE(SUPPRESPACE(MINUSCULE(A12)))",
+      "formule_affichee": "=NOMPROPRE(SUPPRESPACE(MINUSCULE(A12)))",
+      "valeur": "Hervé Kamga",
+      "erreur": false,
+      "attendu": "Hervé Kamga",
+      "ok": true
+    },
+    {
+      "feuille": "Clients",
+      "cellule": "C13",
+      "formule_fr": "=NOMPROPRE(SUPPRESPACE(MINUSCULE(A13)))",
+      "formule_affichee": "=NOMPROPRE(SUPPRESPACE(MINUSCULE(A13)))",
+      "valeur": "Sandrine Abena",
+      "erreur": false,
+      "attendu": "Sandrine Abena",
+      "ok": true
+    },
+    {
+      "feuille": "Clients",
+      "cellule": "C14",
+      "formule_fr": "=NOMPROPRE(SUPPRESPACE(MINUSCULE(A14)))",
+      "formule_affichee": "=NOMPROPRE(SUPPRESPACE(MINUSCULE(A14)))",
+      "valeur": "Fatima Bello",
+      "erreur": false,
+      "attendu": "Fatima Bello",
+      "ok": true
+    },
+    {
+      "feuille": "Clients",
+      "cellule": "C15",
+      "formule_fr": "=NOMPROPRE(SUPPRESPACE(MINUSCULE(A15)))",
+      "formule_affichee": "=NOMPROPRE(SUPPRESPACE(MINUSCULE(A15)))",
+      "valeur": "Carine Fotso",
+      "erreur": false,
+      "attendu": "Carine Fotso",
+      "ok": true
+    },
+    {
+      "feuille": "Clients",
+      "cellule": "C16",
+      "formule_fr": "=NOMPROPRE(SUPPRESPACE(MINUSCULE(A16)))",
+      "formule_affichee": "=NOMPROPRE(SUPPRESPACE(MINUSCULE(A16)))",
+      "valeur": "Paul Ebode",
+      "erreur": false,
+      "attendu": "Paul Ebode",
+      "ok": true
+    },
+    {
+      "feuille": "Clients",
+      "cellule": "F2",
+      "formule_fr": "=SIERREUR(GAUCHE(C2;TROUVE(\" \";C2)-1);C2)",
+      "formule_affichee": "=SIERREUR(GAUCHE(C2;TROUVE(\" \";C2)-1);C2)",
+      "valeur": "Aminatou",
+      "erreur": false,
+      "attendu": "Aminatou",
+      "ok": true
+    },
+    {
+      "feuille": "Clients",
+      "cellule": "F3",
+      "formule_fr": "=SIERREUR(GAUCHE(C3;TROUVE(\" \";C3)-1);C3)",
+      "formule_affichee": "=SIERREUR(GAUCHE(C3;TROUVE(\" \";C3)-1);C3)",
+      "valeur": "Boris",
+      "erreur": false,
+      "attendu": "Boris",
+      "ok": true
+    },
+    {
+      "feuille": "Clients",
+      "cellule": "F4",
+      "formule_fr": "=SIERREUR(GAUCHE(C4;TROUVE(\" \";C4)-1);C4)",
+      "formule_affichee": "=SIERREUR(GAUCHE(C4;TROUVE(\" \";C4)-1);C4)",
+      "valeur": "Carine",
+      "erreur": false,
+      "attendu": "Carine",
+      "ok": true
+    },
+    {
+      "feuille": "Clients",
+      "cellule": "F5",
+      "formule_fr": "=SIERREUR(GAUCHE(C5;TROUVE(\" \";C5)-1);C5)",
+      "formule_affichee": "=SIERREUR(GAUCHE(C5;TROUVE(\" \";C5)-1);C5)",
+      "valeur": "Aminatou",
+      "erreur": false,
+      "attendu": "Aminatou",
+      "ok": true
+    },
+    {
+      "feuille": "Clients",
+      "cellule": "F6",
+      "formule_fr": "=SIERREUR(GAUCHE(C6;TROUVE(\" \";C6)-1);C6)",
+      "formule_affichee": "=SIERREUR(GAUCHE(C6;TROUVE(\" \";C6)-1);C6)",
+      "valeur": "Esther",
+      "erreur": false,
+      "attendu": "Esther",
+      "ok": true
+    },
+    {
+      "feuille": "Clients",
+      "cellule": "F7",
+      "formule_fr": "=SIERREUR(GAUCHE(C7;TROUVE(\" \";C7)-1);C7)",
+      "formule_affichee": "=SIERREUR(GAUCHE(C7;TROUVE(\" \";C7)-1);C7)",
+      "valeur": "Joël",
+      "erreur": false,
+      "attendu": "Joël",
+      "ok": true
+    },
+    {
+      "feuille": "Clients",
+      "cellule": "F8",
+      "formule_fr": "=SIERREUR(GAUCHE(C8;TROUVE(\" \";C8)-1);C8)",
+      "formule_affichee": "=SIERREUR(GAUCHE(C8;TROUVE(\" \";C8)-1);C8)",
+      "valeur": "Boris",
+      "erreur": false,
+      "attendu": "Boris",
+      "ok": true
+    },
+    {
+      "feuille": "Clients",
+      "cellule": "F9",
+      "formule_fr": "=SIERREUR(GAUCHE(C9;TROUVE(\" \";C9)-1);C9)",
+      "formule_affichee": "=SIERREUR(GAUCHE(C9;TROUVE(\" \";C9)-1);C9)",
+      "valeur": "Pauline",
+      "erreur": false,
+      "attendu": "Pauline",
+      "ok": true
+    },
+    {
+      "feuille": "Clients",
+      "cellule": "F10",
+      "formule_fr": "=SIERREUR(GAUCHE(C10;TROUVE(\" \";C10)-1);C10)",
+      "formule_affichee": "=SIERREUR(GAUCHE(C10;TROUVE(\" \";C10)-1);C10)",
+      "valeur": "Armand",
+      "erreur": false,
+      "attendu": "Armand",
+      "ok": true
+    },
+    {
+      "feuille": "Clients",
+      "cellule": "F11",
+      "formule_fr": "=SIERREUR(GAUCHE(C11;TROUVE(\" \";C11)-1);C11)",
+      "formule_affichee": "=SIERREUR(GAUCHE(C11;TROUVE(\" \";C11)-1);C11)",
+      "valeur": "Marie-Claire",
+      "erreur": false,
+      "attendu": "Marie-Claire",
+      "ok": true
+    },
+    {
+      "feuille": "Clients",
+      "cellule": "F12",
+      "formule_fr": "=SIERREUR(GAUCHE(C12;TROUVE(\" \";C12)-1);C12)",
+      "formule_affichee": "=SIERREUR(GAUCHE(C12;TROUVE(\" \";C12)-1);C12)",
+      "valeur": "Hervé",
+      "erreur": false,
+      "attendu": "Hervé",
+      "ok": true
+    },
+    {
+      "feuille": "Clients",
+      "cellule": "F13",
+      "formule_fr": "=SIERREUR(GAUCHE(C13;TROUVE(\" \";C13)-1);C13)",
+      "formule_affichee": "=SIERREUR(GAUCHE(C13;TROUVE(\" \";C13)-1);C13)",
+      "valeur": "Sandrine",
+      "erreur": false,
+      "attendu": "Sandrine",
+      "ok": true
+    },
+    {
+      "feuille": "Clients",
+      "cellule": "F14",
+      "formule_fr": "=SIERREUR(GAUCHE(C14;TROUVE(\" \";C14)-1);C14)",
+      "formule_affichee": "=SIERREUR(GAUCHE(C14;TROUVE(\" \";C14)-1);C14)",
+      "valeur": "Fatima",
+      "erreur": false,
+      "attendu": "Fatima",
+      "ok": true
+    },
+    {
+      "feuille": "Clients",
+      "cellule": "F15",
+      "formule_fr": "=SIERREUR(GAUCHE(C15;TROUVE(\" \";C15)-1);C15)",
+      "formule_affichee": "=SIERREUR(GAUCHE(C15;TROUVE(\" \";C15)-1);C15)",
+      "valeur": "Carine",
+      "erreur": false,
+      "attendu": "Carine",
+      "ok": true
+    },
+    {
+      "feuille": "Clients",
+      "cellule": "F16",
+      "formule_fr": "=SIERREUR(GAUCHE(C16;TROUVE(\" \";C16)-1);C16)",
+      "formule_affichee": "=SIERREUR(GAUCHE(C16;TROUVE(\" \";C16)-1);C16)",
+      "valeur": "Paul",
+      "erreur": false,
+      "attendu": "Paul",
+      "ok": true
+    },
+    {
+      "feuille": "Clients",
+      "cellule": "G2",
+      "formule_fr": "=SIERREUR(DROITE(C2;NBCAR(C2)-TROUVE(\" \";C2));\"\")",
+      "formule_affichee": "=SIERREUR(DROITE(C2;NBCAR(C2)-TROUVE(\" \";C2));\"\")",
+      "valeur": "Njoya",
+      "erreur": false,
+      "attendu": "Njoya",
+      "ok": true
+    },
+    {
+      "feuille": "Clients",
+      "cellule": "G3",
+      "formule_fr": "=SIERREUR(DROITE(C3;NBCAR(C3)-TROUVE(\" \";C3));\"\")",
+      "formule_affichee": "=SIERREUR(DROITE(C3;NBCAR(C3)-TROUVE(\" \";C3));\"\")",
+      "valeur": "Tchoumi",
+      "erreur": false,
+      "attendu": "Tchoumi",
+      "ok": true
+    },
+    {
+      "feuille": "Clients",
+      "cellule": "G4",
+      "formule_fr": "=SIERREUR(DROITE(C4;NBCAR(C4)-TROUVE(\" \";C4));\"\")",
+      "formule_affichee": "=SIERREUR(DROITE(C4;NBCAR(C4)-TROUVE(\" \";C4));\"\")",
+      "valeur": "Fotso",
+      "erreur": false,
+      "attendu": "Fotso",
+      "ok": true
+    },
+    {
+      "feuille": "Clients",
+      "cellule": "G5",
+      "formule_fr": "=SIERREUR(DROITE(C5;NBCAR(C5)-TROUVE(\" \";C5));\"\")",
+      "formule_affichee": "=SIERREUR(DROITE(C5;NBCAR(C5)-TROUVE(\" \";C5));\"\")",
+      "valeur": "Njoya",
+      "erreur": false,
+      "attendu": "Njoya",
+      "ok": true
+    },
+    {
+      "feuille": "Clients",
+      "cellule": "G6",
+      "formule_fr": "=SIERREUR(DROITE(C6;NBCAR(C6)-TROUVE(\" \";C6));\"\")",
+      "formule_affichee": "=SIERREUR(DROITE(C6;NBCAR(C6)-TROUVE(\" \";C6));\"\")",
+      "valeur": "Nkou",
+      "erreur": false,
+      "attendu": "Nkou",
+      "ok": true
+    },
+    {
+      "feuille": "Clients",
+      "cellule": "G7",
+      "formule_fr": "=SIERREUR(DROITE(C7;NBCAR(C7)-TROUVE(\" \";C7));\"\")",
+      "formule_affichee": "=SIERREUR(DROITE(C7;NBCAR(C7)-TROUVE(\" \";C7));\"\")",
+      "valeur": "Atangana",
+      "erreur": false,
+      "attendu": "Atangana",
+      "ok": true
+    },
+    {
+      "feuille": "Clients",
+      "cellule": "G8",
+      "formule_fr": "=SIERREUR(DROITE(C8;NBCAR(C8)-TROUVE(\" \";C8));\"\")",
+      "formule_affichee": "=SIERREUR(DROITE(C8;NBCAR(C8)-TROUVE(\" \";C8));\"\")",
+      "valeur": "Tchoumi",
+      "erreur": false,
+      "attendu": "Tchoumi",
+      "ok": true
+    },
+    {
+      "feuille": "Clients",
+      "cellule": "G9",
+      "formule_fr": "=SIERREUR(DROITE(C9;NBCAR(C9)-TROUVE(\" \";C9));\"\")",
+      "formule_affichee": "=SIERREUR(DROITE(C9;NBCAR(C9)-TROUVE(\" \";C9));\"\")",
+      "valeur": "Ngo Bassa",
+      "erreur": false,
+      "attendu": "Ngo Bassa",
+      "ok": true
+    },
+    {
+      "feuille": "Clients",
+      "cellule": "G10",
+      "formule_fr": "=SIERREUR(DROITE(C10;NBCAR(C10)-TROUVE(\" \";C10));\"\")",
+      "formule_affichee": "=SIERREUR(DROITE(C10;NBCAR(C10)-TROUVE(\" \";C10));\"\")",
+      "valeur": "Mbarga",
+      "erreur": false,
+      "attendu": "Mbarga",
+      "ok": true
+    },
+    {
+      "feuille": "Clients",
+      "cellule": "G11",
+      "formule_fr": "=SIERREUR(DROITE(C11;NBCAR(C11)-TROUVE(\" \";C11));\"\")",
+      "formule_affichee": "=SIERREUR(DROITE(C11;NBCAR(C11)-TROUVE(\" \";C11));\"\")",
+      "valeur": "Ewane",
+      "erreur": false,
+      "attendu": "Ewane",
+      "ok": true
+    },
+    {
+      "feuille": "Clients",
+      "cellule": "G12",
+      "formule_fr": "=SIERREUR(DROITE(C12;NBCAR(C12)-TROUVE(\" \";C12));\"\")",
+      "formule_affichee": "=SIERREUR(DROITE(C12;NBCAR(C12)-TROUVE(\" \";C12));\"\")",
+      "valeur": "Kamga",
+      "erreur": false,
+      "attendu": "Kamga",
+      "ok": true
+    },
+    {
+      "feuille": "Clients",
+      "cellule": "G13",
+      "formule_fr": "=SIERREUR(DROITE(C13;NBCAR(C13)-TROUVE(\" \";C13));\"\")",
+      "formule_affichee": "=SIERREUR(DROITE(C13;NBCAR(C13)-TROUVE(\" \";C13));\"\")",
+      "valeur": "Abena",
+      "erreur": false,
+      "attendu": "Abena",
+      "ok": true
+    },
+    {
+      "feuille": "Clients",
+      "cellule": "G14",
+      "formule_fr": "=SIERREUR(DROITE(C14;NBCAR(C14)-TROUVE(\" \";C14));\"\")",
+      "formule_affichee": "=SIERREUR(DROITE(C14;NBCAR(C14)-TROUVE(\" \";C14));\"\")",
+      "valeur": "Bello",
+      "erreur": false,
+      "attendu": "Bello",
+      "ok": true
+    },
+    {
+      "feuille": "Clients",
+      "cellule": "G15",
+      "formule_fr": "=SIERREUR(DROITE(C15;NBCAR(C15)-TROUVE(\" \";C15));\"\")",
+      "formule_affichee": "=SIERREUR(DROITE(C15;NBCAR(C15)-TROUVE(\" \";C15));\"\")",
+      "valeur": "Fotso",
+      "erreur": false,
+      "attendu": "Fotso",
+      "ok": true
+    },
+    {
+      "feuille": "Clients",
+      "cellule": "G16",
+      "formule_fr": "=SIERREUR(DROITE(C16;NBCAR(C16)-TROUVE(\" \";C16));\"\")",
+      "formule_affichee": "=SIERREUR(DROITE(C16;NBCAR(C16)-TROUVE(\" \";C16));\"\")",
+      "valeur": "Ebode",
+      "erreur": false,
+      "attendu": "Ebode",
+      "ok": true
+    }
+  ]
+}

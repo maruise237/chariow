@@ -1,0 +1,156 @@
+{
+  "id": "c3-noms",
+  "ok": true,
+  "resultats": [
+    {
+      "feuille": "Clients",
+      "cellule": "C2",
+      "formule_fr": "=NOMPROPRE(SUPPRESPACE(MINUSCULE(A2)))",
+      "formule_affichee": "=NOMPROPRE(SUPPRESPACE(MINUSCULE(A2)))",
+      "valeur": "Aminatou Njoya",
+      "erreur": false,
+      "attendu": "Aminatou Njoya",
+      "ok": true
+    },
+    {
+      "feuille": "Clients",
+      "cellule": "C3",
+      "formule_fr": "=NOMPROPRE(SUPPRESPACE(MINUSCULE(A3)))",
+      "formule_affichee": "=NOMPROPRE(SUPPRESPACE(MINUSCULE(A3)))",
+      "valeur": "Boris Tchoumi",
+      "erreur": false,
+      "attendu": "Boris Tchoumi",
+      "ok": true
+    },
+    {
+      "feuille": "Clients",
+      "cellule": "C4",
+      "formule_fr": "=NOMPROPRE(SUPPRESPACE(MINUSCULE(A4)))",
+      "formule_affichee": "=NOMPROPRE(SUPPRESPACE(MINUSCULE(A4)))",
+      "valeur": "Carine Fotso",
+      "erreur": false,
+      "attendu": "Carine Fotso",
+      "ok": true
+    },
+    {
+      "feuille": "Clients",
+      "cellule": "C5",
+      "formule_fr": "=NOMPROPRE(SUPPRESPACE(MINUSCULE(A5)))",
+      "formule_affichee": "=NOMPROPRE(SUPPRESPACE(MINUSCULE(A5)))",
+      "valeur": "Aminatou Njoya",
+      "erreur": false,
+      "attendu": "Aminatou Njoya",
+      "ok": true
+    },
+    {
+      "feuille": "Clients",
+      "cellule": "C6",
+      "formule_fr": "=NOMPROPRE(SUPPRESPACE(MINUSCULE(A6)))",
+      "formule_affichee": "=NOMPROPRE(SUPPRESPACE(MINUSCULE(A6)))",
+      "valeur": "Esther Nkou",
+      "erreur": false,
+      "attendu": "Esther Nkou",
+      "ok": true
+    },
+    {
+      "feuille": "Clients",
+      "cellule": "C7",
+      "formule_fr": "=NOMPROPRE(SUPPRESPACE(MINUSCULE(A7)))",
+      "formule_affichee": "=NOMPROPRE(SUPPRESPACE(MINUSCULE(A7)))",
+      "valeur": "Joël Atangana",
+      "erreur": false,
+      "attendu": "Joël Atangana",
+      "ok": true
+    },
+    {
+      "feuille": "Clients",
+      "cellule": "C8",
+      "formule_fr": "=NOMPROPRE(SUPPRESPACE(MINUSCULE(A8)))",
+      "formule_affichee": "=NOMPROPRE(SUPPRESPACE(MINUSCULE(A8)))",
+      "valeur": "Boris Tchoumi",
+      "erreur": false,
+      "attendu": "Boris Tchoumi",
+      "ok": true
+    },
+    {
+      "feuille": "Clients",
+      "cellule": "C9",
+      "formule_fr": "=NOMPROPRE(SUPPRESPACE(MINUSCULE(A9)))",
+      "formule_affichee": "=NOMPROPRE(SUPPRESPACE(MINUSCULE(A9)))",
+      "valeur": "Pauline Ngo Bassa",
+      "erreur": false,
+      "attendu": "Pauline Ngo Bassa",
+      "ok": true
+    },
+    {
+      "feuille": "Clients",
+      "cellule": "C10",
+      "formule_fr": "=NOMPROPRE(SUPPRESPACE(MINUSCULE(A10)))",
+      "formule_affichee": "=NOMPROPRE(SUPPRESPACE(MINUSCULE(A10)))",
+      "valeur": "Armand Mbarga",
+      "erreur": false,
+      "attendu": "Armand Mbarga",
+      "ok": true
+    },
+    {
+      "feuille": "Clients",
+      "cellule": "C11",
+      "formule_fr": "=NOMPROPRE(SUPPRESPACE(MINUSCULE(A11)))",
+      "formule_affichee": "=NOMPROPRE(SUPPRESPACE(MINUSCULE(A11)))",
+      "valeur": "Marie-Claire Ewane",
+      "erreur": false,
+      "attendu": "Marie-Claire Ewane",
+      "ok": true
+    },
+    {
+      "feuille": "Clients",
+      "cellule": "C12",
+      "formule_fr": "=NOMPROPRE(SUPPRESPACE(MINUSCULE(A12)))",
+      "formule_affichee": "=NOMPROPRE(SUPPRESPACE(MINUSCULE(A12)))",
+      "valeur": "Hervé Kamga",
+      "erreur": false,
+      "attendu": "Hervé Kamga",
+      "ok": true
+    },
+    {
+      "feuille": "Clients",
+      "cellule": "C13",
+      "formule_fr": "=NOMPROPRE(SUPPRESPACE(MINUSCULE(A13)))",
+      "formule_affichee": "=NOMPROPRE(SUPPRESPACE(MINUSCULE(A13)))",
+      "valeur": "Sandrine Abena",
+      "erreur": false,
+      "attendu": "Sandrine Abena",
+      "ok": true
+    },
+    {
+      "feuille": "Clients",
+      "cellule": "C14",
+      "formule_fr": "=NOMPROPRE(SUPPRESPACE(MINUSCULE(A14)))",
+      "formule_affichee": "=NOMPROPRE(SUPPRESPACE(MINUSCULE(A14)))",
+      "valeur": "Fatima Bello",
+      "erreur": false,
+      "attendu": "Fatima Bello",
+      "ok": true
+    },
+    {
+      "feuille": "Clients",
+      "cellule": "C15",
+      "formule_fr": "=NOMPROPRE(SUPPRESPACE(MINUSCULE(A15)))",
+      "formule_affichee": "=NOMPROPRE(SUPPRESPACE(MINUSCULE(A15)))",
+      "valeur": "Carine Fotso",
+      "erreur": false,
+      "attendu": "Carine Fotso",
+      "ok": true
+    },
+    {
+      "feuille": "Clients",
+      "cellule": "C16",
+      "formule_fr": "=NOMPROPRE(SUPPRESPACE(MINUSCULE(A16)))",
+      "formule_affichee": "=NOMPROPRE(SUPPRESPACE(MINUSCULE(A16)))",
+      "valeur": "Paul Ebode",
+      "erreur": false,
+      "attendu": "Paul Ebode",
+      "ok": true
+    }
+  ]
+}

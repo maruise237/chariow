@@ -1,0 +1,69 @@
+{
+ "id": "c7-paie-piege",
+ "note": "taux saisi 4,2 au lieu de 4,2 %",
+ "feuilles": {
+  "Paie": [
+   [
+    "Fiche de paie",
+    "Montant (F)"
+   ],
+   [
+    "Salaire brut",
+    250000
+   ],
+   [
+    "Taux retraite (CNPS)",
+    4.2
+   ],
+   [
+    "Plafond de la base",
+    750000
+   ],
+   [
+    "Autres retenues (saisies)",
+    25000
+   ],
+   [
+    "Cotisation retraite"
+   ],
+   [
+    "Total des retenues"
+   ],
+   [
+    "Net à payer"
+   ]
+  ]
+ },
+ "formules": [
+  {
+   "feuille": "Paie",
+   "cellule": "B6",
+   "fr": "=MIN(B2;B4)*B3",
+   "attendu": 1050000
+  },
+  {
+   "feuille": "Paie",
+   "cellule": "B7",
+   "fr": "=B6+B5",
+   "attendu": 1075000
+  },
+  {
+   "feuille": "Paie",
+   "cellule": "B8",
+   "fr": "=B2-B7",
+   "attendu": -825000
+  }
+ ],
+ "capture": {
+  "feuille": "Paie",
+  "plage": "A2:B8",
+  "cellule_active": "B6",
+  "zoom": 165
+ },
+ "formats": {
+  "B2:B2": "# ##0",
+  "B4:B8": "# ##0",
+  "B3:B3": "0,0"
+ },
+ "largeurs_serrees": 40
+}

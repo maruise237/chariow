@@ -1,0 +1,156 @@
+{
+  "id": "c3-tel-gpt4o",
+  "ok": true,
+  "resultats": [
+    {
+      "feuille": "Clients",
+      "cellule": "D2",
+      "formule_fr": "=SI(GAUCHE(B2;4)=\"+237\";SUBSTITUE(B2;\" \";\"\");SI(GAUCHE(B2;5)=\"00237\";SUBSTITUE(DROITE(B2;NBCAR(B2)-5);\" \";\"\");SUBSTITUE(DROITE(B2;NBCAR(B2)-1);\" \";\"\")))",
+      "formule_affichee": "=SI(GAUCHE(B2;4)=\"+237\";SUBSTITUE(B2;\" \";\"\");SI(GAUCHE(B2;5)=\"00237\";SUBSTITUE(DROITE(B2;NBCAR(B2)-5);\" \";\"\");SUBSTITUE(DROITE(B2;NBCAR(B2)-1);\" \";\"\")))",
+      "valeur": "77123456",
+      "erreur": false,
+      "attendu": "77123456",
+      "ok": true
+    },
+    {
+      "feuille": "Clients",
+      "cellule": "D3",
+      "formule_fr": "=SI(GAUCHE(B3;4)=\"+237\";SUBSTITUE(B3;\" \";\"\");SI(GAUCHE(B3;5)=\"00237\";SUBSTITUE(DROITE(B3;NBCAR(B3)-5);\" \";\"\");SUBSTITUE(DROITE(B3;NBCAR(B3)-1);\" \";\"\")))",
+      "formule_affichee": "=SI(GAUCHE(B3;4)=\"+237\";SUBSTITUE(B3;\" \";\"\");SI(GAUCHE(B3;5)=\"00237\";SUBSTITUE(DROITE(B3;NBCAR(B3)-5);\" \";\"\");SUBSTITUE(DROITE(B3;NBCAR(B3)-1);\" \";\"\")))",
+      "valeur": "99887766",
+      "erreur": false,
+      "attendu": "99887766",
+      "ok": true
+    },
+    {
+      "feuille": "Clients",
+      "cellule": "D4",
+      "formule_fr": "=SI(GAUCHE(B4;4)=\"+237\";SUBSTITUE(B4;\" \";\"\");SI(GAUCHE(B4;5)=\"00237\";SUBSTITUE(DROITE(B4;NBCAR(B4)-5);\" \";\"\");SUBSTITUE(DROITE(B4;NBCAR(B4)-1);\" \";\"\")))",
+      "formule_affichee": "=SI(GAUCHE(B4;4)=\"+237\";SUBSTITUE(B4;\" \";\"\");SI(GAUCHE(B4;5)=\"00237\";SUBSTITUE(DROITE(B4;NBCAR(B4)-5);\" \";\"\");SUBSTITUE(DROITE(B4;NBCAR(B4)-1);\" \";\"\")))",
+      "valeur": "+237699112233",
+      "erreur": false,
+      "attendu": "+237699112233",
+      "ok": true
+    },
+    {
+      "feuille": "Clients",
+      "cellule": "D5",
+      "formule_fr": "=SI(GAUCHE(B5;4)=\"+237\";SUBSTITUE(B5;\" \";\"\");SI(GAUCHE(B5;5)=\"00237\";SUBSTITUE(DROITE(B5;NBCAR(B5)-5);\" \";\"\");SUBSTITUE(DROITE(B5;NBCAR(B5)-1);\" \";\"\")))",
+      "formule_affichee": "=SI(GAUCHE(B5;4)=\"+237\";SUBSTITUE(B5;\" \";\"\");SI(GAUCHE(B5;5)=\"00237\";SUBSTITUE(DROITE(B5;NBCAR(B5)-5);\" \";\"\");SUBSTITUE(DROITE(B5;NBCAR(B5)-1);\" \";\"\")))",
+      "valeur": "+237677123456",
+      "erreur": false,
+      "attendu": "+237677123456",
+      "ok": true
+    },
+    {
+      "feuille": "Clients",
+      "cellule": "D6",
+      "formule_fr": "=SI(GAUCHE(B6;4)=\"+237\";SUBSTITUE(B6;\" \";\"\");SI(GAUCHE(B6;5)=\"00237\";SUBSTITUE(DROITE(B6;NBCAR(B6)-5);\" \";\"\");SUBSTITUE(DROITE(B6;NBCAR(B6)-1);\" \";\"\")))",
+      "formule_affichee": "=SI(GAUCHE(B6;4)=\"+237\";SUBSTITUE(B6;\" \";\"\");SI(GAUCHE(B6;5)=\"00237\";SUBSTITUE(DROITE(B6;NBCAR(B6)-5);\" \";\"\");SUBSTITUE(DROITE(B6;NBCAR(B6)-1);\" \";\"\")))",
+      "valeur": "655443322",
+      "erreur": false,
+      "attendu": "655443322",
+      "ok": true
+    },
+    {
+      "feuille": "Clients",
+      "cellule": "D7",
+      "formule_fr": "=SI(GAUCHE(B7;4)=\"+237\";SUBSTITUE(B7;\" \";\"\");SI(GAUCHE(B7;5)=\"00237\";SUBSTITUE(DROITE(B7;NBCAR(B7)-5);\" \";\"\");SUBSTITUE(DROITE(B7;NBCAR(B7)-1);\" \";\"\")))",
+      "formule_affichee": "=SI(GAUCHE(B7;4)=\"+237\";SUBSTITUE(B7;\" \";\"\");SI(GAUCHE(B7;5)=\"00237\";SUBSTITUE(DROITE(B7;NBCAR(B7)-5);\" \";\"\");SUBSTITUE(DROITE(B7;NBCAR(B7)-1);\" \";\"\")))",
+      "valeur": "33612345678",
+      "erreur": false,
+      "attendu": "33612345678",
+      "ok": true
+    },
+    {
+      "feuille": "Clients",
+      "cellule": "D8",
+      "formule_fr": "=SI(GAUCHE(B8;4)=\"+237\";SUBSTITUE(B8;\" \";\"\");SI(GAUCHE(B8;5)=\"00237\";SUBSTITUE(DROITE(B8;NBCAR(B8)-5);\" \";\"\");SUBSTITUE(DROITE(B8;NBCAR(B8)-1);\" \";\"\")))",
+      "formule_affichee": "=SI(GAUCHE(B8;4)=\"+237\";SUBSTITUE(B8;\" \";\"\");SI(GAUCHE(B8;5)=\"00237\";SUBSTITUE(DROITE(B8;NBCAR(B8)-5);\" \";\"\");SUBSTITUE(DROITE(B8;NBCAR(B8)-1);\" \";\"\")))",
+      "valeur": "99887766",
+      "erreur": false,
+      "attendu": "99887766",
+      "ok": true
+    },
+    {
+      "feuille": "Clients",
+      "cellule": "D9",
+      "formule_fr": "=SI(GAUCHE(B9;4)=\"+237\";SUBSTITUE(B9;\" \";\"\");SI(GAUCHE(B9;5)=\"00237\";SUBSTITUE(DROITE(B9;NBCAR(B9)-5);\" \";\"\");SUBSTITUE(DROITE(B9;NBCAR(B9)-1);\" \";\"\")))",
+      "formule_affichee": "=SI(GAUCHE(B9;4)=\"+237\";SUBSTITUE(B9;\" \";\"\");SI(GAUCHE(B9;5)=\"00237\";SUBSTITUE(DROITE(B9;NBCAR(B9)-5);\" \";\"\");SUBSTITUE(DROITE(B9;NBCAR(B9)-1);\" \";\"\")))",
+      "valeur": "7712345",
+      "erreur": false,
+      "attendu": "7712345",
+      "ok": true
+    },
+    {
+      "feuille": "Clients",
+      "cellule": "D10",
+      "formule_fr": "=SI(GAUCHE(B10;4)=\"+237\";SUBSTITUE(B10;\" \";\"\");SI(GAUCHE(B10;5)=\"00237\";SUBSTITUE(DROITE(B10;NBCAR(B10)-5);\" \";\"\");SUBSTITUE(DROITE(B10;NBCAR(B10)-1);\" \";\"\")))",
+      "formule_affichee": "=SI(GAUCHE(B10;4)=\"+237\";SUBSTITUE(B10;\" \";\"\");SI(GAUCHE(B10;5)=\"00237\";SUBSTITUE(DROITE(B10;NBCAR(B10)-5);\" \";\"\");SUBSTITUE(DROITE(B10;NBCAR(B10)-1);\" \";\"\")))",
+      "valeur": "237)691-234-567",
+      "erreur": false,
+      "attendu": "237)691-234-567",
+      "ok": true
+    },
+    {
+      "feuille": "Clients",
+      "cellule": "D11",
+      "formule_fr": "=SI(GAUCHE(B11;4)=\"+237\";SUBSTITUE(B11;\" \";\"\");SI(GAUCHE(B11;5)=\"00237\";SUBSTITUE(DROITE(B11;NBCAR(B11)-5);\" \";\"\");SUBSTITUE(DROITE(B11;NBCAR(B11)-1);\" \";\"\")))",
+      "formule_affichee": "=SI(GAUCHE(B11;4)=\"+237\";SUBSTITUE(B11;\" \";\"\");SI(GAUCHE(B11;5)=\"00237\";SUBSTITUE(DROITE(B11;NBCAR(B11)-5);\" \";\"\");SUBSTITUE(DROITE(B11;NBCAR(B11)-1);\" \";\"\")))",
+      "valeur": "37670556677",
+      "erreur": false,
+      "attendu": "37670556677",
+      "ok": true
+    },
+    {
+      "feuille": "Clients",
+      "cellule": "D12",
+      "formule_fr": "=SI(GAUCHE(B12;4)=\"+237\";SUBSTITUE(B12;\" \";\"\");SI(GAUCHE(B12;5)=\"00237\";SUBSTITUE(DROITE(B12;NBCAR(B12)-5);\" \";\"\");SUBSTITUE(DROITE(B12;NBCAR(B12)-1);\" \";\"\")))",
+      "formule_affichee": "=SI(GAUCHE(B12;4)=\"+237\";SUBSTITUE(B12;\" \";\"\");SI(GAUCHE(B12;5)=\"00237\";SUBSTITUE(DROITE(B12;NBCAR(B12)-5);\" \";\"\");SUBSTITUE(DROITE(B12;NBCAR(B12)-1);\" \";\"\")))",
+      "valeur": "+237699001122",
+      "erreur": false,
+      "attendu": "+237699001122",
+      "ok": true
+    },
+    {
+      "feuille": "Clients",
+      "cellule": "D13",
+      "formule_fr": "=SI(GAUCHE(B13;4)=\"+237\";SUBSTITUE(B13;\" \";\"\");SI(GAUCHE(B13;5)=\"00237\";SUBSTITUE(DROITE(B13;NBCAR(B13)-5);\" \";\"\");SUBSTITUE(DROITE(B13;NBCAR(B13)-1);\" \";\"\")))",
+      "formule_affichee": "=SI(GAUCHE(B13;4)=\"+237\";SUBSTITUE(B13;\" \";\"\");SI(GAUCHE(B13;5)=\"00237\";SUBSTITUE(DROITE(B13;NBCAR(B13)-5);\" \";\"\");SUBSTITUE(DROITE(B13;NBCAR(B13)-1);\" \";\"\")))",
+      "valeur": "94121212",
+      "erreur": false,
+      "attendu": "94121212",
+      "ok": true
+    },
+    {
+      "feuille": "Clients",
+      "cellule": "D14",
+      "formule_fr": "=SI(GAUCHE(B14;4)=\"+237\";SUBSTITUE(B14;\" \";\"\");SI(GAUCHE(B14;5)=\"00237\";SUBSTITUE(DROITE(B14;NBCAR(B14)-5);\" \";\"\");SUBSTITUE(DROITE(B14;NBCAR(B14)-1);\" \";\"\")))",
+      "formule_affichee": "=SI(GAUCHE(B14;4)=\"+237\";SUBSTITUE(B14;\" \";\"\");SI(GAUCHE(B14;5)=\"00237\";SUBSTITUE(DROITE(B14;NBCAR(B14)-5);\" \";\"\");SUBSTITUE(DROITE(B14;NBCAR(B14)-1);\" \";\"\")))",
+      "valeur": "22334455",
+      "erreur": false,
+      "attendu": "22334455",
+      "ok": true
+    },
+    {
+      "feuille": "Clients",
+      "cellule": "D15",
+      "formule_fr": "=SI(GAUCHE(B15;4)=\"+237\";SUBSTITUE(B15;\" \";\"\");SI(GAUCHE(B15;5)=\"00237\";SUBSTITUE(DROITE(B15;NBCAR(B15)-5);\" \";\"\");SUBSTITUE(DROITE(B15;NBCAR(B15)-1);\" \";\"\")))",
+      "formule_affichee": "=SI(GAUCHE(B15;4)=\"+237\";SUBSTITUE(B15;\" \";\"\");SI(GAUCHE(B15;5)=\"00237\";SUBSTITUE(DROITE(B15;NBCAR(B15)-5);\" \";\"\");SUBSTITUE(DROITE(B15;NBCAR(B15)-1);\" \";\"\")))",
+      "valeur": "99112233",
+      "erreur": false,
+      "attendu": "99112233",
+      "ok": true
+    },
+    {
+      "feuille": "Clients",
+      "cellule": "D16",
+      "formule_fr": "=SI(GAUCHE(B16;4)=\"+237\";SUBSTITUE(B16;\" \";\"\");SI(GAUCHE(B16;5)=\"00237\";SUBSTITUE(DROITE(B16;NBCAR(B16)-5);\" \";\"\");SUBSTITUE(DROITE(B16;NBCAR(B16)-1);\" \";\"\")))",
+      "formule_affichee": "=SI(GAUCHE(B16;4)=\"+237\";SUBSTITUE(B16;\" \";\"\");SI(GAUCHE(B16;5)=\"00237\";SUBSTITUE(DROITE(B16;NBCAR(B16)-5);\" \";\"\");SUBSTITUE(DROITE(B16;NBCAR(B16)-1);\" \";\"\")))",
+      "valeur": "51203040",
+      "erreur": false,
+      "attendu": "51203040",
+      "ok": true
+    }
+  ]
+}

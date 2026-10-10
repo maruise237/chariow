@@ -1,0 +1,262 @@
+{
+ "id": "c3-tel-d4",
+ "feuilles": {
+  "Clients": [
+   [
+    "Client",
+    "Téléphone",
+    "Chiffres",
+    "Numéro"
+   ],
+   [
+    "  aminatou  NJOYA ",
+    "6 77 12 34 56"
+   ],
+   [
+    "BORIS tchoumi",
+    699887766
+   ],
+   [
+    "carine FOTSO",
+    "+237699112233"
+   ],
+   [
+    "Aminatou Njoya",
+    "+237677123456"
+   ],
+   [
+    "Esther  Nkou",
+    "00237 655 44 33 22"
+   ],
+   [
+    "Joël  ATANGANA",
+    "+33 6 12 34 56 78"
+   ],
+   [
+    "boris Tchoumi",
+    "699 88 77 66"
+   ],
+   [
+    "Pauline ngo bassa",
+    "677 12 34 5"
+   ],
+   [
+    "armand MBARGA",
+    "(237) 691-234-567"
+   ],
+   [
+    "marie-claire EWANE",
+    "237 670 55 66 77"
+   ],
+   [
+    "Hervé  KAMGA",
+    "+237 6 99 00 11 22"
+   ],
+   [
+    "sandrine abena",
+    "694 12 12 12"
+   ],
+   [
+    "FATIMA bello",
+    "222 33 44 55"
+   ],
+   [
+    "Carine Fotso",
+    699112233
+   ],
+   [
+    "paul  EBODE",
+    "651 20 30 40"
+   ]
+  ]
+ },
+ "formules": [
+  {
+   "feuille": "Clients",
+   "cellule": "C2",
+   "fr": "=SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(SI(ESTNUM(B2);TEXTE(B2;\"0\");B2);\" \";\"\");\"+\";\"\");\"-\";\"\");\".\";\"\");\"(\";\"\");\")\";\"\")",
+   "attendu": "677123456"
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "C3",
+   "fr": "=SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(SI(ESTNUM(B3);TEXTE(B3;\"0\");B3);\" \";\"\");\"+\";\"\");\"-\";\"\");\".\";\"\");\"(\";\"\");\")\";\"\")",
+   "attendu": "699887766"
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "C4",
+   "fr": "=SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(SI(ESTNUM(B4);TEXTE(B4;\"0\");B4);\" \";\"\");\"+\";\"\");\"-\";\"\");\".\";\"\");\"(\";\"\");\")\";\"\")",
+   "attendu": "237699112233"
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "C5",
+   "fr": "=SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(SI(ESTNUM(B5);TEXTE(B5;\"0\");B5);\" \";\"\");\"+\";\"\");\"-\";\"\");\".\";\"\");\"(\";\"\");\")\";\"\")",
+   "attendu": "237677123456"
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "C6",
+   "fr": "=SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(SI(ESTNUM(B6);TEXTE(B6;\"0\");B6);\" \";\"\");\"+\";\"\");\"-\";\"\");\".\";\"\");\"(\";\"\");\")\";\"\")",
+   "attendu": "00237655443322"
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "C7",
+   "fr": "=SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(SI(ESTNUM(B7);TEXTE(B7;\"0\");B7);\" \";\"\");\"+\";\"\");\"-\";\"\");\".\";\"\");\"(\";\"\");\")\";\"\")",
+   "attendu": "33612345678"
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "C8",
+   "fr": "=SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(SI(ESTNUM(B8);TEXTE(B8;\"0\");B8);\" \";\"\");\"+\";\"\");\"-\";\"\");\".\";\"\");\"(\";\"\");\")\";\"\")",
+   "attendu": "699887766"
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "C9",
+   "fr": "=SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(SI(ESTNUM(B9);TEXTE(B9;\"0\");B9);\" \";\"\");\"+\";\"\");\"-\";\"\");\".\";\"\");\"(\";\"\");\")\";\"\")",
+   "attendu": "67712345"
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "C10",
+   "fr": "=SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(SI(ESTNUM(B10);TEXTE(B10;\"0\");B10);\" \";\"\");\"+\";\"\");\"-\";\"\");\".\";\"\");\"(\";\"\");\")\";\"\")",
+   "attendu": "237691234567"
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "C11",
+   "fr": "=SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(SI(ESTNUM(B11);TEXTE(B11;\"0\");B11);\" \";\"\");\"+\";\"\");\"-\";\"\");\".\";\"\");\"(\";\"\");\")\";\"\")",
+   "attendu": "237670556677"
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "C12",
+   "fr": "=SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(SI(ESTNUM(B12);TEXTE(B12;\"0\");B12);\" \";\"\");\"+\";\"\");\"-\";\"\");\".\";\"\");\"(\";\"\");\")\";\"\")",
+   "attendu": "237699001122"
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "C13",
+   "fr": "=SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(SI(ESTNUM(B13);TEXTE(B13;\"0\");B13);\" \";\"\");\"+\";\"\");\"-\";\"\");\".\";\"\");\"(\";\"\");\")\";\"\")",
+   "attendu": "694121212"
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "C14",
+   "fr": "=SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(SI(ESTNUM(B14);TEXTE(B14;\"0\");B14);\" \";\"\");\"+\";\"\");\"-\";\"\");\".\";\"\");\"(\";\"\");\")\";\"\")",
+   "attendu": "222334455"
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "C15",
+   "fr": "=SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(SI(ESTNUM(B15);TEXTE(B15;\"0\");B15);\" \";\"\");\"+\";\"\");\"-\";\"\");\".\";\"\");\"(\";\"\");\")\";\"\")",
+   "attendu": "699112233"
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "C16",
+   "fr": "=SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(SI(ESTNUM(B16);TEXTE(B16;\"0\");B16);\" \";\"\");\"+\";\"\");\"-\";\"\");\".\";\"\");\"(\";\"\");\")\";\"\")",
+   "attendu": "651203040"
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "D2",
+   "fr": "=SI(GAUCHE(C2;2)=\"00\";DROITE(C2;9);SI(GAUCHE(C2;3)=\"237\";DROITE(C2;9);SI(GAUCHE(C2;1)=\"6\";\"+237\"&C2;\"À vérifier\")))",
+   "attendu": "+237677123456"
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "D3",
+   "fr": "=SI(GAUCHE(C3;2)=\"00\";DROITE(C3;9);SI(GAUCHE(C3;3)=\"237\";DROITE(C3;9);SI(GAUCHE(C3;1)=\"6\";\"+237\"&C3;\"À vérifier\")))",
+   "attendu": "+237699887766"
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "D4",
+   "fr": "=SI(GAUCHE(C4;2)=\"00\";DROITE(C4;9);SI(GAUCHE(C4;3)=\"237\";DROITE(C4;9);SI(GAUCHE(C4;1)=\"6\";\"+237\"&C4;\"À vérifier\")))",
+   "attendu": "699112233"
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "D5",
+   "fr": "=SI(GAUCHE(C5;2)=\"00\";DROITE(C5;9);SI(GAUCHE(C5;3)=\"237\";DROITE(C5;9);SI(GAUCHE(C5;1)=\"6\";\"+237\"&C5;\"À vérifier\")))",
+   "attendu": "677123456"
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "D6",
+   "fr": "=SI(GAUCHE(C6;2)=\"00\";DROITE(C6;9);SI(GAUCHE(C6;3)=\"237\";DROITE(C6;9);SI(GAUCHE(C6;1)=\"6\";\"+237\"&C6;\"À vérifier\")))",
+   "attendu": "655443322"
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "D7",
+   "fr": "=SI(GAUCHE(C7;2)=\"00\";DROITE(C7;9);SI(GAUCHE(C7;3)=\"237\";DROITE(C7;9);SI(GAUCHE(C7;1)=\"6\";\"+237\"&C7;\"À vérifier\")))",
+   "attendu": "À vérifier"
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "D8",
+   "fr": "=SI(GAUCHE(C8;2)=\"00\";DROITE(C8;9);SI(GAUCHE(C8;3)=\"237\";DROITE(C8;9);SI(GAUCHE(C8;1)=\"6\";\"+237\"&C8;\"À vérifier\")))",
+   "attendu": "+237699887766"
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "D9",
+   "fr": "=SI(GAUCHE(C9;2)=\"00\";DROITE(C9;9);SI(GAUCHE(C9;3)=\"237\";DROITE(C9;9);SI(GAUCHE(C9;1)=\"6\";\"+237\"&C9;\"À vérifier\")))",
+   "attendu": "+23767712345"
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "D10",
+   "fr": "=SI(GAUCHE(C10;2)=\"00\";DROITE(C10;9);SI(GAUCHE(C10;3)=\"237\";DROITE(C10;9);SI(GAUCHE(C10;1)=\"6\";\"+237\"&C10;\"À vérifier\")))",
+   "attendu": "691234567"
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "D11",
+   "fr": "=SI(GAUCHE(C11;2)=\"00\";DROITE(C11;9);SI(GAUCHE(C11;3)=\"237\";DROITE(C11;9);SI(GAUCHE(C11;1)=\"6\";\"+237\"&C11;\"À vérifier\")))",
+   "attendu": "670556677"
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "D12",
+   "fr": "=SI(GAUCHE(C12;2)=\"00\";DROITE(C12;9);SI(GAUCHE(C12;3)=\"237\";DROITE(C12;9);SI(GAUCHE(C12;1)=\"6\";\"+237\"&C12;\"À vérifier\")))",
+   "attendu": "699001122"
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "D13",
+   "fr": "=SI(GAUCHE(C13;2)=\"00\";DROITE(C13;9);SI(GAUCHE(C13;3)=\"237\";DROITE(C13;9);SI(GAUCHE(C13;1)=\"6\";\"+237\"&C13;\"À vérifier\")))",
+   "attendu": "+237694121212"
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "D14",
+   "fr": "=SI(GAUCHE(C14;2)=\"00\";DROITE(C14;9);SI(GAUCHE(C14;3)=\"237\";DROITE(C14;9);SI(GAUCHE(C14;1)=\"6\";\"+237\"&C14;\"À vérifier\")))",
+   "attendu": "À vérifier"
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "D15",
+   "fr": "=SI(GAUCHE(C15;2)=\"00\";DROITE(C15;9);SI(GAUCHE(C15;3)=\"237\";DROITE(C15;9);SI(GAUCHE(C15;1)=\"6\";\"+237\"&C15;\"À vérifier\")))",
+   "attendu": "+237699112233"
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "D16",
+   "fr": "=SI(GAUCHE(C16;2)=\"00\";DROITE(C16;9);SI(GAUCHE(C16;3)=\"237\";DROITE(C16;9);SI(GAUCHE(C16;1)=\"6\";\"+237\"&C16;\"À vérifier\")))",
+   "attendu": "+237651203040"
+  }
+ ],
+ "capture": {
+  "feuille": "Clients",
+  "plage": "A1:D7",
+  "cellule_active": "D2",
+  "zoom": 165
+ },
+ "largeurs_serrees": 40
+}

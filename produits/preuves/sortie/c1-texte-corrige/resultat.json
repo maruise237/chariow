@@ -1,0 +1,16 @@
+{
+  "id": "c1-texte-corrige",
+  "ok": true,
+  "resultats": [
+    {
+      "feuille": "Ventes",
+      "cellule": "B5",
+      "formule_fr": "=SOMME(B2:B4)",
+      "formule_affichee": "=SOMME(B2:B4)",
+      "valeur": 14500.0,
+      "erreur": false,
+      "attendu": 14500,
+      "ok": true
+    }
+  ]
+}

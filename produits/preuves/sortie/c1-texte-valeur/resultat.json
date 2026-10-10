@@ -1,0 +1,56 @@
+{
+  "id": "c1-texte-valeur",
+  "ok": true,
+  "resultats": [
+    {
+      "feuille": "Ventes",
+      "cellule": "C2",
+      "formule_fr": "=CNUM(SUBSTITUE(B2;\" F\";\"\"))",
+      "formule_affichee": "=CNUM(SUBSTITUE(B2;\" F\";\"\"))",
+      "valeur": 6000.0,
+      "erreur": false,
+      "attendu": 6000,
+      "ok": true
+    },
+    {
+      "feuille": "Ventes",
+      "cellule": "C3",
+      "formule_fr": "=CNUM(SUBSTITUE(B3;\" F\";\"\"))",
+      "formule_affichee": "=CNUM(SUBSTITUE(B3;\" F\";\"\"))",
+      "valeur": 4500.0,
+      "erreur": false,
+      "attendu": 4500,
+      "ok": true
+    },
+    {
+      "feuille": "Ventes",
+      "cellule": "C4",
+      "formule_fr": "=CNUM(SUBSTITUE(B4;\" F\";\"\"))",
+      "formule_affichee": "=CNUM(SUBSTITUE(B4;\" F\";\"\"))",
+      "valeur": 4000.0,
+      "erreur": false,
+      "attendu": 4000,
+      "ok": true
+    },
+    {
+      "feuille": "Ventes",
+      "cellule": "C5",
+      "formule_fr": "=SOMME(C2:C4)",
+      "formule_affichee": "=SOMME(C2:C4)",
+      "valeur": 14500.0,
+      "erreur": false,
+      "attendu": 14500,
+      "ok": true
+    },
+    {
+      "feuille": "Ventes",
+      "cellule": "C6",
+      "formule_fr": "=SOMME(CNUM(SUBSTITUE(B2:B4; \" F\"; \"\")))",
+      "formule_affichee": "=SOMME(CNUM(SUBSTITUE(B2:B4; \" F\"; \"\")))",
+      "valeur": "#VALEUR !",
+      "erreur": true,
+      "attendu": "#VALEUR!",
+      "ok": true
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+ "id": "c1-texte-corrige",
+ "feuilles": {
+  "Ventes": [
+   [
+    "Article",
+    "Montant"
+   ],
+   [
+    "Café noir",
+    6000
+   ],
+   [
+    "Beignets",
+    4500
+   ],
+   [
+    "Thé",
+    4000
+   ],
+   [
+    "Total"
+   ]
+  ]
+ },
+ "formules": [
+  {
+   "feuille": "Ventes",
+   "cellule": "B5",
+   "fr": "=SOMME(B2:B4)",
+   "attendu": 14500
+  }
+ ],
+ "capture": {
+  "feuille": "Ventes",
+  "plage": "A1:B5",
+  "cellule_active": "B5",
+  "zoom": 185
+ },
+ "formats": {
+  "B2:B5": "# ##0\" F\""
+ },
+ "largeurs_serrees": 40
+}

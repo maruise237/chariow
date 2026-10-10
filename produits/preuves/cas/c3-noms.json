@@ -1,0 +1,205 @@
+{
+ "id": "c3-noms",
+ "feuilles": {
+  "Clients": [
+   [
+    "Client",
+    "Téléphone",
+    "Nom propre",
+    "Numéro",
+    "Doublon",
+    "Prénom",
+    "Nom"
+   ],
+   [
+    "  aminatou  NJOYA ",
+    "6 77 12 34 56",
+    null,
+    "+237677123456"
+   ],
+   [
+    "BORIS tchoumi",
+    699887766,
+    null,
+    "+237699887766"
+   ],
+   [
+    "carine FOTSO",
+    "+237699112233",
+    null,
+    "+237699112233"
+   ],
+   [
+    "Aminatou Njoya",
+    "+237677123456",
+    null,
+    "+237677123456"
+   ],
+   [
+    "Esther  Nkou",
+    "00237 655 44 33 22",
+    null,
+    "+237655443322"
+   ],
+   [
+    "Joël  ATANGANA",
+    "+33 6 12 34 56 78",
+    null,
+    "À vérifier"
+   ],
+   [
+    "boris Tchoumi",
+    "699 88 77 66",
+    null,
+    "+237699887766"
+   ],
+   [
+    "Pauline ngo bassa",
+    "677 12 34 5",
+    null,
+    "À vérifier"
+   ],
+   [
+    "armand MBARGA",
+    "(237) 691-234-567",
+    null,
+    "+237691234567"
+   ],
+   [
+    "marie-claire EWANE",
+    "237 670 55 66 77",
+    null,
+    "+237670556677"
+   ],
+   [
+    "Hervé  KAMGA",
+    "+237 6 99 00 11 22",
+    null,
+    "+237699001122"
+   ],
+   [
+    "sandrine abena",
+    "694 12 12 12",
+    null,
+    "+237694121212"
+   ],
+   [
+    "FATIMA bello",
+    "222 33 44 55",
+    null,
+    "À vérifier"
+   ],
+   [
+    "Carine Fotso",
+    699112233,
+    null,
+    "+237699112233"
+   ],
+   [
+    "paul  EBODE",
+    "651 20 30 40",
+    null,
+    "+237651203040"
+   ]
+  ]
+ },
+ "formules": [
+  {
+   "feuille": "Clients",
+   "cellule": "C2",
+   "fr": "=NOMPROPRE(SUPPRESPACE(MINUSCULE(A2)))",
+   "attendu": "Aminatou Njoya"
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "C3",
+   "fr": "=NOMPROPRE(SUPPRESPACE(MINUSCULE(A3)))",
+   "attendu": "Boris Tchoumi"
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "C4",
+   "fr": "=NOMPROPRE(SUPPRESPACE(MINUSCULE(A4)))",
+   "attendu": "Carine Fotso"
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "C5",
+   "fr": "=NOMPROPRE(SUPPRESPACE(MINUSCULE(A5)))",
+   "attendu": "Aminatou Njoya"
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "C6",
+   "fr": "=NOMPROPRE(SUPPRESPACE(MINUSCULE(A6)))",
+   "attendu": "Esther Nkou"
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "C7",
+   "fr": "=NOMPROPRE(SUPPRESPACE(MINUSCULE(A7)))",
+   "attendu": "Joël Atangana"
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "C8",
+   "fr": "=NOMPROPRE(SUPPRESPACE(MINUSCULE(A8)))",
+   "attendu": "Boris Tchoumi"
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "C9",
+   "fr": "=NOMPROPRE(SUPPRESPACE(MINUSCULE(A9)))",
+   "attendu": "Pauline Ngo Bassa"
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "C10",
+   "fr": "=NOMPROPRE(SUPPRESPACE(MINUSCULE(A10)))",
+   "attendu": "Armand Mbarga"
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "C11",
+   "fr": "=NOMPROPRE(SUPPRESPACE(MINUSCULE(A11)))",
+   "attendu": "Marie-Claire Ewane"
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "C12",
+   "fr": "=NOMPROPRE(SUPPRESPACE(MINUSCULE(A12)))",
+   "attendu": "Hervé Kamga"
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "C13",
+   "fr": "=NOMPROPRE(SUPPRESPACE(MINUSCULE(A13)))",
+   "attendu": "Sandrine Abena"
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "C14",
+   "fr": "=NOMPROPRE(SUPPRESPACE(MINUSCULE(A14)))",
+   "attendu": "Fatima Bello"
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "C15",
+   "fr": "=NOMPROPRE(SUPPRESPACE(MINUSCULE(A15)))",
+   "attendu": "Carine Fotso"
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "C16",
+   "fr": "=NOMPROPRE(SUPPRESPACE(MINUSCULE(A16)))",
+   "attendu": "Paul Ebode"
+  }
+ ],
+ "capture": {
+  "feuille": "Clients",
+  "plage": "A1:C7",
+  "cellule_active": "C2",
+  "zoom": 165
+ },
+ "largeurs_serrees": 40
+}

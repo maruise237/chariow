@@ -1,0 +1,156 @@
+{
+  "id": "c3-noms-proper",
+  "ok": true,
+  "resultats": [
+    {
+      "feuille": "Clients",
+      "cellule": "C2",
+      "formule_fr": "=PROPER(SUPPRESPACE(A2))",
+      "formule_affichee": "=proper(SUPPRESPACE(A2))",
+      "valeur": "#NOM ?",
+      "erreur": true,
+      "attendu": "#NOM?",
+      "ok": true
+    },
+    {
+      "feuille": "Clients",
+      "cellule": "C3",
+      "formule_fr": "=PROPER(SUPPRESPACE(A3))",
+      "formule_affichee": "=proper(SUPPRESPACE(A3))",
+      "valeur": "#NOM ?",
+      "erreur": true,
+      "attendu": "#NOM?",
+      "ok": true
+    },
+    {
+      "feuille": "Clients",
+      "cellule": "C4",
+      "formule_fr": "=PROPER(SUPPRESPACE(A4))",
+      "formule_affichee": "=proper(SUPPRESPACE(A4))",
+      "valeur": "#NOM ?",
+      "erreur": true,
+      "attendu": "#NOM?",
+      "ok": true
+    },
+    {
+      "feuille": "Clients",
+      "cellule": "C5",
+      "formule_fr": "=PROPER(SUPPRESPACE(A5))",
+      "formule_affichee": "=proper(SUPPRESPACE(A5))",
+      "valeur": "#NOM ?",
+      "erreur": true,
+      "attendu": "#NOM?",
+      "ok": true
+    },
+    {
+      "feuille": "Clients",
+      "cellule": "C6",
+      "formule_fr": "=PROPER(SUPPRESPACE(A6))",
+      "formule_affichee": "=proper(SUPPRESPACE(A6))",
+      "valeur": "#NOM ?",
+      "erreur": true,
+      "attendu": "#NOM?",
+      "ok": true
+    },
+    {
+      "feuille": "Clients",
+      "cellule": "C7",
+      "formule_fr": "=PROPER(SUPPRESPACE(A7))",
+      "formule_affichee": "=proper(SUPPRESPACE(A7))",
+      "valeur": "#NOM ?",
+      "erreur": true,
+      "attendu": "#NOM?",
+      "ok": true
+    },
+    {
+      "feuille": "Clients",
+      "cellule": "C8",
+      "formule_fr": "=PROPER(SUPPRESPACE(A8))",
+      "formule_affichee": "=proper(SUPPRESPACE(A8))",
+      "valeur": "#NOM ?",
+      "erreur": true,
+      "attendu": "#NOM?",
+      "ok": true
+    },
+    {
+      "feuille": "Clients",
+      "cellule": "C9",
+      "formule_fr": "=PROPER(SUPPRESPACE(A9))",
+      "formule_affichee": "=proper(SUPPRESPACE(A9))",
+      "valeur": "#NOM ?",
+      "erreur": true,
+      "attendu": "#NOM?",
+      "ok": true
+    },
+    {
+      "feuille": "Clients",
+      "cellule": "C10",
+      "formule_fr": "=PROPER(SUPPRESPACE(A10))",
+      "formule_affichee": "=proper(SUPPRESPACE(A10))",
+      "valeur": "#NOM ?",
+      "erreur": true,
+      "attendu": "#NOM?",
+      "ok": true
+    },
+    {
+      "feuille": "Clients",
+      "cellule": "C11",
+      "formule_fr": "=PROPER(SUPPRESPACE(A11))",
+      "formule_affichee": "=proper(SUPPRESPACE(A11))",
+      "valeur": "#NOM ?",
+      "erreur": true,
+      "attendu": "#NOM?",
+      "ok": true
+    },
+    {
+      "feuille": "Clients",
+      "cellule": "C12",
+      "formule_fr": "=PROPER(SUPPRESPACE(A12))",
+      "formule_affichee": "=proper(SUPPRESPACE(A12))",
+      "valeur": "#NOM ?",
+      "erreur": true,
+      "attendu": "#NOM?",
+      "ok": true
+    },
+    {
+      "feuille": "Clients",
+      "cellule": "C13",
+      "formule_fr": "=PROPER(SUPPRESPACE(A13))",
+      "formule_affichee": "=proper(SUPPRESPACE(A13))",
+      "valeur": "#NOM ?",
+      "erreur": true,
+      "attendu": "#NOM?",
+      "ok": true
+    },
+    {
+      "feuille": "Clients",
+      "cellule": "C14",
+      "formule_fr": "=PROPER(SUPPRESPACE(A14))",
+      "formule_affichee": "=proper(SUPPRESPACE(A14))",
+      "valeur": "#NOM ?",
+      "erreur": true,
+      "attendu": "#NOM?",
+      "ok": true
+    },
+    {
+      "feuille": "Clients",
+      "cellule": "C15",
+      "formule_fr": "=PROPER(SUPPRESPACE(A15))",
+      "formule_affichee": "=proper(SUPPRESPACE(A15))",
+      "valeur": "#NOM ?",
+      "erreur": true,
+      "attendu": "#NOM?",
+      "ok": true
+    },
+    {
+      "feuille": "Clients",
+      "cellule": "C16",
+      "formule_fr": "=PROPER(SUPPRESPACE(A16))",
+      "formule_affichee": "=proper(SUPPRESPACE(A16))",
+      "valeur": "#NOM ?",
+      "erreur": true,
+      "attendu": "#NOM?",
+      "ok": true
+    }
+  ]
+}

@@ -1,0 +1,59 @@
+{
+ "id": "c1-apres",
+ "feuilles": {
+  "Ventes": [
+   [
+    "Article",
+    "Prix unitaire",
+    "Quantité",
+    "Total"
+   ],
+   [
+    "Sacs de riz",
+    25000,
+    12
+   ],
+   [
+    "Huile 20 L",
+    32500,
+    8
+   ],
+   [
+    "Sucre 50 kg",
+    36000,
+    15
+   ]
+  ]
+ },
+ "formules": [
+  {
+   "feuille": "Ventes",
+   "cellule": "D2",
+   "fr": "=B2*C2",
+   "attendu": 300000
+  },
+  {
+   "feuille": "Ventes",
+   "cellule": "D3",
+   "fr": "=B3*C3",
+   "attendu": 260000
+  },
+  {
+   "feuille": "Ventes",
+   "cellule": "D4",
+   "fr": "=B4*C4",
+   "attendu": 540000
+  }
+ ],
+ "capture": {
+  "feuille": "Ventes",
+  "plage": "A1:D4",
+  "cellule_active": "A1",
+  "zoom": 150
+ },
+ "formats": {
+  "B2:B4": "# ##0",
+  "D2:D4": "# ##0"
+ },
+ "largeurs_serrees": 40
+}

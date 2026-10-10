@@ -1,0 +1,48 @@
+{
+ "id": "c1-adresse",
+ "feuilles": {
+  "Ventes": [
+   [
+    "Article",
+    "Qté",
+    "Prix",
+    "Total"
+   ],
+   [
+    "Café noir",
+    12,
+    500,
+    6000
+   ],
+   [
+    "Beignets",
+    30,
+    150,
+    4500
+   ],
+   [
+    "Jus de gingembre",
+    8,
+    750,
+    6000
+   ],
+   [
+    "Thé",
+    10,
+    400,
+    4000
+   ]
+  ]
+ },
+ "formules": [],
+ "capture": {
+  "feuille": "Ventes",
+  "plage": "A1:D5",
+  "cellule_active": "C3",
+  "zoom": 185
+ },
+ "formats": {
+  "B2:D5": "# ##0"
+ },
+ "largeurs_serrees": 40
+}

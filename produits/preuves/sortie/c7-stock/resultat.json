@@ -1,0 +1,166 @@
+{
+  "id": "c7-stock",
+  "ok": true,
+  "resultats": [
+    {
+      "feuille": "Stock",
+      "cellule": "C2",
+      "formule_fr": "=SOMME.SI.ENS(Mouvements!$D$2:$D$100;Mouvements!$B$2:$B$100;$A2;Mouvements!$C$2:$C$100;\"Entrée\")",
+      "formule_affichee": "=SOMME.SI.ENS($Mouvements.$D$2:$D$100;$Mouvements.$B$2:$B$100;$A2;$Mouvements.$C$2:$C$100;\"Entrée\")",
+      "valeur": 50.0,
+      "erreur": false,
+      "attendu": 50,
+      "ok": true
+    },
+    {
+      "feuille": "Stock",
+      "cellule": "D2",
+      "formule_fr": "=SOMME.SI.ENS(Mouvements!$D$2:$D$100;Mouvements!$B$2:$B$100;$A2;Mouvements!$C$2:$C$100;\"Sortie\")",
+      "formule_affichee": "=SOMME.SI.ENS($Mouvements.$D$2:$D$100;$Mouvements.$B$2:$B$100;$A2;$Mouvements.$C$2:$C$100;\"Sortie\")",
+      "valeur": 41.0,
+      "erreur": false,
+      "attendu": 41,
+      "ok": true
+    },
+    {
+      "feuille": "Stock",
+      "cellule": "E2",
+      "formule_fr": "=C2-D2",
+      "formule_affichee": "=C2-D2",
+      "valeur": 9.0,
+      "erreur": false,
+      "attendu": 9,
+      "ok": true
+    },
+    {
+      "feuille": "Stock",
+      "cellule": "F2",
+      "formule_fr": "=SI(E2<B2;\"COMMANDER\";\"\")",
+      "formule_affichee": "=SI(E2<B2;\"COMMANDER\";\"\")",
+      "valeur": "COMMANDER",
+      "erreur": false,
+      "attendu": "COMMANDER",
+      "ok": true
+    },
+    {
+      "feuille": "Stock",
+      "cellule": "C3",
+      "formule_fr": "=SOMME.SI.ENS(Mouvements!$D$2:$D$100;Mouvements!$B$2:$B$100;$A3;Mouvements!$C$2:$C$100;\"Entrée\")",
+      "formule_affichee": "=SOMME.SI.ENS($Mouvements.$D$2:$D$100;$Mouvements.$B$2:$B$100;$A3;$Mouvements.$C$2:$C$100;\"Entrée\")",
+      "valeur": 24.0,
+      "erreur": false,
+      "attendu": 24,
+      "ok": true
+    },
+    {
+      "feuille": "Stock",
+      "cellule": "D3",
+      "formule_fr": "=SOMME.SI.ENS(Mouvements!$D$2:$D$100;Mouvements!$B$2:$B$100;$A3;Mouvements!$C$2:$C$100;\"Sortie\")",
+      "formule_affichee": "=SOMME.SI.ENS($Mouvements.$D$2:$D$100;$Mouvements.$B$2:$B$100;$A3;$Mouvements.$C$2:$C$100;\"Sortie\")",
+      "valeur": 8.0,
+      "erreur": false,
+      "attendu": 8,
+      "ok": true
+    },
+    {
+      "feuille": "Stock",
+      "cellule": "E3",
+      "formule_fr": "=C3-D3",
+      "formule_affichee": "=C3-D3",
+      "valeur": 16.0,
+      "erreur": false,
+      "attendu": 16,
+      "ok": true
+    },
+    {
+      "feuille": "Stock",
+      "cellule": "F3",
+      "formule_fr": "=SI(E3<B3;\"COMMANDER\";\"\")",
+      "formule_affichee": "=SI(E3<B3;\"COMMANDER\";\"\")",
+      "valeur": "",
+      "erreur": false,
+      "attendu": "",
+      "ok": true
+    },
+    {
+      "feuille": "Stock",
+      "cellule": "C4",
+      "formule_fr": "=SOMME.SI.ENS(Mouvements!$D$2:$D$100;Mouvements!$B$2:$B$100;$A4;Mouvements!$C$2:$C$100;\"Entrée\")",
+      "formule_affichee": "=SOMME.SI.ENS($Mouvements.$D$2:$D$100;$Mouvements.$B$2:$B$100;$A4;$Mouvements.$C$2:$C$100;\"Entrée\")",
+      "valeur": 30.0,
+      "erreur": false,
+      "attendu": 30,
+      "ok": true
+    },
+    {
+      "feuille": "Stock",
+      "cellule": "D4",
+      "formule_fr": "=SOMME.SI.ENS(Mouvements!$D$2:$D$100;Mouvements!$B$2:$B$100;$A4;Mouvements!$C$2:$C$100;\"Sortie\")",
+      "formule_affichee": "=SOMME.SI.ENS($Mouvements.$D$2:$D$100;$Mouvements.$B$2:$B$100;$A4;$Mouvements.$C$2:$C$100;\"Sortie\")",
+      "valeur": 12.0,
+      "erreur": false,
+      "attendu": 12,
+      "ok": true
+    },
+    {
+      "feuille": "Stock",
+      "cellule": "E4",
+      "formule_fr": "=C4-D4",
+      "formule_affichee": "=C4-D4",
+      "valeur": 18.0,
+      "erreur": false,
+      "attendu": 18,
+      "ok": true
+    },
+    {
+      "feuille": "Stock",
+      "cellule": "F4",
+      "formule_fr": "=SI(E4<B4;\"COMMANDER\";\"\")",
+      "formule_affichee": "=SI(E4<B4;\"COMMANDER\";\"\")",
+      "valeur": "",
+      "erreur": false,
+      "attendu": "",
+      "ok": true
+    },
+    {
+      "feuille": "Stock",
+      "cellule": "C5",
+      "formule_fr": "=SOMME.SI.ENS(Mouvements!$D$2:$D$100;Mouvements!$B$2:$B$100;$A5;Mouvements!$C$2:$C$100;\"Entrée\")",
+      "formule_affichee": "=SOMME.SI.ENS($Mouvements.$D$2:$D$100;$Mouvements.$B$2:$B$100;$A5;$Mouvements.$C$2:$C$100;\"Entrée\")",
+      "valeur": 20.0,
+      "erreur": false,
+      "attendu": 20,
+      "ok": true
+    },
+    {
+      "feuille": "Stock",
+      "cellule": "D5",
+      "formule_fr": "=SOMME.SI.ENS(Mouvements!$D$2:$D$100;Mouvements!$B$2:$B$100;$A5;Mouvements!$C$2:$C$100;\"Sortie\")",
+      "formule_affichee": "=SOMME.SI.ENS($Mouvements.$D$2:$D$100;$Mouvements.$B$2:$B$100;$A5;$Mouvements.$C$2:$C$100;\"Sortie\")",
+      "valeur": 10.0,
+      "erreur": false,
+      "attendu": 10,
+      "ok": true
+    },
+    {
+      "feuille": "Stock",
+      "cellule": "E5",
+      "formule_fr": "=C5-D5",
+      "formule_affichee": "=C5-D5",
+      "valeur": 10.0,
+      "erreur": false,
+      "attendu": 10,
+      "ok": true
+    },
+    {
+      "feuille": "Stock",
+      "cellule": "F5",
+      "formule_fr": "=SI(E5<B5;\"COMMANDER\";\"\")",
+      "formule_affichee": "=SI(E5<B5;\"COMMANDER\";\"\")",
+      "valeur": "COMMANDER",
+      "erreur": false,
+      "attendu": "COMMANDER",
+      "ok": true
+    }
+  ]
+}

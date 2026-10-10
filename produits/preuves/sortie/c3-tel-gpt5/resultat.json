@@ -1,0 +1,156 @@
+{
+  "id": "c3-tel-gpt5",
+  "ok": true,
+  "resultats": [
+    {
+      "feuille": "Clients",
+      "cellule": "D2",
+      "formule_fr": "=\"+237\"&DROITE(SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(B2;\" \";\"\");\"-\";\"\");\"(\";\"\";\")\";\"\");\"+\";\"\");9)",
+      "formule_affichee": "=\"+237\"&DROITE(SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(B2;\" \";\"\");\"-\";\"\");\"(\";\"\";\")\";\"\");\"+\";\"\");9))",
+      "valeur": "Err :504",
+      "erreur": true,
+      "attendu": "Err:504",
+      "ok": true
+    },
+    {
+      "feuille": "Clients",
+      "cellule": "D3",
+      "formule_fr": "=\"+237\"&DROITE(SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(B3;\" \";\"\");\"-\";\"\");\"(\";\"\";\")\";\"\");\"+\";\"\");9)",
+      "formule_affichee": "=\"+237\"&DROITE(SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(B3;\" \";\"\");\"-\";\"\");\"(\";\"\";\")\";\"\");\"+\";\"\");9))",
+      "valeur": "Err :504",
+      "erreur": true,
+      "attendu": "Err:504",
+      "ok": true
+    },
+    {
+      "feuille": "Clients",
+      "cellule": "D4",
+      "formule_fr": "=\"+237\"&DROITE(SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(B4;\" \";\"\");\"-\";\"\");\"(\";\"\";\")\";\"\");\"+\";\"\");9)",
+      "formule_affichee": "=\"+237\"&DROITE(SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(B4;\" \";\"\");\"-\";\"\");\"(\";\"\";\")\";\"\");\"+\";\"\");9))",
+      "valeur": "Err :504",
+      "erreur": true,
+      "attendu": "Err:504",
+      "ok": true
+    },
+    {
+      "feuille": "Clients",
+      "cellule": "D5",
+      "formule_fr": "=\"+237\"&DROITE(SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(B5;\" \";\"\");\"-\";\"\");\"(\";\"\";\")\";\"\");\"+\";\"\");9)",
+      "formule_affichee": "=\"+237\"&DROITE(SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(B5;\" \";\"\");\"-\";\"\");\"(\";\"\";\")\";\"\");\"+\";\"\");9))",
+      "valeur": "Err :504",
+      "erreur": true,
+      "attendu": "Err:504",
+      "ok": true
+    },
+    {
+      "feuille": "Clients",
+      "cellule": "D6",
+      "formule_fr": "=\"+237\"&DROITE(SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(B6;\" \";\"\");\"-\";\"\");\"(\";\"\";\")\";\"\");\"+\";\"\");9)",
+      "formule_affichee": "=\"+237\"&DROITE(SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(B6;\" \";\"\");\"-\";\"\");\"(\";\"\";\")\";\"\");\"+\";\"\");9))",
+      "valeur": "Err :504",
+      "erreur": true,
+      "attendu": "Err:504",
+      "ok": true
+    },
+    {
+      "feuille": "Clients",
+      "cellule": "D7",
+      "formule_fr": "=\"+237\"&DROITE(SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(B7;\" \";\"\");\"-\";\"\");\"(\";\"\";\")\";\"\");\"+\";\"\");9)",
+      "formule_affichee": "=\"+237\"&DROITE(SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(B7;\" \";\"\");\"-\";\"\");\"(\";\"\";\")\";\"\");\"+\";\"\");9))",
+      "valeur": "Err :504",
+      "erreur": true,
+      "attendu": "Err:504",
+      "ok": true
+    },
+    {
+      "feuille": "Clients",
+      "cellule": "D8",
+      "formule_fr": "=\"+237\"&DROITE(SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(B8;\" \";\"\");\"-\";\"\");\"(\";\"\";\")\";\"\");\"+\";\"\");9)",
+      "formule_affichee": "=\"+237\"&DROITE(SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(B8;\" \";\"\");\"-\";\"\");\"(\";\"\";\")\";\"\");\"+\";\"\");9))",
+      "valeur": "Err :504",
+      "erreur": true,
+      "attendu": "Err:504",
+      "ok": true
+    },
+    {
+      "feuille": "Clients",
+      "cellule": "D9",
+      "formule_fr": "=\"+237\"&DROITE(SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(B9;\" \";\"\");\"-\";\"\");\"(\";\"\";\")\";\"\");\"+\";\"\");9)",
+      "formule_affichee": "=\"+237\"&DROITE(SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(B9;\" \";\"\");\"-\";\"\");\"(\";\"\";\")\";\"\");\"+\";\"\");9))",
+      "valeur": "Err :504",
+      "erreur": true,
+      "attendu": "Err:504",
+      "ok": true
+    },
+    {
+      "feuille": "Clients",
+      "cellule": "D10",
+      "formule_fr": "=\"+237\"&DROITE(SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(B10;\" \";\"\");\"-\";\"\");\"(\";\"\";\")\";\"\");\"+\";\"\");9)",
+      "formule_affichee": "=\"+237\"&DROITE(SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(B10;\" \";\"\");\"-\";\"\");\"(\";\"\";\")\";\"\");\"+\";\"\");9))",
+      "valeur": "Err :504",
+      "erreur": true,
+      "attendu": "Err:504",
+      "ok": true
+    },
+    {
+      "feuille": "Clients",
+      "cellule": "D11",
+      "formule_fr": "=\"+237\"&DROITE(SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(B11;\" \";\"\");\"-\";\"\");\"(\";\"\";\")\";\"\");\"+\";\"\");9)",
+      "formule_affichee": "=\"+237\"&DROITE(SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(B11;\" \";\"\");\"-\";\"\");\"(\";\"\";\")\";\"\");\"+\";\"\");9))",
+      "valeur": "Err :504",
+      "erreur": true,
+      "attendu": "Err:504",
+      "ok": true
+    },
+    {
+      "feuille": "Clients",
+      "cellule": "D12",
+      "formule_fr": "=\"+237\"&DROITE(SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(B12;\" \";\"\");\"-\";\"\");\"(\";\"\";\")\";\"\");\"+\";\"\");9)",
+      "formule_affichee": "=\"+237\"&DROITE(SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(B12;\" \";\"\");\"-\";\"\");\"(\";\"\";\")\";\"\");\"+\";\"\");9))",
+      "valeur": "Err :504",
+      "erreur": true,
+      "attendu": "Err:504",
+      "ok": true
+    },
+    {
+      "feuille": "Clients",
+      "cellule": "D13",
+      "formule_fr": "=\"+237\"&DROITE(SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(B13;\" \";\"\");\"-\";\"\");\"(\";\"\";\")\";\"\");\"+\";\"\");9)",
+      "formule_affichee": "=\"+237\"&DROITE(SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(B13;\" \";\"\");\"-\";\"\");\"(\";\"\";\")\";\"\");\"+\";\"\");9))",
+      "valeur": "Err :504",
+      "erreur": true,
+      "attendu": "Err:504",
+      "ok": true
+    },
+    {
+      "feuille": "Clients",
+      "cellule": "D14",
+      "formule_fr": "=\"+237\"&DROITE(SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(B14;\" \";\"\");\"-\";\"\");\"(\";\"\";\")\";\"\");\"+\";\"\");9)",
+      "formule_affichee": "=\"+237\"&DROITE(SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(B14;\" \";\"\");\"-\";\"\");\"(\";\"\";\")\";\"\");\"+\";\"\");9))",
+      "valeur": "Err :504",
+      "erreur": true,
+      "attendu": "Err:504",
+      "ok": true
+    },
+    {
+      "feuille": "Clients",
+      "cellule": "D15",
+      "formule_fr": "=\"+237\"&DROITE(SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(B15;\" \";\"\");\"-\";\"\");\"(\";\"\";\")\";\"\");\"+\";\"\");9)",
+      "formule_affichee": "=\"+237\"&DROITE(SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(B15;\" \";\"\");\"-\";\"\");\"(\";\"\";\")\";\"\");\"+\";\"\");9))",
+      "valeur": "Err :504",
+      "erreur": true,
+      "attendu": "Err:504",
+      "ok": true
+    },
+    {
+      "feuille": "Clients",
+      "cellule": "D16",
+      "formule_fr": "=\"+237\"&DROITE(SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(B16;\" \";\"\");\"-\";\"\");\"(\";\"\";\")\";\"\");\"+\";\"\");9)",
+      "formule_affichee": "=\"+237\"&DROITE(SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(B16;\" \";\"\");\"-\";\"\");\"(\";\"\";\")\";\"\");\"+\";\"\");9))",
+      "valeur": "Err :504",
+      "erreur": true,
+      "attendu": "Err:504",
+      "ok": true
+    }
+  ]
+}

@@ -1,0 +1,78 @@
+{
+ "id": "c1-recopie",
+ "feuilles": {
+  "Ventes": [
+   [
+    "Article",
+    "Qté",
+    "Prix",
+    "Total"
+   ],
+   [
+    "Café noir",
+    12,
+    500
+   ],
+   [
+    "Beignets",
+    30,
+    150
+   ],
+   [
+    "Jus de gingembre",
+    8,
+    750
+   ],
+   [
+    "Thé",
+    10,
+    400
+   ],
+   [
+    "Total"
+   ]
+  ]
+ },
+ "formules": [
+  {
+   "feuille": "Ventes",
+   "cellule": "D2",
+   "fr": "=B2*C2",
+   "attendu": 6000
+  },
+  {
+   "feuille": "Ventes",
+   "cellule": "D3",
+   "fr": "=B3*C3",
+   "attendu": 4500
+  },
+  {
+   "feuille": "Ventes",
+   "cellule": "D4",
+   "fr": "=B4*C4",
+   "attendu": 6000
+  },
+  {
+   "feuille": "Ventes",
+   "cellule": "D5",
+   "fr": "=B5*C5",
+   "attendu": 4000
+  },
+  {
+   "feuille": "Ventes",
+   "cellule": "D6",
+   "fr": "=SOMME(D2:D5)",
+   "attendu": 20500
+  }
+ ],
+ "capture": {
+  "feuille": "Ventes",
+  "plage": "A1:D6",
+  "cellule_active": "D3",
+  "zoom": 185
+ },
+ "formats": {
+  "B2:D6": "# ##0"
+ },
+ "largeurs_serrees": 40
+}

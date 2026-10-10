@@ -1,0 +1,56 @@
+{
+  "id": "c1-ia-5mini",
+  "ok": true,
+  "resultats": [
+    {
+      "feuille": "Ventes",
+      "cellule": "B6",
+      "formule_fr": "=SOMME(B2:B5)",
+      "formule_affichee": "=SOMME(B2:B5)",
+      "valeur": 20500.0,
+      "erreur": false,
+      "attendu": 20500,
+      "ok": true
+    },
+    {
+      "feuille": "Ventes",
+      "cellule": "C2",
+      "formule_fr": "=SI($B$6=0;\"\";B2/$B$6)",
+      "formule_affichee": "=SI($B$6=0;\"\";B2/$B$6)",
+      "valeur": 0.2926829268292683,
+      "erreur": false,
+      "attendu": 0.2926829268292683,
+      "ok": true
+    },
+    {
+      "feuille": "Ventes",
+      "cellule": "C3",
+      "formule_fr": "=SI($B$6=0;\"\";B3/$B$6)",
+      "formule_affichee": "=SI($B$6=0;\"\";B3/$B$6)",
+      "valeur": 0.21951219512195122,
+      "erreur": false,
+      "attendu": 0.21951219512195122,
+      "ok": true
+    },
+    {
+      "feuille": "Ventes",
+      "cellule": "C4",
+      "formule_fr": "=SI($B$6=0;\"\";B4/$B$6)",
+      "formule_affichee": "=SI($B$6=0;\"\";B4/$B$6)",
+      "valeur": 0.2926829268292683,
+      "erreur": false,
+      "attendu": 0.2926829268292683,
+      "ok": true
+    },
+    {
+      "feuille": "Ventes",
+      "cellule": "C5",
+      "formule_fr": "=SI($B$6=0;\"\";B5/$B$6)",
+      "formule_affichee": "=SI($B$6=0;\"\";B5/$B$6)",
+      "valeur": 0.1951219512195122,
+      "erreur": false,
+      "attendu": 0.1951219512195122,
+      "ok": true
+    }
+  ]
+}

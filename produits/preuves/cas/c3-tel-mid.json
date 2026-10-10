@@ -1,0 +1,172 @@
+{
+ "id": "c3-tel-mid",
+ "feuilles": {
+  "Clients": [
+   [
+    "Client",
+    "Téléphone",
+    "Chiffres",
+    "Numéro"
+   ],
+   [
+    "  aminatou  NJOYA ",
+    "6 77 12 34 56"
+   ],
+   [
+    "BORIS tchoumi",
+    699887766
+   ],
+   [
+    "carine FOTSO",
+    "+237699112233"
+   ],
+   [
+    "Aminatou Njoya",
+    "+237677123456"
+   ],
+   [
+    "Esther  Nkou",
+    "00237 655 44 33 22"
+   ],
+   [
+    "Joël  ATANGANA",
+    "+33 6 12 34 56 78"
+   ],
+   [
+    "boris Tchoumi",
+    "699 88 77 66"
+   ],
+   [
+    "Pauline ngo bassa",
+    "677 12 34 5"
+   ],
+   [
+    "armand MBARGA",
+    "(237) 691-234-567"
+   ],
+   [
+    "marie-claire EWANE",
+    "237 670 55 66 77"
+   ],
+   [
+    "Hervé  KAMGA",
+    "+237 6 99 00 11 22"
+   ],
+   [
+    "sandrine abena",
+    "694 12 12 12"
+   ],
+   [
+    "FATIMA bello",
+    "222 33 44 55"
+   ],
+   [
+    "Carine Fotso",
+    699112233
+   ],
+   [
+    "paul  EBODE",
+    "651 20 30 40"
+   ]
+  ]
+ },
+ "formules": [
+  {
+   "feuille": "Clients",
+   "cellule": "C2",
+   "fr": "=CONCAT(SI(ESTNUM(VALEUR(MID(B2;LIGNE(INDIRECT(\"1:\"&NBCAR(B2)));1)));MID(B2;LIGNE(INDIRECT(\"1:\"&NBCAR(B2)));1);\"\"))",
+   "attendu": ""
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "C3",
+   "fr": "=CONCAT(SI(ESTNUM(VALEUR(MID(B3;LIGNE(INDIRECT(\"1:\"&NBCAR(B3)));1)));MID(B3;LIGNE(INDIRECT(\"1:\"&NBCAR(B3)));1);\"\"))",
+   "attendu": ""
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "C4",
+   "fr": "=CONCAT(SI(ESTNUM(VALEUR(MID(B4;LIGNE(INDIRECT(\"1:\"&NBCAR(B4)));1)));MID(B4;LIGNE(INDIRECT(\"1:\"&NBCAR(B4)));1);\"\"))",
+   "attendu": ""
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "C5",
+   "fr": "=CONCAT(SI(ESTNUM(VALEUR(MID(B5;LIGNE(INDIRECT(\"1:\"&NBCAR(B5)));1)));MID(B5;LIGNE(INDIRECT(\"1:\"&NBCAR(B5)));1);\"\"))",
+   "attendu": ""
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "C6",
+   "fr": "=CONCAT(SI(ESTNUM(VALEUR(MID(B6;LIGNE(INDIRECT(\"1:\"&NBCAR(B6)));1)));MID(B6;LIGNE(INDIRECT(\"1:\"&NBCAR(B6)));1);\"\"))",
+   "attendu": ""
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "C7",
+   "fr": "=CONCAT(SI(ESTNUM(VALEUR(MID(B7;LIGNE(INDIRECT(\"1:\"&NBCAR(B7)));1)));MID(B7;LIGNE(INDIRECT(\"1:\"&NBCAR(B7)));1);\"\"))",
+   "attendu": ""
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "C8",
+   "fr": "=CONCAT(SI(ESTNUM(VALEUR(MID(B8;LIGNE(INDIRECT(\"1:\"&NBCAR(B8)));1)));MID(B8;LIGNE(INDIRECT(\"1:\"&NBCAR(B8)));1);\"\"))",
+   "attendu": ""
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "C9",
+   "fr": "=CONCAT(SI(ESTNUM(VALEUR(MID(B9;LIGNE(INDIRECT(\"1:\"&NBCAR(B9)));1)));MID(B9;LIGNE(INDIRECT(\"1:\"&NBCAR(B9)));1);\"\"))",
+   "attendu": ""
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "C10",
+   "fr": "=CONCAT(SI(ESTNUM(VALEUR(MID(B10;LIGNE(INDIRECT(\"1:\"&NBCAR(B10)));1)));MID(B10;LIGNE(INDIRECT(\"1:\"&NBCAR(B10)));1);\"\"))",
+   "attendu": ""
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "C11",
+   "fr": "=CONCAT(SI(ESTNUM(VALEUR(MID(B11;LIGNE(INDIRECT(\"1:\"&NBCAR(B11)));1)));MID(B11;LIGNE(INDIRECT(\"1:\"&NBCAR(B11)));1);\"\"))",
+   "attendu": ""
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "C12",
+   "fr": "=CONCAT(SI(ESTNUM(VALEUR(MID(B12;LIGNE(INDIRECT(\"1:\"&NBCAR(B12)));1)));MID(B12;LIGNE(INDIRECT(\"1:\"&NBCAR(B12)));1);\"\"))",
+   "attendu": ""
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "C13",
+   "fr": "=CONCAT(SI(ESTNUM(VALEUR(MID(B13;LIGNE(INDIRECT(\"1:\"&NBCAR(B13)));1)));MID(B13;LIGNE(INDIRECT(\"1:\"&NBCAR(B13)));1);\"\"))",
+   "attendu": ""
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "C14",
+   "fr": "=CONCAT(SI(ESTNUM(VALEUR(MID(B14;LIGNE(INDIRECT(\"1:\"&NBCAR(B14)));1)));MID(B14;LIGNE(INDIRECT(\"1:\"&NBCAR(B14)));1);\"\"))",
+   "attendu": ""
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "C15",
+   "fr": "=CONCAT(SI(ESTNUM(VALEUR(MID(B15;LIGNE(INDIRECT(\"1:\"&NBCAR(B15)));1)));MID(B15;LIGNE(INDIRECT(\"1:\"&NBCAR(B15)));1);\"\"))",
+   "attendu": ""
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "C16",
+   "fr": "=CONCAT(SI(ESTNUM(VALEUR(MID(B16;LIGNE(INDIRECT(\"1:\"&NBCAR(B16)));1)));MID(B16;LIGNE(INDIRECT(\"1:\"&NBCAR(B16)));1);\"\"))",
+   "attendu": ""
+  }
+ ],
+ "capture": {
+  "feuille": "Clients",
+  "plage": "A1:D4",
+  "cellule_active": "C2",
+  "zoom": 165
+ },
+ "largeurs_serrees": 40
+}

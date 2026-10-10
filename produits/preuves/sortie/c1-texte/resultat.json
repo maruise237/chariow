@@ -1,0 +1,26 @@
+{
+  "id": "c1-texte",
+  "ok": true,
+  "resultats": [
+    {
+      "feuille": "Ventes",
+      "cellule": "B5",
+      "formule_fr": "=SOMME(B2:B4)",
+      "formule_affichee": "=SOMME(B2:B4)",
+      "valeur": 4500.0,
+      "erreur": false,
+      "attendu": 4500,
+      "ok": true
+    },
+    {
+      "feuille": "Ventes",
+      "cellule": "B6",
+      "formule_fr": "=B2+B3",
+      "formule_affichee": "=B2+B3",
+      "valeur": "#VALEUR !",
+      "erreur": true,
+      "attendu": "#VALEUR!",
+      "ok": true
+    }
+  ]
+}

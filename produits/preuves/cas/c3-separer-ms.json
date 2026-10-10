@@ -1,0 +1,385 @@
+{
+ "id": "c3-separer-ms",
+ "feuilles": {
+  "Clients": [
+   [
+    "Client",
+    "Téléphone",
+    "Nom propre",
+    "Numéro",
+    "Doublon",
+    "Prénom",
+    "Nom"
+   ],
+   [
+    "  aminatou  NJOYA ",
+    "6 77 12 34 56",
+    null,
+    "+237677123456"
+   ],
+   [
+    "BORIS tchoumi",
+    699887766,
+    null,
+    "+237699887766"
+   ],
+   [
+    "carine FOTSO",
+    "+237699112233",
+    null,
+    "+237699112233"
+   ],
+   [
+    "Aminatou Njoya",
+    "+237677123456",
+    null,
+    "+237677123456"
+   ],
+   [
+    "Esther  Nkou",
+    "00237 655 44 33 22",
+    null,
+    "+237655443322"
+   ],
+   [
+    "Joël  ATANGANA",
+    "+33 6 12 34 56 78",
+    null,
+    "À vérifier"
+   ],
+   [
+    "boris Tchoumi",
+    "699 88 77 66",
+    null,
+    "+237699887766"
+   ],
+   [
+    "Pauline ngo bassa",
+    "677 12 34 5",
+    null,
+    "À vérifier"
+   ],
+   [
+    "armand MBARGA",
+    "(237) 691-234-567",
+    null,
+    "+237691234567"
+   ],
+   [
+    "marie-claire EWANE",
+    "237 670 55 66 77",
+    null,
+    "+237670556677"
+   ],
+   [
+    "Hervé  KAMGA",
+    "+237 6 99 00 11 22",
+    null,
+    "+237699001122"
+   ],
+   [
+    "sandrine abena",
+    "694 12 12 12",
+    null,
+    "+237694121212"
+   ],
+   [
+    "FATIMA bello",
+    "222 33 44 55",
+    null,
+    "À vérifier"
+   ],
+   [
+    "Carine Fotso",
+    699112233,
+    null,
+    "+237699112233"
+   ],
+   [
+    "paul  EBODE",
+    "651 20 30 40",
+    null,
+    "+237651203040"
+   ]
+  ]
+ },
+ "formules": [
+  {
+   "feuille": "Clients",
+   "cellule": "C2",
+   "fr": "=NOMPROPRE(SUPPRESPACE(MINUSCULE(A2)))",
+   "attendu": "Aminatou Njoya"
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "C3",
+   "fr": "=NOMPROPRE(SUPPRESPACE(MINUSCULE(A3)))",
+   "attendu": "Boris Tchoumi"
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "C4",
+   "fr": "=NOMPROPRE(SUPPRESPACE(MINUSCULE(A4)))",
+   "attendu": "Carine Fotso"
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "C5",
+   "fr": "=NOMPROPRE(SUPPRESPACE(MINUSCULE(A5)))",
+   "attendu": "Aminatou Njoya"
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "C6",
+   "fr": "=NOMPROPRE(SUPPRESPACE(MINUSCULE(A6)))",
+   "attendu": "Esther Nkou"
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "C7",
+   "fr": "=NOMPROPRE(SUPPRESPACE(MINUSCULE(A7)))",
+   "attendu": "Joël Atangana"
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "C8",
+   "fr": "=NOMPROPRE(SUPPRESPACE(MINUSCULE(A8)))",
+   "attendu": "Boris Tchoumi"
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "C9",
+   "fr": "=NOMPROPRE(SUPPRESPACE(MINUSCULE(A9)))",
+   "attendu": "Pauline Ngo Bassa"
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "C10",
+   "fr": "=NOMPROPRE(SUPPRESPACE(MINUSCULE(A10)))",
+   "attendu": "Armand Mbarga"
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "C11",
+   "fr": "=NOMPROPRE(SUPPRESPACE(MINUSCULE(A11)))",
+   "attendu": "Marie-Claire Ewane"
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "C12",
+   "fr": "=NOMPROPRE(SUPPRESPACE(MINUSCULE(A12)))",
+   "attendu": "Hervé Kamga"
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "C13",
+   "fr": "=NOMPROPRE(SUPPRESPACE(MINUSCULE(A13)))",
+   "attendu": "Sandrine Abena"
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "C14",
+   "fr": "=NOMPROPRE(SUPPRESPACE(MINUSCULE(A14)))",
+   "attendu": "Fatima Bello"
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "C15",
+   "fr": "=NOMPROPRE(SUPPRESPACE(MINUSCULE(A15)))",
+   "attendu": "Carine Fotso"
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "C16",
+   "fr": "=NOMPROPRE(SUPPRESPACE(MINUSCULE(A16)))",
+   "attendu": "Paul Ebode"
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "F2",
+   "fr": "=GAUCHE(C2;CHERCHE(\" \";C2;1))",
+   "attendu": "Aminatou "
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "F3",
+   "fr": "=GAUCHE(C3;CHERCHE(\" \";C3;1))",
+   "attendu": "Boris "
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "F4",
+   "fr": "=GAUCHE(C4;CHERCHE(\" \";C4;1))",
+   "attendu": "Carine "
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "F5",
+   "fr": "=GAUCHE(C5;CHERCHE(\" \";C5;1))",
+   "attendu": "Aminatou "
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "F6",
+   "fr": "=GAUCHE(C6;CHERCHE(\" \";C6;1))",
+   "attendu": "Esther "
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "F7",
+   "fr": "=GAUCHE(C7;CHERCHE(\" \";C7;1))",
+   "attendu": "Joël "
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "F8",
+   "fr": "=GAUCHE(C8;CHERCHE(\" \";C8;1))",
+   "attendu": "Boris "
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "F9",
+   "fr": "=GAUCHE(C9;CHERCHE(\" \";C9;1))",
+   "attendu": "Pauline "
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "F10",
+   "fr": "=GAUCHE(C10;CHERCHE(\" \";C10;1))",
+   "attendu": "Armand "
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "F11",
+   "fr": "=GAUCHE(C11;CHERCHE(\" \";C11;1))",
+   "attendu": "Marie-Claire "
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "F12",
+   "fr": "=GAUCHE(C12;CHERCHE(\" \";C12;1))",
+   "attendu": "Hervé "
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "F13",
+   "fr": "=GAUCHE(C13;CHERCHE(\" \";C13;1))",
+   "attendu": "Sandrine "
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "F14",
+   "fr": "=GAUCHE(C14;CHERCHE(\" \";C14;1))",
+   "attendu": "Fatima "
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "F15",
+   "fr": "=GAUCHE(C15;CHERCHE(\" \";C15;1))",
+   "attendu": "Carine "
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "F16",
+   "fr": "=GAUCHE(C16;CHERCHE(\" \";C16;1))",
+   "attendu": "Paul "
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "G2",
+   "fr": "=NBCAR(F2)",
+   "attendu": 9
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "G3",
+   "fr": "=NBCAR(F3)",
+   "attendu": 6
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "G4",
+   "fr": "=NBCAR(F4)",
+   "attendu": 7
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "G5",
+   "fr": "=NBCAR(F5)",
+   "attendu": 9
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "G6",
+   "fr": "=NBCAR(F6)",
+   "attendu": 7
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "G7",
+   "fr": "=NBCAR(F7)",
+   "attendu": 5
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "G8",
+   "fr": "=NBCAR(F8)",
+   "attendu": 6
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "G9",
+   "fr": "=NBCAR(F9)",
+   "attendu": 8
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "G10",
+   "fr": "=NBCAR(F10)",
+   "attendu": 7
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "G11",
+   "fr": "=NBCAR(F11)",
+   "attendu": 13
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "G12",
+   "fr": "=NBCAR(F12)",
+   "attendu": 6
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "G13",
+   "fr": "=NBCAR(F13)",
+   "attendu": 9
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "G14",
+   "fr": "=NBCAR(F14)",
+   "attendu": 7
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "G15",
+   "fr": "=NBCAR(F15)",
+   "attendu": 7
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "G16",
+   "fr": "=NBCAR(F16)",
+   "attendu": 5
+  }
+ ],
+ "capture": {
+  "feuille": "Clients",
+  "plage": "C1:G7",
+  "cellule_active": "F2",
+  "zoom": 165
+ },
+ "largeurs_serrees": 40
+}

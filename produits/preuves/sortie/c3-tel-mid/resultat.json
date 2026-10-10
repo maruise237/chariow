@@ -1,0 +1,156 @@
+{
+  "id": "c3-tel-mid",
+  "ok": true,
+  "resultats": [
+    {
+      "feuille": "Clients",
+      "cellule": "C2",
+      "formule_fr": "=CONCAT(SI(ESTNUM(VALEUR(MID(B2;LIGNE(INDIRECT(\"1:\"&NBCAR(B2)));1)));MID(B2;LIGNE(INDIRECT(\"1:\"&NBCAR(B2)));1);\"\"))",
+      "formule_affichee": "=CONCAT(SI(ESTNUM(valeur(mid(B2;LIGNE(INDIRECT(\"1:\"&NBCAR(B2)));1)));mid(B2;LIGNE(INDIRECT(\"1:\"&NBCAR(B2)));1);\"\"))",
+      "valeur": "",
+      "erreur": false,
+      "attendu": "",
+      "ok": true
+    },
+    {
+      "feuille": "Clients",
+      "cellule": "C3",
+      "formule_fr": "=CONCAT(SI(ESTNUM(VALEUR(MID(B3;LIGNE(INDIRECT(\"1:\"&NBCAR(B3)));1)));MID(B3;LIGNE(INDIRECT(\"1:\"&NBCAR(B3)));1);\"\"))",
+      "formule_affichee": "=CONCAT(SI(ESTNUM(valeur(mid(B3;LIGNE(INDIRECT(\"1:\"&NBCAR(B3)));1)));mid(B3;LIGNE(INDIRECT(\"1:\"&NBCAR(B3)));1);\"\"))",
+      "valeur": "",
+      "erreur": false,
+      "attendu": "",
+      "ok": true
+    },
+    {
+      "feuille": "Clients",
+      "cellule": "C4",
+      "formule_fr": "=CONCAT(SI(ESTNUM(VALEUR(MID(B4;LIGNE(INDIRECT(\"1:\"&NBCAR(B4)));1)));MID(B4;LIGNE(INDIRECT(\"1:\"&NBCAR(B4)));1);\"\"))",
+      "formule_affichee": "=CONCAT(SI(ESTNUM(valeur(mid(B4;LIGNE(INDIRECT(\"1:\"&NBCAR(B4)));1)));mid(B4;LIGNE(INDIRECT(\"1:\"&NBCAR(B4)));1);\"\"))",
+      "valeur": "",
+      "erreur": false,
+      "attendu": "",
+      "ok": true
+    },
+    {
+      "feuille": "Clients",
+      "cellule": "C5",
+      "formule_fr": "=CONCAT(SI(ESTNUM(VALEUR(MID(B5;LIGNE(INDIRECT(\"1:\"&NBCAR(B5)));1)));MID(B5;LIGNE(INDIRECT(\"1:\"&NBCAR(B5)));1);\"\"))",
+      "formule_affichee": "=CONCAT(SI(ESTNUM(valeur(mid(B5;LIGNE(INDIRECT(\"1:\"&NBCAR(B5)));1)));mid(B5;LIGNE(INDIRECT(\"1:\"&NBCAR(B5)));1);\"\"))",
+      "valeur": "",
+      "erreur": false,
+      "attendu": "",
+      "ok": true
+    },
+    {
+      "feuille": "Clients",
+      "cellule": "C6",
+      "formule_fr": "=CONCAT(SI(ESTNUM(VALEUR(MID(B6;LIGNE(INDIRECT(\"1:\"&NBCAR(B6)));1)));MID(B6;LIGNE(INDIRECT(\"1:\"&NBCAR(B6)));1);\"\"))",
+      "formule_affichee": "=CONCAT(SI(ESTNUM(valeur(mid(B6;LIGNE(INDIRECT(\"1:\"&NBCAR(B6)));1)));mid(B6;LIGNE(INDIRECT(\"1:\"&NBCAR(B6)));1);\"\"))",
+      "valeur": "",
+      "erreur": false,
+      "attendu": "",
+      "ok": true
+    },
+    {
+      "feuille": "Clients",
+      "cellule": "C7",
+      "formule_fr": "=CONCAT(SI(ESTNUM(VALEUR(MID(B7;LIGNE(INDIRECT(\"1:\"&NBCAR(B7)));1)));MID(B7;LIGNE(INDIRECT(\"1:\"&NBCAR(B7)));1);\"\"))",
+      "formule_affichee": "=CONCAT(SI(ESTNUM(valeur(mid(B7;LIGNE(INDIRECT(\"1:\"&NBCAR(B7)));1)));mid(B7;LIGNE(INDIRECT(\"1:\"&NBCAR(B7)));1);\"\"))",
+      "valeur": "",
+      "erreur": false,
+      "attendu": "",
+      "ok": true
+    },
+    {
+      "feuille": "Clients",
+      "cellule": "C8",
+      "formule_fr": "=CONCAT(SI(ESTNUM(VALEUR(MID(B8;LIGNE(INDIRECT(\"1:\"&NBCAR(B8)));1)));MID(B8;LIGNE(INDIRECT(\"1:\"&NBCAR(B8)));1);\"\"))",
+      "formule_affichee": "=CONCAT(SI(ESTNUM(valeur(mid(B8;LIGNE(INDIRECT(\"1:\"&NBCAR(B8)));1)));mid(B8;LIGNE(INDIRECT(\"1:\"&NBCAR(B8)));1);\"\"))",
+      "valeur": "",
+      "erreur": false,
+      "attendu": "",
+      "ok": true
+    },
+    {
+      "feuille": "Clients",
+      "cellule": "C9",
+      "formule_fr": "=CONCAT(SI(ESTNUM(VALEUR(MID(B9;LIGNE(INDIRECT(\"1:\"&NBCAR(B9)));1)));MID(B9;LIGNE(INDIRECT(\"1:\"&NBCAR(B9)));1);\"\"))",
+      "formule_affichee": "=CONCAT(SI(ESTNUM(valeur(mid(B9;LIGNE(INDIRECT(\"1:\"&NBCAR(B9)));1)));mid(B9;LIGNE(INDIRECT(\"1:\"&NBCAR(B9)));1);\"\"))",
+      "valeur": "",
+      "erreur": false,
+      "attendu": "",
+      "ok": true
+    },
+    {
+      "feuille": "Clients",
+      "cellule": "C10",
+      "formule_fr": "=CONCAT(SI(ESTNUM(VALEUR(MID(B10;LIGNE(INDIRECT(\"1:\"&NBCAR(B10)));1)));MID(B10;LIGNE(INDIRECT(\"1:\"&NBCAR(B10)));1);\"\"))",
+      "formule_affichee": "=CONCAT(SI(ESTNUM(valeur(mid(B10;LIGNE(INDIRECT(\"1:\"&NBCAR(B10)));1)));mid(B10;LIGNE(INDIRECT(\"1:\"&NBCAR(B10)));1);\"\"))",
+      "valeur": "",
+      "erreur": false,
+      "attendu": "",
+      "ok": true
+    },
+    {
+      "feuille": "Clients",
+      "cellule": "C11",
+      "formule_fr": "=CONCAT(SI(ESTNUM(VALEUR(MID(B11;LIGNE(INDIRECT(\"1:\"&NBCAR(B11)));1)));MID(B11;LIGNE(INDIRECT(\"1:\"&NBCAR(B11)));1);\"\"))",
+      "formule_affichee": "=CONCAT(SI(ESTNUM(valeur(mid(B11;LIGNE(INDIRECT(\"1:\"&NBCAR(B11)));1)));mid(B11;LIGNE(INDIRECT(\"1:\"&NBCAR(B11)));1);\"\"))",
+      "valeur": "",
+      "erreur": false,
+      "attendu": "",
+      "ok": true
+    },
+    {
+      "feuille": "Clients",
+      "cellule": "C12",
+      "formule_fr": "=CONCAT(SI(ESTNUM(VALEUR(MID(B12;LIGNE(INDIRECT(\"1:\"&NBCAR(B12)));1)));MID(B12;LIGNE(INDIRECT(\"1:\"&NBCAR(B12)));1);\"\"))",
+      "formule_affichee": "=CONCAT(SI(ESTNUM(valeur(mid(B12;LIGNE(INDIRECT(\"1:\"&NBCAR(B12)));1)));mid(B12;LIGNE(INDIRECT(\"1:\"&NBCAR(B12)));1);\"\"))",
+      "valeur": "",
+      "erreur": false,
+      "attendu": "",
+      "ok": true
+    },
+    {
+      "feuille": "Clients",
+      "cellule": "C13",
+      "formule_fr": "=CONCAT(SI(ESTNUM(VALEUR(MID(B13;LIGNE(INDIRECT(\"1:\"&NBCAR(B13)));1)));MID(B13;LIGNE(INDIRECT(\"1:\"&NBCAR(B13)));1);\"\"))",
+      "formule_affichee": "=CONCAT(SI(ESTNUM(valeur(mid(B13;LIGNE(INDIRECT(\"1:\"&NBCAR(B13)));1)));mid(B13;LIGNE(INDIRECT(\"1:\"&NBCAR(B13)));1);\"\"))",
+      "valeur": "",
+      "erreur": false,
+      "attendu": "",
+      "ok": true
+    },
+    {
+      "feuille": "Clients",
+      "cellule": "C14",
+      "formule_fr": "=CONCAT(SI(ESTNUM(VALEUR(MID(B14;LIGNE(INDIRECT(\"1:\"&NBCAR(B14)));1)));MID(B14;LIGNE(INDIRECT(\"1:\"&NBCAR(B14)));1);\"\"))",
+      "formule_affichee": "=CONCAT(SI(ESTNUM(valeur(mid(B14;LIGNE(INDIRECT(\"1:\"&NBCAR(B14)));1)));mid(B14;LIGNE(INDIRECT(\"1:\"&NBCAR(B14)));1);\"\"))",
+      "valeur": "",
+      "erreur": false,
+      "attendu": "",
+      "ok": true
+    },
+    {
+      "feuille": "Clients",
+      "cellule": "C15",
+      "formule_fr": "=CONCAT(SI(ESTNUM(VALEUR(MID(B15;LIGNE(INDIRECT(\"1:\"&NBCAR(B15)));1)));MID(B15;LIGNE(INDIRECT(\"1:\"&NBCAR(B15)));1);\"\"))",
+      "formule_affichee": "=CONCAT(SI(ESTNUM(valeur(mid(B15;LIGNE(INDIRECT(\"1:\"&NBCAR(B15)));1)));mid(B15;LIGNE(INDIRECT(\"1:\"&NBCAR(B15)));1);\"\"))",
+      "valeur": "",
+      "erreur": false,
+      "attendu": "",
+      "ok": true
+    },
+    {
+      "feuille": "Clients",
+      "cellule": "C16",
+      "formule_fr": "=CONCAT(SI(ESTNUM(VALEUR(MID(B16;LIGNE(INDIRECT(\"1:\"&NBCAR(B16)));1)));MID(B16;LIGNE(INDIRECT(\"1:\"&NBCAR(B16)));1);\"\"))",
+      "formule_affichee": "=CONCAT(SI(ESTNUM(valeur(mid(B16;LIGNE(INDIRECT(\"1:\"&NBCAR(B16)));1)));mid(B16;LIGNE(INDIRECT(\"1:\"&NBCAR(B16)));1);\"\"))",
+      "valeur": "",
+      "erreur": false,
+      "attendu": "",
+      "ok": true
+    }
+  ]
+}

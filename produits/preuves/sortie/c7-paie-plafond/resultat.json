@@ -1,0 +1,36 @@
+{
+  "id": "c7-paie-plafond",
+  "ok": true,
+  "resultats": [
+    {
+      "feuille": "Paie",
+      "cellule": "B6",
+      "formule_fr": "=MIN(B2;B4)*B3",
+      "formule_affichee": "=MIN(B2;B4)*B3",
+      "valeur": 31500.000000000004,
+      "erreur": false,
+      "attendu": 31500,
+      "ok": true
+    },
+    {
+      "feuille": "Paie",
+      "cellule": "B7",
+      "formule_fr": "=B6+B5",
+      "formule_affichee": "=B6+B5",
+      "valeur": 56500.0,
+      "erreur": false,
+      "attendu": 56500,
+      "ok": true
+    },
+    {
+      "feuille": "Paie",
+      "cellule": "B8",
+      "formule_fr": "=B2-B7",
+      "formule_affichee": "=B2-B7",
+      "valeur": 843500.0,
+      "erreur": false,
+      "attendu": 843500,
+      "ok": true
+    }
+  ]
+}

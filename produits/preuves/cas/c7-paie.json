@@ -1,0 +1,69 @@
+{
+ "id": "c7-paie",
+ "note": "formules gpt-5-mini kam-c7-t07",
+ "feuilles": {
+  "Paie": [
+   [
+    "Fiche de paie",
+    "Montant (F)"
+   ],
+   [
+    "Salaire brut",
+    250000
+   ],
+   [
+    "Taux retraite (CNPS)",
+    0.042
+   ],
+   [
+    "Plafond de la base",
+    750000
+   ],
+   [
+    "Autres retenues (saisies)",
+    25000
+   ],
+   [
+    "Cotisation retraite"
+   ],
+   [
+    "Total des retenues"
+   ],
+   [
+    "Net à payer"
+   ]
+  ]
+ },
+ "formules": [
+  {
+   "feuille": "Paie",
+   "cellule": "B6",
+   "fr": "=MIN(B2;B4)*B3",
+   "attendu": 10500
+  },
+  {
+   "feuille": "Paie",
+   "cellule": "B7",
+   "fr": "=B6+B5",
+   "attendu": 35500
+  },
+  {
+   "feuille": "Paie",
+   "cellule": "B8",
+   "fr": "=B2-B7",
+   "attendu": 214500
+  }
+ ],
+ "capture": {
+  "feuille": "Paie",
+  "plage": "A2:B8",
+  "cellule_active": "B6",
+  "zoom": 165
+ },
+ "formats": {
+  "B2:B2": "# ##0",
+  "B4:B8": "# ##0",
+  "B3:B3": "0,0%"
+ },
+ "largeurs_serrees": 40
+}

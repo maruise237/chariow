@@ -1,0 +1,173 @@
+{
+ "id": "c7-tontine-corrige",
+ "note": "D corrigée : tout le monde cotise à chaque tour",
+ "feuilles": {
+  "Suivi": [
+   [
+    "Membre",
+    "Ordre",
+    "Versé",
+    "Reste",
+    "A reçu"
+   ],
+   [
+    "Awa",
+    1
+   ],
+   [
+    "Boris",
+    2
+   ],
+   [
+    "Carine",
+    3
+   ],
+   [
+    "David",
+    4
+   ]
+  ],
+  "Cotisations": [
+   [
+    "Membre",
+    "Tour",
+    "Montant",
+    null,
+    "Cotisation par tour",
+    10000
+   ],
+   [
+    "Awa",
+    1,
+    10000,
+    null,
+    "Tour en cours",
+    3
+   ],
+   [
+    "Boris",
+    1,
+    10000
+   ],
+   [
+    "Carine",
+    1,
+    10000
+   ],
+   [
+    "David",
+    1,
+    10000
+   ],
+   [
+    "Boris",
+    2,
+    10000
+   ],
+   [
+    "Carine",
+    2,
+    10000
+   ],
+   [
+    "David",
+    2,
+    10000
+   ],
+   [
+    "Boris",
+    3,
+    10000
+   ],
+   [
+    "Carine",
+    3,
+    10000
+   ]
+  ]
+ },
+ "formules": [
+  {
+   "feuille": "Suivi",
+   "cellule": "C2",
+   "fr": "=SOMME.SI.ENS(Cotisations!$C:$C;Cotisations!$A:$A;$A2)",
+   "attendu": 10000
+  },
+  {
+   "feuille": "Suivi",
+   "cellule": "D2",
+   "fr": "=MAX(0;Cotisations!$F$1*Cotisations!$F$2-$C2)",
+   "attendu": 20000
+  },
+  {
+   "feuille": "Suivi",
+   "cellule": "E2",
+   "fr": "=SI($B2<=Cotisations!$F$2;\"Oui\";\"Non\")",
+   "attendu": "Oui"
+  },
+  {
+   "feuille": "Suivi",
+   "cellule": "C3",
+   "fr": "=SOMME.SI.ENS(Cotisations!$C:$C;Cotisations!$A:$A;$A3)",
+   "attendu": 30000
+  },
+  {
+   "feuille": "Suivi",
+   "cellule": "D3",
+   "fr": "=MAX(0;Cotisations!$F$1*Cotisations!$F$2-$C3)",
+   "attendu": 0
+  },
+  {
+   "feuille": "Suivi",
+   "cellule": "E3",
+   "fr": "=SI($B3<=Cotisations!$F$2;\"Oui\";\"Non\")",
+   "attendu": "Oui"
+  },
+  {
+   "feuille": "Suivi",
+   "cellule": "C4",
+   "fr": "=SOMME.SI.ENS(Cotisations!$C:$C;Cotisations!$A:$A;$A4)",
+   "attendu": 30000
+  },
+  {
+   "feuille": "Suivi",
+   "cellule": "D4",
+   "fr": "=MAX(0;Cotisations!$F$1*Cotisations!$F$2-$C4)",
+   "attendu": 0
+  },
+  {
+   "feuille": "Suivi",
+   "cellule": "E4",
+   "fr": "=SI($B4<=Cotisations!$F$2;\"Oui\";\"Non\")",
+   "attendu": "Oui"
+  },
+  {
+   "feuille": "Suivi",
+   "cellule": "C5",
+   "fr": "=SOMME.SI.ENS(Cotisations!$C:$C;Cotisations!$A:$A;$A5)",
+   "attendu": 20000
+  },
+  {
+   "feuille": "Suivi",
+   "cellule": "D5",
+   "fr": "=MAX(0;Cotisations!$F$1*Cotisations!$F$2-$C5)",
+   "attendu": 10000
+  },
+  {
+   "feuille": "Suivi",
+   "cellule": "E5",
+   "fr": "=SI($B5<=Cotisations!$F$2;\"Oui\";\"Non\")",
+   "attendu": "Non"
+  }
+ ],
+ "capture": {
+  "feuille": "Suivi",
+  "plage": "A1:E5",
+  "cellule_active": "D2",
+  "zoom": 165
+ },
+ "formats": {
+  "C2:D5": "# ##0"
+ },
+ "largeurs_serrees": 40
+}

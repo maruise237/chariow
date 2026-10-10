@@ -1,0 +1,80 @@
+{
+ "id": "c7-facture",
+ "note": "gpt-5-mini kam-c7-t08",
+ "feuilles": {
+  "Facture": [
+   [
+    "Désignation",
+    "Qté",
+    "Prix unit.",
+    "Total HT"
+   ],
+   [
+    "Riz 5 kg",
+    3,
+    13500
+   ],
+   [
+    "Savon",
+    4,
+    1250
+   ],
+   [
+    "Total HT"
+   ],
+   [
+    "TVA",
+    0.1925
+   ],
+   [
+    "Total TTC"
+   ]
+  ]
+ },
+ "formules": [
+  {
+   "feuille": "Facture",
+   "cellule": "D2",
+   "fr": "=B2*C2",
+   "attendu": 40500
+  },
+  {
+   "feuille": "Facture",
+   "cellule": "D3",
+   "fr": "=B3*C3",
+   "attendu": 5000
+  },
+  {
+   "feuille": "Facture",
+   "cellule": "D4",
+   "fr": "=SOMME(D2:D3)",
+   "attendu": 45500
+  },
+  {
+   "feuille": "Facture",
+   "cellule": "D5",
+   "fr": "=D4*B5",
+   "attendu": 8758.75
+  },
+  {
+   "feuille": "Facture",
+   "cellule": "D6",
+   "fr": "=ARRONDI(D4+D5;0)",
+   "attendu": 54259
+  }
+ ],
+ "capture": {
+  "feuille": "Facture",
+  "plage": "A1:D6",
+  "cellule_active": "D5",
+  "zoom": 165
+ },
+ "formats": {
+  "B2:C3": "# ##0",
+  "D2:D4": "# ##0",
+  "D5:D5": "# ##0,00",
+  "D6:D6": "# ##0",
+  "B5:B5": "0,00%"
+ },
+ "largeurs_serrees": 40
+}

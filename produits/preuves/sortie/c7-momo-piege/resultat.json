@@ -1,0 +1,86 @@
+{
+  "id": "c7-momo-piege",
+  "ok": true,
+  "resultats": [
+    {
+      "feuille": "Bilan",
+      "cellule": "B2",
+      "formule_fr": "=SOMME.SI.ENS('Opérations'!$D:$D;'Opérations'!$B:$B;$A2;'Opérations'!$C:$C;\"Entrée\")",
+      "formule_affichee": "=SOMME.SI.ENS($Opérations.$D:$D;$Opérations.$B:$B;$A2;$Opérations.$C:$C;\"Entrée\")",
+      "valeur": 170000.0,
+      "erreur": false,
+      "attendu": 170000,
+      "ok": true
+    },
+    {
+      "feuille": "Bilan",
+      "cellule": "C2",
+      "formule_fr": "=SOMME.SI.ENS('Opérations'!$D:$D;'Opérations'!$B:$B;$A2;'Opérations'!$C:$C;\"Sortie\")",
+      "formule_affichee": "=SOMME.SI.ENS($Opérations.$D:$D;$Opérations.$B:$B;$A2;$Opérations.$C:$C;\"Sortie\")",
+      "valeur": 25000.0,
+      "erreur": false,
+      "attendu": 25000,
+      "ok": true
+    },
+    {
+      "feuille": "Bilan",
+      "cellule": "D2",
+      "formule_fr": "=SOMME.SI('Opérations'!$B:$B;$A2;'Opérations'!$E:$E)",
+      "formule_affichee": "=SOMME.SI($Opérations.$B:$B;$A2;$Opérations.$E:$E)",
+      "valeur": 250.0,
+      "erreur": false,
+      "attendu": 250,
+      "ok": true
+    },
+    {
+      "feuille": "Bilan",
+      "cellule": "E2",
+      "formule_fr": "=B2-C2-D2",
+      "formule_affichee": "=B2-C2-D2",
+      "valeur": 144750.0,
+      "erreur": false,
+      "attendu": 144750,
+      "ok": true
+    },
+    {
+      "feuille": "Bilan",
+      "cellule": "B3",
+      "formule_fr": "=SOMME.SI.ENS('Opérations'!$D:$D;'Opérations'!$B:$B;$A3;'Opérations'!$C:$C;\"Entrée\")",
+      "formule_affichee": "=SOMME.SI.ENS($Opérations.$D:$D;$Opérations.$B:$B;$A3;$Opérations.$C:$C;\"Entrée\")",
+      "valeur": 80000.0,
+      "erreur": false,
+      "attendu": 80000,
+      "ok": true
+    },
+    {
+      "feuille": "Bilan",
+      "cellule": "C3",
+      "formule_fr": "=SOMME.SI.ENS('Opérations'!$D:$D;'Opérations'!$B:$B;$A3;'Opérations'!$C:$C;\"Sortie\")",
+      "formule_affichee": "=SOMME.SI.ENS($Opérations.$D:$D;$Opérations.$B:$B;$A3;$Opérations.$C:$C;\"Sortie\")",
+      "valeur": 45000.0,
+      "erreur": false,
+      "attendu": 45000,
+      "ok": true
+    },
+    {
+      "feuille": "Bilan",
+      "cellule": "D3",
+      "formule_fr": "=SOMME.SI('Opérations'!$B:$B;$A3;'Opérations'!$E:$E)",
+      "formule_affichee": "=SOMME.SI($Opérations.$B:$B;$A3;$Opérations.$E:$E)",
+      "valeur": 500.0,
+      "erreur": false,
+      "attendu": 500,
+      "ok": true
+    },
+    {
+      "feuille": "Bilan",
+      "cellule": "E3",
+      "formule_fr": "=B3-C3-D3",
+      "formule_affichee": "=B3-C3-D3",
+      "valeur": 34500.0,
+      "erreur": false,
+      "attendu": 34500,
+      "ok": true
+    }
+  ]
+}

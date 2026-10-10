@@ -1,0 +1,126 @@
+{
+  "id": "c7-tontine",
+  "ok": true,
+  "resultats": [
+    {
+      "feuille": "Suivi",
+      "cellule": "C2",
+      "formule_fr": "=SOMME.SI.ENS(Cotisations!$C:$C;Cotisations!$A:$A;$A2)",
+      "formule_affichee": "=SOMME.SI.ENS($Cotisations.$C:$C;$Cotisations.$A:$A;$A2)",
+      "valeur": 10000.0,
+      "erreur": false,
+      "attendu": 10000,
+      "ok": true
+    },
+    {
+      "feuille": "Suivi",
+      "cellule": "D2",
+      "formule_fr": "=MAX(0;Cotisations!$F$1*MIN(Cotisations!$F$2;$B2)-$C2)",
+      "formule_affichee": "=MAX(0;$Cotisations.$F$1*MIN($Cotisations.$F$2;$B2)-$C2)",
+      "valeur": 0.0,
+      "erreur": false,
+      "attendu": 0,
+      "ok": true
+    },
+    {
+      "feuille": "Suivi",
+      "cellule": "E2",
+      "formule_fr": "=SI($B2<=Cotisations!$F$2;\"Oui\";\"Non\")",
+      "formule_affichee": "=SI($B2<=$Cotisations.$F$2;\"Oui\";\"Non\")",
+      "valeur": "Oui",
+      "erreur": false,
+      "attendu": "Oui",
+      "ok": true
+    },
+    {
+      "feuille": "Suivi",
+      "cellule": "C3",
+      "formule_fr": "=SOMME.SI.ENS(Cotisations!$C:$C;Cotisations!$A:$A;$A3)",
+      "formule_affichee": "=SOMME.SI.ENS($Cotisations.$C:$C;$Cotisations.$A:$A;$A3)",
+      "valeur": 30000.0,
+      "erreur": false,
+      "attendu": 30000,
+      "ok": true
+    },
+    {
+      "feuille": "Suivi",
+      "cellule": "D3",
+      "formule_fr": "=MAX(0;Cotisations!$F$1*MIN(Cotisations!$F$2;$B3)-$C3)",
+      "formule_affichee": "=MAX(0;$Cotisations.$F$1*MIN($Cotisations.$F$2;$B3)-$C3)",
+      "valeur": 0.0,
+      "erreur": false,
+      "attendu": 0,
+      "ok": true
+    },
+    {
+      "feuille": "Suivi",
+      "cellule": "E3",
+      "formule_fr": "=SI($B3<=Cotisations!$F$2;\"Oui\";\"Non\")",
+      "formule_affichee": "=SI($B3<=$Cotisations.$F$2;\"Oui\";\"Non\")",
+      "valeur": "Oui",
+      "erreur": false,
+      "attendu": "Oui",
+      "ok": true
+    },
+    {
+      "feuille": "Suivi",
+      "cellule": "C4",
+      "formule_fr": "=SOMME.SI.ENS(Cotisations!$C:$C;Cotisations!$A:$A;$A4)",
+      "formule_affichee": "=SOMME.SI.ENS($Cotisations.$C:$C;$Cotisations.$A:$A;$A4)",
+      "valeur": 30000.0,
+      "erreur": false,
+      "attendu": 30000,
+      "ok": true
+    },
+    {
+      "feuille": "Suivi",
+      "cellule": "D4",
+      "formule_fr": "=MAX(0;Cotisations!$F$1*MIN(Cotisations!$F$2;$B4)-$C4)",
+      "formule_affichee": "=MAX(0;$Cotisations.$F$1*MIN($Cotisations.$F$2;$B4)-$C4)",
+      "valeur": 0.0,
+      "erreur": false,
+      "attendu": 0,
+      "ok": true
+    },
+    {
+      "feuille": "Suivi",
+      "cellule": "E4",
+      "formule_fr": "=SI($B4<=Cotisations!$F$2;\"Oui\";\"Non\")",
+      "formule_affichee": "=SI($B4<=$Cotisations.$F$2;\"Oui\";\"Non\")",
+      "valeur": "Oui",
+      "erreur": false,
+      "attendu": "Oui",
+      "ok": true
+    },
+    {
+      "feuille": "Suivi",
+      "cellule": "C5",
+      "formule_fr": "=SOMME.SI.ENS(Cotisations!$C:$C;Cotisations!$A:$A;$A5)",
+      "formule_affichee": "=SOMME.SI.ENS($Cotisations.$C:$C;$Cotisations.$A:$A;$A5)",
+      "valeur": 20000.0,
+      "erreur": false,
+      "attendu": 20000,
+      "ok": true
+    },
+    {
+      "feuille": "Suivi",
+      "cellule": "D5",
+      "formule_fr": "=MAX(0;Cotisations!$F$1*MIN(Cotisations!$F$2;$B5)-$C5)",
+      "formule_affichee": "=MAX(0;$Cotisations.$F$1*MIN($Cotisations.$F$2;$B5)-$C5)",
+      "valeur": 10000.0,
+      "erreur": false,
+      "attendu": 10000,
+      "ok": true
+    },
+    {
+      "feuille": "Suivi",
+      "cellule": "E5",
+      "formule_fr": "=SI($B5<=Cotisations!$F$2;\"Oui\";\"Non\")",
+      "formule_affichee": "=SI($B5<=$Cotisations.$F$2;\"Oui\";\"Non\")",
+      "valeur": "Non",
+      "erreur": false,
+      "attendu": "Non",
+      "ok": true
+    }
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "id": "c1-plage",
+  "ok": true,
+  "resultats": [
+    {
+      "feuille": "Ventes",
+      "cellule": "D6",
+      "formule_fr": "=SOMME(D2:D5)",
+      "formule_affichee": "=SOMME(D2:D5)",
+      "valeur": 20500.0,
+      "erreur": false,
+      "attendu": 20500,
+      "ok": true
+    }
+  ]
+}
