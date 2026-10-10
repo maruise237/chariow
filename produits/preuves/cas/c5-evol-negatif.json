@@ -1,0 +1,54 @@
+{
+ "id": "c5-evol-negatif",
+ "feuilles": {
+  "Tableau de bord": [
+   [
+    "Indicateur",
+    "Octobre",
+    "Septembre",
+    "Évolution"
+   ],
+   [
+    "Bénéfice",
+    34000,
+    -10000
+   ],
+   [
+    "Bénéfice",
+    34000,
+    -10000
+   ]
+  ]
+ },
+ "formules": [
+  {
+   "feuille": "Tableau de bord",
+   "cellule": "D2",
+   "fr": "=(B2-C2)/C2",
+   "attendu": -4.4
+  },
+  {
+   "feuille": "Tableau de bord",
+   "cellule": "D3",
+   "fr": "=(B3-C3)/ABS(C3)",
+   "attendu": 4.4
+  }
+ ],
+ "capture": {
+  "feuille": "Tableau de bord",
+  "plage": "A1:D3",
+  "cellule_active": "D2",
+  "zoom": 165
+ },
+ "largeurs": {
+  "A": 14,
+  "B": 12,
+  "C": 12,
+  "D": 12
+ },
+ "formats": {
+  "B2:C3": "# ##0",
+  "D2:D3": "0,0%"
+ },
+ "largeurs_serrees": 40
+}

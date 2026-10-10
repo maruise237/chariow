@@ -1,0 +1,26 @@
+{
+  "id": "c5-pct-double",
+  "ok": true,
+  "resultats": [
+    {
+      "feuille": "Tableau de bord",
+      "cellule": "C3",
+      "formule_fr": "=B3/B2*100",
+      "formule_affichee": "=B3/B2*100",
+      "valeur": 35.38461538461539,
+      "erreur": false,
+      "attendu": 35.38461538461539,
+      "ok": true
+    },
+    {
+      "feuille": "Tableau de bord",
+      "cellule": "C4",
+      "formule_fr": "=B4/B2",
+      "formule_affichee": "=B4/B2",
+      "valeur": 0.35384615384615387,
+      "erreur": false,
+      "attendu": 0.35384615384615387,
+      "ok": true
+    }
+  ]
+}

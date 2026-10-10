@@ -1,0 +1,125 @@
+{
+  "id": "c5-tableau-de-bord",
+  "ok": true,
+  "resultats": [
+    {
+      "cellule": "B2",
+      "formule": "=SOMME.SI($Ventes.$A$2:$A$40;B$1;$Ventes.$C$2:$C$40)",
+      "valeur": 130000.0,
+      "attendu": 130000,
+      "ok": true
+    },
+    {
+      "cellule": "C2",
+      "formule": "=SOMME.SI($Ventes.$A$2:$A$40;C$1;$Ventes.$C$2:$C$40)",
+      "valeur": 85000.0,
+      "attendu": 85000,
+      "ok": true
+    },
+    {
+      "cellule": "B3",
+      "formule": "=SOMME.SI($Dépenses.$A$2:$A$40;B$1;$Dépenses.$C$2:$C$40)",
+      "valeur": 96000.0,
+      "attendu": 96000,
+      "ok": true
+    },
+    {
+      "cellule": "C3",
+      "formule": "=SOMME.SI($Dépenses.$A$2:$A$40;C$1;$Dépenses.$C$2:$C$40)",
+      "valeur": 95000.0,
+      "attendu": 95000,
+      "ok": true
+    },
+    {
+      "cellule": "B4",
+      "formule": "=B2-B3",
+      "valeur": 34000.0,
+      "attendu": 34000,
+      "ok": true
+    },
+    {
+      "cellule": "C4",
+      "formule": "=C2-C3",
+      "valeur": -10000.0,
+      "attendu": -10000,
+      "ok": true
+    },
+    {
+      "cellule": "B5",
+      "formule": "=SI(B$2=0;0;SOMME.SI.ENS($Ventes.$C$2:$C$40;$Ventes.$A$2:$A$40;B$1;$Ventes.$D$2:$D$40;\"Espèces\")/B$2)",
+      "valeur": 0.35384615384615387,
+      "attendu": 0.35384615384615387,
+      "ok": true
+    },
+    {
+      "cellule": "B6",
+      "formule": "=SI(B$2=0;0;SOMME.SI.ENS($Ventes.$C$2:$C$40;$Ventes.$A$2:$A$40;B$1;$Ventes.$D$2:$D$40;\"Orange Money\")/B$2)",
+      "valeur": 0.3384615384615385,
+      "attendu": 0.3384615384615385,
+      "ok": true
+    },
+    {
+      "cellule": "B7",
+      "formule": "=SI(B$2=0;0;SOMME.SI.ENS($Ventes.$C$2:$C$40;$Ventes.$A$2:$A$40;B$1;$Ventes.$D$2:$D$40;\"MTN MoMo\")/B$2)",
+      "valeur": 0.3076923076923077,
+      "attendu": 0.3076923076923077,
+      "ok": true
+    },
+    {
+      "cellule": "C5",
+      "formule": "=SI(C$2=0;0;SOMME.SI.ENS($Ventes.$C$2:$C$40;$Ventes.$A$2:$A$40;C$1;$Ventes.$D$2:$D$40;\"Espèces\")/C$2)",
+      "valeur": 0.4235294117647059,
+      "attendu": null,
+      "ok": true
+    },
+    {
+      "cellule": "C6",
+      "formule": "=SI(C$2=0;0;SOMME.SI.ENS($Ventes.$C$2:$C$40;$Ventes.$A$2:$A$40;C$1;$Ventes.$D$2:$D$40;\"Orange Money\")/C$2)",
+      "valeur": 0.2823529411764706,
+      "attendu": null,
+      "ok": true
+    },
+    {
+      "cellule": "C7",
+      "formule": "=SI(C$2=0;0;SOMME.SI.ENS($Ventes.$C$2:$C$40;$Ventes.$A$2:$A$40;C$1;$Ventes.$D$2:$D$40;\"MTN MoMo\")/C$2)",
+      "valeur": 0.29411764705882354,
+      "attendu": null,
+      "ok": true
+    },
+    {
+      "cellule": "D2",
+      "formule": "=SIERREUR((B2-C2)/C2;\"\")",
+      "valeur": 0.5294117647058824,
+      "attendu": 0.5294117647058824,
+      "ok": true
+    },
+    {
+      "cellule": "D3",
+      "formule": "=SIERREUR((B3-C3)/C3;\"\")",
+      "valeur": 0.010526315789473684,
+      "attendu": null,
+      "ok": true
+    },
+    {
+      "cellule": "D4",
+      "formule": "=SIERREUR((B4-C4)/ABS(C4);\"\")",
+      "valeur": 4.4,
+      "attendu": 4.4,
+      "ok": true
+    }
+  ],
+  "mise_en_forme_conditionnelle": [
+    {
+      "plage": "B4:C4",
+      "operateur": "<Enum instance com.sun.star.sheet.ConditionOperator ('LESS')>",
+      "formule1": "0",
+      "style": "KT_Rouge"
+    },
+    {
+      "plage": "B2:C2",
+      "operateur": "<Enum instance com.sun.star.sheet.ConditionOperator ('GREATER_EQUAL')>",
+      "formule1": "$E$2",
+      "style": "KT_Vert"
+    }
+  ]
+}

@@ -1,0 +1,26 @@
+{
+  "id": "c5-evol-negatif",
+  "ok": true,
+  "resultats": [
+    {
+      "feuille": "Tableau de bord",
+      "cellule": "D2",
+      "formule_fr": "=(B2-C2)/C2",
+      "formule_affichee": "=(B2-C2)/C2",
+      "valeur": -4.4,
+      "erreur": false,
+      "attendu": -4.4,
+      "ok": true
+    },
+    {
+      "feuille": "Tableau de bord",
+      "cellule": "D3",
+      "formule_fr": "=(B3-C3)/ABS(C3)",
+      "formule_affichee": "=(B3-C3)/ABS(C3)",
+      "valeur": 4.4,
+      "erreur": false,
+      "attendu": 4.4,
+      "ok": true
+    }
+  ]
+}

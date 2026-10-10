@@ -1,0 +1,36 @@
+{
+  "id": "c5-div0",
+  "ok": true,
+  "resultats": [
+    {
+      "feuille": "Tableau de bord",
+      "cellule": "D2",
+      "formule_fr": "=(B2-C2)/C2",
+      "formule_affichee": "=(B2-C2)/C2",
+      "valeur": "#DIV/0 !",
+      "erreur": true,
+      "attendu": "#DIV/0!",
+      "ok": true
+    },
+    {
+      "feuille": "Tableau de bord",
+      "cellule": "D3",
+      "formule_fr": "=SI(OU(ESTVIDE(C3);C3=0);\"\";(B3-C3)/C3)",
+      "formule_affichee": "=SI(OU(ESTVIDE(C3);C3=0);\"\";(B3-C3)/C3)",
+      "valeur": "",
+      "erreur": false,
+      "attendu": "",
+      "ok": true
+    },
+    {
+      "feuille": "Tableau de bord",
+      "cellule": "D4",
+      "formule_fr": "=SIERREUR((B4-C4)/C4;\"\")",
+      "formule_affichee": "=SIERREUR((B4-C4)/C4;\"\")",
+      "valeur": "",
+      "erreur": false,
+      "attendu": "",
+      "ok": true
+    }
+  ]
+}

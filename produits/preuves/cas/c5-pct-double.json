@@ -1,0 +1,56 @@
+{
+ "id": "c5-pct-double",
+ "feuilles": {
+  "Tableau de bord": [
+   [
+    "Indicateur",
+    "Octobre",
+    "Part"
+   ],
+   [
+    "Ventes",
+    130000
+   ],
+   [
+    "Espèces",
+    46000,
+    "=B3/B2*100"
+   ],
+   [
+    "Espèces (bon)",
+    46000,
+    "=B4/B2"
+   ]
+  ]
+ },
+ "formules": [
+  {
+   "feuille": "Tableau de bord",
+   "cellule": "C3",
+   "fr": "=B3/B2*100",
+   "attendu": 35.38461538461539
+  },
+  {
+   "feuille": "Tableau de bord",
+   "cellule": "C4",
+   "fr": "=B4/B2",
+   "attendu": 0.35384615384615387
+  }
+ ],
+ "capture": {
+  "feuille": "Tableau de bord",
+  "plage": "A1:C4",
+  "cellule_active": "C3",
+  "zoom": 165
+ },
+ "largeurs": {
+  "A": 14,
+  "B": 12,
+  "C": 12,
+  "D": 12
+ },
+ "formats": {
+  "C3:C4": "0,0%"
+ },
+ "largeurs_serrees": 40
+}

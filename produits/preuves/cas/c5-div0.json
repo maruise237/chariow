@@ -1,0 +1,64 @@
+{
+ "id": "c5-div0",
+ "feuilles": {
+  "Tableau de bord": [
+   [
+    "Cas",
+    "Octobre",
+    "Septembre",
+    "Évolution"
+   ],
+   [
+    "Formule simple",
+    130000,
+    null
+   ],
+   [
+    "Réponse ChatGPT",
+    130000,
+    null
+   ],
+   [
+    "Avec SIERREUR",
+    130000,
+    null
+   ]
+  ]
+ },
+ "formules": [
+  {
+   "feuille": "Tableau de bord",
+   "cellule": "D2",
+   "fr": "=(B2-C2)/C2",
+   "attendu_erreur": "#DIV/0!"
+  },
+  {
+   "feuille": "Tableau de bord",
+   "cellule": "D3",
+   "fr": "=SI(OU(ESTVIDE(C3);C3=0);\"\";(B3-C3)/C3)",
+   "attendu": ""
+  },
+  {
+   "feuille": "Tableau de bord",
+   "cellule": "D4",
+   "fr": "=SIERREUR((B4-C4)/C4;\"\")",
+   "attendu": ""
+  }
+ ],
+ "capture": {
+  "feuille": "Tableau de bord",
+  "plage": "A1:D4",
+  "cellule_active": "D2",
+  "zoom": 165
+ },
+ "largeurs": {
+  "A": 16,
+  "B": 11,
+  "C": 11,
+  "D": 11
+ },
+ "formats": {
+  "D2:D4": "0,0%"
+ },
+ "largeurs_serrees": 40
+}
