@@ -1,107 +1,131 @@
-// Bibliothèque de visuels réutilisables (couvertures, ouvertures de chapitre).
-// Un visuel est appelé par son nom depuis le fichier source : `visuel: tableur`.
-// Règle : un visuel montre le RÉSULTAT que le lecteur obtiendra, jamais une décoration.
+// Bibliothèque de visuels (couvertures, ouvertures, pages).
+// Règles (voir DIRECTION-ARTISTIQUE.md, section anti-slop) :
+// - un visuel montre un objet réel du lecteur (tableur, journal, ticket de caisse), posé à plat ;
+// - réplique fidèle ou schéma franc, jamais une imitation approximative ;
+// - pas d'inclinaison, pas d'ombre portée décorative, pas de bulles de chat génériques ;
+// - les explications passent par des repères numérotés reliés à une légende.
 
-const ventes = [
-  ['02/10', 'Savon', '12', '6 000'],
-  ['02/10', 'Huile 1 L', '5', '7 500'],
-  ['03/10', 'Savon', '20', '10 000'],
-  ['03/10', 'Riz 5 kg', '3', '13 500'],
-];
+const nb = n => String(n).replace(/\B(?=(\d{3})+(?!\d))/g, ' ');
 
-const V = {
-  tableur: () => `<div class="scene">
-    <div class="bulle moi"><small>TOI</small>Fais le total des ventes de savon, colonne D.</div>
-    <div class="carte tableur">
-      <div class="fx"><span>fx</span><code>=SOMME.SI.ENS(D2:D5;B2:B5;"Savon")</code></div>
-      <table>
-        <tr class="col"><td></td><td>A</td><td>B</td><td>C</td><td>D</td></tr>
-        <tr class="tete"><td>1</td><td>Date</td><td>Produit</td><td>Qté</td><td>Total FCFA</td></tr>
-        ${ventes.map((l, i) => `<tr><td>${i + 2}</td>${l.map(c => `<td>${c}</td>`).join('')}</tr>`).join('')}
-        <tr class="tot"><td>6</td><td colspan="3">Total « Savon »</td><td>16 000</td></tr>
+// Réplique d'Excel (version française) : zone de nom, barre de formule, en-têtes, cellule active.
+function excel({ formule = '=SOMME.SI.ENS(D2:D5;B2:B5;"Savon")', reperes = true, legende = true } = {}) {
+  const lignes = [
+    ['02/10', 'Savon', 12, 6000], ['02/10', 'Huile 1 L', 5, 7500],
+    ['03/10', 'Savon', 20, 10000], ['03/10', 'Riz 5 kg', 3, 13500],
+  ];
+  return `<figure class="v-excel">
+    <div class="xl">
+      <div class="xl-barre"><span class="xl-nom">D6</span><span class="xl-fx">fx</span><span class="xl-formule">${formule}${reperes ? '<i class="rep">1</i>' : ''}</span></div>
+      <table class="xl-grille">
+        <tr class="xl-cols"><th></th><th>A</th><th>B</th><th>C</th><th class="act">D</th><th>E</th></tr>
+        <tr><th>1</th><td class="b">Date</td><td class="b">Produit</td><td class="b n">Qté</td><td class="b n">Total FCFA</td><td></td></tr>
+        ${lignes.map((l, i) => `<tr><th>${i + 2}</th><td>${l[0]}</td><td>${l[1]}</td><td class="n">${l[2]}</td><td class="n">${nb(l[3])}</td><td></td></tr>`).join('')}
+        <tr><th class="act">6</th><td></td><td></td><td class="n">Savon</td><td class="n cel">16 000${reperes ? '<i class="rep">2</i>' : ''}<span class="poignee"></span></td><td></td></tr>
       </table>
     </div>
-    <div class="bulle ia"><small>L'IA</small>Formule en français, avec des « ; ». Prête à coller.</div>
-  </div>`,
+    ${legende ? `<figcaption><span class="leg"><i class="rep">1</i><span>La formule écrite par l’IA, avec les noms français et les « ; ».</span><span><i class="rep">2</i>Le résultat : 16 000 F de savon vendus.</span></figcaption>` : ''}
+  </figure>`;
+}
 
-  journal: () => `<div class="scene">
-    <div class="bulle moi"><small>TOI</small>Facture fournisseur : 500 000 F HT, TVA 19,25 %. Passe l'écriture.</div>
-    <div class="carte journal">
-      <div class="j-tete">Journal des achats · Mode SYSCOHADA</div>
-      <table>
-        <tr class="tete"><td>Compte</td><td>Libellé</td><td>Débit</td><td>Crédit</td></tr>
-        <tr><td>601</td><td>Achats de marchandises</td><td>500 000</td><td></td></tr>
-        <tr><td>4452</td><td>TVA récupérable sur achats</td><td>96 250</td><td></td></tr>
-        <tr><td>401</td><td>Fournisseurs</td><td></td><td>596 250</td></tr>
-        <tr class="tot"><td></td><td>Totaux</td><td>596 250</td><td>596 250</td></tr>
-      </table>
-    </div>
-    <div class="bulle ia"><small>L'IA</small>Écriture équilibrée : débit = crédit.</div>
-  </div>`,
+// Écriture au journal, présentation professionnelle : comptes crédités décalés, totaux sous filet.
+function journal({ titre = 'Journal des achats', date = '12/10/2026', piece = 'F-0231' } = {}) {
+  return `<figure class="v-journal">
+    <div class="jn-tete"><span>${titre}</span><span>${date} · pièce ${piece}</span></div>
+    <table class="jn">
+      <tr><th>Compte</th><th>Intitulé</th><th class="n">Débit</th><th class="n">Crédit</th></tr>
+      <tr><td>601</td><td>Achats de marchandises</td><td class="n">500 000</td><td></td></tr>
+      <tr><td>4452</td><td>TVA récupérable sur achats</td><td class="n">96 250</td><td></td></tr>
+      <tr class="cr"><td>401</td><td>Fournisseurs</td><td></td><td class="n">596 250</td></tr>
+      <tr class="tot"><td></td><td>Totaux</td><td class="n">596 250</td><td class="n">596 250</td></tr>
+    </table>
+    <p class="jn-lib">Facture ${piece}, marchandises, TVA 19,25 %</p>
+  </figure>`;
+}
 
-  telephone: () => `<div class="scene tel-scene">
-    <div class="tel"><div class="tel-ecran">
-      <div class="tel-tete">Mon assistant boutique</div>
-      <div class="bulle moi">Ventes : 85 000. Achats : 52 000. Transport : 3 500. Mama Rose a pris 6 000 à crédit.</div>
-      <div class="bulle ia">Bénéfice du jour : 29 500 F. En caisse : 23 500 F. Mama Rose te doit 6 000 F.</div>
-    </div></div>
-    <div class="carte stat"><small>Aujourd'hui</small><b>+29 500 F</b><span>bénéfice réel</span></div>
-  </div>`,
+// Ticket de caisse du jour : l'objet que le commerçant connaît.
+function recu() {
+  const l = [['Ventes', '85 000'], ['Achats', '− 52 000'], ['Transport', '− 3 500']];
+  return `<figure class="v-recu"><div class="recu">
+    <p class="recu-t">Bilan du jour</p><p class="recu-d">Mardi 14 octobre</p>
+    ${l.map(([a, b]) => `<p class="recu-l"><span>${a}</span><span>${b.replace(' ', ' ')} F</span></p>`).join('')}
+    <p class="recu-l tot"><span>Bénéfice</span><span>29 500 F</span></p>
+    <p class="recu-l pt"><span>Dont crédit Mama Rose</span><span>6 000 F</span></p>
+    <p class="recu-l pt"><span>En caisse ce soir</span><span>23 500 F</span></p>
+  </div></figure>`;
+}
 
-  // Petites cartes pour les ouvertures de chapitre : un avant → après en un coup d'œil
-  avantApres: (avant, apres, titre = '') => `<div class="carte mini">
-    ${titre ? `<div class="j-tete">${titre}</div>` : ''}
-    <div class="mini-aa"><s>${avant}</s><span>→</span><b>${apres}</b></div>
-  </div>`,
-};
+// Avant → après en une ligne typographique (pas de carte)
+function avantApres(avant, apres, legende = '') {
+  return `<figure class="v-aa"><p><s>${avant}</s><svg class="fl" viewBox="0 0 24 12" width="1em" height=".5em"><path d="M1 6h20m-5-5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg><b>${apres}</b></p>${legende ? `<figcaption>${legende}</figcaption>` : ''}</figure>`;
+}
 
-// Appel depuis la source : "tableur" ou "avantApres: #NOM? | 16 000 | =SOMME.SI.ENS(...)"
+const V = { excel, journal, recu, avantApres, tableur: excel };
+
+// Appel depuis la source : "excel" ou "avantApres: 50 F | 9 F | Savon vendu 500 F"
 function visuel(spec) {
   if (!spec) return '';
-  const [nom, reste] = spec.split(/:\s*/, 2).length > 1 ? [spec.slice(0, spec.indexOf(':')).trim(), spec.slice(spec.indexOf(':') + 1)] : [spec.trim(), ''];
-  const f = V[nom];
-  if (!f) throw new Error(`Visuel inconnu : ${nom}`);
-  return f(...(reste ? reste.split('|').map(s => s.trim()) : []));
+  const i = spec.indexOf(':');
+  const nom = (i < 0 ? spec : spec.slice(0, i)).trim();
+  const args = i < 0 ? [] : spec.slice(i + 1).split('|').map(s => s.trim());
+  if (!V[nom]) throw new Error(`Visuel inconnu : ${nom}`);
+  return V[nom](...args);
 }
 
 const CSS = `
-  .scene{position:relative;width:100%;display:flex;flex-direction:column;align-items:center}
-  .scene .bulle.moi{align-self:flex-end;margin-right:2mm;margin-bottom:-4mm;z-index:3;transform:rotate(2deg)}
-  .scene .bulle.ia{align-self:flex-start;margin-left:2mm;margin-top:-5mm;z-index:3;transform:rotate(-2deg)}
-  .carte{background:#fff;color:var(--encre);border-radius:3mm;box-shadow:0 4mm 10mm rgba(0,0,0,.3);overflow:hidden}
-  .bulle{border-radius:3mm;padding:2.2mm 3mm;font-size:8pt;line-height:1.35;box-shadow:0 2mm 6mm rgba(0,0,0,.22);max-width:62mm;font-family:Outfit}
-  .bulle.moi{background:#fff;color:var(--encre);border-bottom-right-radius:.8mm}
-  .bulle.ia{background:var(--a);color:var(--surA);border-bottom-left-radius:.8mm;font-weight:600}
-  .bulle small{display:block;font-size:6pt;font-weight:800;letter-spacing:.08em;opacity:.7;margin-bottom:.6mm}
-  .tableur,.journal{width:112mm;transform:rotate(-1.5deg);font-size:7.5pt}
-  .fx{display:flex;gap:2mm;align-items:center;background:#F3F4F6;border-bottom:1px solid #D9DCE1;padding:1.8mm 3mm}
-  .fx span{font-style:italic;font-weight:800;color:var(--p)}
-  .fx code{font-family:'JetBrains Mono',monospace;font-size:7.2pt;color:var(--f);background:#fff;border:1.2px solid var(--p);border-radius:1mm;padding:.6mm 1.8mm}
-  .carte table{width:100%;border-collapse:collapse}
-  .carte td{border:1px solid #E3E5E9;padding:1.3mm 1.8mm}
-  .tableur .col td{background:#F7F8FA;color:#7A808A;text-align:center;font-size:6.5pt;padding:.7mm}
-  .tableur td:first-child{background:#F7F8FA;color:#7A808A;text-align:center;width:5mm;font-size:6.5pt}
-  .tableur td:last-child,.journal td:nth-child(3),.journal td:nth-child(4){text-align:right;font-variant-numeric:tabular-nums}
-  .carte .tete td{font-weight:800}
-  .carte .tot td{background:var(--a);font-weight:800;color:var(--f)}
-  .j-tete{background:var(--f);color:#fff;font-weight:800;font-size:7.5pt;letter-spacing:.04em;padding:2mm 3mm}
-  .journal td:first-child{font-weight:800;color:var(--p);width:10mm}
-  .mini{width:62mm;transform:rotate(-3deg)}
-  .mini-aa{display:flex;align-items:baseline;gap:2.5mm;padding:4mm 5mm;font-family:var(--titre);font-size:19pt;white-space:nowrap}
-  .mini-aa s{color:var(--erreur);text-decoration-thickness:2px}
-  .mini-aa b{color:var(--p);font-weight:inherit}
-  .mini-aa span{font-size:13pt;opacity:.6}
-  .tel-scene{flex-direction:row;justify-content:center;align-items:center}
-  .tel{width:54mm;height:76mm;background:#111;border-radius:8mm;padding:2.2mm;box-shadow:0 6mm 14mm rgba(0,0,0,.45);transform:rotate(-4deg)}
-  .tel-ecran{background:#EFE7DC;border-radius:6mm;height:100%;padding:0 2.5mm;display:flex;flex-direction:column;gap:3mm;overflow:hidden}
-  .tel-tete{background:var(--f);color:#fff;font-weight:600;font-size:7pt;margin:0 -2.5mm;padding:5mm 3mm 2mm}
-  .tel .bulle{font-size:7.2pt;max-width:none;box-shadow:0 1mm 2mm rgba(0,0,0,.12)}
-  .tel .bulle.moi{margin-left:4mm}
-  .tel .bulle.ia{margin-right:3mm}
-  .stat{padding:3.5mm 5mm;transform:rotate(3deg) translate(-6mm,10mm);display:flex;flex-direction:column}
-  .stat small{font-size:6.5pt;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#7A808A}
-  .stat b{font-family:var(--titre);font-size:20pt;color:#12924A;line-height:1.1}
-  .stat span{font-size:7.5pt}
+  figure{margin:0}
+  .rep{display:inline-flex;align-items:center;justify-content:center;width:1.5em;height:1.5em;border-radius:50%;background:var(--f);color:#fff;font:800 .62em/1 var(--texte);font-style:normal;margin-left:.5em;vertical-align:middle;flex:none}
+  figcaption{display:flex;flex-direction:column;gap:1.2mm;margin-top:2.5mm;font-size:.8em;line-height:1.35}
+  figcaption .leg{display:flex;gap:.5em;align-items:flex-start}
+  figcaption .rep{margin:0;font-size:.75em}
+
+  /* Excel : couleurs et proportions de l'interface réelle */
+  .v-excel .xl{background:#fff;border:1px solid #C8C8C8;font-family:'Liberation Sans',Arial,sans-serif;font-size:8pt;color:#222}
+  .xl-barre{display:flex;align-items:center;border-bottom:1px solid #D4D4D4;height:7mm}
+  .xl-nom{width:14mm;padding:0 2mm;border-right:1px solid #D4D4D4;height:100%;display:flex;align-items:center}
+  .xl-fx{padding:0 2.5mm;font-style:italic;color:#666;border-right:1px solid #D4D4D4;height:100%;display:flex;align-items:center}
+  .xl-formule{padding:0 2.5mm;display:flex;align-items:center;font-family:'Liberation Sans',Arial;white-space:nowrap}
+  .xl-grille{border-collapse:collapse;width:100%;table-layout:fixed}
+  .xl-grille th{background:#F3F3F3;color:#555;font-weight:400;border:1px solid #D4D4D4;height:5.2mm;font-size:7pt}
+  .xl-grille tr th:first-child{width:7mm}
+  .xl-grille th.act{background:#D3F0E0;color:#107C41;font-weight:700;border-bottom:2px solid #107C41}
+  .xl-grille tr th.act:first-child{border-bottom:1px solid #D4D4D4;border-right:2px solid #107C41}
+  .xl-grille td{border:1px solid #E1E1E1;height:5.2mm;padding:0 1.5mm;white-space:nowrap;overflow:visible}
+  .xl-grille td.n{text-align:right}
+  .xl-grille td.b{font-weight:700}
+  .xl-grille td.cel{outline:2px solid #107C41;outline-offset:-1px;position:relative;font-weight:700}
+  .poignee{position:absolute;right:-1.3mm;bottom:-1.3mm;width:1.8mm;height:1.8mm;background:#107C41;border:1px solid #fff}
+  .xl-grille .rep{position:absolute;left:calc(100% + 2.5mm);top:50%;transform:translateY(-50%);margin:0}
+
+  /* Journal comptable */
+  .v-journal{background:#fff;border-top:2px solid var(--f);font-size:8.5pt}
+  .visuel-flux .v-journal{font-size:.72em}
+  .jn-tete{display:flex;justify-content:space-between;padding:2mm 0 1.5mm;font-size:.85em;color:#555}
+  .jn-tete span:first-child{font-weight:800;color:var(--f);text-transform:uppercase;letter-spacing:.08em}
+  .jn{width:100%;border-collapse:collapse;font-variant-numeric:tabular-nums}
+  .jn th{font-size:.78em;font-weight:800;text-transform:uppercase;letter-spacing:.06em;text-align:left;color:#555;padding:1.2mm 1.5mm;border-bottom:1px solid var(--f)}
+  .jn td{padding:1.6mm 1.5mm;border-bottom:1px solid #E6E6E6}
+  .jn .n{text-align:right}
+  .jn td:first-child{font-weight:700;color:var(--p);width:11mm}
+  .jn tr.cr td:nth-child(2){padding-left:7mm}
+  .jn tr.tot td{border-top:1.5px solid var(--f);border-bottom:none;font-weight:800}
+  .jn-lib{font-size:.85em;font-style:italic;color:#555;padding-top:1.5mm}
+
+  /* Ticket de caisse */
+  .recu{background:#FFFDF8;color:#222;width:58mm;padding:5mm 5mm 7mm;font-family:'JetBrains Mono',monospace;font-size:7.6pt;line-height:1.5;
+    -webkit-mask:linear-gradient(#000 0 0) top/100% calc(100% - 2.4mm) no-repeat,conic-gradient(from -45deg at bottom,#0000,#000 1deg 89deg,#0000 90deg) bottom/3.2mm 2.4mm repeat-x;
+    mask:linear-gradient(#000 0 0) top/100% calc(100% - 2.4mm) no-repeat,conic-gradient(from -45deg at bottom,#0000,#000 1deg 89deg,#0000 90deg) bottom/3.2mm 2.4mm repeat-x}
+  .recu-t{text-align:center;font-weight:500;text-transform:uppercase;letter-spacing:.12em}
+  .recu-d{text-align:center;color:#777;margin-bottom:2.5mm;padding-bottom:2mm;border-bottom:1px dashed #999}
+  .recu-l{display:flex;justify-content:space-between}
+  .recu-l.tot{border-top:1px dashed #999;margin-top:1.5mm;padding-top:1.5mm;font-size:1.25em}
+  .recu-l.pt{color:#666}
+
+  /* Avant → après */
+  .v-aa p{font-family:var(--titre);font-size:30pt;line-height:1;white-space:nowrap}
+  .v-aa s{color:var(--erreur);text-decoration-thickness:3px;opacity:.8}
+  .v-aa .fl{font-size:.7em;margin:0 .25em;opacity:.55;vertical-align:middle}
+  .v-aa b{color:inherit;font-weight:inherit}
+  .v-aa figcaption{font-size:9pt;opacity:.8;margin-top:1.5mm}
 `;
 
 module.exports = { visuel, CSS };

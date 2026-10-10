@@ -9,7 +9,7 @@ surtitre: Excel + Intelligence artificielle
 sousTitre: Tu dis ce que tu veux en français, l'IA écrit la formule à ta place. De débutant à pro en 7 jours.
 collection: E-book + bonus
 atouts: 100 prompts prêts | 20 modèles en FCFA | PC et téléphone
-visuel: tableur
+visuel: excel
 contenu: L'e-book PDF (environ 70 pages) | 100 prompts Excel en français | 20 modèles Excel et Google Sheets en FCFA | La fiche mémo des 15 formules
 suite: Tu travailles en comptabilité ? Découvre **Comptable 2.0**.
 edition: Octobre 2026
@@ -35,7 +35,7 @@ objectif: obtenir de l'IA la bonne formule du premier coup, et la débloquer qua
 intro: SOMME, SI, RECHERCHEV, SOMME.SI.ENS... Pour chacune : le prompt à copier, la formule obtenue et l'erreur que font presque tous les débutants.
 duree: 25 min
 bonus: fiche mémo des 15 formules
-visuel: avantApres: #NOM? | 16 000 | SOMME.SI.ENS
+visuel: avantApres: #NOM? | 16 000 | La même formule, corrigée par l’IA
 :::
 
 ## SOMME.SI.ENS : le total d'un seul produit

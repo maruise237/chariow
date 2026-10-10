@@ -41,11 +41,8 @@ C'est le cas le plus courant, et celui où l'IA se trompe le plus souvent de pla
 Mode SYSCOHADA. Facture fournisseur F-0231 : marchandises 500 000 F HT, TVA 19,25 %, payable à 30 jours. Donne l'écriture au journal des achats en tableau : compte, intitulé exact, débit, crédit. Vérifie que débit = crédit.
 :::
 
-| Compte | Intitulé | Débit | Crédit |
-|---|---|---|---|
-| 601 | Achats de marchandises | 500 000 | |
-| 4452 | TVA récupérable sur achats | 96 250 | |
-| 401 | Fournisseurs | | 596 250 |
+:::visuel journal
+:::
 
 :::erreur
 Sans le mode SYSCOHADA, l'IA utilise le plan comptable français : 607 et 44566. L'écriture semble juste, mais les comptes sont faux.

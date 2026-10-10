@@ -2,9 +2,14 @@
 
 - **Pourquoi** ces choix, et comment choisir pour un nouveau produit : `DIRECTION-ARTISTIQUE.md`.
 - **Directions artistiques** (couleurs, polices, styles) : `da.js`.
-- **Visuels** réutilisables (tableur, journal, téléphone, avant/après) : `visuels.js`.
+- **Visuels** réutilisables (réplique Excel, journal comptable, ticket de caisse, avant/après) : `visuels.js`.
 - **Moteur** (source texte → PDF) : `moteur.js`.
 - **Exemples** : `exemples/*.md`, avec un chapitre type par e-book, et leurs rendus dans `exemples/sortie/`.
+
+## Première utilisation
+```
+produits/charte/polices.sh   # télécharge les polices (non versionnées, voir la licence Fontshare)
+```
 
 ## Écrire un e-book
 1. Copier un exemple : `exemples/excel.md`.

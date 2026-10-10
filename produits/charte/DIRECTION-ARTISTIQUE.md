@@ -36,7 +36,7 @@ Limite : aucune étude publique ne porte sur le style des e-books vendus en Afri
 
 ### Couche 1 : la marque KAMTECH (ne change jamais)
 - Le logo KAMTECH (provisoire, en texte, à remplacer par le vrai logo).
-- La police du texte (Outfit) : c'est elle qui donne la « voix » commune aux e-books.
+- Les polices communes (section 5) : Literata pour lire, Hanken Grotesk pour les outils, JetBrains Mono pour les formules. Elles donnent la « voix » commune aux e-books.
 - La **forme** des encadrés de la méthode : prompt à copier, résultat attendu, erreur fréquente, astuce, à retenir, à toi de jouer. Un lecteur qui a acheté Excel reconnaît la méthode dans Comptable 2.0.
 - Les pages licence, auteur et 4e de couverture.
 - Le format de page et les règles de lisibilité.
@@ -53,10 +53,10 @@ On choisit la DA avec 4 questions :
 
 | DA | Pour qui | Titres | Couverture | Ouvertures | Corps | Motif | Produits |
 |---|---|---|---|---|---|---|---|
-| **Cabinet** | Pros, premium, référence | DM Serif Display (éditorial) | Typographique : le titre est l'image | Scindée (colonne + texte) | 14 pt, ~48 car./ligne | Filets fins | Comptable 2.0 |
-| **Atelier** | Apprenants motivés, outil | Space Grotesk (technique) | Scène : le résultat montré (tableur + IA) | Pleine page / panneau en alternance | 15,5 pt, ~44 car./ligne | Grille de tableur | Excel avec l'IA |
-| **Marché** | Grand public, petit prix, téléphone | Bricolage Grotesque (chaleureux) | Scène : le téléphone avec la conversation | Panneau / pleine page | 17 pt, ~40 car./ligne | Losanges façon pagne, discrets | Comptes de boutique |
-| **Studio** | Créatifs, vidéo, réseaux | Archivo Black (brut) | Typographique sur fond sombre | Pleine page | 15,5 pt | Grille | Futur e-book montage vidéo |
+| **Cabinet** | Pros, premium, référence | Zodiak (serif éditorial, Fontshare) | Typographique : le titre est l'image | Scindée (colonne + texte) | 13,5 pt, ~48 car./ligne | Filets fins | Comptable 2.0 |
+| **Atelier** | Apprenants motivés, outil | Cabinet Grotesk (grotesque à caractère, Fontshare) | Scène : réplique d'Excel avec repères numérotés | Pleine page / panneau en alternance | 15 pt, ~44 car./ligne | Grille de tableur | Excel avec l'IA |
+| **Marché** | Grand public, petit prix, téléphone | Bricolage Grotesque (chaleureux) | Scène : le ticket « bilan du jour » | Panneau / pleine page | 16,5 pt, ~40 car./ligne | Losanges façon pagne, discrets | Comptes de boutique |
+| **Studio** | Créatifs, vidéo, réseaux | Supreme (Fontshare) | Typographique sur fond sombre | Pleine page | 15,5 pt | Grille | Futur e-book montage vidéo |
 
 Pourquoi la police des titres change alors que la recherche conseille de la garder constante :
 - Nos trois publics sont trop éloignés pour un même ton : un comptable qui paie 4 900 F n'achète pas sur les mêmes signaux qu'un commerçant à 1 500 F.
@@ -85,17 +85,85 @@ On n'écrit pas « page 12 = gabarit B ». On écrit le contenu avec des blocs, 
 ## 4. Les règles chiffrées
 
 1. **Format** : 148 × 185 mm (portrait 4:5, largeur A5). Affichée en entier sur un téléphone d'environ 400 px de large, la page est réduite à 0,72 environ.
-2. **Corps du texte** : 14 pt (Cabinet), 15,5 pt (Atelier) et 17 pt (Marché), soit 13 à 16 px réels sur téléphone et 40 à 48 caractères par ligne. On ne descend jamais sous 14 pt pour le texte courant.
+2. **Corps du texte** : 13,5 pt (Cabinet), 15 pt (Atelier) et 16,5 pt (Marché) en Literata, soit 13 à 16 px réels sur téléphone et 40 à 48 caractères par ligne. On ne descend jamais sous 13,5 pt pour le texte courant.
 3. **Paragraphes** : 60 mots au plus. Le moteur alerte au-delà de 75.
-4. **Couverture** : 7 mots de titre au plus, un seul mot en couleur d'accent, lisible à 200 px. On vérifie `*-miniature-200px-01.png`.
-5. **Polices** : deux familles par e-book (titres et texte), plus une police mono réservée aux formules.
+4. **Couverture** : 7 mots de titre au plus, un seul mot en couleur d'accent, lisible à 200 px (vérifier `*-miniature-200px-01.png`). Pas de badge au-dessus du titre, et les atouts tiennent sur une seule ligne de texte.
+5. **Polices** : une police de titre par DA, plus les trois polices communes. Rien d'autre.
 6. **Palette** : 5 couleurs par DA (primaire, foncé, accent, fond, papier), plus le rouge des erreurs, commun à tous.
 7. **Chaque chapitre** : ouverture, contenu avec au moins un prompt, puis `:::recap`. Un `:::exercice` est conseillé.
 8. **Rythme** : un `:::chiffre`, un `:::avantapres` ou un tableau par chapitre. Une `:::pause` toutes les 4 à 6 pages, placée **entre deux sections** et pas juste après un encadré, sinon la page précédente reste à moitié vide.
 9. **Poids** : moins de 10 Mo. Pas de photo pleine page.
 10. **Déclinaisons** : la même source produit le PDF, la vignette carrée (boutique Chariow, pubs) et la miniature de contrôle. Le mockup 3D reste réservé aux pubs.
 
-## 5. Ce qui reste à décider ou à tester
+## 5. Typographie
+
+### Choix des polices
+Source : recherche d'octobre 2026 (Typewolf, Butterick, Fontshare), avec les glyphes et les chiffres vérifiés dans chaque fichier.
+
+| Rôle | Police | Pourquoi | Licence |
+|---|---|---|---|
+| Texte courant (toute la collection) | **Literata** | Dessinée pour Google Play Livres, donc pour lire sur Android. Grande hauteur d'x (0,507 em), vrai italique. Le serif donne un rendu « livre » et pas « template ». | OFL |
+| Outils : tableaux, légendes, étiquettes, prompts | **Hanken Grotesk** | Sans-serif sobre à chiffres tabulaires, qui distingue « ce qu'on lit » de « ce qu'on utilise ». | OFL |
+| Formules Excel | **JetBrains Mono** | Zéro barré, aucun caractère ambigu. | OFL |
+| Titres Cabinet | **Zodiak** | Serif à contraste doux, autoritaire sans être froide. | ITF FFL |
+| Titres Atelier | **Cabinet Grotesk** | Grotesque moderne avec du caractère, nette en gros corps. | ITF FFL |
+| Titres Marché | **Bricolage Grotesque** | Expressive et chaleureuse, avec des chiffres tabulaires. | OFL |
+| Titres Studio | **Supreme** | Display moderne pour les créatifs. | ITF FFL |
+
+Écartées :
+- Outfit : hauteur d'x basse, rondeurs fatigantes sur un long texte, « look template ».
+- Inter, Poppins et Montserrat : vues partout.
+- DM Serif Display et Space Grotesk : moins de caractère que les choix retenus.
+
+Les fichiers de police ne sont **pas versionnés**. La licence Fontshare interdit de les redistribuer, mais autorise leur incorporation dans un PDF vendu. `polices.sh` les télécharge.
+
+### Règles françaises appliquées automatiquement par le moteur
+- Espace fine insécable avant ; ! ? et à l'intérieur des « ». Aucune de nos polices n'a le glyphe U+202F, donc le moteur le remplace par une insécable en corps réduit.
+- Insécable avant les deux-points et entre un nombre et son unité (500 F, 25 min, 19,25 %).
+- Apostrophe courbe ’ et points de suspension « … » en un seul caractère.
+- Milliers séparés par une fine (596 250).
+- Titres équilibrés : jamais un mot ou un point d'interrogation seul sur la dernière ligne.
+- Césure française dans le texte courant, jamais dans les titres.
+- Le code et les formules ne sont pas touchés.
+
+## 6. Anti-slop : ce qu'on s'interdit
+
+Le « slop » est l'esthétique par défaut des outils IA et des templates (source : [impeccable.style/slop](https://impeccable.style/slop)). Remplacer une couleur par une autre ne suffit pas : il faut une raison à chaque élément.
+
+| Interdit | Remplacé par |
+|---|---|
+| Halos et dégradés radiaux | Aplats de couleur |
+| Cartes penchées avec grosse ombre | Objets posés à plat, avec un filet fin |
+| Bulles de chat « TOI / L'IA » | Répliques fidèles d'interface avec repères numérotés |
+| Pastilles arrondies à coche (« 100 prompts ✓ ») | Une ligne de texte, séparateurs « / » |
+| Badge ou petit label au-dessus du titre | Le titre seul. Le numéro de chapitre, plein, sert d'étiquette. |
+| Numéros géants en contour | Numéros pleins dans la police de titre |
+| Tableaux à en-tête plein et grille | Filets horizontaux fins (section 7) |
+| Formules « pas X, mais Y », phrases-slogans, gras décoratif | Phrases concrètes, avec les vrais chiffres (passage au skill humanizer) |
+
+## 7. Tableaux et illustrations
+
+### Tableaux
+D'après [Butterick](https://practicaltypography.com/tables.html) et [Matthew Strom](https://matthewstrom.com/writing/tables).
+
+1. Pas de grille, seulement des filets horizontaux fins. L'en-tête est en petites capitales, avec un filet foncé dessous.
+2. Les colonnes de montants sont détectées automatiquement et alignées à droite, en chiffres tabulaires.
+3. La ligne « Total » ou « Totaux » est détectée et passe en gras sous un filet.
+4. L'unité va dans l'en-tête (« Total FCFA ») et n'est pas répétée dans chaque cellule.
+5. Sur téléphone, 4 colonnes au plus. Au-delà, on découpe ou on passe à une liste.
+6. En comptabilité, on utilise la présentation journal (`:::visuel journal`) : comptes crédités décalés, totaux débit = crédit sous filet, libellé en italique sous l'écriture.
+
+### Illustrations
+1. Un visuel montre un **objet réel du lecteur** : le tableur Excel, le journal comptable, le ticket du jour. Pas de décor.
+2. **Réplique fidèle ou schéma franc**, jamais une imitation approximative. La réplique d'Excel reprend les couleurs, la zone de nom, la barre de formule et la cellule active de la version française.
+3. Les explications passent par des **repères numérotés** reliés à une légende : 5 au plus, une seule couleur.
+4. Style par e-book :
+   - Excel : interface réelle annotée ;
+   - Comptable 2.0 : typographie et documents comptables fidèles ;
+   - Comptes de boutique : objets du quotidien (ticket, cahier), plus un motif géométrique discret façon pagne, en accent seulement.
+5. Images générées par IA : seulement pour d'éventuelles scènes de couverture, avec un style verrouillé (même bloc de style, palette fixe, aucun texte dans l'image). Coût estimé : 3 à 7 $ pour 30 images via treg. À décider : rien n'a été généré.
+
+## 8. Ce qui reste à décider ou à tester
 - Le vrai logo KAMTECH et ses couleurs : la couche 1 est prête à les recevoir dans `da.js`, via `MARQUE`.
 - Tester les 3 PDF sur 2 ou 3 téléphones Android réels (dont un bas de gamme).
 - A/B test en pub : couverture plate ou mockup 3D.

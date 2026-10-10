@@ -11,7 +11,7 @@ collection: Spécial commerçants
 surtitre: Boutique + IA · zéro jargon
 sousTitre: Sache chaque soir combien tu as vraiment gagné, avec ton téléphone et l'IA.
 atouts: Modèle Google Sheets | 10 messages de relance | 10 min par jour
-visuel: telephone
+visuel: recu
 contenu: L'e-book PDF (environ 35 pages) | Le modèle Google Sheets « Cahier de caisse intelligent » | 30 messages pour l'IA et 10 messages de relance | La fiche de la routine à imprimer
 suite: Tu veux aller plus loin avec ton tableau ? Découvre **Excel sans apprendre les formules**.
 edition: Octobre 2026
@@ -36,7 +36,7 @@ objectif: calculer ton vrai bénéfice par article et fixer un prix qui rapporte
 intro: Sur un savon vendu 500 F, beaucoup de commerçants pensent gagner 50 F. Une fois le transport et la casse comptés, il leur reste 9 F.
 duree: 15 min
 bonus: Cahier de caisse intelligent
-visuel: avantApres: 50 F | 9 F | Savon vendu 500 F
+visuel: avantApres: 50 F | 9 F | Bénéfice sur un savon vendu 500 F
 :::
 
 ## Ton vrai bénéfice par article
@@ -56,11 +56,6 @@ Bénéfice : 500 − 491 = **9 F par savon**
 Diviser par 24 au lieu de 22. On croit gagner 50 F par savon, alors qu'on en gagne 9.
 :::
 
-:::pause
-chiffre: 9 F
-texte: C'est ce que rapporte vraiment un savon vendu 500 F, quand on compte le transport et la casse.
-:::
-
 ## Fixer un prix qui rapporte
 
 :::chiffre
@@ -70,6 +65,11 @@ legende: le prix minimum pour garder 20 % de bénéfice sur ce savon.
 
 :::astuce
 Achète 2 cartons à la fois : tu paies le transport une seule fois, et ton bénéfice par savon remonte.
+:::
+
+:::pause
+chiffre: 9 F
+texte: C'est ce que rapporte vraiment un savon vendu 500 F, quand on compte le transport et la casse.
 :::
 
 :::recap

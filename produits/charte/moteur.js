@@ -130,29 +130,27 @@ const logo = (clair = false) => `<span class="logo${clair ? ' clair' : ''}"><i><
 const titreRiche = s => titre(s); // *mot* → <em>mot</em> : le mot mis en accent
 
 function couverture(m, da) {
+  // Pas de badge au-dessus du titre, pas de pastilles à coches : les atouts tiennent sur une ligne de texte.
   const atouts = (m.atouts || '').split('|').map(s => s.trim()).filter(Boolean);
-  const bas = `<div class="couv-bas">
-      <ul class="atouts">${atouts.map(a => `<li>${ico.check}<span>${fmt(a)}</span></li>`).join('')}</ul>
-      <div class="signature">${logo(true)}<span>${m.edition || ''}</span></div>
-    </div>`;
+  const bas = `<div class="couv-bas"><p class="atouts">${atouts.map(fmt).join('<i>/</i>')}</p>
+      <div class="signature">${logo(true)}<span>${fmt(m.edition || '')}</span></div></div>`;
   if (da.couverture === 'typo') {
     const mots = (m.motsCles || '').split('|').map(s => s.trim()).filter(Boolean);
     return `<section class="plein couv couv-typo motif-${da.motif}">
-      <header class="couv-haut"><span class="collection">${fmt(m.collection || '')}</span><span class="surtitre-ligne">${fmt(m.surtitre || '')}</span></header>
+      <header class="couv-haut"><span class="collection">${fmt(m.collection || '')}</span><span>${fmt(m.surtitre || '')}</span></header>
       <div class="couv-titre"><h1>${titreRiche(m.titreCouv || m.titre)}</h1><p class="sous-titre">${fmt(m.sousTitre || '')}</p></div>
       ${mots.length ? `<p class="mots-cles">${mots.map(fmt).join('<i>·</i>')}</p>` : ''}
       ${bas}
     </section>`;
   }
-  return `<section class="plein couv couv-scene motif-${da.motif}">
-    <header class="couv-haut">${logo(true)}<span class="pastille">${fmt(m.collection || '')}</span></header>
+  return `<section class="plein couv couv-scene couv-${m.produit || ''}">
+    <header class="couv-haut">${logo(true)}<span class="collection">${fmt(m.collection || '')}</span></header>
     <div class="couv-titre">
-      <p class="surtitre">${fmt(m.surtitre || '')}</p>
       <h1>${titreRiche(m.titreCouv || m.titre)}</h1>
       <p class="sous-titre">${fmt(m.sousTitre || '')}</p>
     </div>
-    <div class="couv-visuel"><div class="zoom">${visuel(m.visuel)}</div></div>
-    ${bas.replace(logo(true), `<span class="par">Un e-book ${MARQUE.nom}</span>`)}
+    <div class="couv-visuel motif-${da.motif}">${visuel(m.visuelCouv || m.visuel)}</div>
+    ${bas}
   </section>`;
 }
 
@@ -163,7 +161,7 @@ function licence(m) {
     <div class="marges">
       <p>Cet e-book <b>« ${fmt(m.titre)} »</b> et ses fichiers bonus te sont vendus pour ton usage personnel. Il contient :</p>
       <ul class="liste">${contenu.map(c => `<li>${fmt(c)}</li>`).join('')}</ul>
-      <p class="fort"><em>Toute revente, copie, partage dans un groupe WhatsApp ou Telegram, ou distribution gratuite ou payante est strictement interdite.</em></p>
+      <p><em>Toute revente, copie, partage dans un groupe WhatsApp ou Telegram, ou distribution gratuite ou payante est strictement interdite.</em></p>
       <p>Chaque exemplaire est lié à un achat. En utilisant cet e-book, tu acceptes ces conditions.</p>
       <p class="fort">© ${(m.edition || '').split(' ').pop()} ${MARQUE.nom}. Tous droits réservés.</p>
     </div>
@@ -181,18 +179,19 @@ function sommaire(chapitres, pages) {
 }
 
 function ouverture(b, variante, marqueur) {
+  // Le numéro plein sert d'étiquette : pas de petit label « CHAPITRE » au-dessus du titre.
   const k = b.kv;
-  const meta = `<div class="ouv-meta">${k.duree ? `<span class="pilule">Lecture : ${fmt(k.duree)}</span>` : ''}${k.bonus ? `<span class="bonus">Bonus lié : <b>${fmt(k.bonus)}</b></span>` : ''}</div>`;
+  const infos = [k.duree && `Lecture : ${fmt(k.duree)}`, k.bonus && `Bonus lié : <b>${fmt(k.bonus)}</b>`].filter(Boolean);
+  const meta = infos.length ? `<p class="ouv-meta">${infos.join('<i>/</i>')}</p>` : '';
   const vis = k.visuel ? `<div class="ouv-visuel">${visuel(k.visuel)}</div>` : '';
   const id = `id="ch${b.arg}"`;
   const marq = marqueur ? `<span class="marqueur">@@CH${b.arg}@@</span>` : '';
+  const obj = k.objectif ? `<p class="objectif">Tu vas savoir ${fmt(k.objectif.replace(/^\s*[A-ZÀ-Ý]/, c => c.toLowerCase()))}</p>` : '';
   if (variante === 'scinde') {
     return `<section ${id} class="plein ouv ouv-scinde">${marq}
       <div class="col-num"><span>${b.arg}</span></div>
       <div class="col-texte">
-        <p class="kicker">Chapitre ${b.arg}</p>
-        <h1>${titre(k.titre)}</h1>
-        <p class="objectif">${fmt(k.objectif || '')}</p>
+        <h1>${titre(k.titre)}</h1>${obj}
         <p class="intro">${fmt(k.intro || '')}</p>
         ${vis}${meta}
       </div>
@@ -200,24 +199,18 @@ function ouverture(b, variante, marqueur) {
   }
   if (variante === 'panneau') {
     return `<section ${id} class="plein ouv ouv-panneau">${marq}
-      <div class="ouv-haut"><span class="num-contour">${b.arg}</span>${vis}</div>
+      <div class="ouv-haut">${vis || `<span class="num-seul">${b.arg}</span>`}</div>
       <div class="panneau">
-        <p class="kicker">Chapitre ${b.arg}</p>
-        <h1>${titre(k.titre)}</h1>
-        <p class="objectif">Tu vas savoir : ${fmt(k.objectif || '')}</p>
+        <h1><span class="num">${b.arg}</span>${titre(k.titre)}</h1>${obj}
         <p class="intro">${fmt(k.intro || '')}</p>
         ${meta}
       </div>
     </section>`;
   }
   return `<section ${id} class="plein ouv ouv-plein">${marq}
-    <span class="num-geant">${b.arg}</span>
-    <div class="ouv-plein-texte">
-      <p class="kicker">Chapitre ${b.arg}</p>
-      <h1>${titre(k.titre)}</h1>
-      <p class="objectif">Tu vas savoir : ${fmt(k.objectif || '')}</p>
-      <p class="intro">${fmt(k.intro || '')}</p>
-    </div>
+    <p class="num-plein">${b.arg}</p>
+    <h1>${titre(k.titre)}</h1>${obj}
+    <p class="intro">${fmt(k.intro || '')}</p>
     ${vis}${meta}
   </section>`;
 }
@@ -242,7 +235,15 @@ function bloc(b) {
     case 'ul': return `<ul class="puces">${b.items.map(i => `<li>${fmt(i)}</li>`).join('')}</ul>`;
     case 'ol': return `<ol class="etapes">${b.items.map((i, n) => `<li><span class="n">${n + 1}</span><span>${fmt(i)}</span></li>`).join('')}</ol>`;
     case 'citation': return `<blockquote>${fmt(b.x)}</blockquote>`;
-    case 'table': return `<table class="tab"><tr>${b.rows[0].map(c => `<th>${fmt(c)}</th>`).join('')}</tr>${b.rows.slice(1).map(r => `<tr>${r.map(c => `<td>${fmt(c)}</td>`).join('')}</tr>`).join('')}</table>`;
+    case 'table': {
+      // Colonnes de montants détectées : alignées à droite ; ligne « Total » soulignée par un filet
+      const corps = b.rows.slice(1), estNb = c => /^[−+\-]?\s?[\d][\d\s.,]*\s?(F|FCFA|%)?$/.test(c);
+      const num = b.rows[0].map((_, j) => corps.some(r => r[j]) && corps.every(r => !r[j] || estNb(r[j])));
+      const cl = (j, extra = '') => (num[j] ? ' class="n"' : '') + extra;
+      return `<table class="tab"><tr>${b.rows[0].map((c, j) => `<th${cl(j)}>${fmt(c)}</th>`).join('')}</tr>${corps.map(r =>
+        `<tr${r.some(c => /^totaux?$/i.test(c)) ? ' class="tot"' : ''}>${r.map((c, j) => `<td${cl(j)}>${fmt(c)}</td>`).join('')}</tr>`).join('')}</table>`;
+    }
+    case 'visuel': return `<div class="visuel-flux">${visuel(b.arg)}</div>`;
     case 'prompt': return `<div class="prompt"><div class="prompt-tete"><span>À copier</span><span>${fmt(b.arg)}</span></div><p>${texte()}</p></div>`;
     case 'resultat': {
       const [titre, opt] = b.arg.split('|').map(s => s.trim());
@@ -296,12 +297,20 @@ function document(src, pages = {}, marqueurs = false) {
     else flux.push(bloc(b));
   }
   vider();
-  return `<!doctype html><html lang="fr"><head><meta charset="utf-8"><title>${echap(meta.titre)}</title>
+  const html = `<!doctype html><html lang="fr"><head><meta charset="utf-8"><title>${echap(meta.titre)}</title>
     <style>${polices()}${css(meta, da)}${CSS_VISUELS}</style></head><body>
     ${couverture(meta, da)}${licence(meta)}${sommaire(chapitres, pages)}
     ${corps.join('\n')}
     ${auteur(meta)}${dos(meta, da)}
   </body></html>`;
+  return fines(html);
+}
+
+// Aucune de nos polices n'a le glyphe U+202F (espace fine insécable) : on le remplace par une
+// insécable en corps réduit, sinon le navigateur irait le chercher dans une autre police.
+function fines(html) {
+  const i = html.indexOf('</style>');
+  return html.slice(0, i) + html.slice(i).replace(/\u202F/g, '<span class="fi">\u00A0</span>');
 }
 
 // ---------- Styles ----------
@@ -316,55 +325,63 @@ function css(m, da) {
   return `
   @page{size:${F.l} ${F.h};margin:0}
   @page texte{margin:13mm 13mm 16mm;background:${c.papier};
-    @bottom-left{content:"${echap(m.court || m.titre)}";font:600 7pt Outfit;color:#8A8F98}
-    @bottom-right{content:counter(page);font:800 8pt Outfit;color:${c.fonce}}}
+    @bottom-left{content:"${echap(m.court || m.titre)}";font:600 7pt "Hanken Grotesk";color:#8A8F98}
+    @bottom-right{content:counter(page);font:800 8pt "Hanken Grotesk";color:${c.fonce}}}
   :root{--p:${c.primaire};--f:${c.fonce};--a:${c.accent};--surA:${c.surAccent};--fond:${c.fond};--papier:${c.papier};
-    --encre:${MARQUE.encre};--erreur:${MARQUE.erreur};--titre:'${t.famille}';--c:${da.corps}pt}
+    --encre:${MARQUE.encre};--erreur:${MARQUE.erreur};--titre:'${t.famille}';--texte:'${MARQUE.texte}';--util:'${MARQUE.util}';--mono:'${MARQUE.mono}';--c:${da.corps}pt}
   *{box-sizing:border-box;margin:0;padding:0}
-  body{font-family:${MARQUE.texte},sans-serif;color:var(--encre);-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  body{font-family:var(--texte),serif;color:var(--encre);-webkit-print-color-adjust:exact;print-color-adjust:exact}
   h1,h2,h3,.titre{text-wrap:balance}
   .flux p,.flux li{text-wrap:pretty;hyphens:auto}
   h1,h2,.titre{font-family:var(--titre),serif;font-weight:${t.graisse};letter-spacing:${t.interlettre};text-transform:${t.casse};line-height:1.04}
   em{font-style:italic}
-  code{font-family:'JetBrains Mono',monospace;font-size:.86em;background:rgba(0,0,0,.06);padding:0 .25em;border-radius:.2em}
+  code{font-family:var(--mono,'JetBrains Mono'),monospace;font-size:.86em;background:rgba(0,0,0,.06);padding:0 .25em;border-radius:.2em}
   .plein{width:${F.l};height:${F.h};position:relative;overflow:hidden;break-after:page;background:var(--fond)}
   .marges{padding:14mm 13mm 0}
   ${Object.entries(motifs).map(([k, v]) => `.motif-${k}::before{content:"";position:absolute;inset:0;${v}}`).join('\n  ')}
   .plein>*{position:relative}
+  /* Le sans-serif utilitaire pour tout ce qui n'est pas de la lecture suivie */
+  .prompt,.tab,.resultat-label,.ex-t,.ck-t,.aa span,.ouv-meta,.atouts,.couv-haut,.signature,figcaption,.toc,.chiffre-l,.bande,.mots-cles,.jn,.jn-tete,.encart b,.recap-t,.v-aa figcaption{font-family:var(--util),sans-serif}
+  .fi{font-size:.6em;letter-spacing:0}
   .marqueur{position:absolute!important;top:0;left:0;font-size:2px;color:transparent}
 
   /* Logo provisoire KAMTECH (texte) */
-  .logo{display:inline-flex;align-items:center;gap:1.6mm;font-family:'Archivo Black';font-size:10pt;letter-spacing:.14em;color:${MARQUE.signature}}
+  .logo{display:inline-flex;align-items:center;gap:1.6mm;font-family:var(--util);font-weight:800;font-size:10pt;letter-spacing:.16em;color:${MARQUE.signature}}
   .logo i{width:3.2mm;height:3.2mm;background:var(--a);transform:rotate(45deg);border-radius:.6mm}
   .logo.clair{color:#fff}
   .logo-bas{position:absolute!important;left:0;right:0;bottom:11mm;text-align:center}
 
-  /* Couverture « scène » : le résultat montré */
-  .couv{display:flex;flex-direction:column;color:#fff;padding:10mm 11mm 9mm;background:radial-gradient(120% 80% at 85% 0%,var(--p) 0%,var(--f) 62%)}
-  .couv-haut{display:flex;justify-content:space-between;align-items:center}
-  .pastille{border:1.2px solid var(--a);color:var(--a);border-radius:99px;padding:1mm 3mm;font-weight:600;font-size:6.5pt;letter-spacing:.08em;text-transform:uppercase}
-  .couv-titre{margin-top:8mm}
-  .surtitre{display:inline-block;background:var(--a);color:var(--surA);font-weight:800;font-size:7pt;letter-spacing:.08em;text-transform:uppercase;padding:1mm 2.6mm;border-radius:1.2mm;margin-bottom:3.5mm}
-  .couv h1{font-size:${m.tailleTitre || 34}pt;line-height:.98}
-  .couv h1 em{color:var(--a)}
-  .sous-titre{font-size:10pt;line-height:1.4;margin-top:3.5mm;max-width:112mm;opacity:.92}
-  .couv-visuel{flex:1;display:flex;align-items:center;justify-content:center;padding:3mm 0}
-  .couv-bas{flex:none}
-  .atouts{list-style:none;display:flex;gap:2mm;flex-wrap:wrap;margin-bottom:4mm}
-  .atouts li{display:flex;align-items:center;gap:1.4mm;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.22);border-radius:99px;padding:1.3mm 2.8mm 1.3mm 1.6mm;font-size:7.5pt;font-weight:600}
-  .atouts svg{color:var(--a);font-size:9pt;--surIco:var(--surA)}
+  /* Couverture « scène » : aplat, titre, objet réel du lecteur. Pas de halo, pas de pastilles. */
+  .couv{display:flex;flex-direction:column;color:#fff;padding:10mm 11mm 9mm;background:var(--f)}
+  .couv-haut{display:flex;justify-content:space-between;align-items:center;font-size:7pt;letter-spacing:.12em;text-transform:uppercase}
+  .collection{color:var(--a);font-weight:800}
+  .couv-titre{margin-top:11mm}
+  .couv h1{font-size:${m.tailleTitre || 36}pt;line-height:.98}
+  .couv h1 em{color:var(--a);font-style:${t.italique === false ? 'normal' : 'italic'}}
+  .sous-titre{font-size:10.5pt;line-height:1.4;margin-top:4mm;max-width:108mm;opacity:.9}
+  .couv-visuel{flex:1;display:flex;align-items:center;justify-content:center;margin:5mm -11mm 4mm;padding:6mm 11mm;position:relative}
+  .couv-visuel::before{opacity:.9}
+  .couv-visuel>*{position:relative}
+  .couv-excel .couv-visuel{align-items:flex-end;justify-content:flex-start;margin:6mm -11mm 4mm 0;padding:0}
+  .couv-excel .v-excel{width:100mm;zoom:1.38;color:var(--encre)}
+  .couv-boutique .v-recu{zoom:1.45}
+  .couv-excel figcaption{color:#fff;opacity:.9;font-size:6pt;padding-left:1mm}
+  .couv-excel .rep{background:var(--a);color:var(--surA)}
+  .couv-excel figcaption{flex-direction:row;gap:6mm}
+  .couv-excel figcaption .leg{flex:1}
+  .couv-bas{flex:none;border-top:1px solid rgba(255,255,255,.22);padding-top:3mm}
+  .atouts{font-size:8pt;font-weight:600;margin-bottom:2.5mm}
+  .atouts i,.ouv-meta i{font-style:normal;color:var(--a);margin:0 .6em}
   .signature{display:flex;justify-content:space-between;align-items:center;font-size:7.5pt;opacity:.85}
-  .par{font-size:7.5pt;opacity:.8;letter-spacing:.04em}
 
   /* Couverture « typo » : le titre est l'image (premium) */
-  .couv-typo{background:var(--f);padding:11mm 12mm 9mm}
-  .couv-typo .couv-haut{border-bottom:1px solid rgba(255,255,255,.25);padding-bottom:3mm;font-size:7pt;letter-spacing:.14em;text-transform:uppercase}
-  .couv-typo .collection{color:var(--a);font-weight:800}
+  .couv-typo{padding:11mm 12mm 9mm}
+  .couv-typo .couv-haut{border-bottom:1px solid rgba(255,255,255,.25);padding-bottom:3mm}
   .couv-typo .couv-titre{margin-top:auto}
-  .couv-typo h1{font-size:${m.tailleTitre || 52}pt;line-height:.92}
-  .couv-typo h1 em{display:block;font-size:2.1em;line-height:.9;color:transparent;-webkit-text-stroke:1.4px var(--a);font-style:normal}
-  .couv-typo .sous-titre{border-left:2px solid var(--a);padding-left:3.5mm;margin-top:6mm}
-  .mots-cles{margin:9mm 0 6mm;font-size:7pt;letter-spacing:.16em;text-transform:uppercase;color:rgba(255,255,255,.7)}
+  .couv-typo h1{font-size:${m.tailleTitre || 50}pt;line-height:.92}
+  .couv-typo h1 em{display:block;font-size:2.3em;line-height:.85;color:var(--a);font-style:normal}
+  .couv-typo .sous-titre{margin-top:6mm}
+  .mots-cles{margin:9mm 0 5mm;font-size:7pt;letter-spacing:.14em;text-transform:uppercase;color:rgba(255,255,255,.7)}
   .mots-cles i{color:var(--a);margin:0 2mm;font-style:normal}
 
   /* Licence, sommaire, auteur */
@@ -387,38 +404,36 @@ function css(m, da) {
   .suite{margin-top:6mm}
   .lien{font-weight:800;color:var(--p);font-size:11pt;margin-top:8mm}
 
-  /* Ouvertures de chapitre */
-  .ouv .kicker{font-size:7.5pt;font-weight:800;letter-spacing:.12em;text-transform:uppercase;opacity:.75;margin-bottom:1.5mm}
+  /* Ouvertures de chapitre : numéro plein, pas d'outline, pas de pilule */
   .ouv h1{font-size:25pt;margin-bottom:4mm}
   .ouv .objectif{font-weight:600;font-size:calc(var(--c)*.82);line-height:1.4;margin-bottom:3mm}
   .ouv .intro{font-size:calc(var(--c)*.72);line-height:1.45}
-  .ouv-meta{display:flex;align-items:center;gap:3mm;font-size:8pt}
-  .pilule{background:var(--a);color:var(--surA);font-weight:800;padding:2mm 4mm;border-radius:99px;white-space:nowrap}
-  .ouv-visuel{display:flex;justify-content:center;zoom:.8}
+  .ouv-meta{font-size:7.5pt;opacity:.85}
+  .ouv-visuel{display:flex;justify-content:center}
   /* plein */
-  .ouv-plein{background:var(--f);color:#fff;padding:12mm}
-  .num-geant{position:absolute!important;right:-3mm;top:-2mm;font-family:var(--titre);font-size:150pt;line-height:1;color:transparent;-webkit-text-stroke:1.5px var(--a);opacity:.9}
-  .ouv-plein-texte{margin-top:40mm}
+  .ouv-plein{background:var(--f);color:#fff;padding:12mm;display:flex;flex-direction:column}
+  .num-plein{font-family:var(--titre);font-size:64pt;line-height:.9;color:var(--a);margin-bottom:6mm}
   .ouv-plein .objectif{color:var(--a)}
-  .ouv-plein .ouv-visuel{position:absolute!important;left:0;right:0;bottom:30mm}
-  .ouv-plein .ouv-meta{position:absolute!important;left:12mm;right:12mm;bottom:12mm}
+  .ouv-plein .ouv-visuel{margin:auto 0 6mm;color:#fff}
+  .ouv-plein .ouv-meta{margin-top:auto;border-top:1px solid rgba(255,255,255,.22);padding-top:3mm}
+  .ouv-plein .ouv-visuel + .ouv-meta{margin-top:0}
   /* panneau */
-  .ouv-haut{height:66mm;display:flex;align-items:center;justify-content:space-between;padding:0 11mm}
-  .num-contour{font-family:var(--titre);font-size:96pt;line-height:1;color:transparent;-webkit-text-stroke:1.5px var(--p)}
-  .ouv-panneau .ouv-visuel{zoom:.75}
-  .panneau{position:absolute!important;left:0;right:0;bottom:0;top:68mm;background:var(--f);color:#fff;border-radius:15mm 15mm 0 0;padding:11mm 12mm 0}
+  .ouv-haut{height:70mm;display:flex;align-items:center;justify-content:center;padding:0 12mm;color:var(--f)}
+  .ouv-haut .v-aa p{font-size:44pt}
+  .num-seul{font-family:var(--titre);font-size:96pt;line-height:1;color:var(--p)}
+  .panneau{position:absolute!important;left:0;right:0;bottom:0;top:72mm;background:var(--f);color:#fff;border-radius:7mm 7mm 0 0;padding:11mm 12mm 0}
+  .panneau h1 .num{display:block;color:var(--a);font-size:.8em;margin-bottom:1mm}
   .panneau .objectif{color:var(--a)}
-  .panneau .ouv-meta{position:absolute;left:12mm;right:12mm;bottom:12mm}
+  .panneau .ouv-meta{position:absolute;left:12mm;right:12mm;bottom:11mm;border-top:1px solid rgba(255,255,255,.22);padding-top:3mm}
   /* scindé (éditorial) */
   .ouv-scinde{display:flex;background:var(--papier)}
-  .col-num{width:38mm;background:var(--f);display:flex;align-items:flex-end;justify-content:center;padding-bottom:12mm}
+  .col-num{width:36mm;background:var(--f);display:flex;align-items:flex-end;justify-content:center;padding-bottom:12mm}
   .col-num span{font-family:var(--titre);font-size:70pt;color:var(--a);writing-mode:vertical-rl;transform:rotate(180deg);line-height:1}
-  .col-texte{flex:1;padding:22mm 11mm 12mm 9mm;display:flex;flex-direction:column}
-  .ouv-scinde .kicker{color:var(--p);opacity:1}
-  .ouv-scinde h1{color:var(--f);font-size:23pt}
+  .col-texte{flex:1;padding:24mm 11mm 12mm 9mm;display:flex;flex-direction:column}
+  .ouv-scinde h1{color:var(--f);font-size:24pt}
   .ouv-scinde .objectif{border-top:1.5px solid var(--a);padding-top:3mm;color:var(--f)}
-  .ouv-scinde .ouv-visuel{margin:auto 0 6mm;zoom:.62}
-  .ouv-scinde .ouv-meta{margin-top:auto;flex-wrap:wrap}
+  .ouv-scinde .ouv-visuel{margin:auto 0 6mm}
+  .ouv-scinde .ouv-meta{margin-top:auto;border-top:1px solid #ddd;padding-top:3mm}
 
   /* Page respiration */
   .pause{background:var(--a);color:var(--surA);display:flex;flex-direction:column;justify-content:center;padding:0 14mm}
@@ -431,7 +446,7 @@ function css(m, da) {
   .flux p{margin-bottom:.75em}
   .flux b{font-weight:600}
   .h-section{font-size:1.9em;color:var(--f);margin-bottom:.6em}
-  .flux h2{font-size:1.45em;color:var(--f);margin:1.2em 0 .5em;break-after:avoid}
+  .flux h2{font-size:1.45em;color:var(--f);margin:1em 0 .45em;break-after:avoid}
   .flux h2:first-child{margin-top:0}
   .flux h3{font-weight:800;font-size:1.05em;margin:1em 0 .3em;break-after:avoid}
   .puces{list-style:none;margin-bottom:.8em}
@@ -441,17 +456,23 @@ function css(m, da) {
   .etapes li{display:flex;gap:.55em;margin-bottom:.45em;break-inside:avoid}
   .etapes .n{flex:none;width:1.45em;height:1.45em;border-radius:50%;background:var(--f);color:#fff;font-weight:800;font-size:.85em;display:flex;align-items:center;justify-content:center;margin-top:.12em}
   blockquote{font-family:var(--titre);font-size:1.3em;line-height:1.25;color:var(--f);border-left:3px solid var(--a);padding-left:.7em;margin:.8em 0}
-  .tab{width:100%;border-collapse:collapse;font-size:.85em;margin-bottom:1em;break-inside:avoid}
-  .tab th{background:var(--f);color:#fff;text-align:left;padding:.4em .5em}
-  .tab td{border-bottom:1px solid #E3E5E9;padding:.4em .5em}
-  .prompt,.resultat,.encart,.chiffre,.aa,.recap,.exercice,.checklist{break-inside:avoid;margin:0 0 .9em}
+  /* Tableaux : aucune grille, filets horizontaux fins, chiffres tabulaires alignés à droite */
+  .tab{width:100%;border-collapse:collapse;font-size:.85em;margin:.4em 0 1.1em;break-inside:avoid;font-variant-numeric:tabular-nums lining-nums}
+  .tab th{text-align:left;font-size:.78em;font-weight:800;text-transform:uppercase;letter-spacing:.06em;color:var(--f);padding:.5em .6em .45em;border-bottom:1.5px solid var(--f);vertical-align:bottom}
+  .tab td{border-bottom:1px solid rgba(0,0,0,.1);padding:.6em .6em;vertical-align:top}
+  .tab .n{text-align:right;white-space:nowrap}
+  .tab tr.tot td{border-top:1.5px solid var(--f);border-bottom:none;font-weight:800}
+  .tab td:first-child,.tab th:first-child{padding-left:0}
+  .tab td:last-child,.tab th:last-child{padding-right:0}
+  .prompt,.resultat,.encart,.chiffre,.aa,.recap,.exercice,.checklist,.visuel-flux{break-inside:avoid;margin:0 0 .9em}
+  .visuel-flux{margin:.4em 0 1.1em}
   .prompt{background:var(--f);color:#fff;border-radius:3mm;padding:.8em 1em}
   .prompt-tete{display:flex;justify-content:space-between;font-size:.62em;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--a);margin-bottom:.5em}
   .prompt p{margin:0;font-size:.95em}
   .resultat{border:1.5px solid var(--p);border-radius:3mm;background:#fff;overflow:hidden}
   .resultat-label{display:block;background:var(--p);color:#fff;font-size:.62em;font-weight:800;letter-spacing:.1em;padding:.4em 1.6em;text-transform:uppercase}
   .resultat-corps{padding:.7em 1em;font-size:.95em}
-  .resultat-corps.mono{font-family:'JetBrains Mono',monospace;font-size:.82em}
+  .resultat-corps.mono{font-family:var(--mono,'JetBrains Mono'),monospace;font-size:.82em}
   .encart{display:flex;gap:.6em;border-radius:3mm;padding:.8em 1em;font-size:.9em;line-height:1.4}
   .encart svg{flex:none;font-size:1.25em;margin-top:.05em}
   .erreur{background:#FFE9E4}.erreur svg{color:var(--erreur)}
@@ -498,7 +519,7 @@ function vignetteHtml(m, da) {
     .vig h1{font-size:${(m.tailleVignette || 92)}px;line-height:.95}
     .vig h1 em{color:var(--a)}
     .vig.typo h1 em{display:block;font-size:2em;color:transparent;-webkit-text-stroke:3px var(--a);font-style:normal}
-    .vig .s{display:inline-block;background:var(--a);color:var(--surA);font:800 22px Outfit;letter-spacing:.08em;text-transform:uppercase;padding:8px 18px;border-radius:8px;margin-bottom:28px}
+    .vig .s{display:inline-block;background:var(--a);color:var(--surA);font:800 22px 'Hanken Grotesk';letter-spacing:.08em;text-transform:uppercase;padding:8px 18px;border-radius:8px;margin-bottom:28px}
     .vig .d{flex:1;zoom:1.75;position:relative}
     .vig .logo{position:absolute;left:70px;bottom:56px;font-size:24px}
   </style></head><body>
@@ -542,12 +563,13 @@ async function generer(source) {
   await rendre(nav, document(src, pages, false), fHtml, fPdf);
   const nb = execFileSync('pdfinfo', [fPdf], { encoding: 'utf8' }).match(/Pages:\s+(\d+)/)[1];
 
+  for (const f of fs.readdirSync(path.join(sortie, 'png'))) if (f.startsWith(nom + '-')) fs.unlinkSync(path.join(sortie, 'png', f));
   // Aperçus PNG de chaque page + test de la couverture en miniature (200 px, comme sur la boutique)
   execFileSync('pdftoppm', ['-r', '60', '-png', fPdf, path.join(sortie, 'png', nom)]);
   execFileSync('pdftoppm', ['-r', '35', '-png', '-f', '1', '-l', '1', '-scale-to-x', '200', '-scale-to-y', '-1', fPdf, path.join(sortie, `${nom}-miniature-200px`)]);
   const pv = await nav.newPage({ viewport: { width: 1080, height: 1080 } });
   const fVig = path.join(sortie, `${nom}-vignette.html`);
-  fs.writeFileSync(fVig, vignetteHtml(src.meta, da));
+  fs.writeFileSync(fVig, fines(vignetteHtml(src.meta, da)));
   await pv.goto('file://' + fVig);
   await pv.evaluate(() => document.fonts.ready);
   await pv.screenshot({ path: path.join(sortie, `${nom}-vignette-carree.png`) });
