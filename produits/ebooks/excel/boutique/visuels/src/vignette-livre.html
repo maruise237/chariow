@@ -1,0 +1,33 @@
+<!doctype html><html lang="fr"><head><meta charset="utf-8"><link rel="stylesheet" href="base.css"><style>
+/* Livre imprimé en volume : la vraie couverture du PDF, un dos, la tranche des pages, une ombre portée au sol. */
+body{width:1200px;height:1200px;position:relative;overflow:hidden;background:#12924A}
+body::after{content:"";position:absolute;inset:0;background:radial-gradient(ellipse 70% 55% at 50% 42%,rgba(255,255,255,.10),transparent 70%);pointer-events:none}
+.scene{position:absolute;left:50%;top:110px;width:640px;height:800px;margin-left:-280px;perspective:2200px}
+.livre{position:absolute;inset:0;transform-style:preserve-3d;transform:rotateY(30deg) rotateX(2deg)}
+.face{position:absolute}
+.avant{width:640px;height:800px;background:url(img/n1-001.png) center/cover;border-radius:2px 6px 6px 2px;
+  box-shadow:inset 6px 0 10px -4px rgba(0,0,0,.45),inset -1px 0 0 rgba(255,255,255,.08)}
+/* charnière : léger pli près du dos */
+.avant::before{content:"";position:absolute;left:14px;top:0;bottom:0;width:3px;background:linear-gradient(90deg,rgba(0,0,0,.35),rgba(255,255,255,.12),transparent)}
+.dos{width:58px;height:800px;left:-58px;transform-origin:right;transform:rotateY(-90deg);
+  background:linear-gradient(90deg,#03200f,#06331C 40%,#0a3f24 85%,#03200f);
+  display:flex;align-items:center;justify-content:center}
+.dos span{transform:rotate(90deg);white-space:nowrap;font:800 22px 'Cabinet Grotesk';color:#C8F05A;letter-spacing:.01em}
+.tranche{width:56px;height:792px;top:4px;right:0;transform-origin:right;transform:rotateY(-90deg);
+  background:repeating-linear-gradient(90deg,#f4f1e8 0 2px,#e2ddd0 2px 3px)}
+.haut{width:640px;height:56px;top:0;transform-origin:top;transform:rotateX(-90deg);background:repeating-linear-gradient(0deg,#f4f1e8 0 2px,#e2ddd0 2px 3px)}
+.ombre{position:absolute;left:50%;top:880px;width:760px;height:90px;margin-left:-360px;border-radius:50%;
+  background:radial-gradient(ellipse at center,rgba(0,0,0,.38),rgba(0,0,0,0) 70%);filter:blur(6px)}
+.bas{position:absolute;left:0;right:0;bottom:70px;display:flex;justify-content:center;align-items:baseline;gap:34px;color:#fff;font:700 34px 'Hanken Grotesk'}
+.bas b{font:800 78px 'Cabinet Grotesk';letter-spacing:-.03em;color:#fff}
+.bas i{font-style:normal;color:#C8F05A}
+</style></head><body>
+<div class="ombre"></div>
+<div class="scene"><div class="livre">
+  <div class="face haut"></div>
+  <div class="face tranche"></div>
+  <div class="face dos"><span>Excel sans apprendre les formules · KAMTECH</span></div>
+  <div class="face avant"></div>
+</div></div>
+<div class="bas"><span>E-book PDF <i>+ 7 modèles Excel</i></span><b>2{f}500&nbsp;F</b></div>
+</body></html>
