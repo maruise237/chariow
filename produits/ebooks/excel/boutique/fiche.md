@@ -123,6 +123,8 @@ Le chapitre 1 reprend les bases en une heure : cellule, tableau propre, premièr
 - Fichiers : 1. le PDF (aperçu des premières pages proposé par Chariow), 2. le ZIP des 7 modèles.
 - Vignette et image de partage : visuels/vignette-boite-1200.png. Bannière : visuels/banniere-1620x600.png.
 - FAQ : 5 questions (limite Chariow). Filigrane au nom de l'acheteur activé, nombre de ventes masqué.
+- Prix : réglage du fondateur conservé à sa demande (10 000 F barré, promo 2 500 F, période renouvelée automatiquement).
+- Remboursement : aucun (produit numérique), aide par e-mail si un fichier ne s’ouvre pas ; écrit dans la description.
 - Remarques de l'IA Chariow traitées : résumé en tête ajouté, mot-clé « excel formulas ai » ajouté ; refusé : prix barré fictif ; non pertinent : « pas d'images » (elles sont en place).
 - L'adresse « excel-sans-apprendre-les-formules » est refusée par Chariow (mot réservé « app »).
 - Les listes de l'éditeur s'affichent numérotées sur la page publique : on écrit des lignes simples (✅ ou •).
