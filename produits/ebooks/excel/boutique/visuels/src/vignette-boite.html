@@ -1,0 +1,32 @@
+<!doctype html><html lang="fr"><head><meta charset="utf-8"><link rel="stylesheet" href="base.css"><style>
+/* Boîte produit en volume posée dans une scène de bureau (fond généré par IA, sans texte ; boîte et textes rendus ici, avec la vraie couverture). */
+body{width:1200px;height:1200px;position:relative;overflow:hidden;background:#eceae6 url(img/fond-bureau.jpg) center/cover}
+.titre{position:absolute;left:0;right:0;top:46px;text-align:center;font:800 104px/1 'Cabinet Grotesk';letter-spacing:-.035em;color:#06331C}
+.titre em{font-style:normal;color:#12924A}
+.sous{position:absolute;left:0;right:0;top:162px;text-align:center;font:700 34px 'Hanken Grotesk';color:#3D4A42}
+.scene{position:absolute;left:400px;top:262px;width:560px;height:700px;perspective:2000px}
+.boite{position:absolute;inset:0;transform-style:preserve-3d;transform:rotateY(28deg) rotateX(2deg)}
+.f{position:absolute}
+.avant{width:560px;height:700px;background:url(img/n1-001.png) center/cover;box-shadow:inset 0 0 0 1px rgba(255,255,255,.08)}
+.cote{width:150px;height:700px;left:-150px;transform-origin:right;transform:rotateY(-90deg);
+  background:linear-gradient(90deg,#03200f,#06331C 55%,#0b4a29);display:flex;align-items:center;justify-content:center;overflow:hidden}
+.cote div{transform:rotate(90deg);white-space:nowrap;text-align:center;color:#fff;font:800 50px/1 'Cabinet Grotesk';letter-spacing:-.02em}
+.cote div em{font-style:normal;color:#C8F05A}
+.cote small{display:block;margin-top:14px;font:700 20px 'Hanken Grotesk';letter-spacing:.14em;color:#C8F05A}
+.dessus{width:560px;height:150px;top:-150px;transform-origin:bottom;transform:rotateX(90deg);background:linear-gradient(#0b4a29,#06331C)}
+.ombre{position:absolute;left:290px;top:930px;width:760px;height:110px;border-radius:50%;background:radial-gradient(ellipse at center,rgba(0,0,0,.42),rgba(0,0,0,0) 70%);filter:blur(8px)}
+.pastille{position:absolute;right:58px;bottom:70px;background:#12924A;color:#fff;border-radius:50%;width:210px;height:210px;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  font:800 50px/1 "Cabinet Grotesk";white-space:nowrap;letter-spacing:-.02em;box-shadow:0 12px 30px rgba(0,0,0,.25)}
+.pastille small{font:700 20px 'Hanken Grotesk';margin-top:8px;color:#C8F05A;text-align:center;line-height:1.2}
+.pastille{white-space:nowrap;font-size:48px}
+</style></head><body>
+<p class="titre">Excel <em>sans formules</em></p>
+<p class="sous">Avec l’IA, en français · 7 modèles Excel inclus</p>
+<div class="ombre"></div>
+<div class="scene"><div class="boite">
+  <div class="f dessus"></div>
+  <div class="f cote"><div>Excel <em>sans formules</em><small>KAMTECH</small></div></div>
+  <div class="f avant"></div>
+</div></div>
+<div class="pastille"><b>2{f}500&nbsp;F</b><small>e-book<br>+ 7 modèles</small></div>
+</body></html>

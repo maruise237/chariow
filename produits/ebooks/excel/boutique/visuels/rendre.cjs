@@ -10,6 +10,7 @@ const VISUELS = [
   ['vignette-v2-1200', 'vignette-v2', 1200, 1200],
   ['vignette-v3-1200', 'vignette-v3', 1200, 1200],
   ['vignette-livre-1200', 'vignette-livre', 1200, 1200],
+  ['vignette-boite-1200', 'vignette-boite', 1200, 1200],
   ['seo-1200x1200', 'vignette-v3', 1200, 1200],
   ['banniere-1620x600', 'banniere', 1620, 600],
   ['partage-1200x627', 'partage', 1200, 627],
