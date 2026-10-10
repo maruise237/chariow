@@ -1,31 +1,24 @@
-# Charte des e-books KAMTECH
+# Charte et moteur des e-books KAMTECH
 
-Gabarit commun aux 3 e-books. La structure suit le modèle Canva de Chariow, avec nos couleurs et une couverture plus travaillée.
+- **Pourquoi** ces choix, et comment choisir pour un nouveau produit : `DIRECTION-ARTISTIQUE.md`.
+- **Directions artistiques** (couleurs, polices, styles) : `da.js`.
+- **Visuels** réutilisables (tableur, journal, téléphone, avant/après) : `visuels.js`.
+- **Moteur** (source texte → PDF) : `moteur.js`.
+- **Exemples** : `exemples/*.md`, avec un chapitre type par e-book, et leurs rendus dans `exemples/sortie/`.
 
-Format : 203 × 254 mm (portrait 4:5, comme le modèle Chariow). C'est lisible sur téléphone.
-
-## Structure d'un e-book
-1. **Couverture.** Fond dégradé de la couleur du produit. Grand titre serif avec un mot en accent. Au centre, un visuel « avant/après IA » : une question à l'IA, le résultat, la réponse. En bas, 3 atouts et la signature.
-2. **Avertissement.** Bande foncée, usage personnel, interdiction de partage WhatsApp/Telegram.
-3. **Sommaire.**
-4. **Comment lire cet e-book.** Sections numérotées séparées par des filets, étapes avec flèches.
-5. **Ouverture de chapitre.** Grand numéro en contour, panneau arrondi foncé, « Tu vas savoir : », pilule de durée de lecture et bonus lié.
-6. **Pages de contenu.** Composants : prompt à copier (encadré foncé), résultat attendu, erreur fréquente (rouge), astuce.
-7. **À propos de l'auteur.** Bande couleur accent, renvoi vers le produit suivant.
-8. **4e de couverture.** Couleurs Easy Store, logos Easy Store et KAMTECH.
-
-## Couleurs
-| | Primaire | Foncé | Accent | Fond |
-|---|---|---|---|---|
-| Marque Easy Store | #001DA1 | | #1080FF | |
-| Excel avec l'IA | #12924A | #06331C | #C8F05A | #F1F7F0 |
-| Comptable 2.0 | #1F3FD1 | #00104F | #E8B84A | #F5F3EC |
-| Comptes de boutique | #F0641E | #4A1806 | #FFC93C | #FFF5EA |
-
-Polices (libres, OFL) : Fraunces 700 pour les titres, Outfit pour le texte.
-
-## Générer
+## Écrire un e-book
+1. Copier un exemple : `exemples/excel.md`.
+2. Dans l'en-tête, régler `da:` (cabinet, atelier, marche ou studio), le titre, les atouts et le visuel de couverture.
+3. Écrire le contenu en texte simple : `##` pour les titres, `-` pour les puces, `1.` pour les étapes, et les blocs `:::prompt`, `:::recap`, etc. (liste dans `DIRECTION-ARTISTIQUE.md`).
+4. Générer :
 ```
-NODE_PATH=$(npm root -g) node produits/charte/generer.js [excel|compta|boutique]
+NODE_PATH=$(npm root -g) node produits/charte/moteur.js produits/charte/exemples/excel.md
 ```
-Les sorties vont dans `apercu/` : le PDF, le HTML et le PNG de chaque page. Les contenus et les couleurs sont dans `produits.js`. Les titres sont provisoires (E2, C1, CA1) en attendant ton choix.
+
+Le moteur produit dans `sortie/` :
+- le PDF, avec signets et sommaire cliquable ;
+- la vignette carrée pour la boutique et les pubs ;
+- la miniature de 200 px pour vérifier la lisibilité ;
+- une image de chaque page dans `sortie/png/`.
+
+Il signale aussi ce qui ne respecte pas la charte : titre trop long, chapitre sans récap, paragraphe trop long.
