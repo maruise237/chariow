@@ -26,11 +26,11 @@ em{font-style:italic;color:var(--a)}
 .status .ic{display:flex;gap:8px;align-items:center}
 .sig{display:flex;gap:2px;align-items:flex-end;height:14px}.sig i{width:4px;background:#16181D;border-radius:1px}
 .bat{width:30px;height:15px;border:2px solid #16181D;border-radius:5px;padding:1.5px;position:relative}.bat i{display:block;width:70%;height:100%;background:#16181D;border-radius:2px}
-.appbar{position:absolute;top:64px;left:0;right:0;height:58px;background:#fff;z-index:3;display:flex;align-items:center;padding:0 24px;font:600 21px 'Hanken Grotesk';color:#16181D;border-bottom:1px solid #d6dcd5;gap:16px}
+.appbar{position:absolute;top:62px;left:0;right:0;height:60px;background:#fff;z-index:3;display:flex;align-items:center;padding:0 24px;font:600 21px 'Hanken Grotesk';color:#16181D;border-bottom:1px solid #d6dcd5;gap:16px}
 .appbar .bk{width:12px;height:12px;border-left:3px solid #16181D;border-bottom:3px solid #16181D;transform:rotate(45deg);margin-left:6px}
 .scroll{position:absolute;top:122px;left:0;right:0;bottom:0;padding:0 10px}
 .pg{display:block;width:526px;height:auto;box-shadow:0 1px 3px rgba(0,0,0,.18);margin-bottom:10px;background:#fff}
-.home{position:absolute;bottom:14px;left:50%;width:170px;height:6px;margin-left:-85px;background:#111;border-radius:3px;z-index:5;opacity:.85}
+.home{position:absolute;bottom:7px;left:50%;width:170px;height:6px;margin-left:-85px;background:#111;border-radius:3px;z-index:5;opacity:.85}
 .count{position:absolute;right:18px;bottom:40px;z-index:5;background:#16181D;color:#fff;font:600 19px 'Hanken Grotesk';padding:8px 16px;border-radius:20px}
 
 .appbar .pgn{margin-left:auto;font:600 19px 'Hanken Grotesk';color:#3D4A42}

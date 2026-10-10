@@ -7,6 +7,8 @@ const SRC = path.join(__dirname, 'src');
 // nom du fichier de sortie, source HTML, dimensions
 const VISUELS = [
   ['vignette-1200', 'vignette', 1200, 1200],
+  ['vignette-v2-1200', 'vignette-v2', 1200, 1200],
+  ['seo-1200x1200', 'vignette-v2', 1200, 1200, '#seo'],
   ['banniere-1620x600', 'banniere', 1620, 600],
   ['partage-1200x627', 'partage', 1200, 627],
   ['mockup-couverture', 'mockup-couverture', 1080, 1350],
@@ -25,13 +27,13 @@ const habiller = h => h.replace(/\{f\}/g, '<span class="f">&nbsp;</span>').repla
 (async () => {
   const noms = process.argv.slice(2);
   const nav = await chromium.launch();
-  for (const [sortie, source, w, h] of VISUELS) {
+  for (const [sortie, source, w, h, hash = ''] of VISUELS) {
     if (noms.length && !noms.includes(sortie)) continue;
     const html = habiller(fs.readFileSync(path.join(SRC, source + '.html'), 'utf8'));
     const tmp = path.join(SRC, `.${source}.rendu.html`);       // copie habillée, à côté pour que les chemins relatifs marchent
     fs.writeFileSync(tmp, html);
     const page = await nav.newPage({ viewport: { width: w, height: h }, deviceScaleFactor: 1 });
-    await page.goto('file://' + tmp);
+    await page.goto('file://' + tmp + hash);
     await page.evaluate(() => document.fonts.ready);
     await page.waitForTimeout(150);
     await page.screenshot({ path: path.join(__dirname, sortie + '.png') });

@@ -1,0 +1,34 @@
+[
+ {
+  "q": "Ça marche sur téléphone ?",
+  "r": "En partie. Le livre est un PDF que tu peux lire sur ton téléphone. Pour travailler dans le tableur, le chapitre 1 explique comment saisir une formule dans Excel sur Android (barre de formule, bouton fx) et dans Google Sheets, d’après les pages d’aide de Microsoft et de Google.\n\nNous n’avons pas pu capturer Excel mobile ni Google Sheets, et nous le disons dans le livre. Les captures viennent d’un tableur sur ordinateur. Le séparateur de formule dans Google Sheets (« ; » ou « , ») dépend de la feuille : le livre te dit quoi changer si ta formule est refusée. Le chapitre 6 (macros) décrit les menus et raccourcis de l’ordinateur."
+ },
+ {
+  "q": "J’ai Excel 2016. Ça marche pour moi ?",
+  "r": "Oui, c’est la version utilisée dans les messages du livre. Elle a une limite : RECHERCHEX n’existe pas dans Excel 2016 ni 2019, d’après Microsoft. Le livre te montre comment dire ta version à l’IA pour qu’elle te donne RECHERCHEV à la place.\n\nNous n’avions pas Excel 2016 sous la main : les noms de menus ont été vérifiés dans l’aide Microsoft, pas sur cette version. Le chapitre 4 le signale pour les tableaux croisés."
+ },
+ {
+  "q": "Je n’ai pas Excel. Je peux quand même suivre ?",
+  "r": "Le livre dit qu’il te faut Excel ou Google Sheets. Les formules du livre ont été testées dans LibreOffice Calc en français. Les 7 modèles sont des fichiers Excel : nous ne les avons pas essayés dans Google Sheets. Si tu n’as aucun de ces logiciels, vérifie d’abord que tu peux en ouvrir un avant d’acheter."
+ },
+ {
+  "q": "Il faut payer ChatGPT ?",
+  "r": "Non. Le livre demande une IA gratuite : ChatGPT, Gemini ou Claude. Nos tests ont été faits avec les modèles gpt-4o-mini et gpt-5-mini. La version gratuite que tu utilises peut répondre un peu autrement, c’est pourquoi le livre insiste sur la vérification en 30 secondes."
+ },
+ {
+  "q": "C’est un PDF ?",
+  "r": "Oui, pour le livre : un PDF de 227 pages. Tu reçois en plus 7 fichiers Excel que tu ouvres et que tu remplis avec tes chiffres."
+ },
+ {
+  "q": "Les captures viennent d’Excel ?",
+  "r": "Non. Elles viennent de LibreOffice Calc, un tableur en français, utilisé pour tout vérifier. Les formules portent les mêmes noms qu’en Excel. Il y a quelques différences d’affichage, que le livre signale : LibreOffice écrit #N/D là où Excel écrit #N/A, et appelle « table de pilote » le tableau croisé dynamique."
+ },
+ {
+  "q": "L’IA se trompe-t-elle vraiment ?",
+  "r": "Oui. Dans nos tests, elle a donné des formules justes la plupart du temps quand la question était en français, et des formules fausses d’autres fois, parfois sans message d’erreur. Le livre te montre les cas réels et la méthode pour les attraper."
+ },
+ {
+  "q": "Je suis débutant complet. Je peux commencer ?",
+  "r": "Le chapitre 1 reprend les bases en une heure : cellule, tableau propre, première formule SOMME, signe $. Tu n’as pas besoin de connaître les formules avant de commencer."
+ }
+]

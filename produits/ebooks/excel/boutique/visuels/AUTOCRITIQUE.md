@@ -50,3 +50,15 @@ Le PDF corrigé (227 pages) a remplacé l’ancien : pages utilisées re-rendues
 - Partage : couverture remplacée par la version pleine page du nouveau PDF (une image manquante a été repérée au rendu et corrigée).
 - Note : la couverture imprimée dit encore « 35 prompts testés / 7 modèles Excel / Captures réelles ». Cohérent avec les visuels, rien à changer côté visuels.
 - Poids : tous les PNG font entre 54 et 275 Ko, bien sous 2 Mo.
+
+## Vignette v2 et image SEO (1200 × 1200) : produit visible, prix honnête
+Consignes appliquées : pas de prix barré (aucun prix de référence réellement pratiqué), mention « Prix de lancement, jusqu’au 31 octobre », prix modéré, fond contrasté, regard et geste dirigés vers le livre, personnage réduit.
+- Passe 1 (brouillon sur fond accent plein, 1 200 px) : le fond #C8F05A seul est trop clair. Sur le blanc de la grille Chariow, le contraste est d’environ 1,2:1 : la vignette se fondrait dans la page (alerte Amazon KDP sur les vignettes claires). Les tuiles .xlsx se chevauchaient, le barré était trop épais, le personnage (1 010 px) volait la vedette au livre, le prix était dominant.
+- Passe 2 : fond vert foncé #06331C (contraste avec le blanc supérieur à 12:1) sur la moitié haute, avec le titre en blanc et « sans apprendre » en accent. Bande accent en bas, car le trait noir d’Open Peeps n’est lisible que sur fond clair : le personnage, le livre (vert foncé, qui ressort sur l’accent) et le prix y sont posés. Barré supprimé. Tuiles .xlsx rangées sans chevauchement. Personnage réduit à 780 px, geste du doigt vers la couverture, regard vers la gauche.
+- Passe 3 (lecture à 200 px et à 150 px, y compris sur fond blanc de grille) : le titre reste lisible à 200 px et se devine à 150 px, la couverture verte sur la bande accent se distingue, le prix (100 px) lit « 2 500 F » sans dominer. Livre agrandi (372 × 465), personnage décalé à droite pour que le doigt reste près de la tranche. Les tuiles .xlsx sont lisibles seulement à taille réelle (décor).
+- Reste perfectible : le livre n’est pas tenu en main (aucun personnage Open Peeps ne tient un livre), la couverture imprimée dit « 35 prompts testés / Octobre 2026 » en petit, et l’efficacité d’un prix visible sur l’image n’est pas prouvée : à tester contre une version sans prix.
+- Image SEO : même composition que la vignette, avec l’adresse kamtech.mychariow.com sous la mention du prix. Même fichier de départ (`src/vignette-v2.html`, ajout via `#seo`).
+
+## Affiche 1080 × 1080 et story : prix de lancement
+- Mention « Prix de lancement, jusqu’au 31 octobre » ajoutée au-dessus du prix (affiche) et sous forme de deux lignes (story), sans prix barré. Capture de l’affiche réduite à 860 px pour libérer la place du pied de page, annotation « aucune alerte » recalée et passée sur une seule ligne.
+- Story : première ligne de la page 54 visible en entier dans le téléphone (défilement ajusté à −398 px, aussi dans le mockup prompt).
