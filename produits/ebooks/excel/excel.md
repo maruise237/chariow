@@ -8,9 +8,9 @@ court: Excel sans formules
 collection: Méthode KAMTECH
 surtitre: Excel + IA · en français
 sousTitre: Tu écris ta demande en français, l'IA te donne la formule, tu la vérifies en 30 secondes.
-atouts: 100 prompts testés | 20 modèles en FCFA | Fiche mémo
+atouts: 35 prompts testés | 7 modèles Excel | Captures réelles
 visuel: excel
-contenu: L'e-book PDF | 100 prompts Excel testés | 20 modèles Excel et Google Sheets en FCFA | La fiche mémo des 15 formules
+contenu: L'e-book PDF | 7 modèles Excel en FCFA : stock, paie, facture, tontine, Mobile Money, tableau de bord, ventes du mois
 suite: Tu es comptable ? Le même principe, appliqué au SYSCOHADA : **Comptable 2.0**.
 edition: Octobre 2026
 ---
