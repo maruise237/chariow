@@ -51,7 +51,7 @@
  ],
  "capture": {
   "feuille": "Ventes",
-  "plage": "A1:E5",
+  "plage": "A1:E4",
   "cellule_active": "E2",
   "zoom": 165
  },

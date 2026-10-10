@@ -50,7 +50,7 @@ Beaucoup de tutoriels sont en anglais. Si tu poses ta question en anglais, l'IA 
 Nous l'avons collée telle quelle dans un tableur en français :
 
 :::capture ../../preuves/sortie/si-anglais/capture.png | Capture réelle : LibreOffice Calc en français, 10 octobre 2026.
-1: 42,8 b | La formule anglaise, collée sans rien changer.
+1: 50,6 h4 | La formule anglaise, collée sans rien changer.
 2: 89,67 g4 | Le résultat : une erreur au lieu de « Remise 10% ».
 :::
 
@@ -61,8 +61,8 @@ Dans Excel en français aussi, `IF` et `AND` sont inconnus : il faut `SI`, `ET` 
 :::
 
 :::capture ../../preuves/sortie/si-et/capture.png | La même formule, collée dans le même tableur.
-1: 58,6 b | La formule française, avec ET et les « ; ».
-2: 87,52 b4 | Awa est grossiste et dépasse 50 000 F : elle a la remise. Boris (détaillant) et Carine (30 000 F) n'ont rien.
+1: 50,9 h4 | La formule française, avec ET et les « ; ».
+2: 86,56 b4 | Awa est grossiste et dépasse 50 000 F : elle a la remise. Boris (détaillant) et Carine (30 000 F) n'ont rien.
 :::
 
 ## Piège 2 : un mot anglais au milieu
@@ -96,8 +96,9 @@ Nous avons envoyé ce réglage à gpt-5-mini avec « Excel 2016 » et notre beso
 :::
 
 :::capture ../../preuves/sortie/recherchev-sierreur/capture.png | LibreOffice écrit 0 à la place de FAUX : c'est la même valeur.
-1: 68,8 b | La formule de l'IA, collée en B2 puis recopiée en B3.
-2: 48,72 d | P09 n'existe pas dans les tarifs : le message remplace l'erreur.
+1: 60,7 h4 | La formule de l'IA, collée en B2 puis recopiée en B3.
+2: 56,57 d4 | P03 existe dans les tarifs : son prix s'affiche.
+3: 48,73 d4 | P09 n'existe pas dans les tarifs : le message remplace l'erreur.
 :::
 
 :::astuce
@@ -109,8 +110,8 @@ Sur Google Sheets, écris « J'utilise Google Sheets en français ». Les noms s
 L'IA peut se tromper même quand la formule est juste. Dans nos tests, ChatGPT a donné `=NB.SI(E:E; "Payé")` pour compter les clients qui ont payé, en ajoutant qu'il fallait « respecter les majuscules ». Nous avons vérifié :
 
 :::capture ../../preuves/sortie/nb-si-casse/capture.png | Payé, payé et PAYÉ sont comptés ; Impayé ne l'est pas.
-1: 38,5 b | La formule de l'IA, limitée aux lignes 2 à 6.
-2: 98,83 g | Résultat : 4. NB.SI ne fait pas la différence entre majuscules et minuscules.
+1: 46,6 h4 | La formule de l'IA, limitée aux lignes 2 à 6.
+2: 98,83 g4 | Résultat : 4. NB.SI ne fait pas la différence entre majuscules et minuscules.
 :::
 
 La formule est juste, l'explication est fausse. L'aide Microsoft le confirme : « NB.SI ignore la casse ».
@@ -152,9 +153,10 @@ J'ai un tableau Excel : colonne B les produits, colonne D le total de chaque ven
 :::
 
 :::capture ../../preuves/sortie/somme-si/capture.png | Capture réelle, LibreOffice Calc en français.
-1: 40,6 b | La formule, telle que l'IA l'a donnée.
-2: 31,57 d | Les deux lignes « Savon » : 6 000 + 10 000.
-3: 74,80 g | Le total : 16 000. Le compte est bon.
+1: 57,6 h4 | La formule, telle que l'IA l'a donnée.
+2: 38,42 d4 | Première vente de savon : 6 000.
+3: 38,67 d4 | Deuxième vente de savon : 10 000.
+4: 84,92 g4 | Le total : 16 000. Le compte est bon.
 :::
 
 :::erreur

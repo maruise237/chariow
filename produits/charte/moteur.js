@@ -255,7 +255,8 @@ function capture(b) {
       <circle cx="${cx}" cy="${cy}" r="${R}" class="cap-rep" stroke-width="${u * .35}"/>
       <text x="${cx}" y="${cy}" font-size="${R * 1.15}" class="cap-n">${r.n}</text>`;
   }).join('');
-  return `<figure class="capture">
+  const haut = reps.some(r => r.dir === 'h') ? ' cap-haut' : '';   // repères au-dessus : on réserve la place
+  return `<figure class="capture${haut}">
     <div class="cap-img"><img src="file://${chemin}" alt="">
       <svg viewBox="0 0 ${l} ${h}"><defs><marker id="pointe" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="3.2" markerHeight="3.2" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="cap-pointe"/></marker></defs>${svg}</svg>
     </div>
@@ -485,9 +486,11 @@ function css(m, da) {
 
   /* Page respiration */
   /* Captures annotées : l'image réelle, un cadre fin, des repères et flèches d'une seule couleur vive */
-  .capture{margin:5mm 0 6mm;break-inside:avoid}
-  .cap-img{position:relative;border:1px solid #CFCFCF;border-radius:1.5mm;overflow:hidden;background:#fff}
-  .cap-img img{display:block;width:100%;height:auto}
+  .capture{margin:5mm -6mm 6mm;break-inside:avoid}
+  .capture figcaption{padding:0 6mm}
+  .cap-img{position:relative}
+  .cap-img img{display:block;width:100%;height:auto;border:1px solid #CFCFCF;border-radius:1.5mm;background:#fff}
+  .cap-haut{padding-top:9%}
   .cap-img svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
   .cap-fl{stroke:var(--erreur);stroke-linecap:round}
   .cap-pointe{fill:var(--erreur)}

@@ -31,14 +31,16 @@ import time
 RACINE = os.path.dirname(os.path.abspath(__file__))
 DOSSIER_CAS = os.path.join(RACINE, "cas")
 DOSSIER_SORTIE = os.path.join(RACINE, "sortie")
-ECRAN = "1600x1000x24"
+# Écran virtuel grand : l'interface de LibreOffice est agrandie (DPI forcé),
+# ce qui agrandit aussi la barre de formule (sa police ne suit pas le zoom de la feuille).
+ECRAN = "2600x1600x24"
+ECRAN_L, ECRAN_H = 2600, 1600
+DPI_INTERFACE = 192       # SAL_FORCEDPI : 96 = normal ; l'interface grandit avec
+# Le texte de la barre de formule (taille fixe) doit rester lisible une fois la
+# capture ramenée à 1000 px : sa taille relative à la grille vaut 1/zoom. On
+# plafonne donc le zoom de la feuille (le zoom des json est un maximum).
+ZOOM_MAX = 120
 LARGEUR_FINALE = 1000
-ECRAN_L, ECRAN_H = 1600, 1000
-# Calage de la capture (pixels de l'écran virtuel)
-PX_PAR_CENTIMM = 0.0399   # pixels par 1/100 mm à 100 % de zoom
-RATIO_Y = 1.0             # correction des hauteurs de ligne
-BARRE_Y, BARRE_H = 31, 28 # bandeau « zone de nom + barre de formule »
-GRILLE_X0, GRILLE_Y0 = 32, 64  # origine de la grille (en-têtes de colonnes)
 
 
 # ---------------------------------------------------------------- environnement
@@ -72,8 +74,9 @@ def lancer_calc(profil):
     cmd = ["soffice", "-env:UserInstallation=file://" + profil,
            "--accept=socket,host=127.0.0.1,port=%d;urp;" % port,
            "--calc", "--norestore", "--nologo", "--nodefault"]
+    env = dict(os.environ, SAL_FORCEDPI=str(DPI_INTERFACE))
     p = subprocess.Popen(cmd, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL,
-                         start_new_session=True)
+                         start_new_session=True, env=env)
     return p, port
 
 
@@ -200,6 +203,10 @@ def egal(a, b):
     return a == b
 
 
+def zoom_effectif(cap):
+    return min(int(cap.get("zoom", 100)), ZOOM_MAX)
+
+
 def configurer_fenetre(doc, cas):
     """Zoom, plage visible, cellule active, interface épurée avant capture."""
     cap = cas["capture"]
@@ -211,7 +218,8 @@ def configurer_fenetre(doc, cas):
     lm = frame.LayoutManager
     # on garde seulement la barre de formule ; on masque barres d'outils, menu, latéral
     for el in ("menubar/menubar", "toolbar/standardbar", "toolbar/toolbar",
-               "toolbar/findbar", "statusbar/statusbar", "toolbar/colorbar"):
+               "toolbar/findbar", "statusbar/statusbar", "toolbar/colorbar",
+               "toolbar/formatobjectbar", "toolbar/textobjectbar"):
         try:
             lm.hideElement("private:resource/" + el)
         except Exception:
@@ -219,7 +227,7 @@ def configurer_fenetre(doc, cas):
     feuille = doc.Sheets.getByName(cap["feuille"])
     ctrl.setActiveSheet(feuille)
     ctrl.ZoomType = 3  # DocumentZoomType.BY_VALUE
-    ctrl.ZoomValue = int(cap.get("zoom", 100))
+    ctrl.ZoomValue = zoom_effectif(cap)
     # plage visible : on place le coin haut-gauche de la plage en haut-gauche
     plage = feuille.getCellRangeByName(cap["plage"])
     ctrl.setFirstVisibleColumn(plage.RangeAddress.StartColumn)
@@ -294,35 +302,109 @@ def main_cas(chemin_cas, doc_ctx_factory=None):
         shutil.rmtree(tmp, ignore_errors=True)
 
 
-def recadrer(brut, cible, cas, doc):
-    """Recadre la capture : barre de formule + plage demandée, largeur ~1000 px.
+def _sombre(p):
+    """Trait de grille d'en-tête : noir ou bleu nuit de la sélection."""
+    return max(p[:3]) < 120
 
-    Les dimensions en pixels se déduisent des largeurs/hauteurs réelles des
-    cellules (1/100 mm) et du zoom ; les constantes ci-dessous ont été calées
-    sur des captures réelles de l'interface à l'écran virtuel utilisé.
+
+def _separateurs_x(im, y, x0, x_max):
+    """Abscisses des traits sombres (fins) sur la ligne y, de x0 à x_max."""
+    xs, prec = [], False
+    for x in range(x0, x_max):
+        s = _sombre(im.getpixel((x, y)))
+        if s and not prec:
+            xs.append(x)
+        prec = s
+    return xs
+
+
+def _separateurs_y(im, x, y0, y_max):
+    ys, prec = [], False
+    for y in range(y0, y_max):
+        s = _sombre(im.getpixel((x, y)))
+        if s and not prec:
+            ys.append(y)
+        prec = s
+    return ys
+
+
+def mesurer_ecran(im, nb_col, nb_lig):
+    """Repère, par analyse de la capture brute, les bandes de l'interface.
+
+    Renvoie un dict : x0 (trait à droite des numéros de ligne), y_entete
+    (trait sous les lettres de colonnes), x_fin / y_fin (dernier trait de la
+    plage), bar_haut / bar_bas (bandeau nom de cellule + barre de formule).
+    Rien n'est calé en dur : tout se déduit des couleurs de l'interface.
     """
+    larg, haut = im.size
+    # trait vertical à droite des numéros de ligne : premier pixel noir de la
+    # ligne y = bas d'écran (les numéros de ligne descendent jusque-là)
+    y_bas = haut - 200
+    x0 = next(x for x in range(0, larg) if _sombre(im.getpixel((x, y_bas))))
+    # trait sous les en-têtes de colonnes : à droite, dans la grille vide, on
+    # remonte depuis le bas (traits de grille clairs) jusqu'au premier trait noir
+    xv = larg - 300
+    y_entete = next(y for y in range(y_bas, 0, -1) if _sombre(im.getpixel((xv, y))))
+    # traits entre colonnes, lus juste au-dessus du trait d'en-tête
+    seps_x = _separateurs_x(im, y_entete - 3, x0, larg - 60)
+    seps_y = _separateurs_y(im, x0 - 10, y_entete, haut - 20)
+    if len(seps_x) < nb_col + 1 or len(seps_y) < nb_lig:
+        raise RuntimeError("plage trop grande pour l'écran virtuel")
+    x_fin = seps_x[nb_col]      # seps_x[0] = x0
+    y_fin = seps_y[nb_lig]      # seps_y[0] = y_entete
+    # bandeau de la barre de formule : à droite (zone de texte vide, blanche),
+    # en remontant depuis les en-têtes, on traverse le gris puis le blanc
+    xb = larg - 300
+    y = y_entete - 1
+    gris = im.getpixel((xb, y))[:3]
+    while im.getpixel((xb, y))[:3] == gris:
+        y -= 1
+    bar_bas = y + 1                      # sous le cadre bas du champ de saisie
+    while im.getpixel((xb, y))[:3] != gris:
+        y -= 1
+    bar_haut = max(y - 3, 0)             # au-dessus du cadre haut du champ
+    return {"x0": x0, "y_entete": y_entete, "x_fin": x_fin, "y_fin": y_fin,
+            "bar_haut": bar_haut, "bar_bas": bar_bas, "xb": xb}
+
+
+def fin_texte_formule(im, m):
+    """Abscisse du dernier pixel de texte dans le champ de formule."""
+    y1, y2 = m["bar_haut"] + 6, m["bar_bas"] - 6
+    for x in range(m["xb"] - 40, 400, -1):
+        for y in range(y1, y2):
+            if max(im.getpixel((x, y))[:3]) < 160:
+                return x
+    return 400
+
+
+def recadrer(brut, cible, cas, doc):
+    """Recadre la capture : barre de formule + exactement la plage demandée.
+
+    Les bandes sont repérées par analyse d'image (voir mesurer_ecran) : le
+    recadrage tombe sur le dernier trait de la plage, sans colonne ni ligne en
+    trop. Si le texte de la formule dépasse la plage, la barre est gardée en
+    entier et la grille est complétée à droite par du blanc (jamais de colonne
+    voisine). L'image reste une capture réelle : aucun pixel n'est dessiné.
+    """
+    from PIL import Image
     cap = cas["capture"]
     feuille = doc.Sheets.getByName(cap["feuille"])
     plage = feuille.getCellRangeByName(cap["plage"]).RangeAddress
-    zoom = int(cap.get("zoom", 100))
-    k = PX_PAR_CENTIMM * zoom / 100.0
-    larg = sum(feuille.Columns.getByIndex(c).Width
-               for c in range(plage.StartColumn, plage.EndColumn + 1))
-    haut = sum(feuille.Rows.getByIndex(r).Height
-               for r in range(plage.StartRow, plage.EndRow + 1))
-    x_fin = min(GRILLE_X0 + int(larg * k) + 6, ECRAN_L)
-    y_fin = min(GRILLE_Y0 + int(haut * k * RATIO_Y) + 10, ECRAN_H - 30)
-    # barre de formule (nom de cellule + formule) puis grille, assemblées
-    barre = os.path.join(os.path.dirname(brut), "barre.png")
-    grille = os.path.join(os.path.dirname(brut), "grille.png")
-    subprocess.run(["convert", brut, "-crop", "%dx%d+0+%d" % (x_fin, BARRE_H, BARRE_Y),
-                    "+repage", barre], check=True)
-    subprocess.run(["convert", brut, "-crop",
-                    "%dx%d+0+%d" % (x_fin, y_fin - GRILLE_Y0, GRILLE_Y0),
-                    "+repage", grille], check=True)
-    subprocess.run(["convert", barre, grille, "-append", "+repage", "-bordercolor",
-                    "white", "-border", "4", "-resize", "%dx" % LARGEUR_FINALE, cible],
-                   check=True)
+    nb_col = plage.EndColumn - plage.StartColumn + 1
+    nb_lig = plage.EndRow - plage.StartRow + 1
+    im = Image.open(brut).convert("RGB")
+    m = mesurer_ecran(im, nb_col, nb_lig)
+    larg_grille = m["x_fin"] + 3
+    larg = max(larg_grille, fin_texte_formule(im, m) + 24)
+    barre = im.crop((0, m["bar_haut"], larg, m["bar_bas"]))
+    grille = im.crop((0, m["bar_bas"], larg_grille, m["y_fin"] + 3))
+    toile = Image.new("RGB", (larg, barre.height + grille.height), (255, 255, 255))
+    toile.paste(barre, (0, 0))
+    toile.paste(grille, (0, barre.height))
+    cadre = Image.new("RGB", (larg + 8, toile.height + 8), (255, 255, 255))
+    cadre.paste(toile, (4, 4))
+    h = round(cadre.height * LARGEUR_FINALE / cadre.width)
+    cadre.resize((LARGEUR_FINALE, h), Image.LANCZOS).save(cible)
 
 
 def cas_a_lancer(args):
