@@ -71,3 +71,18 @@ Limite : LibreOffice 24.2 ne connaît pas RECHERCHEX. Pour cette fonction, on s'
 - Microsoft, pages ouvertes avec WebFetch : SOMME.SI.ENS (somme_plage en premier), CONCAT (« disponible […] si vous avez Office 2019, ou […] un abonnement Office 365 »), CONCATENER (reste disponible pour la compatibilité ; & recommandé), AUJOURDHUI (numéro de série de la date ; format Standard ou Nombre), ARRONDI (0 = entier le plus proche), SUPPRESPACE (ne supprime pas l'espace insécable, code 160), RECHERCHEV (#N/A : espace de fin, caractères non imprimables ; SUPPRESPACE ou EPURAGE).
 - TVA Cameroun 19,25 % : PwC Worldwide Tax Summaries, page Cameroon / Corporate / Other taxes (« The total VAT in Cameroon is 19.25%. », dernière revue le 14 août 2026) ; lefisk.cm/fiscalite/tva (17,5 % + 10 % de centimes additionnels, soit 19,25 %). Le site impots.cm (DGI) ne mentionne pas le taux sur sa page d'accueil. Aucune de ces sources n'est un texte de loi : le taux est à confirmer dans le Code général des impôts.
 - Non trouvée : une page support.microsoft.com sur #N/A (l'URL essayée donne 404). Le livre s'appuie sur la page RECHERCHEV.
+
+## Journaux par chapitre
+
+Les chapitres 1 et 3 à 7 ont été rédigés en parallèle ; chacun a son journal (tests ChatGPT, cas vérifiés, sources ouvertes, limites) :
+
+| Chapitre | Journal | Outils propres |
+|---|---|---|
+| 01 L'essentiel d'Excel | `tests-ia-ch01.md` | |
+| 03 Nettoyer une liste | `tests-ia-ch03.md` | `outils/c3-gen.py` |
+| 04 Tableaux croisés et graphiques | `tests-ia-ch04.md` | `outils/c4-tcd.py` |
+| 05 Tableau de bord | `tests-ia-ch05.md` | `outils/c5-tableau-de-bord.py` |
+| 06 Automatiser sans coder | `tests-ia-ch06.md` | `outils/c6-macro.py` |
+| 07 Projets réels et conclusion | `tests-ia-ch07.md` | |
+
+Toutes les captures ont été régénérées une par une (pas en parallèle) avant l'assemblage final, pour éviter qu'un écran virtuel d'un autre lancement soit photographié.
