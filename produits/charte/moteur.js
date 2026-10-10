@@ -17,10 +17,28 @@ const polices = () => POLICES.replace(/\.\.\/assets\//g, `file://${ASSETS}/`);
 // ---------- Lecture de la source ----------
 
 const echap = s => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
-const fmt = s => echap(s)
-  .replace(/`([^`]+)`/g, '<code>$1</code>')
-  .replace(/\*\*([^*]+)\*\*/g, '<b>$1</b>')
-  .replace(/\*([^*]+)\*/g, '<em>$1</em>');
+// Typographie française (Lexique des règles typographiques de l'Imprimerie nationale) :
+// espace fine insécable avant ; ! ? et dans les guillemets, insécable avant : et entre un nombre
+// et son unité, apostrophe courbe, milliers séparés par une fine. Jamais appliqué au code.
+const FINE = ' ', INSEC = ' ';
+function typo(s) {
+  let t = s
+    .replace(/'/g, '’')
+    .replace(/\.\.\./g, '…')
+    .replace(/«\s*/g, '«' + FINE).replace(/\s*»/g, FINE + '»')
+    .replace(/\s+([;!?])/g, FINE + '$1')
+    .replace(/([\wÀ-ÿ»)])([!?])/g, '$1' + FINE + '$2')
+    .replace(/\s+:(?=\s|$)/g, INSEC + ':')
+    .replace(/(\d) (?=\d{3}(?!\d))/g, '$1' + FINE)
+    .replace(/(\d)\s+(F|FCFA|%|min|h|Mo|pages|ans|jours)(?=[\s.,;:!?)]|$)/g, '$1' + INSEC + '$2')
+    .replace(/(\d)\s+(?=[\d]{3}\b)/g, '$1' + FINE);
+  return t;
+}
+const fmt = s => echap(s).split(/(`[^`]+`)/).map(part => part.startsWith('`') && part.endsWith('`') && part.length > 1
+  ? `<code>${part.slice(1, -1)}</code>`
+  : typo(part).replace(/\*\*([^*]+)\*\*/g, '<b>$1</b>').replace(/\*([^*]+)\*/g, '<em>$1</em>')).join('');
+// Titres : pas de mot ni de ponctuation seuls sur la dernière ligne
+const titre = s => fmt(s).replace(/ (\S+)$/, INSEC + '$1');
 
 function clesValeurs(lignes) {
   const o = {};
@@ -109,7 +127,7 @@ const ico = {
 };
 
 const logo = (clair = false) => `<span class="logo${clair ? ' clair' : ''}"><i></i>${MARQUE.nom}</span>`;
-const titreRiche = s => fmt(s); // *mot* → <em>mot</em> : le mot mis en accent
+const titreRiche = s => titre(s); // *mot* → <em>mot</em> : le mot mis en accent
 
 function couverture(m, da) {
   const atouts = (m.atouts || '').split('|').map(s => s.trim()).filter(Boolean);
@@ -173,7 +191,7 @@ function ouverture(b, variante, marqueur) {
       <div class="col-num"><span>${b.arg}</span></div>
       <div class="col-texte">
         <p class="kicker">Chapitre ${b.arg}</p>
-        <h1>${fmt(k.titre)}</h1>
+        <h1>${titre(k.titre)}</h1>
         <p class="objectif">${fmt(k.objectif || '')}</p>
         <p class="intro">${fmt(k.intro || '')}</p>
         ${vis}${meta}
@@ -185,7 +203,7 @@ function ouverture(b, variante, marqueur) {
       <div class="ouv-haut"><span class="num-contour">${b.arg}</span>${vis}</div>
       <div class="panneau">
         <p class="kicker">Chapitre ${b.arg}</p>
-        <h1>${fmt(k.titre)}</h1>
+        <h1>${titre(k.titre)}</h1>
         <p class="objectif">Tu vas savoir : ${fmt(k.objectif || '')}</p>
         <p class="intro">${fmt(k.intro || '')}</p>
         ${meta}
@@ -196,7 +214,7 @@ function ouverture(b, variante, marqueur) {
     <span class="num-geant">${b.arg}</span>
     <div class="ouv-plein-texte">
       <p class="kicker">Chapitre ${b.arg}</p>
-      <h1>${fmt(k.titre)}</h1>
+      <h1>${titre(k.titre)}</h1>
       <p class="objectif">Tu vas savoir : ${fmt(k.objectif || '')}</p>
       <p class="intro">${fmt(k.intro || '')}</p>
     </div>
@@ -218,8 +236,8 @@ function bloc(b) {
   const items = () => b.lignes.map(l => l.match(/^\s*[-•]\s+(.*)$/)).filter(Boolean).map(r => r[1]);
   switch (b.t) {
     case 'p': return `<p>${fmt(b.x)}</p>`;
-    case 'h1': return `<h1 class="h-section">${fmt(b.x)}</h1>`;
-    case 'h2': return `<h2>${fmt(b.x)}</h2>`;
+    case 'h1': return `<h1 class="h-section">${titre(b.x)}</h1>`;
+    case 'h2': return `<h2>${titre(b.x)}</h2>`;
     case 'h3': return `<h3>${fmt(b.x)}</h3>`;
     case 'ul': return `<ul class="puces">${b.items.map(i => `<li>${fmt(i)}</li>`).join('')}</ul>`;
     case 'ol': return `<ol class="etapes">${b.items.map((i, n) => `<li><span class="n">${n + 1}</span><span>${fmt(i)}</span></li>`).join('')}</ol>`;
@@ -228,7 +246,7 @@ function bloc(b) {
     case 'prompt': return `<div class="prompt"><div class="prompt-tete"><span>À copier</span><span>${fmt(b.arg)}</span></div><p>${texte()}</p></div>`;
     case 'resultat': {
       const [titre, opt] = b.arg.split('|').map(s => s.trim());
-      return `<div class="resultat"><span class="resultat-label">${fmt(titre || 'Résultat')}</span><div class="resultat-corps${opt === 'mono' ? ' mono' : ''}">${texte()}</div></div>`;
+      return `<div class="resultat"><span class="resultat-label">${fmt(titre || 'Résultat')}</span><div class="resultat-corps${opt === 'mono' ? ' mono' : ''}">${opt === 'mono' ? b.lignes.filter(l => l.trim()).map(echap).join('<br>') : texte()}</div></div>`;
     }
     case 'erreur': return `<div class="encart erreur">${ico.alerte}<div><b>Erreur fréquente.</b> ${texte()}</div></div>`;
     case 'astuce': return `<div class="encart astuce">${ico.ampoule}<div><b>Astuce.</b> ${texte()}</div></div>`;
@@ -246,8 +264,7 @@ function auteur(m) {
     <div class="bande-accent"><h1>À propos de l'auteur</h1></div>
     <div class="marges centre">
       <p>Cet e-book a été conçu par <b>${MARQUE.nom}</b>, au Cameroun.</p>
-      <p class="maj">Notre mission</p>
-      <p>Mettre l'intelligence artificielle au service de ceux qui travaillent en Afrique francophone, avec des méthodes simples, testées sur téléphone, et des exemples en FCFA.</p>
+      <p>${MARQUE.nom} écrit des guides pour utiliser l'intelligence artificielle dans le travail de tous les jours en Afrique francophone. Chaque méthode est testée sur téléphone, avec des montants en FCFA.</p>
       ${m.suite ? `<p class="suite">${fmt(m.suite)}</p>` : ''}
       <p class="lien">${MARQUE.boutique}</p>
     </div>
@@ -305,6 +322,8 @@ function css(m, da) {
     --encre:${MARQUE.encre};--erreur:${MARQUE.erreur};--titre:'${t.famille}';--c:${da.corps}pt}
   *{box-sizing:border-box;margin:0;padding:0}
   body{font-family:${MARQUE.texte},sans-serif;color:var(--encre);-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  h1,h2,h3,.titre{text-wrap:balance}
+  .flux p,.flux li{text-wrap:pretty;hyphens:auto}
   h1,h2,.titre{font-family:var(--titre),serif;font-weight:${t.graisse};letter-spacing:${t.interlettre};text-transform:${t.casse};line-height:1.04}
   em{font-style:italic}
   code{font-family:'JetBrains Mono',monospace;font-size:.86em;background:rgba(0,0,0,.06);padding:0 .25em;border-radius:.2em}

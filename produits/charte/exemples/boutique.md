@@ -33,7 +33,7 @@ Ce livre est pour toi si ta boutique vend bien, mais que tu ne sais jamais où p
 :::chapitre 04
 titre: Stock et prix
 objectif: calculer ton vrai bénéfice par article et fixer un prix qui rapporte.
-intro: Beaucoup de commerçants pensent gagner 50 F par article. En vrai, ils gagnent 9 F. Le transport et les pertes mangent le bénéfice sans faire de bruit.
+intro: Sur un savon vendu 500 F, beaucoup de commerçants pensent gagner 50 F. Une fois le transport et la casse comptés, il leur reste 9 F.
 duree: 15 min
 bonus: Cahier de caisse intelligent
 visuel: avantApres: 50 F | 9 F | Savon vendu 500 F
@@ -41,7 +41,7 @@ visuel: avantApres: 50 F | 9 F | Savon vendu 500 F
 
 ## Ton vrai bénéfice par article
 
-Le prix d'achat ne suffit pas. Il faut ajouter le transport et retirer les articles cassés ou perdus. L'IA fait le calcul pour toi.
+Pour connaître ton vrai bénéfice, ajoute le transport au prix d'achat et retire les articles cassés ou perdus. L'IA fait le calcul si tu lui donnes ces chiffres.
 
 :::prompt Message 4.2
 J'achète un carton de 24 savons à 9 600 F. Transport : 1 200 F. 2 savons arrivent cassés. Je vends le savon à 500 F. Calcule mon vrai bénéfice par savon et dis-moi si mon prix est bon.

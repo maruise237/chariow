@@ -24,10 +24,10 @@ Tu vas apprendre à obtenir n'importe quelle formule sans l'apprendre par cœur.
 - Les fichiers bonus livrés avec cet e-book.
 
 ## Les encadrés de la méthode
-1. Les encadrés foncés sont des **prompts** : copie-les tels quels.
+1. Les encadrés foncés sont des prompts : copie-les tels quels.
 2. Les encadrés « résultat » montrent ce que l'IA doit te rendre.
-3. Les encadrés rouges listent les **erreurs fréquentes**. Lis-les avant de valider.
-4. Chaque chapitre finit par **À retenir** et un exercice.
+3. Les encadrés rouges listent les erreurs fréquentes. Lis-les avant de valider.
+4. Chaque chapitre se termine par un résumé « À retenir » et un exercice.
 
 :::chapitre 02
 titre: Les 15 formules qui font 90 % du travail
@@ -40,7 +40,7 @@ visuel: avantApres: #NOM? | 16 000 | SOMME.SI.ENS
 
 ## SOMME.SI.ENS : le total d'un seul produit
 
-Tu veux savoir combien t'a rapporté un produit précis dans une longue liste de ventes. Ne cherche pas la formule : décris ton tableau à l'IA.
+Tu veux savoir combien t'a rapporté un seul produit dans une longue liste de ventes. Décris ton tableau à l'IA et demande-lui la formule.
 
 :::prompt Prompt 2.6
 J'utilise Excel en français. Colonne B = produit, colonne D = montant en FCFA, lignes 2 à 200. Écris la formule qui fait le total des ventes de « Savon ». Utilise les noms de fonctions en français et le point-virgule.
@@ -60,7 +60,7 @@ L'IA répond `SUMIFS(D2:D200,B2:B200,"Savon")`. En Excel français, ça affiche 
 
 ## Débloquer une formule en erreur
 
-Quand une formule affiche une erreur, ne la corrige pas à la main. Copie la formule ET le message d'erreur, et donne les deux à l'IA.
+Quand une formule affiche une erreur, copie-la avec le message d'erreur et colle les deux dans l'IA. Elle te dit d'où vient le problème.
 
 :::avantapres
 avant: Tu cherches sur Google pendant 20 minutes, tu essaies trois formules, rien ne marche.

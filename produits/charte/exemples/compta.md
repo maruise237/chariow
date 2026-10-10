@@ -19,11 +19,11 @@ edition: Octobre 2026
 
 Cet e-book s'adresse aux comptables, assistants comptables et cabinets qui travaillent en SYSCOHADA révisé. Il montre comment confier à l'IA le travail répétitif, sans jamais lui confier la signature.
 
-1. Tu **anonymises** toujours les données clients avant de les donner à l'IA.
-2. Tu vérifies chaque écriture avec la **grille de contrôle en 7 points** (chapitre 9).
+1. Tu anonymises toujours les données clients avant de les donner à l'IA.
+2. Tu vérifies chaque écriture avec la grille de contrôle en 7 points (chapitre 9).
 3. Pour la fiscalité, le texte en vigueur (CGI, loi de finances) a toujours raison contre l'IA.
 
-> L'IA prépare, le comptable décide.
+> Aucune écriture proposée par l'IA n'entre en comptabilité sans ton contrôle.
 
 :::chapitre 01
 titre: Les écritures courantes
@@ -35,7 +35,7 @@ bonus: 150 prompts SYSCOHADA
 
 ## La facture d'achat avec TVA
 
-Le cas le plus courant, et celui où l'IA se trompe le plus souvent de plan comptable. Le mode SYSCOHADA du chapitre 0 règle le problème.
+C'est le cas le plus courant, et celui où l'IA se trompe le plus souvent de plan comptable. Le mode SYSCOHADA du chapitre 0 corrige ce défaut.
 
 :::prompt Prompt 1.3
 Mode SYSCOHADA. Facture fournisseur F-0231 : marchandises 500 000 F HT, TVA 19,25 %, payable à 30 jours. Donne l'écriture au journal des achats en tableau : compte, intitulé exact, débit, crédit. Vérifie que débit = crédit.
@@ -52,7 +52,7 @@ Sans le mode SYSCOHADA, l'IA utilise le plan comptable français : 607 et 44566.
 :::
 
 :::astuce
-Demande toujours « l'intitulé exact du compte » : un intitulé inventé trahit un compte inventé.
+Demande toujours « l'intitulé exact du compte ». Si l'intitulé ne figure pas dans le plan SYSCOHADA, le compte est probablement inventé.
 :::
 
 ## Les contrôles avant de valider
