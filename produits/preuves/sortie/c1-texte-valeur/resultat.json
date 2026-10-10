@@ -51,6 +51,16 @@
       "erreur": true,
       "attendu": "#VALEUR!",
       "ok": true
+    },
+    {
+      "feuille": "Ventes",
+      "cellule": "C7",
+      "formule_fr": "=VALEUR(SUBSTITUE(B2;\" F\";\"\"))",
+      "formule_affichee": "=valeur(SUBSTITUE(B2;\" F\";\"\"))",
+      "valeur": "#NOM ?",
+      "erreur": true,
+      "attendu": "#NOM?",
+      "ok": true
     }
   ]
 }

@@ -146,3 +146,9 @@ if __name__ == "__main__":
     ms = '=GAUCHE(C{r};CHERCHE(" ";C{r};1))'
     ecrire("c3-separer-ms", base + formules("F", ms, [p + " " for p in PRENOMS]) + formules("G", "=NBCAR(F{r})", [len(p) + 1 for p in PRENOMS]),
            cap("C1:G7", "F2"))
+    ecrire("c3-separer-ngo", base + spl, cap("C8:G11", "G9"))
+    # NOMPROPRE seul (sans MINUSCULE) : meme resultat
+    ecrire("c3-noms-sans-minuscule", formules("C", "=NOMPROPRE(SUPPRESPACE(A{r}))", NOMS), cap("A1:C7", "C2"))
+    # gpt-4o-mini, etape 1 (colonne C), reponse brute
+    c4 = '=TEXTJOIN("");(SIERREUR(SI(ESTNUM(VALUE(B{r}));VALUE(B{r});SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(B{r};" ";"");"(";"");")";"");"-";"");".";"")));""))'
+    ecrire("c3-tel-4o-c2", formules("C", c4, erreur="Err:508"), cap("A1:D4", "C2"), mode="tel")

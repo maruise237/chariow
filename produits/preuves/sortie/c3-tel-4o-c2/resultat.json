@@ -1,0 +1,156 @@
+{
+  "id": "c3-tel-4o-c2",
+  "ok": true,
+  "resultats": [
+    {
+      "feuille": "Clients",
+      "cellule": "C2",
+      "formule_fr": "=TEXTJOIN(\"\");(SIERREUR(SI(ESTNUM(VALUE(B2));VALUE(B2);SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(B2;\" \";\"\");\"(\";\"\");\")\";\"\");\"-\";\"\");\".\";\"\")));\"\"))",
+      "formule_affichee": "=textjoin(\"\");(SIERREUR(SI(ESTNUM(value(B2));value(B2);SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(B2;\" \";\"\");\"(\";\"\");\")\";\"\");\"-\";\"\");\".\";\"\")));\"\"))",
+      "valeur": "Err :508",
+      "erreur": true,
+      "attendu": "Err:508",
+      "ok": true
+    },
+    {
+      "feuille": "Clients",
+      "cellule": "C3",
+      "formule_fr": "=TEXTJOIN(\"\");(SIERREUR(SI(ESTNUM(VALUE(B3));VALUE(B3);SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(B3;\" \";\"\");\"(\";\"\");\")\";\"\");\"-\";\"\");\".\";\"\")));\"\"))",
+      "formule_affichee": "=textjoin(\"\");(SIERREUR(SI(ESTNUM(value(B3));value(B3);SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(B3;\" \";\"\");\"(\";\"\");\")\";\"\");\"-\";\"\");\".\";\"\")));\"\"))",
+      "valeur": "Err :508",
+      "erreur": true,
+      "attendu": "Err:508",
+      "ok": true
+    },
+    {
+      "feuille": "Clients",
+      "cellule": "C4",
+      "formule_fr": "=TEXTJOIN(\"\");(SIERREUR(SI(ESTNUM(VALUE(B4));VALUE(B4);SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(B4;\" \";\"\");\"(\";\"\");\")\";\"\");\"-\";\"\");\".\";\"\")));\"\"))",
+      "formule_affichee": "=textjoin(\"\");(SIERREUR(SI(ESTNUM(value(B4));value(B4);SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(B4;\" \";\"\");\"(\";\"\");\")\";\"\");\"-\";\"\");\".\";\"\")));\"\"))",
+      "valeur": "Err :508",
+      "erreur": true,
+      "attendu": "Err:508",
+      "ok": true
+    },
+    {
+      "feuille": "Clients",
+      "cellule": "C5",
+      "formule_fr": "=TEXTJOIN(\"\");(SIERREUR(SI(ESTNUM(VALUE(B5));VALUE(B5);SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(B5;\" \";\"\");\"(\";\"\");\")\";\"\");\"-\";\"\");\".\";\"\")));\"\"))",
+      "formule_affichee": "=textjoin(\"\");(SIERREUR(SI(ESTNUM(value(B5));value(B5);SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(B5;\" \";\"\");\"(\";\"\");\")\";\"\");\"-\";\"\");\".\";\"\")));\"\"))",
+      "valeur": "Err :508",
+      "erreur": true,
+      "attendu": "Err:508",
+      "ok": true
+    },
+    {
+      "feuille": "Clients",
+      "cellule": "C6",
+      "formule_fr": "=TEXTJOIN(\"\");(SIERREUR(SI(ESTNUM(VALUE(B6));VALUE(B6);SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(B6;\" \";\"\");\"(\";\"\");\")\";\"\");\"-\";\"\");\".\";\"\")));\"\"))",
+      "formule_affichee": "=textjoin(\"\");(SIERREUR(SI(ESTNUM(value(B6));value(B6);SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(B6;\" \";\"\");\"(\";\"\");\")\";\"\");\"-\";\"\");\".\";\"\")));\"\"))",
+      "valeur": "Err :508",
+      "erreur": true,
+      "attendu": "Err:508",
+      "ok": true
+    },
+    {
+      "feuille": "Clients",
+      "cellule": "C7",
+      "formule_fr": "=TEXTJOIN(\"\");(SIERREUR(SI(ESTNUM(VALUE(B7));VALUE(B7);SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(B7;\" \";\"\");\"(\";\"\");\")\";\"\");\"-\";\"\");\".\";\"\")));\"\"))",
+      "formule_affichee": "=textjoin(\"\");(SIERREUR(SI(ESTNUM(value(B7));value(B7);SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(B7;\" \";\"\");\"(\";\"\");\")\";\"\");\"-\";\"\");\".\";\"\")));\"\"))",
+      "valeur": "Err :508",
+      "erreur": true,
+      "attendu": "Err:508",
+      "ok": true
+    },
+    {
+      "feuille": "Clients",
+      "cellule": "C8",
+      "formule_fr": "=TEXTJOIN(\"\");(SIERREUR(SI(ESTNUM(VALUE(B8));VALUE(B8);SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(B8;\" \";\"\");\"(\";\"\");\")\";\"\");\"-\";\"\");\".\";\"\")));\"\"))",
+      "formule_affichee": "=textjoin(\"\");(SIERREUR(SI(ESTNUM(value(B8));value(B8);SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(B8;\" \";\"\");\"(\";\"\");\")\";\"\");\"-\";\"\");\".\";\"\")));\"\"))",
+      "valeur": "Err :508",
+      "erreur": true,
+      "attendu": "Err:508",
+      "ok": true
+    },
+    {
+      "feuille": "Clients",
+      "cellule": "C9",
+      "formule_fr": "=TEXTJOIN(\"\");(SIERREUR(SI(ESTNUM(VALUE(B9));VALUE(B9);SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(B9;\" \";\"\");\"(\";\"\");\")\";\"\");\"-\";\"\");\".\";\"\")));\"\"))",
+      "formule_affichee": "=textjoin(\"\");(SIERREUR(SI(ESTNUM(value(B9));value(B9);SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(B9;\" \";\"\");\"(\";\"\");\")\";\"\");\"-\";\"\");\".\";\"\")));\"\"))",
+      "valeur": "Err :508",
+      "erreur": true,
+      "attendu": "Err:508",
+      "ok": true
+    },
+    {
+      "feuille": "Clients",
+      "cellule": "C10",
+      "formule_fr": "=TEXTJOIN(\"\");(SIERREUR(SI(ESTNUM(VALUE(B10));VALUE(B10);SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(B10;\" \";\"\");\"(\";\"\");\")\";\"\");\"-\";\"\");\".\";\"\")));\"\"))",
+      "formule_affichee": "=textjoin(\"\");(SIERREUR(SI(ESTNUM(value(B10));value(B10);SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(B10;\" \";\"\");\"(\";\"\");\")\";\"\");\"-\";\"\");\".\";\"\")));\"\"))",
+      "valeur": "Err :508",
+      "erreur": true,
+      "attendu": "Err:508",
+      "ok": true
+    },
+    {
+      "feuille": "Clients",
+      "cellule": "C11",
+      "formule_fr": "=TEXTJOIN(\"\");(SIERREUR(SI(ESTNUM(VALUE(B11));VALUE(B11);SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(B11;\" \";\"\");\"(\";\"\");\")\";\"\");\"-\";\"\");\".\";\"\")));\"\"))",
+      "formule_affichee": "=textjoin(\"\");(SIERREUR(SI(ESTNUM(value(B11));value(B11);SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(B11;\" \";\"\");\"(\";\"\");\")\";\"\");\"-\";\"\");\".\";\"\")));\"\"))",
+      "valeur": "Err :508",
+      "erreur": true,
+      "attendu": "Err:508",
+      "ok": true
+    },
+    {
+      "feuille": "Clients",
+      "cellule": "C12",
+      "formule_fr": "=TEXTJOIN(\"\");(SIERREUR(SI(ESTNUM(VALUE(B12));VALUE(B12);SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(B12;\" \";\"\");\"(\";\"\");\")\";\"\");\"-\";\"\");\".\";\"\")));\"\"))",
+      "formule_affichee": "=textjoin(\"\");(SIERREUR(SI(ESTNUM(value(B12));value(B12);SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(B12;\" \";\"\");\"(\";\"\");\")\";\"\");\"-\";\"\");\".\";\"\")));\"\"))",
+      "valeur": "Err :508",
+      "erreur": true,
+      "attendu": "Err:508",
+      "ok": true
+    },
+    {
+      "feuille": "Clients",
+      "cellule": "C13",
+      "formule_fr": "=TEXTJOIN(\"\");(SIERREUR(SI(ESTNUM(VALUE(B13));VALUE(B13);SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(B13;\" \";\"\");\"(\";\"\");\")\";\"\");\"-\";\"\");\".\";\"\")));\"\"))",
+      "formule_affichee": "=textjoin(\"\");(SIERREUR(SI(ESTNUM(value(B13));value(B13);SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(B13;\" \";\"\");\"(\";\"\");\")\";\"\");\"-\";\"\");\".\";\"\")));\"\"))",
+      "valeur": "Err :508",
+      "erreur": true,
+      "attendu": "Err:508",
+      "ok": true
+    },
+    {
+      "feuille": "Clients",
+      "cellule": "C14",
+      "formule_fr": "=TEXTJOIN(\"\");(SIERREUR(SI(ESTNUM(VALUE(B14));VALUE(B14);SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(B14;\" \";\"\");\"(\";\"\");\")\";\"\");\"-\";\"\");\".\";\"\")));\"\"))",
+      "formule_affichee": "=textjoin(\"\");(SIERREUR(SI(ESTNUM(value(B14));value(B14);SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(B14;\" \";\"\");\"(\";\"\");\")\";\"\");\"-\";\"\");\".\";\"\")));\"\"))",
+      "valeur": "Err :508",
+      "erreur": true,
+      "attendu": "Err:508",
+      "ok": true
+    },
+    {
+      "feuille": "Clients",
+      "cellule": "C15",
+      "formule_fr": "=TEXTJOIN(\"\");(SIERREUR(SI(ESTNUM(VALUE(B15));VALUE(B15);SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(B15;\" \";\"\");\"(\";\"\");\")\";\"\");\"-\";\"\");\".\";\"\")));\"\"))",
+      "formule_affichee": "=textjoin(\"\");(SIERREUR(SI(ESTNUM(value(B15));value(B15);SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(B15;\" \";\"\");\"(\";\"\");\")\";\"\");\"-\";\"\");\".\";\"\")));\"\"))",
+      "valeur": "Err :508",
+      "erreur": true,
+      "attendu": "Err:508",
+      "ok": true
+    },
+    {
+      "feuille": "Clients",
+      "cellule": "C16",
+      "formule_fr": "=TEXTJOIN(\"\");(SIERREUR(SI(ESTNUM(VALUE(B16));VALUE(B16);SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(B16;\" \";\"\");\"(\";\"\");\")\";\"\");\"-\";\"\");\".\";\"\")));\"\"))",
+      "formule_affichee": "=textjoin(\"\");(SIERREUR(SI(ESTNUM(value(B16));value(B16);SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(B16;\" \";\"\");\"(\";\"\");\")\";\"\");\"-\";\"\");\".\";\"\")));\"\"))",
+      "valeur": "Err :508",
+      "erreur": true,
+      "attendu": "Err:508",
+      "ok": true
+    }
+  ]
+}

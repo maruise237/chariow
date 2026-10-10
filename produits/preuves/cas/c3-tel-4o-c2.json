@@ -1,0 +1,172 @@
+{
+ "id": "c3-tel-4o-c2",
+ "feuilles": {
+  "Clients": [
+   [
+    "Client",
+    "Téléphone",
+    "Chiffres",
+    "Numéro"
+   ],
+   [
+    "  aminatou  NJOYA ",
+    "6 77 12 34 56"
+   ],
+   [
+    "BORIS tchoumi",
+    699887766
+   ],
+   [
+    "carine FOTSO",
+    "+237699112233"
+   ],
+   [
+    "Aminatou Njoya",
+    "+237677123456"
+   ],
+   [
+    "Esther  Nkou",
+    "00237 655 44 33 22"
+   ],
+   [
+    "Joël  ATANGANA",
+    "+33 6 12 34 56 78"
+   ],
+   [
+    "boris Tchoumi",
+    "699 88 77 66"
+   ],
+   [
+    "Pauline ngo bassa",
+    "677 12 34 5"
+   ],
+   [
+    "armand MBARGA",
+    "(237) 691-234-567"
+   ],
+   [
+    "marie-claire EWANE",
+    "237 670 55 66 77"
+   ],
+   [
+    "Hervé  KAMGA",
+    "+237 6 99 00 11 22"
+   ],
+   [
+    "sandrine abena",
+    "694 12 12 12"
+   ],
+   [
+    "FATIMA bello",
+    "222 33 44 55"
+   ],
+   [
+    "Carine Fotso",
+    699112233
+   ],
+   [
+    "paul  EBODE",
+    "651 20 30 40"
+   ]
+  ]
+ },
+ "formules": [
+  {
+   "feuille": "Clients",
+   "cellule": "C2",
+   "fr": "=TEXTJOIN(\"\");(SIERREUR(SI(ESTNUM(VALUE(B2));VALUE(B2);SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(B2;\" \";\"\");\"(\";\"\");\")\";\"\");\"-\";\"\");\".\";\"\")));\"\"))",
+   "attendu_erreur": "Err:508"
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "C3",
+   "fr": "=TEXTJOIN(\"\");(SIERREUR(SI(ESTNUM(VALUE(B3));VALUE(B3);SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(B3;\" \";\"\");\"(\";\"\");\")\";\"\");\"-\";\"\");\".\";\"\")));\"\"))",
+   "attendu_erreur": "Err:508"
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "C4",
+   "fr": "=TEXTJOIN(\"\");(SIERREUR(SI(ESTNUM(VALUE(B4));VALUE(B4);SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(B4;\" \";\"\");\"(\";\"\");\")\";\"\");\"-\";\"\");\".\";\"\")));\"\"))",
+   "attendu_erreur": "Err:508"
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "C5",
+   "fr": "=TEXTJOIN(\"\");(SIERREUR(SI(ESTNUM(VALUE(B5));VALUE(B5);SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(B5;\" \";\"\");\"(\";\"\");\")\";\"\");\"-\";\"\");\".\";\"\")));\"\"))",
+   "attendu_erreur": "Err:508"
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "C6",
+   "fr": "=TEXTJOIN(\"\");(SIERREUR(SI(ESTNUM(VALUE(B6));VALUE(B6);SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(B6;\" \";\"\");\"(\";\"\");\")\";\"\");\"-\";\"\");\".\";\"\")));\"\"))",
+   "attendu_erreur": "Err:508"
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "C7",
+   "fr": "=TEXTJOIN(\"\");(SIERREUR(SI(ESTNUM(VALUE(B7));VALUE(B7);SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(B7;\" \";\"\");\"(\";\"\");\")\";\"\");\"-\";\"\");\".\";\"\")));\"\"))",
+   "attendu_erreur": "Err:508"
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "C8",
+   "fr": "=TEXTJOIN(\"\");(SIERREUR(SI(ESTNUM(VALUE(B8));VALUE(B8);SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(B8;\" \";\"\");\"(\";\"\");\")\";\"\");\"-\";\"\");\".\";\"\")));\"\"))",
+   "attendu_erreur": "Err:508"
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "C9",
+   "fr": "=TEXTJOIN(\"\");(SIERREUR(SI(ESTNUM(VALUE(B9));VALUE(B9);SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(B9;\" \";\"\");\"(\";\"\");\")\";\"\");\"-\";\"\");\".\";\"\")));\"\"))",
+   "attendu_erreur": "Err:508"
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "C10",
+   "fr": "=TEXTJOIN(\"\");(SIERREUR(SI(ESTNUM(VALUE(B10));VALUE(B10);SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(B10;\" \";\"\");\"(\";\"\");\")\";\"\");\"-\";\"\");\".\";\"\")));\"\"))",
+   "attendu_erreur": "Err:508"
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "C11",
+   "fr": "=TEXTJOIN(\"\");(SIERREUR(SI(ESTNUM(VALUE(B11));VALUE(B11);SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(B11;\" \";\"\");\"(\";\"\");\")\";\"\");\"-\";\"\");\".\";\"\")));\"\"))",
+   "attendu_erreur": "Err:508"
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "C12",
+   "fr": "=TEXTJOIN(\"\");(SIERREUR(SI(ESTNUM(VALUE(B12));VALUE(B12);SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(B12;\" \";\"\");\"(\";\"\");\")\";\"\");\"-\";\"\");\".\";\"\")));\"\"))",
+   "attendu_erreur": "Err:508"
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "C13",
+   "fr": "=TEXTJOIN(\"\");(SIERREUR(SI(ESTNUM(VALUE(B13));VALUE(B13);SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(B13;\" \";\"\");\"(\";\"\");\")\";\"\");\"-\";\"\");\".\";\"\")));\"\"))",
+   "attendu_erreur": "Err:508"
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "C14",
+   "fr": "=TEXTJOIN(\"\");(SIERREUR(SI(ESTNUM(VALUE(B14));VALUE(B14);SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(B14;\" \";\"\");\"(\";\"\");\")\";\"\");\"-\";\"\");\".\";\"\")));\"\"))",
+   "attendu_erreur": "Err:508"
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "C15",
+   "fr": "=TEXTJOIN(\"\");(SIERREUR(SI(ESTNUM(VALUE(B15));VALUE(B15);SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(B15;\" \";\"\");\"(\";\"\");\")\";\"\");\"-\";\"\");\".\";\"\")));\"\"))",
+   "attendu_erreur": "Err:508"
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "C16",
+   "fr": "=TEXTJOIN(\"\");(SIERREUR(SI(ESTNUM(VALUE(B16));VALUE(B16);SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(SUBSTITUE(B16;\" \";\"\");\"(\";\"\");\")\";\"\");\"-\";\"\");\".\";\"\")));\"\"))",
+   "attendu_erreur": "Err:508"
+  }
+ ],
+ "capture": {
+  "feuille": "Clients",
+  "plage": "A1:D4",
+  "cellule_active": "C2",
+  "zoom": 165
+ },
+ "largeurs_serrees": 40
+}

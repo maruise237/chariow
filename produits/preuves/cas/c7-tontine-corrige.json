@@ -162,12 +162,15 @@
  ],
  "capture": {
   "feuille": "Suivi",
-  "plage": "A1:E5",
+  "plage": "A1:F5",
   "cellule_active": "D2",
   "zoom": 165
  },
  "formats": {
   "C2:D5": "# ##0"
  },
- "largeurs_serrees": 40
+ "largeurs_serrees": 40,
+ "largeurs": {
+  "F": 5
+ }
 }

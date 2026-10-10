@@ -56,7 +56,7 @@
  ],
  "capture": {
   "feuille": "Paie",
-  "plage": "A2:B8",
+  "plage": "A2:C8",
   "cellule_active": "B6",
   "zoom": 165
  },
@@ -65,5 +65,8 @@
   "B4:B8": "# ##0",
   "B3:B3": "0,0"
  },
- "largeurs_serrees": 40
+ "largeurs_serrees": 40,
+ "largeurs": {
+  "C": 5
+ }
 }

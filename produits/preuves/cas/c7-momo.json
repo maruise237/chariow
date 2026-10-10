@@ -128,12 +128,15 @@
  ],
  "capture": {
   "feuille": "Bilan",
-  "plage": "A1:E3",
+  "plage": "A1:F3",
   "cellule_active": "B2",
   "zoom": 165
  },
  "formats": {
   "B2:E3": "# ##0"
  },
- "largeurs_serrees": 40
+ "largeurs_serrees": 40,
+ "largeurs": {
+  "F": 5
+ }
 }

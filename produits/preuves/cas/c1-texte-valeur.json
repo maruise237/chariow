@@ -1,6 +1,6 @@
 {
  "id": "c1-texte-valeur",
- "note": "VALEUR est le nom Excel ; LibreOffice FR l'appelle CNUM (VALEUR donne #NOM?). On teste donc CNUM, équivalent. C2:C4 : formule de gpt-5-mini ; C6 : celle de gpt-4o-mini.",
+ "note": "Ligne 7 : la formule telle que l'a écrite gpt-5-mini (VALEUR). Lignes 2 à 5 : même formule avec CNUM, nom français d'après l'aide Microsoft. Ligne 6 : formule de gpt-4o-mini, avec CNUM.",
  "feuilles": {
   "Ventes": [
    [
@@ -25,6 +25,9 @@
    ],
    [
     "IA 4o-mini"
+   ],
+   [
+    "IA 5-mini"
    ]
   ]
  },
@@ -58,12 +61,18 @@
    "cellule": "C6",
    "fr": "=SOMME(CNUM(SUBSTITUE(B2:B4; \" F\"; \"\")))",
    "attendu_erreur": "#VALEUR!"
+  },
+  {
+   "feuille": "Ventes",
+   "cellule": "C7",
+   "fr": "=VALEUR(SUBSTITUE(B2;\" F\";\"\"))",
+   "attendu_erreur": "#NOM?"
   }
  ],
  "capture": {
   "feuille": "Ventes",
-  "plage": "A1:C6",
-  "cellule_active": "C2",
+  "plage": "A1:C7",
+  "cellule_active": "C7",
   "zoom": 185
  },
  "formats": {

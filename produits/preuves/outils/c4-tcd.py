@@ -108,10 +108,38 @@ def capture_feuille(doc, id_, feuille, plage, active, zoom=185, serre=40):
     return mes
 
 
+def demarrer_xvfb_sur():
+    """Comme T.demarrer_xvfb, mais vérifie que l'écran virtuel tient et réessaie.
+
+    Plusieurs agents lancent Xvfb en même temps : deux peuvent tomber sur le même numéro d'écran
+    et se voler leurs captures. On contrôle donc que NOTRE Xvfb est vivant et on garde son numéro.
+    """
+    import subprocess
+    for essai in range(8):
+        lire, ecrire = os.pipe()
+        proc = subprocess.Popen(["Xvfb", "-screen", "0", T.ECRAN, "-nolisten", "tcp",
+                                 "-displayfd", str(ecrire)], pass_fds=(ecrire,),
+                                stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+        os.close(ecrire)
+        numero = os.read(lire, 16).decode().strip()
+        os.close(lire)
+        time.sleep(1.5)
+        if numero and proc.poll() is None:
+            os.environ["DISPLAY"] = ":" + numero
+            os.environ["LANG"] = os.environ["LC_ALL"] = "fr_FR.UTF-8"
+            return proc
+        try:
+            proc.terminate()
+        except Exception:
+            pass
+        time.sleep(2 + essai)
+    raise RuntimeError("Xvfb ne démarre pas")
+
+
 def main():
     import uno
     from com.sun.star.awt import Rectangle, Size
-    xvfb = T.demarrer_xvfb()
+    xvfb = demarrer_xvfb_sur()
     tmp = tempfile.mkdtemp(prefix="kt-c4-")
     proc, port = T.lancer_calc(os.path.join(tmp, "profil"))
     tout_ok = True

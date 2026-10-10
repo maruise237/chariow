@@ -1,0 +1,385 @@
+{
+ "id": "c3-separer-ngo",
+ "feuilles": {
+  "Clients": [
+   [
+    "Client",
+    "Téléphone",
+    "Nom propre",
+    "Numéro",
+    "Doublon",
+    "Prénom",
+    "Nom"
+   ],
+   [
+    "  aminatou  NJOYA ",
+    "6 77 12 34 56",
+    null,
+    "+237677123456"
+   ],
+   [
+    "BORIS tchoumi",
+    699887766,
+    null,
+    "+237699887766"
+   ],
+   [
+    "carine FOTSO",
+    "+237699112233",
+    null,
+    "+237699112233"
+   ],
+   [
+    "Aminatou Njoya",
+    "+237677123456",
+    null,
+    "+237677123456"
+   ],
+   [
+    "Esther  Nkou",
+    "00237 655 44 33 22",
+    null,
+    "+237655443322"
+   ],
+   [
+    "Joël  ATANGANA",
+    "+33 6 12 34 56 78",
+    null,
+    "À vérifier"
+   ],
+   [
+    "boris Tchoumi",
+    "699 88 77 66",
+    null,
+    "+237699887766"
+   ],
+   [
+    "Pauline ngo bassa",
+    "677 12 34 5",
+    null,
+    "À vérifier"
+   ],
+   [
+    "armand MBARGA",
+    "(237) 691-234-567",
+    null,
+    "+237691234567"
+   ],
+   [
+    "marie-claire EWANE",
+    "237 670 55 66 77",
+    null,
+    "+237670556677"
+   ],
+   [
+    "Hervé  KAMGA",
+    "+237 6 99 00 11 22",
+    null,
+    "+237699001122"
+   ],
+   [
+    "sandrine abena",
+    "694 12 12 12",
+    null,
+    "+237694121212"
+   ],
+   [
+    "FATIMA bello",
+    "222 33 44 55",
+    null,
+    "À vérifier"
+   ],
+   [
+    "Carine Fotso",
+    699112233,
+    null,
+    "+237699112233"
+   ],
+   [
+    "paul  EBODE",
+    "651 20 30 40",
+    null,
+    "+237651203040"
+   ]
+  ]
+ },
+ "formules": [
+  {
+   "feuille": "Clients",
+   "cellule": "C2",
+   "fr": "=NOMPROPRE(SUPPRESPACE(MINUSCULE(A2)))",
+   "attendu": "Aminatou Njoya"
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "C3",
+   "fr": "=NOMPROPRE(SUPPRESPACE(MINUSCULE(A3)))",
+   "attendu": "Boris Tchoumi"
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "C4",
+   "fr": "=NOMPROPRE(SUPPRESPACE(MINUSCULE(A4)))",
+   "attendu": "Carine Fotso"
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "C5",
+   "fr": "=NOMPROPRE(SUPPRESPACE(MINUSCULE(A5)))",
+   "attendu": "Aminatou Njoya"
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "C6",
+   "fr": "=NOMPROPRE(SUPPRESPACE(MINUSCULE(A6)))",
+   "attendu": "Esther Nkou"
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "C7",
+   "fr": "=NOMPROPRE(SUPPRESPACE(MINUSCULE(A7)))",
+   "attendu": "Joël Atangana"
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "C8",
+   "fr": "=NOMPROPRE(SUPPRESPACE(MINUSCULE(A8)))",
+   "attendu": "Boris Tchoumi"
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "C9",
+   "fr": "=NOMPROPRE(SUPPRESPACE(MINUSCULE(A9)))",
+   "attendu": "Pauline Ngo Bassa"
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "C10",
+   "fr": "=NOMPROPRE(SUPPRESPACE(MINUSCULE(A10)))",
+   "attendu": "Armand Mbarga"
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "C11",
+   "fr": "=NOMPROPRE(SUPPRESPACE(MINUSCULE(A11)))",
+   "attendu": "Marie-Claire Ewane"
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "C12",
+   "fr": "=NOMPROPRE(SUPPRESPACE(MINUSCULE(A12)))",
+   "attendu": "Hervé Kamga"
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "C13",
+   "fr": "=NOMPROPRE(SUPPRESPACE(MINUSCULE(A13)))",
+   "attendu": "Sandrine Abena"
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "C14",
+   "fr": "=NOMPROPRE(SUPPRESPACE(MINUSCULE(A14)))",
+   "attendu": "Fatima Bello"
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "C15",
+   "fr": "=NOMPROPRE(SUPPRESPACE(MINUSCULE(A15)))",
+   "attendu": "Carine Fotso"
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "C16",
+   "fr": "=NOMPROPRE(SUPPRESPACE(MINUSCULE(A16)))",
+   "attendu": "Paul Ebode"
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "F2",
+   "fr": "=SIERREUR(GAUCHE(C2;TROUVE(\" \";C2)-1);C2)",
+   "attendu": "Aminatou"
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "F3",
+   "fr": "=SIERREUR(GAUCHE(C3;TROUVE(\" \";C3)-1);C3)",
+   "attendu": "Boris"
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "F4",
+   "fr": "=SIERREUR(GAUCHE(C4;TROUVE(\" \";C4)-1);C4)",
+   "attendu": "Carine"
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "F5",
+   "fr": "=SIERREUR(GAUCHE(C5;TROUVE(\" \";C5)-1);C5)",
+   "attendu": "Aminatou"
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "F6",
+   "fr": "=SIERREUR(GAUCHE(C6;TROUVE(\" \";C6)-1);C6)",
+   "attendu": "Esther"
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "F7",
+   "fr": "=SIERREUR(GAUCHE(C7;TROUVE(\" \";C7)-1);C7)",
+   "attendu": "Joël"
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "F8",
+   "fr": "=SIERREUR(GAUCHE(C8;TROUVE(\" \";C8)-1);C8)",
+   "attendu": "Boris"
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "F9",
+   "fr": "=SIERREUR(GAUCHE(C9;TROUVE(\" \";C9)-1);C9)",
+   "attendu": "Pauline"
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "F10",
+   "fr": "=SIERREUR(GAUCHE(C10;TROUVE(\" \";C10)-1);C10)",
+   "attendu": "Armand"
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "F11",
+   "fr": "=SIERREUR(GAUCHE(C11;TROUVE(\" \";C11)-1);C11)",
+   "attendu": "Marie-Claire"
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "F12",
+   "fr": "=SIERREUR(GAUCHE(C12;TROUVE(\" \";C12)-1);C12)",
+   "attendu": "Hervé"
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "F13",
+   "fr": "=SIERREUR(GAUCHE(C13;TROUVE(\" \";C13)-1);C13)",
+   "attendu": "Sandrine"
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "F14",
+   "fr": "=SIERREUR(GAUCHE(C14;TROUVE(\" \";C14)-1);C14)",
+   "attendu": "Fatima"
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "F15",
+   "fr": "=SIERREUR(GAUCHE(C15;TROUVE(\" \";C15)-1);C15)",
+   "attendu": "Carine"
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "F16",
+   "fr": "=SIERREUR(GAUCHE(C16;TROUVE(\" \";C16)-1);C16)",
+   "attendu": "Paul"
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "G2",
+   "fr": "=SIERREUR(DROITE(C2;NBCAR(C2)-TROUVE(\" \";C2));\"\")",
+   "attendu": "Njoya"
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "G3",
+   "fr": "=SIERREUR(DROITE(C3;NBCAR(C3)-TROUVE(\" \";C3));\"\")",
+   "attendu": "Tchoumi"
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "G4",
+   "fr": "=SIERREUR(DROITE(C4;NBCAR(C4)-TROUVE(\" \";C4));\"\")",
+   "attendu": "Fotso"
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "G5",
+   "fr": "=SIERREUR(DROITE(C5;NBCAR(C5)-TROUVE(\" \";C5));\"\")",
+   "attendu": "Njoya"
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "G6",
+   "fr": "=SIERREUR(DROITE(C6;NBCAR(C6)-TROUVE(\" \";C6));\"\")",
+   "attendu": "Nkou"
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "G7",
+   "fr": "=SIERREUR(DROITE(C7;NBCAR(C7)-TROUVE(\" \";C7));\"\")",
+   "attendu": "Atangana"
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "G8",
+   "fr": "=SIERREUR(DROITE(C8;NBCAR(C8)-TROUVE(\" \";C8));\"\")",
+   "attendu": "Tchoumi"
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "G9",
+   "fr": "=SIERREUR(DROITE(C9;NBCAR(C9)-TROUVE(\" \";C9));\"\")",
+   "attendu": "Ngo Bassa"
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "G10",
+   "fr": "=SIERREUR(DROITE(C10;NBCAR(C10)-TROUVE(\" \";C10));\"\")",
+   "attendu": "Mbarga"
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "G11",
+   "fr": "=SIERREUR(DROITE(C11;NBCAR(C11)-TROUVE(\" \";C11));\"\")",
+   "attendu": "Ewane"
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "G12",
+   "fr": "=SIERREUR(DROITE(C12;NBCAR(C12)-TROUVE(\" \";C12));\"\")",
+   "attendu": "Kamga"
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "G13",
+   "fr": "=SIERREUR(DROITE(C13;NBCAR(C13)-TROUVE(\" \";C13));\"\")",
+   "attendu": "Abena"
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "G14",
+   "fr": "=SIERREUR(DROITE(C14;NBCAR(C14)-TROUVE(\" \";C14));\"\")",
+   "attendu": "Bello"
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "G15",
+   "fr": "=SIERREUR(DROITE(C15;NBCAR(C15)-TROUVE(\" \";C15));\"\")",
+   "attendu": "Fotso"
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "G16",
+   "fr": "=SIERREUR(DROITE(C16;NBCAR(C16)-TROUVE(\" \";C16));\"\")",
+   "attendu": "Ebode"
+  }
+ ],
+ "capture": {
+  "feuille": "Clients",
+  "plage": "C8:G11",
+  "cellule_active": "G9",
+  "zoom": 165
+ },
+ "largeurs_serrees": 40
+}
