@@ -43,7 +43,7 @@ Ce livre propose une autre méthode : tu écris ce que tu veux en français, une
 
 ### Ce qui le rend différent
 
-Chaque message du livre a été envoyé à ChatGPT (modèles gpt-4o-mini et gpt-5-mini) avant d'être imprimé. Chaque formule a ensuite été collée dans un vrai tableur en français. Les captures montrent le résultat obtenu.
+Chaque message du livre a été envoyé à ChatGPT (modèles gpt-4o-mini et gpt-5-mini) avant d'être imprimé. Les formules ont ensuite été collées dans un vrai tableur en français : 58 cas vérifiés, et les captures montrent le résultat obtenu. Les rares points impossibles à tester (une fonction absente du tableur, un script Google Sheets) sont signalés et appuyés sur l'aide officielle.
 
 Les erreurs de l'IA sont montrées. Quelques exemples :
 

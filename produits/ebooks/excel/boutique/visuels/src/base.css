@@ -32,3 +32,5 @@ em{font-style:italic;color:var(--a)}
 .pg{display:block;width:526px;height:auto;box-shadow:0 1px 3px rgba(0,0,0,.18);margin-bottom:10px;background:#fff}
 .home{position:absolute;bottom:14px;left:50%;width:170px;height:6px;margin-left:-85px;background:#111;border-radius:3px;z-index:5;opacity:.85}
 .count{position:absolute;right:18px;bottom:40px;z-index:5;background:#16181D;color:#fff;font:600 19px 'Hanken Grotesk';padding:8px 16px;border-radius:20px}
+
+.appbar .pgn{margin-left:auto;font:600 19px 'Hanken Grotesk';color:#3D4A42}
