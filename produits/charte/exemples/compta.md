@@ -10,6 +10,7 @@ collection: Édition professionnelle
 surtitre: SYSCOHADA révisé + IA
 sousTitre: Saisie, rapprochement, clôture et états financiers avec l'IA, plus vite et sans perdre le contrôle.
 motsCles: Écritures | Rapprochement | Clôture | États financiers | DSF
+visuel: journalAnnote
 atouts: 150 prompts SYSCOHADA | Modèles Excel | Grille de contrôle
 contenu: L'e-book PDF (environ 90 pages) | 150 prompts SYSCOHADA prêts à copier | Modèles Excel : rapprochement, amortissements, immobilisations, balance | La checklist de clôture
 suite: Pour aller plus loin sur les tableaux, découvre **Excel sans apprendre les formules**.

@@ -28,17 +28,19 @@ function excel({ formule = '=SOMME.SI.ENS(D2:D5;B2:B5;"Savon")', reperes = true,
 }
 
 // Écriture au journal, présentation professionnelle : comptes crédités décalés, totaux sous filet.
-function journal({ titre = 'Journal des achats', date = '12/10/2026', piece = 'F-0231' } = {}) {
+function journal({ titre = 'Journal des achats', date = '12/10/2026', piece = 'F-0231', reperes = false } = {}) {
+  const r = n => reperes ? `<i class="rep">${n}</i>` : '';
   return `<figure class="v-journal">
-    <div class="jn-tete"><span>${titre}</span><span>${date} · pièce ${piece}</span></div>
+    <div class="jn-tete"><span>${titre}${r(1)}</span><span>${date} · pièce ${piece}</span></div>
     <table class="jn">
       <tr><th>Compte</th><th>Intitulé</th><th class="n">Débit</th><th class="n">Crédit</th></tr>
       <tr><td>601</td><td>Achats de marchandises</td><td class="n">500 000</td><td></td></tr>
       <tr><td>4452</td><td>TVA récupérable sur achats</td><td class="n">96 250</td><td></td></tr>
       <tr class="cr"><td>401</td><td>Fournisseurs</td><td></td><td class="n">596 250</td></tr>
-      <tr class="tot"><td></td><td>Totaux</td><td class="n">596 250</td><td class="n">596 250</td></tr>
+      <tr class="tot"><td></td><td>Totaux${r(2)}</td><td class="n">596 250</td><td class="n">596 250</td></tr>
     </table>
     <p class="jn-lib">Facture ${piece}, marchandises, TVA 19,25 %</p>
+    ${reperes ? `<figcaption><span class="leg"><i class="rep">1</i><span>Écriture proposée par l’IA en mode SYSCOHADA.</span></span><span class="leg"><i class="rep">2</i><span>Débit = crédit : tu contrôles, puis tu valides.</span></span></figcaption>` : ''}
   </figure>`;
 }
 
@@ -59,7 +61,7 @@ function avantApres(avant, apres, legende = '') {
   return `<figure class="v-aa"><p><s>${avant}</s><svg class="fl" viewBox="0 0 24 12" width="1em" height=".5em"><path d="M1 6h20m-5-5l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg><b>${apres}</b></p>${legende ? `<figcaption>${legende}</figcaption>` : ''}</figure>`;
 }
 
-const V = { excel, journal, recu, avantApres, tableur: excel };
+const V = { excel, journal, journalAnnote: () => journal({ reperes: true }), recu, avantApres, tableur: excel };
 
 // Appel depuis la source : "excel" ou "avantApres: 50 F | 9 F | Savon vendu 500 F"
 function visuel(spec) {
@@ -97,7 +99,7 @@ const CSS = `
   .xl-grille .rep{position:absolute;left:calc(100% + 2.5mm);top:50%;transform:translateY(-50%);margin:0}
 
   /* Journal comptable */
-  .v-journal{background:#fff;border-top:2px solid var(--f);font-size:8.5pt}
+  .v-journal{background:#fff;color:var(--encre);border-top:2px solid var(--f);font-size:8.5pt}
   .visuel-flux .v-journal{font-size:.72em}
   .jn-tete{display:flex;justify-content:space-between;padding:2mm 0 1.5mm;font-size:.85em;color:#555}
   .jn-tete span:first-child{font-weight:800;color:var(--f);text-transform:uppercase;letter-spacing:.08em}

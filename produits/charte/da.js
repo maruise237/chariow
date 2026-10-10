@@ -9,7 +9,7 @@
 
 const MARQUE = {
   nom: 'KAMTECH',
-  boutique: 'esaysto.mychariow.shop',
+  boutique: '',            // lien de la boutique Chariow KAMTECH (à renseigner) ; vide = pas de lien imprimé
   signature: '#111318',     // encre de la marque (logo, 4e de couverture)
   texte: 'Literata',        // texte courant, commun à tous les e-books : dessinée pour la lecture sur Android
   util: 'Hanken Grotesk',   // tableaux, légendes, étiquettes, prompts : sans-serif utilitaire, chiffres tabulaires
@@ -26,7 +26,7 @@ const DA = {
     titres: { famille: 'Zodiak', graisse: 700, casse: 'none', interlettre: '-0.01em' },
     couleurs: { primaire: '#1F3FD1', fonce: '#00104F', accent: '#E8B84A', surAccent: '#1A1405', fond: '#FAF8F2', papier: '#FFFFFF' },
     corps: 13.5, interligne: 1.5,       // ~48 car./ligne, ~13 px sur téléphone : lecteurs pros, souvent aussi sur PC
-    couverture: 'typo',
+    couverture: 'scene',   // l'écriture au journal : comme les autres couvertures, on montre l'objet du lecteur
     ouvertures: ['scinde'],
     motif: 'filets',
   },

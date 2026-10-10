@@ -267,7 +267,7 @@ function auteur(m) {
       <p>Cet e-book a été conçu par <b>${MARQUE.nom}</b>, au Cameroun.</p>
       <p>${MARQUE.nom} écrit des guides pour utiliser l'intelligence artificielle dans le travail de tous les jours en Afrique francophone. Chaque méthode est testée sur téléphone, avec des montants en FCFA.</p>
       ${m.suite ? `<p class="suite">${fmt(m.suite)}</p>` : ''}
-      <p class="lien">${MARQUE.boutique}</p>
+      ${MARQUE.boutique ? `<p class="lien">${MARQUE.boutique}</p>` : ''}
     </div>
     <div class="logo-bas">${logo()}</div>
   </section>`;
@@ -276,7 +276,7 @@ function auteur(m) {
 function dos(m, da) {
   return `<section class="plein dos motif-${da.motif}">
     <div class="dos-centre">${logo(true)}<p>${fmt(m.titre)}</p></div>
-    <p class="dos-bas">${MARQUE.boutique}<br>${m.edition || ''}</p>
+    <p class="dos-bas">${MARQUE.boutique ? MARQUE.boutique + '<br>' : ''}${m.edition || ''}</p>
   </section>`;
 }
 
@@ -365,6 +365,12 @@ function css(m, da) {
   .couv-excel .couv-visuel{align-items:flex-end;justify-content:flex-start;margin:6mm -11mm 4mm 0;padding:0}
   .couv-excel .v-excel{width:100mm;zoom:1.38;color:var(--encre)}
   .couv-boutique .v-recu{zoom:1.45}
+  .couv-compta .couv-visuel{align-items:flex-end;justify-content:flex-start;margin:6mm -11mm 4mm 0;padding:0}
+  .couv-compta .v-journal{width:108mm;zoom:1.22;padding:4mm 5mm 3mm;border-top:3px solid var(--a)}
+  .couv-compta figcaption{color:#fff;font-size:6pt;flex-direction:row;gap:5mm;margin:3mm -5mm -3mm;padding:2.5mm 5mm 0;background:var(--f)}
+  .couv-compta figcaption .leg{flex:1}
+  .couv-compta .rep{background:var(--a);color:var(--surA)}
+  .couv-compta .couv-titre h1{font-size:44pt}
   .couv-excel figcaption{color:#fff;opacity:.9;font-size:6pt;padding-left:1mm}
   .couv-excel .rep{background:var(--a);color:var(--surA)}
   .couv-excel figcaption{flex-direction:row;gap:6mm}
@@ -521,6 +527,8 @@ function vignetteHtml(m, da) {
     .vig.typo h1 em{display:block;font-size:2em;color:transparent;-webkit-text-stroke:3px var(--a);font-style:normal}
     .vig .s{display:inline-block;background:var(--a);color:var(--surA);font:800 22px 'Hanken Grotesk';letter-spacing:.08em;text-transform:uppercase;padding:8px 18px;border-radius:8px;margin-bottom:28px}
     .vig .d{flex:1;zoom:1.75;position:relative}
+    .vig .d .v-journal{zoom:.85}
+    .vig .d figcaption{display:none}
     .vig .logo{position:absolute;left:70px;bottom:56px;font-size:24px}
   </style></head><body>
   <div class="vig ${da.couverture === 'typo' ? 'typo' : ''} motif-${da.motif}">
