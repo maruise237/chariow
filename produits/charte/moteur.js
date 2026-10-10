@@ -126,7 +126,7 @@ const ico = {
   case: '<svg viewBox="0 0 24 24" width="1em" height="1em"><rect x="2" y="2" width="20" height="20" rx="5" fill="none" stroke="currentColor" stroke-width="2.4"/></svg>',
 };
 
-const logo = (clair = false) => `<span class="logo${clair ? ' clair' : ''}"><i></i>${MARQUE.nom}</span>`;
+const logo = (clair = false) => `<span class="logo${clair ? ' clair' : ''}"><img src="file://${ASSETS}/${MARQUE.logo}" alt="">${MARQUE.nom}</span>`;
 const titreRiche = s => titre(s); // *mot* → <em>mot</em> : le mot mis en accent
 
 function couverture(m, da) {
@@ -347,7 +347,7 @@ function css(m, da) {
 
   /* Logo provisoire KAMTECH (texte) */
   .logo{display:inline-flex;align-items:center;gap:1.6mm;font-family:var(--util);font-weight:800;font-size:10pt;letter-spacing:.16em;color:${MARQUE.signature}}
-  .logo i{width:3.2mm;height:3.2mm;background:var(--a);transform:rotate(45deg);border-radius:.6mm}
+  .logo img{height:1.6em;width:auto;border-radius:.3em}
   .logo.clair{color:#fff}
   .logo-bas{position:absolute!important;left:0;right:0;bottom:11mm;text-align:center}
 
@@ -509,7 +509,7 @@ function css(m, da) {
   .dos{background:var(--f);color:#fff}
   .dos-centre{position:absolute!important;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4mm}
   .dos-centre .logo{font-size:20pt}
-  .dos-centre .logo i{width:6mm;height:6mm}
+  .dos-centre .logo img{height:1.8em}
   .dos-centre p{font-size:9pt;opacity:.7;max-width:90mm;text-align:center}
   .dos-bas{position:absolute!important;bottom:11mm;left:0;right:0;text-align:center;font-size:8pt;opacity:.8;line-height:1.5}
   `;

@@ -24,5 +24,9 @@ La session principale **supervise** : elle comprend la demande, découpe le trav
 
 - `veille/` : veille des pubs Meta des boutiques Chariow concurrentes (voir `veille/README.md`). Tableau de bord : Radar KAMTECH, https://claude.ai/artifact/CeyiakYhTfLpacMDQPjfjc
 - `bot/` : connexion automatisée au dashboard Chariow.
-- Boutique : esaystor (https://esaysto.mychariow.shop), devise XAF, marché Afrique francophone (Cameroun d'abord).
+- Boutiques Chariow du compte (3) :
+  - **KAMTECH** (https://kamtech.mychariow.com) : la boutique des e-books KAMTECH, celle à utiliser par défaut ;
+  - esaystor (https://esaysto.mychariow.shop) : c'est la seule que voient le connecteur MCP chariow et les clés API actuelles ;
+  - digital-maket (https://ycnrtfmk.mychariow.shop).
+- Devise XAF, marché Afrique francophone (Cameroun d'abord).
 - Langue de travail : français.

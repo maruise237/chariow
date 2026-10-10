@@ -9,8 +9,9 @@
 
 const MARQUE = {
   nom: 'KAMTECH',
-  boutique: '',            // lien de la boutique Chariow KAMTECH (à renseigner) ; vide = pas de lien imprimé
-  signature: '#111318',     // encre de la marque (logo, 4e de couverture)
+  boutique: 'kamtech.mychariow.com', // boutique Chariow KAMTECH (vide = pas de lien imprimé)
+  logo: 'logo-kamtech.png',          // logo de la boutique Chariow KAMTECH
+  signature: '#1C1E21',     // noir du logo KAMTECH
   texte: 'Literata',        // texte courant, commun à tous les e-books : dessinée pour la lecture sur Android
   util: 'Hanken Grotesk',   // tableaux, légendes, étiquettes, prompts : sans-serif utilitaire, chiffres tabulaires
   mono: 'JetBrains Mono',   // formules uniquement
