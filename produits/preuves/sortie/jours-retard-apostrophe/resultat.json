@@ -1,0 +1,16 @@
+{
+  "id": "jours-retard-apostrophe",
+  "ok": true,
+  "resultats": [
+    {
+      "feuille": "Factures",
+      "cellule": "C2",
+      "formule_fr": "=MAX(0; AUJOURD'HUI() - B2)",
+      "formule_affichee": "=MAX(0; aujourd'hui() - b2))",
+      "valeur": "Err :508",
+      "erreur": true,
+      "attendu": "Err :508",
+      "ok": true
+    }
+  ]
+}

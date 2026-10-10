@@ -1,0 +1,106 @@
+{
+  "id": "recherchev-na",
+  "ok": true,
+  "resultats": [
+    {
+      "feuille": "Facture",
+      "cellule": "B2",
+      "formule_fr": "=RECHERCHEV(A2;Tarifs!A:B;2;FAUX)",
+      "formule_affichee": "=RECHERCHEV(A2;$Tarifs.A:B;2;0)",
+      "valeur": "#N/D",
+      "erreur": true,
+      "attendu": "#N/D",
+      "ok": true
+    },
+    {
+      "feuille": "Facture",
+      "cellule": "B3",
+      "formule_fr": "=RECHERCHEV(A3;Tarifs!A:B;2;FAUX)",
+      "formule_affichee": "=RECHERCHEV(A3;$Tarifs.A:B;2;0)",
+      "valeur": 500.0,
+      "erreur": false,
+      "attendu": 500,
+      "ok": true
+    },
+    {
+      "feuille": "Facture",
+      "cellule": "B4",
+      "formule_fr": "=RECHERCHEV(A4;Tarifs!A:B;2;FAUX)",
+      "formule_affichee": "=RECHERCHEV(A4;$Tarifs.A:B;2;0)",
+      "valeur": 7500.0,
+      "erreur": false,
+      "attendu": 7500,
+      "ok": true
+    },
+    {
+      "feuille": "Facture",
+      "cellule": "B5",
+      "formule_fr": "=RECHERCHEV(A5;Tarifs!A:B;2;FAUX)",
+      "formule_affichee": "=RECHERCHEV(A5;$Tarifs.A:B;2;0)",
+      "valeur": "#N/D",
+      "erreur": true,
+      "attendu": "#N/D",
+      "ok": true
+    },
+    {
+      "feuille": "Facture",
+      "cellule": "E2",
+      "formule_fr": "=RECHERCHEV(TRIM(SUBSTITUE(A2;CAR(160);\"\"));Tarifs!A:B;2;FAUX)",
+      "formule_affichee": "=RECHERCHEV(TRIM(SUBSTITUE(A2;CAR(160);\"\"));$Tarifs.A:B;2;0)",
+      "valeur": "Err :511",
+      "erreur": true,
+      "attendu": "Err :511",
+      "ok": true
+    },
+    {
+      "feuille": "Facture",
+      "cellule": "E3",
+      "formule_fr": "=RECHERCHEV(SUBSTITUE(A5;CAR(160);\"\");Tarifs!A:B;2;FAUX)",
+      "formule_affichee": "=RECHERCHEV(SUBSTITUE(A5;CAR(160);\"\");$Tarifs.A:B;2;0)",
+      "valeur": "#N/D",
+      "erreur": true,
+      "attendu": "#N/D",
+      "ok": true
+    },
+    {
+      "feuille": "Facture",
+      "cellule": "E4",
+      "formule_fr": "=RECHERCHEV(SUPPRESPACE(A5);Tarifs!A:B;2;FAUX)",
+      "formule_affichee": "=RECHERCHEV(SUPPRESPACE(A5);$Tarifs.A:B;2;0)",
+      "valeur": "#N/D",
+      "erreur": true,
+      "attendu": "#N/D",
+      "ok": true
+    },
+    {
+      "feuille": "Facture",
+      "cellule": "E5",
+      "formule_fr": "=NBCAR(A2)",
+      "formule_affichee": "=NBCAR(A2)",
+      "valeur": 4.0,
+      "erreur": false,
+      "attendu": 4,
+      "ok": true
+    },
+    {
+      "feuille": "Facture",
+      "cellule": "E6",
+      "formule_fr": "=RECHERCHEV(SUBSTITUE(A5;UNICAR(160);\"\");Tarifs!A:B;2;FAUX)",
+      "formule_affichee": "=RECHERCHEV(SUBSTITUE(A5;UNICAR(160);\"\");$Tarifs.A:B;2;0)",
+      "valeur": 7500.0,
+      "erreur": false,
+      "attendu": 7500,
+      "ok": true
+    },
+    {
+      "feuille": "Facture",
+      "cellule": "E7",
+      "formule_fr": "=RECHERCHEV(SUPPRESPACE(A4);Tarifs!A:B;2;FAUX)",
+      "formule_affichee": "=RECHERCHEV(SUPPRESPACE(A4);$Tarifs.A:B;2;0)",
+      "valeur": 7500.0,
+      "erreur": false,
+      "attendu": 7500,
+      "ok": true
+    }
+  ]
+}

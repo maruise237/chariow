@@ -1,0 +1,65 @@
+{
+ "id": "jours-retard",
+ "note": "Dépend de la date du jour : attendus valables le 10/10/2026 (AUJOURDHUI).",
+ "feuilles": {
+  "Factures": [
+   [
+    "Facture",
+    "Échéance",
+    "Retard (jours)"
+   ],
+   [
+    "F-101",
+    46293
+   ],
+   [
+    "F-102",
+    46300
+   ],
+   [
+    "F-103",
+    46315
+   ],
+   [
+    "F-104",
+    46305
+   ]
+  ]
+ },
+ "formules": [
+  {
+   "feuille": "Factures",
+   "cellule": "C2",
+   "fr": "=MAX(0;AUJOURDHUI()-B2)",
+   "attendu": 12
+  },
+  {
+   "feuille": "Factures",
+   "cellule": "C3",
+   "fr": "=MAX(0;AUJOURDHUI()-B3)",
+   "attendu": 5
+  },
+  {
+   "feuille": "Factures",
+   "cellule": "C4",
+   "fr": "=MAX(0;AUJOURDHUI()-B4)",
+   "attendu": 0
+  },
+  {
+   "feuille": "Factures",
+   "cellule": "C5",
+   "fr": "=MAX(0;AUJOURDHUI()-B5)",
+   "attendu": 0
+  }
+ ],
+ "capture": {
+  "feuille": "Factures",
+  "plage": "A1:C5",
+  "cellule_active": "C2",
+  "zoom": 185
+ },
+ "formats": {
+  "B2:B5": "JJ/MM/AAAA"
+ },
+ "largeurs_serrees": 40
+}

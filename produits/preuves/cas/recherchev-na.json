@@ -1,0 +1,122 @@
+{
+ "id": "recherchev-na",
+ "feuilles": {
+  "Tarifs": [
+   [
+    "Code",
+    "Prix FCFA"
+   ],
+   [
+    "P01",
+    500
+   ],
+   [
+    "P02",
+    2500
+   ],
+   [
+    "P03",
+    7500
+   ],
+   [
+    "P04",
+    13500
+   ]
+  ],
+  "Facture": [
+   [
+    "Code",
+    "Prix FCFA"
+   ],
+   [
+    "P03 "
+   ],
+   [
+    "P01"
+   ],
+   [
+    "p03"
+   ],
+   [
+    "P03 "
+   ]
+  ]
+ },
+ "formules": [
+  {
+   "feuille": "Facture",
+   "cellule": "B2",
+   "fr": "=RECHERCHEV(A2;Tarifs!A:B;2;FAUX)",
+   "attendu_erreur": "#N/D"
+  },
+  {
+   "feuille": "Facture",
+   "cellule": "B3",
+   "fr": "=RECHERCHEV(A3;Tarifs!A:B;2;FAUX)",
+   "attendu": 500
+  },
+  {
+   "feuille": "Facture",
+   "cellule": "B4",
+   "fr": "=RECHERCHEV(A4;Tarifs!A:B;2;FAUX)",
+   "attendu": 7500
+  },
+  {
+   "feuille": "Facture",
+   "cellule": "B5",
+   "fr": "=RECHERCHEV(A5;Tarifs!A:B;2;FAUX)",
+   "attendu_erreur": "#N/D"
+  },
+  {
+   "feuille": "Facture",
+   "cellule": "E2",
+   "fr": "=RECHERCHEV(TRIM(SUBSTITUE(A2;CAR(160);\"\"));Tarifs!A:B;2;FAUX)",
+   "attendu_erreur": "Err :511"
+  },
+  {
+   "feuille": "Facture",
+   "cellule": "E3",
+   "fr": "=RECHERCHEV(SUBSTITUE(A5;CAR(160);\"\");Tarifs!A:B;2;FAUX)",
+   "attendu": 7500,
+   "attendu_erreur": "#N/D"
+  },
+  {
+   "feuille": "Facture",
+   "cellule": "E4",
+   "fr": "=RECHERCHEV(SUPPRESPACE(A5);Tarifs!A:B;2;FAUX)",
+   "attendu_erreur": "#N/D"
+  },
+  {
+   "feuille": "Facture",
+   "cellule": "E5",
+   "fr": "=NBCAR(A2)",
+   "attendu": 4
+  },
+  {
+   "feuille": "Facture",
+   "cellule": "E6",
+   "fr": "=RECHERCHEV(SUBSTITUE(A5;UNICAR(160);\"\");Tarifs!A:B;2;FAUX)",
+   "attendu": 7500
+  },
+  {
+   "feuille": "Facture",
+   "cellule": "E7",
+   "fr": "=RECHERCHEV(SUPPRESPACE(A4);Tarifs!A:B;2;FAUX)",
+   "attendu": 7500
+  }
+ ],
+ "capture": {
+  "feuille": "Facture",
+  "plage": "A1:B3",
+  "cellule_active": "B2",
+  "zoom": 185
+ },
+ "formats": {
+  "B2:B5": "# ##0"
+ },
+ "largeurs": {
+  "A": 12,
+  "B": 16
+ },
+ "largeurs_serrees": 40
+}

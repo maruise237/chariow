@@ -1,0 +1,73 @@
+{
+ "id": "recherchev-na-corrige",
+ "feuilles": {
+  "Tarifs": [
+   [
+    "Code",
+    "Prix FCFA"
+   ],
+   [
+    "P01",
+    500
+   ],
+   [
+    "P02",
+    2500
+   ],
+   [
+    "P03",
+    7500
+   ],
+   [
+    "P04",
+    13500
+   ]
+  ],
+  "Facture": [
+   [
+    "Code",
+    "Prix FCFA"
+   ],
+   [
+    "P03 "
+   ],
+   [
+    "P01"
+   ],
+   [
+    "p03"
+   ],
+   [
+    "P03 "
+   ]
+  ]
+ },
+ "formules": [
+  {
+   "feuille": "Facture",
+   "cellule": "B2",
+   "fr": "=RECHERCHEV(SUPPRESPACE(A2);Tarifs!A:B;2;FAUX)",
+   "attendu": 7500
+  },
+  {
+   "feuille": "Facture",
+   "cellule": "B3",
+   "fr": "=RECHERCHEV(SUPPRESPACE(A3);Tarifs!A:B;2;FAUX)",
+   "attendu": 500
+  }
+ ],
+ "capture": {
+  "feuille": "Facture",
+  "plage": "A1:B3",
+  "cellule_active": "B2",
+  "zoom": 185
+ },
+ "formats": {
+  "B2:B3": "# ##0"
+ },
+ "largeurs": {
+  "A": 12,
+  "B": 16
+ },
+ "largeurs_serrees": 40
+}

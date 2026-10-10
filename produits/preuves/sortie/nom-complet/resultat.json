@@ -1,0 +1,76 @@
+{
+  "id": "nom-complet",
+  "ok": true,
+  "resultats": [
+    {
+      "feuille": "Clients",
+      "cellule": "C2",
+      "formule_fr": "=CONCATENER(A2;\" \";B2)",
+      "formule_affichee": "=CONCATENER(A2;\" \";B2)",
+      "valeur": "Aminatou Njoya",
+      "erreur": false,
+      "attendu": "Aminatou Njoya",
+      "ok": true
+    },
+    {
+      "feuille": "Clients",
+      "cellule": "D2",
+      "formule_fr": "=A2&\" \"&B2",
+      "formule_affichee": "=A2&\" \"&B2",
+      "valeur": "Aminatou Njoya",
+      "erreur": false,
+      "attendu": "Aminatou Njoya",
+      "ok": true
+    },
+    {
+      "feuille": "Clients",
+      "cellule": "C3",
+      "formule_fr": "=CONCATENER(A3;\" \";B3)",
+      "formule_affichee": "=CONCATENER(A3;\" \";B3)",
+      "valeur": "Boris Tchoumi",
+      "erreur": false,
+      "attendu": "Boris Tchoumi",
+      "ok": true
+    },
+    {
+      "feuille": "Clients",
+      "cellule": "D3",
+      "formule_fr": "=A3&\" \"&B3",
+      "formule_affichee": "=A3&\" \"&B3",
+      "valeur": "Boris Tchoumi",
+      "erreur": false,
+      "attendu": "Boris Tchoumi",
+      "ok": true
+    },
+    {
+      "feuille": "Clients",
+      "cellule": "C4",
+      "formule_fr": "=CONCATENER(A4;\" \";B4)",
+      "formule_affichee": "=CONCATENER(A4;\" \";B4)",
+      "valeur": "Carine Fotso",
+      "erreur": false,
+      "attendu": "Carine Fotso",
+      "ok": true
+    },
+    {
+      "feuille": "Clients",
+      "cellule": "D4",
+      "formule_fr": "=A4&\" \"&B4",
+      "formule_affichee": "=A4&\" \"&B4",
+      "valeur": "Carine Fotso",
+      "erreur": false,
+      "attendu": "Carine Fotso",
+      "ok": true
+    },
+    {
+      "feuille": "Clients",
+      "cellule": "F2",
+      "formule_fr": "=CONCAT(A2;\" \";B2)",
+      "formule_affichee": "=CONCAT(A2;\" \";B2)",
+      "valeur": "Aminatou Njoya",
+      "erreur": false,
+      "attendu": "Aminatou Njoya",
+      "ok": true
+    }
+  ]
+}

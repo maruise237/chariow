@@ -1,0 +1,76 @@
+{
+ "id": "nom-complet",
+ "feuilles": {
+  "Clients": [
+   [
+    "Prénom",
+    "Nom",
+    "Nom complet",
+    "Avec &"
+   ],
+   [
+    "Aminatou",
+    "Njoya"
+   ],
+   [
+    "Boris",
+    "Tchoumi"
+   ],
+   [
+    "Carine",
+    "Fotso"
+   ]
+  ]
+ },
+ "formules": [
+  {
+   "feuille": "Clients",
+   "cellule": "C2",
+   "fr": "=CONCATENER(A2;\" \";B2)",
+   "attendu": "Aminatou Njoya"
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "D2",
+   "fr": "=A2&\" \"&B2",
+   "attendu": "Aminatou Njoya"
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "C3",
+   "fr": "=CONCATENER(A3;\" \";B3)",
+   "attendu": "Boris Tchoumi"
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "D3",
+   "fr": "=A3&\" \"&B3",
+   "attendu": "Boris Tchoumi"
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "C4",
+   "fr": "=CONCATENER(A4;\" \";B4)",
+   "attendu": "Carine Fotso"
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "D4",
+   "fr": "=A4&\" \"&B4",
+   "attendu": "Carine Fotso"
+  },
+  {
+   "feuille": "Clients",
+   "cellule": "F2",
+   "fr": "=CONCAT(A2;\" \";B2)",
+   "attendu": "Aminatou Njoya"
+  }
+ ],
+ "capture": {
+  "feuille": "Clients",
+  "plage": "A1:D6",
+  "cellule_active": "C2",
+  "zoom": 165
+ },
+ "largeurs_serrees": 40
+}

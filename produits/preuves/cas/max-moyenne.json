@@ -1,0 +1,53 @@
+{
+ "id": "max-moyenne",
+ "feuilles": {
+  "Ventes": [
+   [
+    "Jour",
+    "Ventes FCFA",
+    "Plus gros",
+    "Moyenne"
+   ],
+   [
+    "Lundi",
+    12500
+   ],
+   [
+    "Mardi",
+    8000
+   ],
+   [
+    "Mercredi",
+    21000
+   ],
+   [
+    "Jeudi",
+    15000
+   ]
+  ]
+ },
+ "formules": [
+  {
+   "feuille": "Ventes",
+   "cellule": "C2",
+   "fr": "=MAX(B2:B5)",
+   "attendu": 21000
+  },
+  {
+   "feuille": "Ventes",
+   "cellule": "D2",
+   "fr": "=MOYENNE(B2:B5)",
+   "attendu": 14125
+  }
+ ],
+ "capture": {
+  "feuille": "Ventes",
+  "plage": "A1:D5",
+  "cellule_active": "C2",
+  "zoom": 165
+ },
+ "formats": {
+  "B2:D5": "# ##0"
+ },
+ "largeurs_serrees": 40
+}

@@ -1,0 +1,46 @@
+{
+  "id": "jours-retard",
+  "ok": true,
+  "resultats": [
+    {
+      "feuille": "Factures",
+      "cellule": "C2",
+      "formule_fr": "=MAX(0;AUJOURDHUI()-B2)",
+      "formule_affichee": "=MAX(0;AUJOURDHUI()-B2)",
+      "valeur": 12.0,
+      "erreur": false,
+      "attendu": 12,
+      "ok": true
+    },
+    {
+      "feuille": "Factures",
+      "cellule": "C3",
+      "formule_fr": "=MAX(0;AUJOURDHUI()-B3)",
+      "formule_affichee": "=MAX(0;AUJOURDHUI()-B3)",
+      "valeur": 5.0,
+      "erreur": false,
+      "attendu": 5,
+      "ok": true
+    },
+    {
+      "feuille": "Factures",
+      "cellule": "C4",
+      "formule_fr": "=MAX(0;AUJOURDHUI()-B4)",
+      "formule_affichee": "=MAX(0;AUJOURDHUI()-B4)",
+      "valeur": 0.0,
+      "erreur": false,
+      "attendu": 0,
+      "ok": true
+    },
+    {
+      "feuille": "Factures",
+      "cellule": "C5",
+      "formule_fr": "=MAX(0;AUJOURDHUI()-B5)",
+      "formule_affichee": "=MAX(0;AUJOURDHUI()-B5)",
+      "valeur": 0.0,
+      "erreur": false,
+      "attendu": 0,
+      "ok": true
+    }
+  ]
+}

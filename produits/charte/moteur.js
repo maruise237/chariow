@@ -27,7 +27,7 @@ function typo(s) {
     .replace(/\.\.\./g, '…')
     .replace(/«\s*/g, '«' + FINE).replace(/\s*»/g, FINE + '»')
     .replace(/\s+([;!?])/g, FINE + '$1')
-    .replace(/([\wÀ-ÿ»)])([!?])/g, '$1' + FINE + '$2')
+    .replace(/([\wÀ-ÿ»)])([!?])(?=[\s»)\]]|$)/g, '$1' + FINE + '$2')   // pas dans Tarifs!A:B
     .replace(/\s+:(?=\s|$)/g, INSEC + ':')
     .replace(/(\d) (?=\d{3}(?!\d))/g, '$1' + FINE)
     .replace(/(\d)\s+(F|FCFA|%|min|h|Mo|pages|ans|jours)(?=[\s.,;:!?)]|$)/g, '$1' + INSEC + '$2')

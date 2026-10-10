@@ -1,0 +1,16 @@
+{
+  "id": "somme-si-ens-produit",
+  "ok": true,
+  "resultats": [
+    {
+      "feuille": "Ventes",
+      "cellule": "C6",
+      "formule_fr": "=SOMME.SI(A2:A5; \"Awa\"; C2:C5) * SOMME.SI(B2:B5; \"Savon\"; C2:C5)",
+      "formule_affichee": "=SOMME.SI(A2:A5; \"Awa\"; C2:C5) * SOMME.SI(B2:B5; \"Savon\"; C2:C5)",
+      "valeur": 427500000.0,
+      "erreur": false,
+      "attendu": 427500000,
+      "ok": true
+    }
+  ]
+}

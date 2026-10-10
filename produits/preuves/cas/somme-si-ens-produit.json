@@ -1,0 +1,54 @@
+{
+ "id": "somme-si-ens-produit",
+ "note": "Réponse fausse de gpt-4o-mini : deux SOMME.SI multipliés.",
+ "feuilles": {
+  "Ventes": [
+   [
+    "Vendeur",
+    "Produit",
+    "Total FCFA"
+   ],
+   [
+    "Awa",
+    "Savon",
+    6000
+   ],
+   [
+    "Boris",
+    "Savon",
+    4000
+   ],
+   [
+    "Awa",
+    "Huile 1 L",
+    7500
+   ],
+   [
+    "Awa",
+    "Savon",
+    9000
+   ],
+   [
+    "Total"
+   ]
+  ]
+ },
+ "formules": [
+  {
+   "feuille": "Ventes",
+   "cellule": "C6",
+   "fr": "=SOMME.SI(A2:A5; \"Awa\"; C2:C5) * SOMME.SI(B2:B5; \"Savon\"; C2:C5)",
+   "attendu": 427500000
+  }
+ ],
+ "capture": {
+  "feuille": "Ventes",
+  "plage": "A1:C6",
+  "cellule_active": "C6",
+  "zoom": 185
+ },
+ "formats": {
+  "C2:C6": "# ##0"
+ },
+ "largeurs_serrees": 40
+}

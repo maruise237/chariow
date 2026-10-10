@@ -1,0 +1,26 @@
+{
+  "id": "max-moyenne",
+  "ok": true,
+  "resultats": [
+    {
+      "feuille": "Ventes",
+      "cellule": "C2",
+      "formule_fr": "=MAX(B2:B5)",
+      "formule_affichee": "=MAX(B2:B5)",
+      "valeur": 21000.0,
+      "erreur": false,
+      "attendu": 21000,
+      "ok": true
+    },
+    {
+      "feuille": "Ventes",
+      "cellule": "D2",
+      "formule_fr": "=MOYENNE(B2:B5)",
+      "formule_affichee": "=MOYENNE(B2:B5)",
+      "valeur": 14125.0,
+      "erreur": false,
+      "attendu": 14125,
+      "ok": true
+    }
+  ]
+}

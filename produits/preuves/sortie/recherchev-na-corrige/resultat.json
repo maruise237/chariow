@@ -1,0 +1,26 @@
+{
+  "id": "recherchev-na-corrige",
+  "ok": true,
+  "resultats": [
+    {
+      "feuille": "Facture",
+      "cellule": "B2",
+      "formule_fr": "=RECHERCHEV(SUPPRESPACE(A2);Tarifs!A:B;2;FAUX)",
+      "formule_affichee": "=RECHERCHEV(SUPPRESPACE(A2);$Tarifs.A:B;2;0)",
+      "valeur": 7500.0,
+      "erreur": false,
+      "attendu": 7500,
+      "ok": true
+    },
+    {
+      "feuille": "Facture",
+      "cellule": "B3",
+      "formule_fr": "=RECHERCHEV(SUPPRESPACE(A3);Tarifs!A:B;2;FAUX)",
+      "formule_affichee": "=RECHERCHEV(SUPPRESPACE(A3);$Tarifs.A:B;2;0)",
+      "valeur": 500.0,
+      "erreur": false,
+      "attendu": 500,
+      "ok": true
+    }
+  ]
+}

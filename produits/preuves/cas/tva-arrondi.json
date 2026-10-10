@@ -1,0 +1,93 @@
+{
+ "id": "tva-arrondi",
+ "note": "F2 et F3 : formule de gpt-4o-mini (avec B2 puis avec B1, comme elle l'a écrite). F4 : formule de gpt-5-mini quand on ne donne pas le taux.",
+ "feuilles": {
+  "Prix": [
+   [
+    "Produit",
+    "Prix HT",
+    "Prix TTC",
+    "Sans ARRONDI"
+   ],
+   [
+    "Savon",
+    2500
+   ],
+   [
+    "Huile 1 L",
+    7500
+   ],
+   [
+    "Riz 5 kg",
+    13500
+   ]
+  ]
+ },
+ "formules": [
+  {
+   "feuille": "Prix",
+   "cellule": "C2",
+   "fr": "=ARRONDI(B2*1,1925;0)",
+   "attendu": 2981
+  },
+  {
+   "feuille": "Prix",
+   "cellule": "C3",
+   "fr": "=ARRONDI(B3*1,1925;0)",
+   "attendu": 8944
+  },
+  {
+   "feuille": "Prix",
+   "cellule": "C4",
+   "fr": "=ARRONDI(B4*1,1925;0)",
+   "attendu": 16099
+  },
+  {
+   "feuille": "Prix",
+   "cellule": "D2",
+   "fr": "=B2*1,1925",
+   "attendu": 2981.25
+  },
+  {
+   "feuille": "Prix",
+   "cellule": "D3",
+   "fr": "=B3*1,1925",
+   "attendu": 8943.75
+  },
+  {
+   "feuille": "Prix",
+   "cellule": "D4",
+   "fr": "=B4*1,1925",
+   "attendu": 16098.75
+  },
+  {
+   "feuille": "Prix",
+   "cellule": "F2",
+   "fr": "=ARRONDI(B2 * (1 + 19,25%) ; 0)",
+   "attendu": 2981
+  },
+  {
+   "feuille": "Prix",
+   "cellule": "F3",
+   "fr": "=ARRONDI(B1 * (1 + 19,25%) ; 0)",
+   "attendu_erreur": "#VALEUR!"
+  },
+  {
+   "feuille": "Prix",
+   "cellule": "F4",
+   "fr": "=ARRONDI(B2*(1+0,1925);0)",
+   "attendu": 2981
+  }
+ ],
+ "capture": {
+  "feuille": "Prix",
+  "plage": "A1:D6",
+  "cellule_active": "C2",
+  "zoom": 165
+ },
+ "formats": {
+  "B2:C4": "# ##0",
+  "D2:D4": "# ##0,00"
+ },
+ "largeurs_serrees": 40
+}
