@@ -1,0 +1,18 @@
+Excel sans apprendre les formules - Modèles bonus (KAMTECH)
+
+Ces 7 classeurs sont les tableaux construits et vérifiés dans le livre.
+Ils s'ouvrent dans Excel (2016 et plus récent), dans LibreOffice Calc et dans Google Sheets.
+
+1-Stock.xlsx                          Chapitre 7, projet 1 : entrées, sorties, stock restant, alerte de commande
+2-Fiche-de-paie.xlsx                  Chapitre 7, projet 2 : brut, retenues, net. Les taux sont des exemples :
+                                      fais confirmer les tiens par un comptable.
+3-Facture-TVA.xlsx                    Chapitre 7, projet 3 : facture avec TVA 19,25 %
+4-Tontine.xlsx                        Chapitre 7, projet 4 : cotisations, qui a reçu, reste à payer
+5-Budget-Mobile-Money.xlsx            Chapitre 7, projet 5 : Orange Money et MTN MoMo. Saisis tes propres frais.
+6-Tableau-de-bord.xlsx                Chapitre 5 : ventes, dépenses, bénéfice, couleurs automatiques
+7-Ventes-du-mois-tableau-croise.xlsx  Chapitre 4 : journal de ventes, tableaux croisés et contrôles
+
+Mode d'emploi : fais une copie du fichier, efface nos exemples, mets tes chiffres.
+Les montants et les noms des exemples sont inventés.
+
+Usage personnel : ne partage pas ces fichiers. kamtech.mychariow.com

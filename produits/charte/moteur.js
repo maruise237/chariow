@@ -247,6 +247,15 @@ function capture(b) {
   const chemin = path.resolve(DOSSIER, fichier);
   if (!fs.existsSync(chemin)) throw new Error(`Capture introuvable : ${chemin}`);
   const { l, h } = taillePng(chemin);
+  // Copie allégée pour le PDF (pngquant, 256 couleurs : texte net, poids divisé par 3 environ). L'original reste la preuve.
+  let src = chemin;
+  try {
+    const cache = path.join(require('os').tmpdir(), 'kt-captures');
+    fs.mkdirSync(cache, { recursive: true });
+    const cle = path.join(cache, chemin.replace(/[\/]/g, '_') + '-' + fs.statSync(chemin).mtimeMs + '.png');
+    if (!fs.existsSync(cle)) execFileSync('pngquant', ['--quality', '75-95', '--speed', '1', '--output', cle, chemin]);
+    src = cle;
+  } catch (e) { /* pngquant absent ou image déjà optimale : on garde l'original */ }
   const reps = b.lignes.map(x => x.match(/^\s*(\d+)\s*:\s*([\d.]+)\s*,\s*([\d.]+)\s*([gdhb])?(\d+)?\s*\|\s*(.+)$/)).filter(Boolean)
     .map(r => ({ n: r[1], x: +r[2] / 100 * l, y: +r[3] / 100 * h, dir: r[4] || 'g', lg: r[5] ? +r[5] : 9, t: r[6] }));
   const u = Math.max(l, h) / 100;            // unité : 1 % du plus grand côté
@@ -262,7 +271,7 @@ function capture(b) {
   }).join('');
   const haut = reps.some(r => r.dir === 'h') ? ' cap-haut' : '';   // repères au-dessus : on réserve la place
   return `<figure class="capture${haut}">
-    <div class="cap-img"><img src="file://${chemin}" alt="">
+    <div class="cap-img"><img src="file://${src}" alt="">
       <svg viewBox="0 0 ${l} ${h}"><defs><marker id="pointe" viewBox="0 0 10 10" refX="7" refY="5" markerWidth="3.2" markerHeight="3.2" orient="auto-start-reverse"><path d="M0 0L10 5L0 10z" class="cap-pointe"/></marker></defs>${svg}</svg>
     </div>
     ${reps.length || legende ? `<figcaption>${reps.map(r => `<span class="leg"><i class="rep">${r.n}</i><span>${fmt(r.t)}</span></span>`).join('')}${legende ? `<span class="cap-leg">${fmt(legende)}</span>` : ''}</figcaption>` : ''}
