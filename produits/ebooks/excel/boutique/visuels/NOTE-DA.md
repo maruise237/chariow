@@ -1,6 +1,6 @@
 # Note de direction artistique : visuels de vente « Excel sans apprendre les formules »
 
-1. **Une seule idée par visuel.** Vignette : le titre. Bannière : le titre et ce qu’il y a dans le livre. Partage : le livre et son prix. Mockups : le vrai contenu sur un téléphone. Affiches : une preuve chiffrée (427 500 000 au lieu de 15 000 ; 58 formules vérifiées ; 35 prompts à copier).
+1. **Une seule idée par visuel.** Vignette : le titre. Bannière : le titre et ce qu’il y a dans le livre. Partage : le livre et son prix. Mockups : le vrai contenu sur un téléphone. Affiches : une preuve chiffrée (427 500 000 au lieu de 15 000 ; 77 tests réels sur ChatGPT ; 35 prompts à copier).
 2. **Hiérarchie en trois niveaux** : un grand élément (titre ou chiffre, 150 à 560 px), une preuve (vraie capture ou vraie page du PDF), une ligne d’information (prix 2 500 F, kamtech.mychariow.com). Rien d’autre.
 3. **Grille** : marge de 80 px (60 px sur le partage), alignement à gauche sur la même ligne de départ pour titre, preuve et pied de page. Les images de preuve prennent toute la largeur de la grille, jamais de cartes flottantes.
 4. **Palette** de la DA Atelier, en aplats : vert foncé #06331C (fond), vert #12924A (gros chiffres seulement : 4,0:1, jamais pour du petit texte), accent #C8F05A (un seul mot ou chiffre par visuel), fond clair #F4F8F2, encre #16181D. Aucun dégradé, aucun halo.

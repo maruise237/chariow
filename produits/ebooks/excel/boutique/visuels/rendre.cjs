@@ -14,7 +14,7 @@ const VISUELS = [
   ['mockup-prompt', 'mockup-prompt', 1080, 1350],
   ['mockup-modele', 'mockup-modele', 1080, 1350],
   ['affiche-1080x1080', 'affiche-erreur', 1080, 1080],
-  ['affiche-1080x1350', 'affiche-58', 1080, 1350],
+  ['affiche-1080x1350', 'affiche-77', 1080, 1350],
   ['story-1080x1920', 'story', 1080, 1920],
 ];
 

@@ -68,7 +68,7 @@ Tu apprends ainsi quoi regarder quand l'IA te répond.
 
 ### Ce que tu reçois
 
-- L'e-book en PDF : 8 chapitres et une conclusion, 129 pages.
+- L'e-book en PDF : 8 chapitres et une conclusion, 227 pages au format téléphone (une page tient sur un écran, en gros caractères).
 - 35 messages (prompts) prêts à copier dans l'IA.
 - 7 modèles Excel en FCFA : stock, fiche de paie, facture avec TVA à 19,25 %, tontine, budget Mobile Money, tableau de bord, ventes du mois avec tableau croisé.
 - Édition d'octobre 2026.
@@ -103,7 +103,7 @@ Non. Le livre demande une IA gratuite : ChatGPT, Gemini ou Claude. Nos tests ont
 
 ### C'est un PDF ?
 
-Oui, pour le livre : un PDF de 129 pages. Tu reçois en plus 7 fichiers Excel que tu ouvres et que tu remplis avec tes chiffres.
+Oui, pour le livre : un PDF de 227 pages. Tu reçois en plus 7 fichiers Excel que tu ouvres et que tu remplis avec tes chiffres.
 
 ### Les captures viennent d'Excel ?
 

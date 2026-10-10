@@ -35,7 +35,7 @@ function typo(s) {
   return t;
 }
 const fmt = s => echap(s).split(/(`[^`]+`)/).map(part => part.startsWith('`') && part.endsWith('`') && part.length > 1
-  ? `<code>${part.slice(1, -1)}</code>`
+  ? `<code>${part.slice(1, -1).replace(/([;(])/g, '$1<wbr>')}</code>`   // une longue formule peut aller à la ligne
   : typo(part).replace(/\*\*([^*]+)\*\*/g, '<b>$1</b>').replace(/\*([^*]+)\*/g, '<em>$1</em>')).join('');
 // Titres : pas de mot ni de ponctuation seuls sur la dernière ligne
 const titre = s => fmt(s).replace(/ (\S+)$/, INSEC + '$1');
@@ -384,7 +384,7 @@ function css(m, da) {
   .flux p,.flux li{text-wrap:pretty;hyphens:auto}
   h1,h2,.titre{font-family:var(--titre),serif;font-weight:${t.graisse};letter-spacing:${t.interlettre};text-transform:${t.casse};line-height:1.04}
   em{font-style:italic}
-  code{font-family:var(--mono,'JetBrains Mono'),monospace;font-size:.86em;background:rgba(0,0,0,.06);padding:0 .25em;border-radius:.2em}
+  code{font-family:var(--mono,'JetBrains Mono'),monospace;font-size:.86em;overflow-wrap:anywhere;background:rgba(0,0,0,.06);padding:0 .25em;border-radius:.2em}
   .plein{width:${F.l};height:${F.h};position:relative;overflow:hidden;break-after:page;background:var(--fond)}
   .marges{padding:14mm 13mm 0}
   ${Object.entries(motifs).map(([k, v]) => `.motif-${k}::before{content:"";position:absolute;inset:0;${v}}`).join('\n  ')}
@@ -392,7 +392,7 @@ function css(m, da) {
   /* Le sans-serif utilitaire pour tout ce qui n'est pas de la lecture suivie */
   .prompt,.tab,.resultat-label,.ex-t,.ck-t,.aa span,.ouv-meta,.atouts,.couv-haut,.signature,figcaption,.toc,.chiffre-l,.bande,.mots-cles,.jn,.jn-tete,.encart b,.recap-t,.v-aa figcaption{font-family:var(--util),sans-serif}
   .fi{font-size:.6em;letter-spacing:0}
-  .marqueur{position:absolute!important;top:0;left:0;font-size:2px;color:transparent}
+  .marqueur{position:absolute!important;top:0;left:0;font-size:4px;color:#000;opacity:.01}
 
   /* Logo provisoire KAMTECH (texte) */
   .logo{display:inline-flex;align-items:center;gap:1.6mm;font-family:var(--util);font-weight:800;font-size:10pt;letter-spacing:.16em;color:${MARQUE.signature}}
@@ -646,6 +646,7 @@ async function generer(source) {
   const txt = execFileSync('pdftotext', ['-layout', fPdf, '-'], { encoding: 'utf8' }).split('\f');
   const pages = {};
   txt.forEach((t, i) => { for (const m of t.matchAll(/@@CH(\w+)@@/g)) pages[m[1]] = i + 1; });
+  if (process.env.KT_DEBUG) console.log('sommaire', JSON.stringify(pages), txt.length);
   // Passe 2 : version finale
   await rendre(nav, document(src, pages, false), fHtml, fPdf);
   const nb = execFileSync('pdfinfo', [fPdf], { encoding: 'utf8' }).match(/Pages:\s+(\d+)/)[1];

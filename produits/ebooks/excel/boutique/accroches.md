@@ -17,7 +17,7 @@ Tu as collé une formule trouvée sur Internet, et Excel affiche #NOM? ou #N/A.
 
 Dans « Excel sans apprendre les formules », nous montrons pourquoi. Nous avons envoyé chaque demande à ChatGPT, puis collé la formule dans un vrai tableur en français. Les erreurs sont dans le livre, avec la correction.
 
-129 pages, 35 prompts à copier, 7 modèles Excel en FCFA. 2 500 F.
+227 pages, 35 prompts à copier, 7 modèles Excel en FCFA. 2 500 F.
 
 ### Texte 2 : l'erreur sans message
 
@@ -33,4 +33,4 @@ Stock de la boutique, facture avec TVA, suivi de tontine, budget Mobile Money : 
 
 Tu vois la demande envoyée à l'IA, sa réponse réelle, le résultat dans le tableur et le piège trouvé. Tu reçois les fichiers Excel, à remplir avec tes chiffres.
 
-Un e-book PDF de 129 pages. 2 500 F.
+Un e-book PDF de 227 pages. 2 500 F.
