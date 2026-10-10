@@ -50,7 +50,12 @@ function clesValeurs(lignes) {
 }
 
 function lire(source) {
-  const txt = fs.readFileSync(source, 'utf8').replace(/\r/g, '');
+  // « @inclure chemin.md » : insère un fichier (un chapitre par fichier, chemin relatif à la source)
+  const inclure = (f, n = 0) => fs.readFileSync(f, 'utf8').replace(/\r/g, '').replace(/^@inclure\s+(.+)$/gm, (_, p) => {
+    if (n > 3) throw new Error('Inclusions trop imbriquées');
+    return inclure(path.resolve(path.dirname(f), p.trim()), n + 1).replace(/\n+$/, '');
+  });
+  const txt = inclure(source);
   const m = txt.match(/^---\n([\s\S]*?)\n---\n/);
   if (!m) throw new Error('En-tête --- manquant');
   const meta = clesValeurs(m[1].split('\n'));
@@ -527,6 +532,12 @@ function css(m, da) {
   .tab td:first-child,.tab th:first-child{padding-left:0}
   .tab td:last-child,.tab th:last-child{padding-right:0}
   .prompt,.resultat,.encart,.chiffre,.aa,.recap,.exercice,.checklist,.visuel-flux{break-inside:avoid;margin:0 0 .9em}
+  /* Les longs encadrés (réponse d'IA, listes) peuvent se couper : sinon ils laissent des demi-pages vides.
+     Le cadre est redessiné de chaque côté de la coupure, le titre reste collé aux premières lignes. */
+  .resultat,.recap,.checklist,.prompt{break-inside:auto;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+  .resultat-label,.prompt-tete,.recap-t,.ck-t{break-after:avoid}
+  .recap li,.checklist li{break-inside:avoid}
+  .flux p,.resultat-corps{orphans:3;widows:3}
   .visuel-flux{margin:.4em 0 1.1em}
   .prompt{background:var(--f);color:#fff;border-radius:3mm;padding:.8em 1em}
   .prompt-tete{display:flex;justify-content:space-between;font-size:.62em;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--a);margin-bottom:.5em}
