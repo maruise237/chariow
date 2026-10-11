@@ -1,139 +1,66 @@
 1
-00:00:00,000 --> 00:00:00,860
-J'ai demandé une formule
+00:00:00,000 --> 00:00:02,310
+J'ai demandé une formule Excel à ChatGPT.
 
 2
-00:00:00,880 --> 00:00:02,010
-Excel à ChatGPT.
+00:00:02,440 --> 00:00:05,030
+Résultat : 427 millions de francs.
 
 3
-00:00:02,440 --> 00:00:02,940
-Résultat.
+00:00:05,060 --> 00:00:06,570
+Le vrai chiffre ? 15 000.
 
 4
-00:00:02,960 --> 00:00:04,830
-427 millions de francs.
+00:00:06,980 --> 00:00:09,350
+Et Excel n'a affiché aucune erreur.
 
 5
-00:00:05,060 --> 00:00:05,950
-Le vrai chiffre?
+00:00:09,550 --> 00:00:11,600
+L'IA peut écrire tes formules à ta place,
 
 6
-00:00:05,980 --> 00:00:06,530
-15 000.
+00:00:11,670 --> 00:00:15,760
+mais il faut savoir lui parler
+et vérifier en 30 secondes.
 
 7
-00:00:06,980 --> 00:00:08,580
-Et Excel n'a affiché
+00:00:15,950 --> 00:00:17,440
+Tu écris ta demande en français.
 
 8
-00:00:08,600 --> 00:00:09,330
-aucune erreur.
+00:00:17,970 --> 00:00:19,340
+L'IA te donne la formule.
 
 9
-00:00:09,550 --> 00:00:10,650
-L'IA peut écrire tes
+00:00:19,590 --> 00:00:22,980
+Tu la colles et tu contrôles
+le résultat de tête.
 
 10
-00:00:10,670 --> 00:00:11,620
-formules à ta place,
+00:00:23,450 --> 00:00:26,500
+Stock, tontine, Mobile Money,
 
 11
-00:00:11,670 --> 00:00:12,530
-mais il faut savoir
+00:00:26,610 --> 00:00:29,320
+paie, tu reçois aussi 7 modèles Excel,
 
 12
-00:00:12,550 --> 00:00:14,340
-lui parler et vérifier
+00:00:29,370 --> 00:00:31,280
+déjà en francs, prêts à remplir.
 
 13
-00:00:14,510 --> 00:00:15,700
-en 30 secondes.
+00:00:31,550 --> 00:00:34,600
+35 prompts testés, avec les
+captures des vrais résultats.
 
 14
-00:00:15,950 --> 00:00:16,690
-Tu écris ta demande
+00:00:34,950 --> 00:00:37,280
+Excel, sans apprendre les formules.
 
 15
-00:00:16,710 --> 00:00:17,400
-en français.
+00:00:38,430 --> 00:00:40,620
+2 500 F au lieu de 10 000 F.
 
 16
-00:00:17,970 --> 00:00:18,670
-L'IA te donne la
-
-17
-00:00:18,690 --> 00:00:19,240
-formule.
-
-18
-00:00:19,590 --> 00:00:20,740
-Tu la colle et
-
-19
-00:00:20,910 --> 00:00:22,550
-tu contrôles le résultat
-
-20
-00:00:22,570 --> 00:00:23,120
-de tête.
-
-21
-00:00:23,450 --> 00:00:24,780
-Stock, tontine,
-
-22
-00:00:25,470 --> 00:00:26,280
-Mobile Money,
-
-23
-00:00:26,610 --> 00:00:28,230
-paie, tu reçois aussi
-
-24
-00:00:28,250 --> 00:00:29,320
-7 modèles Excel,
-
-25
-00:00:29,370 --> 00:00:30,230
-déjà en francs,
-
-26
-00:00:30,250 --> 00:00:31,160
-prêts à remplir.
-
-27
-00:00:31,550 --> 00:00:32,830
-35 prompts testés,
-
-28
-00:00:32,850 --> 00:00:33,710
-avec les captures des
-
-29
-00:00:33,730 --> 00:00:34,460
-vrais résultats.
-
-30
-00:00:34,950 --> 00:00:36,410
-Excel, sans apprendre
-
-31
-00:00:36,430 --> 00:00:37,140
-les formules.
-
-32
-00:00:38,430 --> 00:00:39,930
-2 500 F au lieu de
-
-33
-00:00:39,950 --> 00:00:40,500
-10 000 F.
-
-34
-00:00:41,010 --> 00:00:42,110
-Clique sur En savoir
-
-35
-00:00:42,130 --> 00:00:42,680
-plus.
+00:00:41,010 --> 00:00:42,680
+Clique sur En savoir plus.

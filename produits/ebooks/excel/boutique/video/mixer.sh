@@ -24,9 +24,9 @@ f.append(f"{''.join(labs)}amix=inputs={len(labs)}:normalize=0:duration=longest,a
 m = len(ins); ins.append('audio/musique.mp3')
 f.append(f"[{m}:a]aformat=sample_rates=48000:channel_layouts=stereo,asplit=2[m1][m2]")
 f.append(f"[m1][m2]acrossfade=d=2:c1=tri:c2=tri,atrim=0:{ev['duree']},asetpts=PTS-STARTPTS,"
-         f"afade=t=out:st={ev['duree']-1.5}:d=1.5,volume=-14dB[mus]")
+         f"afade=t=out:st={ev['duree']-1.5}:d=1.5,volume=-10.5dB[mus]")
 # ducking : la voix déclenche la compression de la musique (la musique reste ~-22 dB sous la voix)
-f.append("[mus][vsc]sidechaincompress=threshold=0.01:ratio=10:attack=15:release=450:makeup=1[musd]")
+f.append("[mus][vsc]sidechaincompress=threshold=0.01:ratio=3:attack=20:release=500:makeup=1[musd]")
 # bruitages : un asplit par son, un adelay par événement (impact calé sur t)
 sons = {}
 for e in ev['evenements']:

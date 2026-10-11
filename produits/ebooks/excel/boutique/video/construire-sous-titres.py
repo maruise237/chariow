@@ -10,7 +10,7 @@ voix = {v['fichier'].split('.')[0]: v['t'] for v in json.load(open(f'{ici}/src/e
 # (texte affiché, indice du premier mot Whisper, indice du dernier mot Whisper, ponctuation de fin)
 S = {
  's1': [("J'ai",0,1,''),("demandé",2,2,''),("une",3,3,''),("formule",4,4,''),("Excel",5,5,''),("à",6,6,''),
-        ("ChatGPT",7,8,'.'),("Résultat",9,9,'.'),("427",10,10,''),("millions",11,11,''),("de",12,12,''),("francs",13,13,'.'),
+        ("ChatGPT",7,8,'.'),("Résultat",9,9,':'),("427",10,10,''),("millions",11,11,''),("de",12,12,''),("francs",13,13,'.'),
         ("Le",14,14,''),("vrai",15,15,''),("chiffre",16,16,'?'),("15 000",17,18,'.'),
         ("Et",19,19,''),("Excel",20,20,''),("n'a",21,22,''),("affiché",23,23,''),("aucune",24,24,''),("erreur",25,25,'.')],
  's2': [("L'IA",0,0,''),("peut",1,1,''),("écrire",2,2,''),("tes",3,3,''),("formules",4,4,''),("à",5,5,''),("ta",6,6,''),("place",7,7,','),
@@ -18,7 +18,7 @@ S = {
         ("et",14,14,''),("vérifier",15,15,''),("en",16,16,''),("30",17,17,''),("secondes",18,18,'.')],
  's3': [("Tu",0,0,''),("écris",1,1,''),("ta",2,2,''),("demande",3,3,''),("en",4,4,''),("français",5,5,'.'),
         ("L'IA",6,6,''),("te",7,7,''),("donne",8,8,''),("la",9,9,''),("formule",10,10,'.'),
-        ("Tu",11,11,''),("la",12,12,''),("colle",13,13,''),("et",14,14,''),("tu",15,15,''),("contrôles",16,16,''),
+        ("Tu",11,11,''),("la",12,12,''),("colles",13,13,''),("et",14,14,''),("tu",15,15,''),("contrôles",16,16,''),
         ("le",17,17,''),("résultat",18,18,''),("de",19,19,''),("tête",20,20,'.')],
  's4': [("Stock",0,0,','),("tontine",1,1,','),("Mobile",2,2,''),("Money",3,3,','),("paie",4,4,','),
         ("tu",5,5,''),("reçois",6,6,''),("aussi",7,7,''),("7",8,8,''),("modèles",9,9,''),("Excel",10,10,','),
@@ -73,18 +73,43 @@ for k, g in enumerate(res):
     nxt = res[k + 1][0][1] if k + 1 < len(res) else 44.5
     fin = min(g[-1][1] + 0.55, nxt - 0.02)
     if fin < deb + 0.15: fin = deb + 0.15
-    out.append({'d': deb, 'f': round(fin, 2), 'mots': [{'t': m[0].rstrip('.,?'), 'd': m[1], 'p': m[3]} for m in g]})
+    out.append({'d': deb, 'f': round(fin, 2), 'mots': [{'t': m[0].rstrip('.,?:'), 'd': m[1], 'p': m[3]} for m in g]})
 json.dump(out, open(f'{ici}/src/soustitres.json', 'w'), ensure_ascii=False, indent=1)
 
 def ts(x):
     ms = int(round(x * 1000)); h, ms = divmod(ms, 3600000); m, ms = divmod(ms, 60000); s, ms = divmod(ms, 1000)
     return f'{h:02d}:{m:02d}:{s:02d},{ms:03d}'
-# SRT : phrases de 1 à 2 lignes, plus lisibles pour Meta que les groupes karaoké
-srt = []; n = 0
-for g in out:
-    n += 1
-    txt = ' '.join(m['t'] + m['p'] for m in g['mots'])
-    srt.append(f"{n}\n{ts(g['d'])} --> {ts(g['f'])}\n{txt}\n")
+# SRT : phrases ou demi-phrases, 1 à 2 lignes de 42 signes au plus, jamais un cue d'un seul mot
+NB = '\u00a0'
+def fr(m):          # espace insécable avant ? : comme en français
+    return m[0].rstrip('.,?:') + (NB + m[3] if m[3] in ('?', ':') else m[3])
+cues = []; cur = []
+def clot():
+    global cur
+    if cur: cues.append(cur); cur = []
+for i, m in enumerate(mots_abs):
+    cur.append(m)
+    n = len(' '.join(fr(x) for x in cur))
+    if m[3] in ('.', '?') or (m[3] == ',' and n >= 24) or n > 78: clot()
+clot()
+fus = []
+for c in cues:      # un cue d'un seul mot est collé au précédent s'il est de la même voix
+    if len(c) == 1 and fus and fus[-1][-1][4] == c[0][4] and len(' '.join(fr(x) for x in fus[-1] + c)) <= 84:
+        fus[-1].extend(c)
+    else: fus.append(c)
+def deux_lignes(txt):
+    if len(txt) <= 42: return txt
+    mots = txt.split(' '); best = None
+    for k in range(1, len(mots)):
+        a, b = ' '.join(mots[:k]), ' '.join(mots[k:])
+        if len(a) <= 42 and len(b) <= 42 and (best is None or abs(len(a) - len(b)) < best[0]): best = (abs(len(a) - len(b)), a, b)
+    return best[1] + '\n' + best[2] if best else txt
+srt = []
+for k, c in enumerate(fus):
+    deb = c[0][1]; nxt = fus[k + 1][0][1] if k + 1 < len(fus) else 44.5
+    fin = min(c[-1][2] + 0.25, nxt - 0.03); fin = max(fin, deb + 0.6) if nxt - deb > 0.65 else fin
+    txt = deux_lignes(' '.join(fr(x) for x in c))
+    srt.append(f"{k + 1}\n{ts(deb)} --> {ts(fin)}\n{txt}\n")
 os.makedirs(f'{ici}/sortie', exist_ok=True)
 open(f'{ici}/sortie/pub-excel.srt', 'w', encoding='utf-8').write('\n'.join(srt))
 for g in out: print(g['d'], g['f'], ' '.join(m['t'] for m in g['mots']))
