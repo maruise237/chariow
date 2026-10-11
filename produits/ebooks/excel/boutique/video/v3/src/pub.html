@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Pub Excel v3</title>
+<style>
+/* Typographie v3 : Archivo Black (impact, majuscules), Fraunces italique (l'émotion, 1 accent par écran),
+   Outfit (lecture, étiquettes), JetBrains Mono (formules). Polices OFL, servies depuis produits/charte. */
+@font-face{font-family:'Archivo Black';src:url(../../../../../../charte/assets/fonts/archivo-black-latin-400-normal.woff2)}
+@font-face{font-family:'Fraunces';font-style:italic;font-weight:700;src:url(../../../../../../charte/assets/fonts/fraunces-latin-700-italic.woff2)}
+@font-face{font-family:'Outfit';font-weight:400;src:url(../../../../../../charte/assets/fonts/outfit-latin-400-normal.woff2)}
+@font-face{font-family:'Outfit';font-weight:600;src:url(../../../../../../charte/assets/fonts/outfit-latin-600-normal.woff2)}
+@font-face{font-family:'Outfit';font-weight:800;src:url(../../../../../../charte/assets/fonts/outfit-latin-800-normal.woff2)}
+@font-face{font-family:'JetBrains Mono';font-weight:500;src:url(../../../../../../charte/assets/fonts/jetbrains-mono-latin-500-normal.woff2)}
+:root{--nuit:#0E1210;--creme:#F6F1E4;--vert:#21A366;--vertc:#3DDC84;--jaune:#FFD23F;--rouge:#FF5A4E;--gris:#9AA59F}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:100%;height:100%;background:var(--nuit);overflow:hidden}
+body{font-family:'Outfit',sans-serif;color:var(--creme);-webkit-font-smoothing:antialiased}
+.big{font-family:'Archivo Black',sans-serif;text-transform:uppercase;letter-spacing:-.015em;line-height:.92}
+.it{font-family:'Fraunces',serif;font-style:italic;font-weight:700;letter-spacing:-.01em}
+.mono{font-family:'JetBrains Mono',monospace;font-weight:500}
+#bg{position:absolute;inset:0;background:var(--nuit)}
+#glow{position:absolute;width:1400px;height:1400px;left:-160px;border-radius:50%;background:radial-gradient(closest-side,rgba(33,163,102,.30),rgba(33,163,102,0))}
+#grain{position:absolute;inset:0;opacity:.09;mix-blend-mode:screen;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='240' height='240'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' seed='7'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>")}
+#stage{position:absolute;left:0;width:1080px}
+#frise{position:absolute;left:0;white-space:nowrap;font:400 190px/1 'Archivo Black';text-transform:uppercase;color:transparent;-webkit-text-stroke:3px rgba(246,241,228,.10)}
+#frise2{position:absolute;left:0;white-space:nowrap;font:400 190px/1 'Archivo Black';text-transform:uppercase;color:transparent;-webkit-text-stroke:3px rgba(246,241,228,.10)}
+#frise2 b{color:rgba(61,220,132,.10);-webkit-text-stroke:0;font-weight:400}
+#frise b{color:rgba(61,220,132,.10);-webkit-text-stroke:0;font-weight:400}
+.sc{position:absolute;inset:0;display:none}
+.col{position:absolute;left:48px;right:48px;top:0;bottom:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
+.l{display:block;will-change:transform,opacity}
+.mark{position:relative;display:inline-block;padding:0 .12em;isolation:isolate}
+.mark>i{position:absolute;left:0;top:.1em;bottom:.02em;width:100%;background:var(--jaune);transform-origin:0 50%;z-index:-1;border-radius:6px}
+.mark>span{position:relative}
+.card{background:var(--creme);color:var(--nuit);border-radius:36px;box-shadow:0 30px 70px -20px rgba(0,0,0,.7)}
+/* A */
+#aF{margin:34px 0;padding:34px 40px;text-align:left;font-size:56px;line-height:1.32;width:984px;position:relative}
+#aF .q{color:#B5482F}
+/* B */
+#bPill{display:inline-block;background:var(--vert);color:#fff;font:800 50px 'Outfit';padding:10px 34px 14px;border-radius:60px;margin-bottom:30px}
+#bStrike{position:absolute;left:-10px;right:-10px;top:50%;height:16px;margin-top:-8px;background:var(--rouge);transform-origin:0 50%;border-radius:8px}
+/* C */
+#cHead{position:absolute;left:48px;right:48px;top:0;height:150px;display:flex;align-items:center;gap:28px}
+#cNum{font:400 128px/1 'Archivo Black';color:var(--jaune);width:110px;text-align:center}
+#cLab{font:800 60px/1.05 'Outfit';text-align:left}
+#cLab em{font-family:'Fraunces';font-style:italic;font-weight:700;color:var(--vertc)}
+#cBody{position:absolute;left:48px;right:48px;top:170px;bottom:0}
+#cBul{position:absolute;left:0;right:40px;top:0;padding:38px 44px 42px;border-radius:44px 44px 44px 12px;font:600 64px/1.28 'Outfit';text-align:left;transform-origin:0 0}
+#cBul small{display:block;font:600 30px 'Outfit';color:#6B746F;margin-bottom:8px;letter-spacing:.06em;text-transform:uppercase}
+.cur{display:inline-block;width:6px;height:52px;margin-left:4px;vertical-align:-8px;background:var(--vert)}
+#cRep{position:absolute;left:70px;right:0;padding:30px 40px 38px;border-radius:44px 44px 12px 44px;background:#0B3D24;border:3px solid rgba(61,220,132,.5);text-align:left;box-shadow:0 30px 70px -20px rgba(0,0,0,.7)}
+#cRep small{display:block;font:600 30px 'Outfit';color:var(--vertc);margin-bottom:12px;letter-spacing:.06em;text-transform:uppercase}
+#cRep pre{font:500 48px/1.4 'JetBrains Mono';color:#fff;white-space:pre}
+#cKeys{position:absolute;left:0;right:0;top:250px;display:flex;justify-content:center;align-items:center;gap:36px}
+.key{height:210px;border-radius:34px;background:var(--creme);color:var(--nuit);font:400 86px 'Archivo Black';display:flex;align-items:center;justify-content:center;box-shadow:0 14px 0 #B9B2A0,0 28px 40px rgba(0,0,0,.5)}
+#cKeys b{font:400 90px 'Archivo Black';color:var(--gris)}
+/* feuille dessinée (valeurs réelles du test somme-si-ens) */
+.sheet{background:#fff;color:#1B1F1D;border-radius:30px;overflow:hidden;box-shadow:0 30px 70px -20px rgba(0,0,0,.7);font-family:'Outfit';font-weight:600}
+.fx{display:flex;align-items:center;gap:16px;height:84px;padding:0 24px;background:#EEF3EF;border-bottom:3px solid #D6DED8;font:500 27px 'JetBrains Mono';white-space:nowrap;overflow:hidden}
+.fx b{font:italic 700 36px 'Fraunces';color:var(--vert)}
+.row{display:flex;height:82px;border-bottom:2px solid #E3E8E4;font-size:48px;align-items:stretch}
+.row>div{display:flex;align-items:center;padding:0 22px;border-right:2px solid #E3E8E4;position:relative}
+.row>div:last-child{border-right:0}
+.row .n{width:62px;justify-content:center;padding:0;background:#F3F6F4;color:#7C8781;font-size:32px}
+.row .r{justify-content:flex-end}
+.row.h>div{background:#F3F6F4;color:#4D5A53;font-size:36px;font-weight:800}
+.hl{position:absolute;inset:4px;border-radius:10px;background:var(--jaune);opacity:0;z-index:0}
+.row>div>span{position:relative;z-index:1}
+#cTot{outline:6px solid var(--vert);outline-offset:-6px}
+#cChk{position:absolute;left:50%;top:700px;margin-left:-450px;width:900px;text-align:center;background:var(--vert);color:#fff;border-radius:60px;padding:16px 0 20px;font:400 46px 'Archivo Black';white-space:nowrap;box-shadow:0 20px 40px -10px rgba(0,0,0,.6)}
+/* D */
+#d35 b{font:400 430px/.82 'Archivo Black';color:var(--vertc);letter-spacing:-.04em}
+#d7 b{font:400 430px/.82 'Archivo Black';color:var(--jaune);letter-spacing:-.04em}
+.dl{font:800 70px/1.05 'Outfit';margin-top:26px}
+.dl em{font:italic 700 80px 'Fraunces';color:var(--jaune)}
+.mod{position:absolute;left:48px;right:48px;top:0;bottom:0;display:flex;flex-direction:column;justify-content:center;gap:30px}
+.mod h3{font:400 108px/.95 'Archivo Black';text-transform:uppercase;text-align:left}
+.mod h3 small{display:block;font:600 34px 'Outfit';color:var(--gris);text-transform:none;letter-spacing:.02em;margin-bottom:12px}
+.mod .row{font-size:52px;height:100px}
+.mod .row.h{font-size:38px;height:76px}
+.pillr{background:var(--rouge);color:#fff;border-radius:40px;padding:4px 20px 8px;font:800 38px 'Outfit'}
+/* E */
+#eBox{width:480px;height:650px;border-radius:30px;overflow:hidden;box-shadow:0 40px 80px -24px rgba(0,0,0,.8),0 0 0 4px rgba(246,241,228,.15)}
+#eBox img{width:480px;height:650px;display:block}
+#ePrix{display:flex;align-items:baseline;gap:30px;margin-top:34px}
+#eNew{font:400 150px/1 'Archivo Black';color:var(--jaune);letter-spacing:-.03em}
+#eOld{position:relative;font:600 58px 'Outfit';color:var(--gris)}
+#eOld i{position:absolute;left:-6px;right:-6px;top:52%;height:7px;background:var(--rouge);transform-origin:0 50%;border-radius:4px}
+#eBtn{margin-top:34px;width:820px;height:124px;border-radius:70px;background:var(--vert);color:#fff;font:400 60px 'Archivo Black';display:flex;align-items:center;justify-content:center;gap:24px;position:relative}
+#eRing{position:absolute;inset:0;border-radius:70px;border:8px solid var(--vertc)}
+#eLogo{display:flex;align-items:center;gap:14px;font:800 30px 'Outfit';letter-spacing:.18em;margin-bottom:30px}
+#eLogo img{width:52px;height:52px;border-radius:12px}
+</style></head><body>
+<div id="bg"><div id="glow"></div></div><div id="frise"></div><div id="frise2"></div><div id="grain"></div>
+<div id="stage">
+
+<section class="sc" id="A"><div class="col">
+  <div class="l big" id="aT1" style="font-size:132px">Les formules<br><span style="color:var(--vertc)">Excel</span></div>
+  <div class="l card mono" id="aF">=SOMME.SI.ENS(<br>C2:C5; A2:A5; <span class="q">"Awa"</span>;<br>B2:B5; <span class="q">"Savon"</span>)</div>
+  <div class="l it" id="aT2" style="font-size:118px;color:var(--jaune)">ça te bloque ?</div>
+</div></section>
+
+<section class="sc" id="B"><div class="col">
+  <div class="l" id="bP"><span id="bPill">Bonne nouvelle</span></div>
+  <div class="l big" id="bT1" style="font-size:150px;color:var(--creme)"><span class="mark" id="bMark"><i id="bMarkI"></i><span>Plus</span></span></div>
+  <div class="l big" id="bT2" style="font-size:150px;margin-top:6px"><span class="mark" id="bMark2"><i id="bMarkI2"></i><span>besoin</span></span></div>
+  <div class="l it" id="bT3" style="font-size:112px;margin-top:22px">de les apprendre.</div>
+</div></section>
+
+<section class="sc" id="C">
+  <div id="cHead"><div id="cNum">1</div><div id="cLab"></div></div>
+  <div id="cBody">
+    <div class="card" id="cBul"><small>Ta demande à l'IA</small><span id="cTyp"></span><span class="cur" id="cCur"></span></div>
+    <div id="cRep"><small>Réponse de l'IA</small><pre id="cPre"></pre></div>
+    <div id="cKeys"><div class="key" style="width:330px">Ctrl</div><b>+</b><div class="key" style="width:210px">V</div></div>
+    <div class="sheet" id="cSheet" style="position:absolute;left:0;right:0;top:0">
+      <div class="fx"><b>fx</b>=SOMME.SI.ENS(C2:C5; A2:A5; "Awa"; B2:B5; "Savon")</div>
+      <div class="row h"><div class="n"></div><div style="width:290px">A</div><div style="width:300px">B</div><div style="flex:1">C</div></div>
+      <div class="row"><div class="n">1</div><div style="width:290px"><span>Vendeur</span></div><div style="width:300px"><span>Produit</span></div><div style="flex:1" class="r"><span>Total FCFA</span></div></div>
+      <div class="row"><div class="n">2</div><div style="width:290px"><i class="hl" data-hl="1"></i><span>Awa</span></div><div style="width:300px"><i class="hl" data-hl="1"></i><span>Savon</span></div><div style="flex:1" class="r"><i class="hl" data-hl="1"></i><span>6 000</span></div></div>
+      <div class="row"><div class="n">3</div><div style="width:290px"><span>Boris</span></div><div style="width:300px"><span>Savon</span></div><div style="flex:1" class="r"><span>4 000</span></div></div>
+      <div class="row"><div class="n">4</div><div style="width:290px"><span>Awa</span></div><div style="width:300px"><span>Huile 1 L</span></div><div style="flex:1" class="r"><span>7 500</span></div></div>
+      <div class="row"><div class="n">5</div><div style="width:290px"><i class="hl" data-hl="1"></i><span>Awa</span></div><div style="width:300px"><i class="hl" data-hl="1"></i><span>Savon</span></div><div style="flex:1" class="r"><i class="hl" data-hl="1"></i><span>9 000</span></div></div>
+      <div class="row" style="border-bottom:0"><div class="n">6</div><div style="width:290px"><span>Total</span></div><div style="width:300px"></div><div style="flex:1;font-size:56px;font-weight:800" class="r" id="cTot"><span id="cTotV"></span></div></div>
+    </div>
+    <div id="cChk">6 000 + 9 000 = 15 000 ✓</div>
+  </div>
+</section>
+
+<section class="sc" id="D">
+  <div class="col" id="d35"><b class="l" id="d35n">35</b><div class="l dl" id="d35l">demandes <em>prêtes à copier</em></div></div>
+  <div class="col" id="d7"><b class="l" id="d7n">+7</b><div class="l dl" id="d7l">modèles Excel <em>offerts</em></div></div>
+  <div class="mod" id="mStock"><h3><small>Modèle 1</small>Stock</h3>
+    <div class="sheet"><div class="row h"><div style="width:300px">Produit</div><div style="width:200px" class="r">Reste</div><div style="flex:1">Alerte</div></div>
+    <div class="row"><div style="width:300px">Savon</div><div style="width:200px" class="r">9</div><div style="flex:1"><span class="pillr" id="mStockP">COMMANDER</span></div></div>
+    <div class="row"><div style="width:300px">Huile 1 L</div><div style="width:200px" class="r">16</div><div style="flex:1"></div></div>
+    <div class="row" style="border-bottom:0"><div style="width:300px">Riz 5 kg</div><div style="width:200px" class="r">18</div><div style="flex:1"></div></div></div></div>
+  <div class="mod" id="mTont"><h3><small>Modèle 2</small>Tontine</h3>
+    <div class="sheet"><div class="row h"><div style="width:300px">Membre</div><div style="width:300px" class="r">Versé</div><div style="flex:1" class="r">Reste</div></div>
+    <div class="row"><div style="width:300px">Awa</div><div style="width:300px" class="r">10 000</div><div style="flex:1" class="r"><i class="hl" id="mTontH"></i><span>20 000</span></div></div>
+    <div class="row"><div style="width:300px">Boris</div><div style="width:300px" class="r">30 000</div><div style="flex:1" class="r">0</div></div>
+    <div class="row" style="border-bottom:0"><div style="width:300px">Carine</div><div style="width:300px" class="r">30 000</div><div style="flex:1" class="r">0</div></div></div></div>
+  <div class="mod" id="mMomo"><h3><small>Modèle 3</small>Mobile Money</h3>
+    <div class="sheet"><div class="row h"><div style="width:400px">Opérateur</div><div style="width:260px" class="r">Entrées</div><div style="flex:1" class="r">Solde</div></div>
+    <div class="row"><div style="width:400px">Orange Money</div><div style="width:260px" class="r">170 000</div><div style="flex:1" class="r"><i class="hl" id="mMomoH"></i><span>134 600</span></div></div>
+    <div class="row" style="border-bottom:0"><div style="width:400px">MTN MoMo</div><div style="width:260px" class="r">80 000</div><div style="flex:1" class="r">34 500</div></div></div></div>
+  <div class="mod" id="mPaie"><h3><small>Modèle 4</small>Paie</h3>
+    <div class="sheet"><div class="row"><div style="width:560px">Salaire brut</div><div style="flex:1" class="r">250 000</div></div>
+    <div class="row"><div style="width:560px">Total des retenues</div><div style="flex:1" class="r">35 500</div></div>
+    <div class="row" style="border-bottom:0;font-weight:800"><div style="width:560px">Net à payer</div><div style="flex:1" class="r"><i class="hl" id="mPaieH"></i><span>214 500</span></div></div></div></div>
+</section>
+
+<section class="sc" id="E"><div class="col">
+  <div class="l" id="eLogo"><img src="../../../visuels/src/img/logo-kamtech.png">KAMTECH</div>
+  <div class="l" id="eBox"><img src="../../src/img/boite.png"></div>
+  <div class="l" id="ePrix"><span id="eNew">2 500 F</span><span id="eOld">10 000 F<i id="eOldI"></i></span></div>
+  <div class="l" id="eBtn"><div id="eRing"></div>En savoir plus <span style="font-family:'Outfit';font-weight:800">→</span></div>
+</div></section>
+
+</div>
+<script>
+const $=id=>document.getElementById(id);
+const P=new URLSearchParams(location.search);
+const W=innerWidth,H=innerHeight;
+// zone utile : 9:16 hors des 14 % du haut et 35 % du bas (interface Reels) ; 4:5 presque plein cadre
+const ST=H>1500?{top:270,h:978}:{top:60,h:1230};
+$('stage').style.top=ST.top+'px';$('stage').style.height=ST.h+'px';
+$('glow').style.top=(ST.top+ST.h/2-700)+'px';
+const FR='Excel <b>sans</b> formules · Excel <b>sans</b> formules · ';
+for(const [id,y] of [['frise',1420],['frise2',1640]]){const e=$(id);e.className='frise';e.innerHTML=FR.repeat(4);e.style.top=y+'px';e.style.display=H>1500?'block':'none';}
+
+const cl=(x,a=0,b=1)=>Math.min(b,Math.max(a,x));
+const p=(t,a,d)=>cl((t-a)/d);                       // progression 0..1 de a à a+d
+const eo=x=>1-Math.pow(1-x,3);                       // ease-out cubique
+const eio=x=>x<.5?4*x*x*x:1-Math.pow(-2*x+2,3)/2;
+const back=x=>{const c=1.9;return 1+(c+1)*Math.pow(x-1,3)+c*Math.pow(x-1,2)};
+function S(el,o){if(typeof el==='string')el=$(el);for(const k in o)el.style[k]=o[k];}
+// entrée « punch » : opacité + montée + léger dépassement d'échelle
+function pin(el,t,a,d=.32,dy=60,s0=.86){const x=p(t,a,d);S(el,{opacity:cl(x*2.2),transform:`translateY(${(1-eo(x))*dy}px) scale(${s0+(1-s0)*back(x)})`});}
+function show(id,on){$(id).style.display=on?'block':'none';}
+
+// minutage (secondes, mesuré sur les voix : audio/mots.json + silencedetect)
+const T={B:2.55,C:5.40,c2:7.30,c3:9.40,D:13.05,d7:15.85,stock:17.72,tont:18.72,momo:19.76,paie:20.92,E:21.75,prix:24.39,old:25.95,btn:27.42,fin:30};
+const DEM="Je veux le total des ventes de Savon faites par Awa.";
+const FORM='=SOMME.SI.ENS(C2:C5; A2:A5;\n"Awa"; B2:B5; "Savon")';
+const LAB=['Tu écris <em>en français</em>',"L'IA te donne <em>la formule</em>",'Tu colles, <em>tu vérifies</em>'];
+
+window.seek=function(t){
+  $('stage').style.opacity=1;
+  // fond : lueur qui respire et glisse doucement
+  S('glow',{transform:`translate(${Math.sin(t*.35)*120}px,${Math.cos(t*.27)*80}px) scale(${1+.06*Math.sin(t*.8)})`});
+  S('frise',{transform:`translateX(${-200-t*60}px)`});S('frise2',{transform:`translateX(${-1400+t*60}px)`});
+  for(const s of ['A','B','C','D','E'])show(s,false);
+
+  if(t<T.B){ // A : accroche, texte présent dès l'image 0
+    show('A',true);
+    S('aT1',{opacity:1,transform:`scale(${1.06-.06*eo(p(t,0,.4))})`});
+    // la formule « tremble » : chaque ligne décalée, puis secousse de refus sur « bloque »
+    const sh=p(t,1.72,.5),amp=sh>0&&sh<1?Math.sin(sh*Math.PI*6)*22*(1-sh):0;
+    S('aF',{opacity:1,transform:`translateX(${amp}px) rotate(${-1.2+Math.sin(t*9)*.25}deg)`});
+    pin('aT2',t,1.36,.3,40,.6);
+  } else if(t<T.C){ // B
+    show('B',true);const u=t-T.B;
+    pin('bP',t,T.B,.3,30);
+    pin('bT1',t,3.80,.26,50);pin('bT2',t,4.00,.26,50);
+    S('bMarkI',{transform:`scaleX(${eio(p(t,4.02,.35))})`});S('bMarkI2',{transform:`scaleX(${eio(p(t,4.18,.35))})`});
+    const mk=p(t,4.1,.3);S('bT1',{color:mk>.5?'var(--nuit)':'var(--creme)'});S('bT2',{color:p(t,4.26,.3)>.5?'var(--nuit)':'var(--creme)'});
+    pin('bT3',t,4.48,.3,40);
+    if(t<3.80){S('bT1',{opacity:0});S('bT2',{opacity:0});}
+  } else if(t<T.D){ // C : démonstration en 3 gestes
+    show('C',true);
+    const st=t<T.c2?0:t<T.c3?1:2;
+    $('cNum').textContent=st+1;$('cLab').innerHTML=LAB[st];
+    const a0=[T.C,T.c2,T.c3][st];pin('cNum',t,a0,.28,40,.5);pin('cLab',t,a0+.06,.3,30);
+    // bulle : saisie de la demande
+    const n=Math.round(DEM.length*eio(p(t,5.62,1.45)));$('cTyp').textContent=DEM.slice(0,n);
+    $('cCur').style.opacity=(n<DEM.length||Math.floor(t*2.5)%2)?1:0;
+    const ub=p(t,T.c2,.4);
+    S('cBul',{display:st<2?'block':'none',opacity:st===0?cl(p(t,T.C,.3)*2):1,transform:`translateY(${(1-eo(p(t,T.C,.35)))*60+170*(1-eo(ub))}px) scale(${1-.22*eo(ub)})`});
+    // réponse de l'IA : formule tapée vite
+    S('cRep',{display:st===1?'block':'none',top:'360px'});pin('cRep',t,T.c2+.05,.32,80);
+    const m=Math.round(FORM.length*p(t,7.55,1.1));$('cPre').textContent=FORM.slice(0,m);
+    // collage : Ctrl+V puis la feuille
+    const kv=st===2&&t<10.35;S('cKeys',{display:kv?'flex':'none'});
+    if(kv){const k=p(t,T.c3,.25);S('cKeys',{opacity:cl(k*2),transform:`scale(${.7+.3*back(k)}) translateY(${t>9.62&&t<9.74?12:0}px)`});}
+    const sv=st===2&&t>=10.30;S('cSheet',{display:sv?'block':'none'});S('cChk',{display:sv?'block':'none'});
+    if(sv){pin('cSheet',t,10.30,.35,120,.9);
+      $('cTotV').textContent=t>=10.75?'15 000':'';
+      S('cTot',{background:t>=10.75?'#E9F8EF':'#fff'});
+      const h=eo(p(t,11.40,.3));document.querySelectorAll('[data-hl]').forEach(e=>e.style.opacity=h*.85);
+      pin('cChk',t,11.55,.3,40,.6);}
+  } else if(t<T.E){ // D : 35 demandes, +7 modèles, 4 modèles montrés
+    show('D',true);
+    const ids=['d35','d7','mStock','mTont','mMomo','mPaie'],seg=t<T.d7?0:t<T.stock?1:t<T.tont?2:t<T.momo?3:t<T.paie?4:5;
+    ids.forEach((id,i)=>S(id,{display:i===seg?'flex':'none'}));
+    if(seg===0){const c=eo(p(t,13.15,.75));$('d35n').textContent=Math.round(35*c);pin('d35n',t,13.1,.3,60,.7);pin('d35l',t,13.75,.3,40);}
+    if(seg===1){pin('d7n',t,T.d7,.3,60,.5);pin('d7l',t,16.2,.3,40);}
+    const mods={2:['mStock',T.stock,'mStockP'],3:['mTont',T.tont,'mTontH'],4:['mMomo',T.momo,'mMomoH'],5:['mPaie',T.paie,'mPaieH']};
+    if(mods[seg]){const [id,a,h]=mods[seg];const x=eo(p(t,a,.28));
+      S(id,{opacity:1,transform:`translateX(${(1-x)*140}px)`});
+      const hx=p(t,a+.35,.25);
+      if(h==='mStockP')S(h,{display:'inline-block',transform:`scale(${hx?(.6+.4*back(hx)):0})`});else S(h,{opacity:hx*.85});}
+  } else { // E : l'offre
+    show('E',true);
+    pin('eLogo',t,T.E,.3,20);
+    const bx=p(t,T.E+.05,.5);S('eBox',{opacity:cl(bx*2),transform:`translateY(${(1-eo(bx))*160}px) rotate(${(1-eo(bx))*-6}deg) scale(${1+.02*Math.sin((t-T.E)*1.6)})`});
+    S('ePrix',{opacity:t>=T.prix-.02?1:0});
+    const pr=p(t,T.prix,.3);S('eNew',{display:'inline-block',transform:`scale(${t>=T.prix?(1.8-.8*eo(pr)):0}) rotate(${(1-eo(pr))*-8}deg)`});
+    S('eOld',{opacity:eo(p(t,T.old,.3))});S('eOldI',{transform:`scaleX(${eio(p(t,26.35,.3))})`});
+    const b=p(t,T.btn,.35);S('eBtn',{opacity:cl(b*2),transform:`translateY(${(1-eo(b))*50}px) scale(${t>T.btn+.4?1+.035*Math.sin((t-T.btn)*7):.9+.1*back(b)})`});
+    const r=((t-T.btn-.4)%1.1+1.1)%1.1/1.1;S('eRing',{opacity:t>T.btn+.4?(1-r):0,transform:`scale(${1+r*.18},${1+r*.5})`});
+    S('stage',{opacity:1-p(t,T.fin-.25,.25)});
+  }
+};
+const POL=['400 50px "Archivo Black"','italic 700 50px Fraunces','400 50px Outfit','600 50px Outfit','800 50px Outfit','500 50px "JetBrains Mono"'];
+window.pret=Promise.all([...POL.map(f=>document.fonts.load(f,'Aàé0')),document.fonts.ready,...[...document.images].map(i=>i.complete?1:new Promise(r=>{i.onload=i.onerror=r}))]).then(()=>{window.seek(+(P.get('t')||0));return true});
+</script>
+</body></html>

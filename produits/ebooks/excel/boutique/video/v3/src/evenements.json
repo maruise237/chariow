@@ -1,0 +1,141 @@
+{
+ "duree": 30.0,
+ "fps": 30,
+ "voix": [
+  {
+   "fichier": "v1.mp3",
+   "t": 0.15
+  },
+  {
+   "fichier": "v2.mp3",
+   "t": 2.55
+  },
+  {
+   "fichier": "v3.mp3",
+   "t": 5.4
+  },
+  {
+   "fichier": "v4.mp3",
+   "t": 13.05
+  },
+  {
+   "fichier": "v5.mp3",
+   "t": 21.75
+  }
+ ],
+ "gains_db": {
+  "whoosh": -14,
+  "pop": -13,
+  "clic": -11,
+  "frappe": -17,
+  "ding": -12,
+  "buzz": -15,
+  "caisse": -11
+ },
+ "evenements": [
+  {
+   "t": 1.36,
+   "son": "pop"
+  },
+  {
+   "t": 1.74,
+   "son": "buzz"
+  },
+  {
+   "t": 2.55,
+   "son": "whoosh"
+  },
+  {
+   "t": 3.8,
+   "son": "pop"
+  },
+  {
+   "t": 4.48,
+   "son": "clic"
+  },
+  {
+   "t": 5.4,
+   "son": "whoosh"
+  },
+  {
+   "t": 5.62,
+   "son": "frappe"
+  },
+  {
+   "t": 7.3,
+   "son": "whoosh"
+  },
+  {
+   "t": 7.55,
+   "son": "frappe"
+  },
+  {
+   "t": 9.4,
+   "son": "clic"
+  },
+  {
+   "t": 9.66,
+   "son": "clic"
+  },
+  {
+   "t": 10.3,
+   "son": "whoosh"
+  },
+  {
+   "t": 10.75,
+   "son": "pop"
+  },
+  {
+   "t": 11.55,
+   "son": "ding"
+  },
+  {
+   "t": 13.05,
+   "son": "whoosh"
+  },
+  {
+   "t": 13.9,
+   "son": "pop"
+  },
+  {
+   "t": 15.85,
+   "son": "pop"
+  },
+  {
+   "t": 17.72,
+   "son": "whoosh"
+  },
+  {
+   "t": 18.07,
+   "son": "pop"
+  },
+  {
+   "t": 18.72,
+   "son": "clic"
+  },
+  {
+   "t": 19.76,
+   "son": "clic"
+  },
+  {
+   "t": 20.92,
+   "son": "clic"
+  },
+  {
+   "t": 21.75,
+   "son": "whoosh"
+  },
+  {
+   "t": 24.39,
+   "son": "caisse"
+  },
+  {
+   "t": 26.35,
+   "son": "clic"
+  },
+  {
+   "t": 27.42,
+   "son": "pop"
+  }
+ ]
+}
