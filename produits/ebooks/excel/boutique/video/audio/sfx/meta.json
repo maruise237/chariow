@@ -1,0 +1,37 @@
+{
+ "whoosh": {
+  "attaque": 0.14,
+  "duree": 0.35,
+  "crete_dbfs": -6.0
+ },
+ "pop": {
+  "attaque": 0.003,
+  "duree": 0.08,
+  "crete_dbfs": -6.0
+ },
+ "clic": {
+  "attaque": 0.002,
+  "duree": 0.03,
+  "crete_dbfs": -6.0
+ },
+ "frappe": {
+  "attaque": 0.0,
+  "duree": 2.4,
+  "crete_dbfs": -6.0
+ },
+ "ding": {
+  "attaque": 0.0,
+  "duree": 0.7,
+  "crete_dbfs": -6.0
+ },
+ "buzz": {
+  "attaque": 0.0,
+  "duree": 0.3,
+  "crete_dbfs": -6.0
+ },
+ "caisse": {
+  "attaque": 0.0,
+  "duree": 0.75,
+  "crete_dbfs": -6.0
+ }
+}

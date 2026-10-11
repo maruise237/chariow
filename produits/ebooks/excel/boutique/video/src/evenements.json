@@ -1,0 +1,257 @@
+{
+ "duree": 44.5,
+ "fps": 30,
+ "voix": [
+  {
+   "fichier": "s1.mp3",
+   "t": 0
+  },
+  {
+   "fichier": "s2.mp3",
+   "t": 9.55
+  },
+  {
+   "fichier": "s3.mp3",
+   "t": 15.95
+  },
+  {
+   "fichier": "s4.mp3",
+   "t": 23.45
+  },
+  {
+   "fichier": "s5.mp3",
+   "t": 31.55
+  },
+  {
+   "fichier": "s6.mp3",
+   "t": 34.95
+  }
+ ],
+ "gains_db": {
+  "whoosh": -13,
+  "pop": -12,
+  "clic": -10,
+  "frappe": -16,
+  "ding": -13,
+  "buzz": -11,
+  "caisse": -11
+ },
+ "evenements": [
+  {
+   "id": "a_buzz",
+   "t": 2.96,
+   "son": "buzz",
+   "note": "la cellule affiche 427 500 000 (voix : « 427 »)"
+  },
+  {
+   "id": "a_coupe15",
+   "t": 5.98,
+   "son": "whoosh",
+   "note": "coupe sur la bonne capture (voix : « 15 000 »)"
+  },
+  {
+   "id": "a_ding15",
+   "t": 6.34,
+   "son": "ding",
+   "note": "coche verte"
+  },
+  {
+   "id": "a_retour",
+   "t": 6.98,
+   "son": "pop",
+   "note": "retour sur la capture fausse (voix : « Et Excel n'a affiché »)"
+  },
+  {
+   "id": "a_label",
+   "t": 8.6,
+   "son": "pop",
+   "note": "étiquette Aucun message d'erreur (voix : « aucune erreur »)"
+  },
+  {
+   "id": "b_scene",
+   "t": 9.55,
+   "son": "whoosh",
+   "note": "début scène B"
+  },
+  {
+   "id": "b_frappe1",
+   "t": 10.05,
+   "son": "frappe",
+   "note": "début de la frappe du prompt"
+  },
+  {
+   "id": "b_titre2",
+   "t": 12.33,
+   "son": "pop",
+   "note": "titre : Il faut savoir lui parler"
+  },
+  {
+   "id": "b_frappe2",
+   "t": 12.45,
+   "son": "frappe",
+   "note": "suite de la frappe"
+  },
+  {
+   "id": "b_fin",
+   "t": 14.85,
+   "son": null,
+   "note": "fin de la frappe"
+  },
+  {
+   "id": "b_30s",
+   "t": 14.99,
+   "son": "pop",
+   "note": "puce chrono 30 s (voix : « 30 »)"
+  },
+  {
+   "id": "c_scene",
+   "t": 15.95,
+   "son": "whoosh",
+   "note": "début scène C, geste 1"
+  },
+  {
+   "id": "c_etape2",
+   "t": 17.97,
+   "son": "pop",
+   "note": "geste 2 (voix : « L'IA te donne »)"
+  },
+  {
+   "id": "c_ding",
+   "t": 18.75,
+   "son": "ding",
+   "note": "la formule est affichée"
+  },
+  {
+   "id": "c_etape3",
+   "t": 19.59,
+   "son": "pop",
+   "note": "geste 3 (voix : « Tu la colles »)"
+  },
+  {
+   "id": "c_ctrl",
+   "t": 19.78,
+   "son": "clic",
+   "note": "touche Ctrl"
+  },
+  {
+   "id": "c_v",
+   "t": 19.97,
+   "son": "clic",
+   "note": "touche V (voix : « colle »)"
+  },
+  {
+   "id": "c_capture",
+   "t": 20.91,
+   "son": "whoosh",
+   "note": "la capture entre"
+  },
+  {
+   "id": "c_cercles",
+   "t": 21.43,
+   "son": null,
+   "note": "cercles sur 6 000 et 9 000 (voix : « contrôles »)"
+  },
+  {
+   "id": "c_calcul",
+   "t": 22.11,
+   "son": null,
+   "note": "calcul de tête (voix : « résultat »)"
+  },
+  {
+   "id": "c_check",
+   "t": 22.73,
+   "son": "ding",
+   "note": "coche (voix : « de tête »)"
+  },
+  {
+   "id": "d_scene",
+   "t": 23.45,
+   "son": "whoosh",
+   "note": "Stock (voix : « Stock »)"
+  },
+  {
+   "id": "d_tontine",
+   "t": 24.23,
+   "son": "pop",
+   "note": "Tontine"
+  },
+  {
+   "id": "d_momo",
+   "t": 25.47,
+   "son": "pop",
+   "note": "Mobile Money"
+  },
+  {
+   "id": "d_paie",
+   "t": 26.61,
+   "son": "pop",
+   "note": "Paie"
+  },
+  {
+   "id": "d_grille",
+   "t": 27.49,
+   "son": null,
+   "note": "les 4 modèles en grille (voix : « tu reçois »)"
+  },
+  {
+   "id": "d_badge",
+   "t": 28.25,
+   "son": "ding",
+   "note": "badge + 7 modèles (voix : « 7 modèles »)"
+  },
+  {
+   "id": "e_scene",
+   "t": 31.55,
+   "son": "whoosh",
+   "note": "scène E : compteur 35 prompts"
+  },
+  {
+   "id": "e_c2",
+   "t": 32.55,
+   "son": "pop",
+   "note": "compteur 7 modèles"
+  },
+  {
+   "id": "e_c3",
+   "t": 32.85,
+   "son": "pop",
+   "note": "compteur Captures réelles (voix : « captures »)"
+  },
+  {
+   "id": "f_scene",
+   "t": 34.95,
+   "son": "whoosh",
+   "note": "scène F : la boîte entre"
+  },
+  {
+   "id": "f_stamp",
+   "t": 38.43,
+   "son": null,
+   "note": "le tampon 2 500 F tombe (voix : « 2 500 »)"
+  },
+  {
+   "id": "f_caisse",
+   "t": 38.63,
+   "son": "caisse",
+   "note": "impact du tampon"
+  },
+  {
+   "id": "f_barre",
+   "t": 39.95,
+   "son": "pop",
+   "note": "10 000 F apparaît (voix : « 10 »)"
+  },
+  {
+   "id": "f_trait",
+   "t": 40.21,
+   "son": null,
+   "note": "le trait barre 10 000 F"
+  },
+  {
+   "id": "f_bouton",
+   "t": 41.01,
+   "son": "pop",
+   "note": "bouton En savoir plus (voix : « Clique »)"
+  }
+ ]
+}

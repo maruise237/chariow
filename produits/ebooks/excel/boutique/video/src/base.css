@@ -1,0 +1,11 @@
+/* Charte « atelier » KAMTECH. Polices référencées par chemin relatif (Cabinet Grotesk : licence Fontshare, jamais copiée dans le dépôt). */
+@font-face{font-family:'Cabinet Grotesk';font-weight:800;src:url(../../../../../charte/assets/fonts/CabinetGrotesk-Extrabold.woff2)}
+@font-face{font-family:'Cabinet Grotesk';font-weight:700;src:url(../../../../../charte/assets/fonts/CabinetGrotesk-Bold.woff2)}
+@font-face{font-family:'Hanken Grotesk';font-weight:400;src:url(../../../../../charte/assets/fonts/hanken-grotesk-latin-400-normal.woff2)}
+@font-face{font-family:'Hanken Grotesk';font-weight:600;src:url(../../../../../charte/assets/fonts/hanken-grotesk-latin-600-normal.woff2)}
+@font-face{font-family:'Hanken Grotesk';font-weight:800;src:url(../../../../../charte/assets/fonts/hanken-grotesk-latin-800-normal.woff2)}
+@font-face{font-family:'JetBrains Mono';font-weight:500;src:url(../../../../../charte/assets/fonts/jetbrains-mono-latin-500-normal.woff2)}
+:root{--v:#12924A;--vf:#06331C;--a:#C8F05A;--fond:#F4F8F2;--encre:#16181D;--gris:#3D4A42;--rouge:#E5484D}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Hanken Grotesk',sans-serif;overflow:hidden;-webkit-font-smoothing:antialiased}
+.t{font-family:'Cabinet Grotesk',sans-serif;font-weight:800;letter-spacing:-.03em}
